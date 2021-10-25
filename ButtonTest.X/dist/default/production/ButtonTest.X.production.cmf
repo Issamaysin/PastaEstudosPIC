@@ -16,7 +16,7 @@ cinit CODE 0 3FD 3FD 2 2
 maintext CODE 0 3ED 3ED 10 2
 cstackBANK0 BANK0 1 20 20 1 1
 config CONFIG 4 2007 2007 1 2
-$C:\Users\User\AppData\Local\Temp\xcAs9i8.o
+$C:\Users\User\AppData\Local\Temp\xcAs7f4.o
 end_init CODE 0 0 0 1 2
 config CONFIG 4 2007 2007 1 2
 # %UNUSED Section
@@ -51,17 +51,17 @@ STRING 1-3EC 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\ButtonTest.X.production.o
-3FD cinit CODE >235:C:\Users\User\AppData\Local\Temp\xcAs9i8.s
-3FD cinit CODE >238:C:\Users\User\AppData\Local\Temp\xcAs9i8.s
-3FD cinit CODE >244:C:\Users\User\AppData\Local\Temp\xcAs9i8.s
-3FD cinit CODE >246:C:\Users\User\AppData\Local\Temp\xcAs9i8.s
-3FE cinit CODE >247:C:\Users\User\AppData\Local\Temp\xcAs9i8.s
-3ED maintext CODE >16:C:\Users\User\MPLABXProjects\ButtonTest.X\main.c
-3ED maintext CODE >19:C:\Users\User\MPLABXProjects\ButtonTest.X\main.c
-3F0 maintext CODE >23:C:\Users\User\MPLABXProjects\ButtonTest.X\main.c
-3F5 maintext CODE >24:C:\Users\User\MPLABXProjects\ButtonTest.X\main.c
-3F6 maintext CODE >25:C:\Users\User\MPLABXProjects\ButtonTest.X\main.c
-3F7 maintext CODE >26:C:\Users\User\MPLABXProjects\ButtonTest.X\main.c
+3FD cinit CODE >235:C:\Users\User\AppData\Local\Temp\xcAs7f4.s
+3FD cinit CODE >238:C:\Users\User\AppData\Local\Temp\xcAs7f4.s
+3FD cinit CODE >244:C:\Users\User\AppData\Local\Temp\xcAs7f4.s
+3FD cinit CODE >246:C:\Users\User\AppData\Local\Temp\xcAs7f4.s
+3FE cinit CODE >247:C:\Users\User\AppData\Local\Temp\xcAs7f4.s
+3ED maintext CODE >17:C:\Users\User\MPLABXProjects\ButtonTest.X\main.c
+3ED maintext CODE >20:C:\Users\User\MPLABXProjects\ButtonTest.X\main.c
+3F0 maintext CODE >24:C:\Users\User\MPLABXProjects\ButtonTest.X\main.c
+3F5 maintext CODE >25:C:\Users\User\MPLABXProjects\ButtonTest.X\main.c
+3F6 maintext CODE >26:C:\Users\User\MPLABXProjects\ButtonTest.X\main.c
+3F7 maintext CODE >27:C:\Users\User\MPLABXProjects\ButtonTest.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -82,27 +82,27 @@ __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 400F 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 7FE 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs9i8.o
+___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs7f4.o
 _main 7DA 0 CODE 0 maintext dist/default/production\ButtonTest.X.production.o
 btemp 5E 0 ABS 0 - dist/default/production\ButtonTest.X.production.o
-start 0 0 CODE 0 init C:\Users\User\AppData\Local\Temp\xcAs9i8.o
+start 0 0 CODE 0 init C:\Users\User\AppData\Local\Temp\xcAs7f4.o
 __size_of_main 0 0 ABS 0 - dist/default/production\ButtonTest.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs9i8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs9i8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs9i8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs9i8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs9i8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs9i8.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs7f4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs7f4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs7f4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs7f4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs7f4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs7f4.o
 wtemp0 5E 0 ABS 0 - dist/default/production\ButtonTest.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 7FE 0 ABS 0 clrtext -
 __Lmaintext 7FE 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs9i8.o
-___stacklo 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs9i8.o
+___stackhi 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs7f4.o
+___stacklo 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs7f4.o
 start_initialization 7FA 0 CODE 0 cinit dist/default/production\ButtonTest.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\ButtonTest.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs9i8.o
+___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs7f4.o
 __Hbank0 7FE 0 ABS 0 bank0 -
 __Hbank1 7FE 0 BANK1 1 bank1 -
 __Hcinit 7FE 0 CODE 0 cinit -
@@ -133,11 +133,11 @@ __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Hosccal 7FE 0 CODE 0 osccal -
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\xcAs9i8.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\xcAs7f4.o
 __pmaintext 7DA 0 CODE 0 maintext dist/default/production\ButtonTest.X.production.o
 __Lcommon 7FE 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-___osccal_val 7FE 0 CODE 0 osccal C:\Users\User\AppData\Local\Temp\xcAs9i8.o
+___osccal_val 7FE 0 CODE 0 osccal C:\Users\User\AppData\Local\Temp\xcAs7f4.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -

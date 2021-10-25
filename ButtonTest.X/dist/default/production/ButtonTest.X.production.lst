@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Mon Oct 25 12:06:34 2021
+                                                                                               Mon Oct 25 12:09:06 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F630
@@ -149,7 +149,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    135 ;;
    136 ;; *************** function _main *****************
    137 ;; Defined at:
-   138 ;;		line 16 in file "main.c"
+   138 ;;		line 17 in file "main.c"
    139 ;; Parameters:    Size  Location     Type
    140 ;;		None
    141 ;; Auto vars:     Size  Location     Type
@@ -183,13 +183,13 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    169                           ; Regs used in _main: [wreg+status,2+status,0]
    170                           
    171                           
-   172                           ;main.c: 19:     TRISC = 0b1111110;
+   172                           ;main.c: 20:     TRISC = 0b1111110;
    173  03ED  307E               	movlw	126
    174  03EE  1683               	bsf	3,5	;RP0=1, select bank1
    175  03EF  0087               	movwf	7	;volatile
    176  03F0                     l616:
    177                           
-   178                           ;main.c: 23:         if(PORTC & (1<<1)){
+   178                           ;main.c: 24:         if(PORTC & (1<<1)){
    179  03F0  1283               	bcf	3,5	;RP0=0, select bank0
    180  03F1  1C87               	btfss	7,1	;volatile
    181  03F2  2BF4               	goto	u21
@@ -199,14 +199,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    185  03F5                     u20:
    186  03F5                     l618:
    187                           
-   188                           ;main.c: 24:             PORTC |= (1<<0);
+   188                           ;main.c: 25:             PORTC |= (1<<0);
    189  03F5  1407               	bsf	7,0	;volatile
    190                           
-   191                           ;main.c: 25:         }else{
+   191                           ;main.c: 26:         }else{
    192  03F6  2BF0               	goto	l616
    193  03F7                     l620:
    194                           
-   195                           ;main.c: 26:             PORTC &= ~(1<<0);
+   195                           ;main.c: 27:             PORTC &= ~(1<<0);
    196  03F7  30FE               	movlw	254
    197  03F8  00A0               	movwf	??_main
    198  03F9  0820               	movf	??_main,w
@@ -297,7 +297,7 @@ DATA                 0      0       0       6        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Mon Oct 25 12:06:34 2021
+Symbol Table                                                                                   Mon Oct 25 12:09:06 2021
 
                      u20 03F5                       u21 03F4                      l620 03F7  
                     l614 03ED                      l616 03F0                      l618 03F5  

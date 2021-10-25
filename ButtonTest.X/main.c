@@ -3,6 +3,7 @@
  * Author:          Renato Pepe
  * Description:     Programa que mantem o LED aceso
  *                   enquanto o botão está pressionado
+ * Controlador:     PIC16F630
  * Created on:      20 de Outubro de 2021, 14:42
  */
 
