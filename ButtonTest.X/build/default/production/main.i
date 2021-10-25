@@ -29,6 +29,7 @@
 
 
 
+
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -886,26 +887,49 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 20 "./CONFIG.h" 2
+# 21 "./CONFIG.h" 2
 # 10 "main.c" 2
-
-
-
-
-
+# 28 "main.c"
+char readButton(int iPinButton);
 
 
 void main(void) {
 
-
     TRISC = 0b1111110;
+
+
+    char cButtonPreviousStatus = 0;
+    char cReadButtonBuffer = 0;
+
+
+    PORTC &= ~(1<<0);
 
     while(1){
 
-        if(PORTC & (1<<1)){
-            PORTC |= (1<<0);
-        }else{
-            PORTC &= ~(1<<0);
+        cReadButtonBuffer = readButton(1);
+
+
+        if(cReadButtonBuffer != cButtonPreviousStatus && cReadButtonBuffer){
+            PORTC ^= (1<<0);
+            _delay((unsigned long)((10)*(4000000/4000.0)));
+            cButtonPreviousStatus = cReadButtonBuffer;
+
+
+        }else if(cReadButtonBuffer != cButtonPreviousStatus && !cReadButtonBuffer){
+            cButtonPreviousStatus = cReadButtonBuffer;
         }
+    }
+}
+
+
+char readButton(int iPinButton){
+
+
+
+
+    if(0 <= iPinButton && 5 >= iPinButton){
+        return (PORTC & (1<<iPinButton))>>iPinButton;
+    }else{
+        return 0x00;
     }
 }

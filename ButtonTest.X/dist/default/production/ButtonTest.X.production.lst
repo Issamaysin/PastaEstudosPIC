@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Mon Oct 25 12:09:06 2021
+                                                                                               Mon Oct 25 14:14:32 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F630
@@ -10,233 +10,426 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
      4                           	psect	cinit,global,class=CODE,merge=1,delta=2
      5                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
      6                           	psect	maintext,global,class=CODE,split=1,delta=2
-     7                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
-     8                           	dabs	1,0x5E,2
-     9  0000                     
-    10                           ; Version 2.20
-    11                           ; Generated 12/02/2020 GMT
-    12                           ; 
-    13                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
-    14                           ; All rights reserved.
-    15                           ; 
-    16                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+     7                           	psect	text1,local,class=CODE,merge=1,delta=2
+     8                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+     9                           	dabs	1,0x5E,2
+    10  0000                     
+    11                           ; Version 2.20
+    12                           ; Generated 12/02/2020 GMT
+    13                           ; 
+    14                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    15                           ; All rights reserved.
+    16                           ; 
+    17                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
       +                          ip").
-    17                           ; 
-    18                           ; Redistribution and use in source and binary forms, with or without modification, are
-    19                           ; permitted provided that the following conditions are met:
-    20                           ; 
-    21                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+    18                           ; 
+    19                           ; Redistribution and use in source and binary forms, with or without modification, are
+    20                           ; permitted provided that the following conditions are met:
+    21                           ; 
+    22                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
       +                          t of
-    22                           ;        conditions and the following disclaimer.
-    23                           ; 
-    24                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+    23                           ;        conditions and the following disclaimer.
+    24                           ; 
+    25                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
       +                          list
-    25                           ;        of conditions and the following disclaimer in the documentation and/or other
-    26                           ;        materials provided with the distribution.
-    27                           ; 
-    28                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+    26                           ;        of conditions and the following disclaimer in the documentation and/or other
+    27                           ;        materials provided with the distribution.
+    28                           ; 
+    29                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
       +                          is
-    29                           ;        software without specific prior written permission.
-    30                           ; 
-    31                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
-    32                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+    30                           ;        software without specific prior written permission.
+    31                           ; 
+    32                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    33                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
       +                          OR
-    33                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+    34                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
       +                          T,
-    34                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
-    35                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
-    36                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+    35                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    36                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    37                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
       +                          RICT
-    37                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+    38                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
       +                          SE OF
-    38                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    39                           ; 
+    39                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     40                           ; 
-    41                           ; Code-generator required, PIC16F630 Definitions
-    42                           ; 
-    43                           ; SFR Addresses
-    44  0000                     	;# 
-    45  0001                     	;# 
-    46  0002                     	;# 
-    47  0003                     	;# 
-    48  0004                     	;# 
-    49  0005                     	;# 
-    50  0007                     	;# 
-    51  000A                     	;# 
-    52  000B                     	;# 
-    53  000C                     	;# 
-    54  000E                     	;# 
+    41                           ; 
+    42                           ; Code-generator required, PIC16F630 Definitions
+    43                           ; 
+    44                           ; SFR Addresses
+    45  0000                     	;# 
+    46  0001                     	;# 
+    47  0002                     	;# 
+    48  0003                     	;# 
+    49  0004                     	;# 
+    50  0005                     	;# 
+    51  0007                     	;# 
+    52  000A                     	;# 
+    53  000B                     	;# 
+    54  000C                     	;# 
     55  000E                     	;# 
-    56  000F                     	;# 
-    57  0010                     	;# 
-    58  0019                     	;# 
-    59  0081                     	;# 
-    60  0085                     	;# 
-    61  0087                     	;# 
-    62  008C                     	;# 
-    63  008E                     	;# 
-    64  0090                     	;# 
-    65  0095                     	;# 
+    56  000E                     	;# 
+    57  000F                     	;# 
+    58  0010                     	;# 
+    59  0019                     	;# 
+    60  0081                     	;# 
+    61  0085                     	;# 
+    62  0087                     	;# 
+    63  008C                     	;# 
+    64  008E                     	;# 
+    65  0090                     	;# 
     66  0095                     	;# 
-    67  0096                     	;# 
+    67  0095                     	;# 
     68  0096                     	;# 
-    69  0099                     	;# 
-    70  009A                     	;# 
+    69  0096                     	;# 
+    70  0099                     	;# 
     71  009A                     	;# 
-    72  009B                     	;# 
-    73  009C                     	;# 
-    74  009D                     	;# 
-    75  0000                     	;# 
-    76  0001                     	;# 
-    77  0002                     	;# 
-    78  0003                     	;# 
-    79  0004                     	;# 
-    80  0005                     	;# 
-    81  0007                     	;# 
-    82  000A                     	;# 
-    83  000B                     	;# 
-    84  000C                     	;# 
-    85  000E                     	;# 
+    72  009A                     	;# 
+    73  009B                     	;# 
+    74  009C                     	;# 
+    75  009D                     	;# 
+    76  0000                     	;# 
+    77  0001                     	;# 
+    78  0002                     	;# 
+    79  0003                     	;# 
+    80  0004                     	;# 
+    81  0005                     	;# 
+    82  0007                     	;# 
+    83  000A                     	;# 
+    84  000B                     	;# 
+    85  000C                     	;# 
     86  000E                     	;# 
-    87  000F                     	;# 
-    88  0010                     	;# 
-    89  0019                     	;# 
-    90  0081                     	;# 
-    91  0085                     	;# 
-    92  0087                     	;# 
-    93  008C                     	;# 
-    94  008E                     	;# 
-    95  0090                     	;# 
-    96  0095                     	;# 
+    87  000E                     	;# 
+    88  000F                     	;# 
+    89  0010                     	;# 
+    90  0019                     	;# 
+    91  0081                     	;# 
+    92  0085                     	;# 
+    93  0087                     	;# 
+    94  008C                     	;# 
+    95  008E                     	;# 
+    96  0090                     	;# 
     97  0095                     	;# 
-    98  0096                     	;# 
+    98  0095                     	;# 
     99  0096                     	;# 
-   100  0099                     	;# 
-   101  009A                     	;# 
+   100  0096                     	;# 
+   101  0099                     	;# 
    102  009A                     	;# 
-   103  009B                     	;# 
-   104  009C                     	;# 
-   105  009D                     	;# 
-   106  0007                     _PORTC	set	7
-   107  0087                     _TRISC	set	135
-   108                           
-   109                           	psect	cinit
-   110  03FD                     start_initialization:	
-   111                           ; #config settings
-   112                           
-   113  03FD                     __initialization:
-   114  03FD                     end_of_initialization:	
-   115                           ;End of C runtime variable initialization code
-   116                           
-   117  03FD                     __end_of__initialization:
-   118  03FD  0183               	clrf	3
-   119  03FE  2BED               	ljmp	_main	;jump to C main() function
-   120                           
-   121                           	psect	cstackBANK0
-   122  0020                     __pcstackBANK0:
-   123  0020                     ?_main:
-   124  0020                     ??_main:	
-   125                           ; 1 bytes @ 0x0
-   126                           
+   103  009A                     	;# 
+   104  009B                     	;# 
+   105  009C                     	;# 
+   106  009D                     	;# 
+   107  0007                     _PORTC	set	7
+   108  0087                     _TRISC	set	135
+   109                           
+   110                           	psect	cinit
+   111  03FD                     start_initialization:	
+   112                           ; #config settings
+   113                           
+   114  03FD                     __initialization:
+   115  03FD                     end_of_initialization:	
+   116                           ;End of C runtime variable initialization code
+   117                           
+   118  03FD                     __end_of__initialization:
+   119  03FD  0183               	clrf	3
+   120  03FE  2BC0               	ljmp	_main	;jump to C main() function
+   121                           
+   122                           	psect	cstackBANK0
+   123  0020                     __pcstackBANK0:
+   124  0020                     ?_readButton:
+   125  0020                     ?_main:	
+   126                           ; 1 bytes @ 0x0
    127                           
-   128                           ; 1 bytes @ 0x0
-   129  0020                     	ds	1
+   128  0020                     readButton@iPinButton:	
+   129                           ; 1 bytes @ 0x0
    130                           
-   131                           	psect	maintext
-   132  03ED                     __pmaintext:	
-   133 ;;
-   134 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
-   135 ;;
-   136 ;; *************** function _main *****************
-   137 ;; Defined at:
-   138 ;;		line 17 in file "main.c"
-   139 ;; Parameters:    Size  Location     Type
-   140 ;;		None
-   141 ;; Auto vars:     Size  Location     Type
-   142 ;;		None
-   143 ;; Return value:  Size  Location     Type
-   144 ;;                  1    wreg      void 
-   145 ;; Registers used:
-   146 ;;		wreg, status,2, status,0
-   147 ;; Tracked objects:
-   148 ;;		On entry : B00/0
-   149 ;;		On exit  : 0/0
-   150 ;;		Unchanged: 0/0
-   151 ;; Data sizes:     COMMON   BANK0
-   152 ;;      Params:         0       0
-   153 ;;      Locals:         0       0
-   154 ;;      Temps:          0       1
-   155 ;;      Totals:         0       1
-   156 ;;Total ram usage:        1 bytes
-   157 ;; This function calls:
-   158 ;;		Nothing
-   159 ;; This function is called by:
-   160 ;;		Startup code after reset
-   161 ;; This function uses a non-reentrant model
-   162 ;;
-   163                           
-   164                           
-   165                           ;psect for function _main
-   166  03ED                     _main:
-   167  03ED                     l614:	
-   168                           ;incstack = 0
-   169                           ; Regs used in _main: [wreg+status,2+status,0]
-   170                           
-   171                           
-   172                           ;main.c: 20:     TRISC = 0b1111110;
-   173  03ED  307E               	movlw	126
-   174  03EE  1683               	bsf	3,5	;RP0=1, select bank1
-   175  03EF  0087               	movwf	7	;volatile
-   176  03F0                     l616:
-   177                           
-   178                           ;main.c: 24:         if(PORTC & (1<<1)){
-   179  03F0  1283               	bcf	3,5	;RP0=0, select bank0
-   180  03F1  1C87               	btfss	7,1	;volatile
-   181  03F2  2BF4               	goto	u21
-   182  03F3  2BF5               	goto	u20
-   183  03F4                     u21:
-   184  03F4  2BF7               	goto	l620
-   185  03F5                     u20:
-   186  03F5                     l618:
-   187                           
-   188                           ;main.c: 25:             PORTC |= (1<<0);
-   189  03F5  1407               	bsf	7,0	;volatile
-   190                           
-   191                           ;main.c: 26:         }else{
-   192  03F6  2BF0               	goto	l616
-   193  03F7                     l620:
-   194                           
-   195                           ;main.c: 27:             PORTC &= ~(1<<0);
-   196  03F7  30FE               	movlw	254
-   197  03F8  00A0               	movwf	??_main
-   198  03F9  0820               	movf	??_main,w
-   199  03FA  0587               	andwf	7,f	;volatile
-   200  03FB  2BF0               	goto	l616
-   201  03FC  2800               	ljmp	start
-   202  03FD                     __end_of_main:
-   203  005E                     btemp	set	94	;btemp
-   204  005E                     wtemp0	set	94
+   131                           
+   132                           ; 2 bytes @ 0x0
+   133  0020                     	ds	2
+   134  0022                     ??_readButton:
+   135                           
+   136                           ; 1 bytes @ 0x2
+   137  0022                     	ds	2
+   138  0024                     ??_main:
+   139                           
+   140                           ; 1 bytes @ 0x4
+   141  0024                     	ds	2
+   142  0026                     main@cButtonPreviousStatus:
+   143                           
+   144                           ; 1 bytes @ 0x6
+   145  0026                     	ds	1
+   146  0027                     main@cReadButtonBuffer:
+   147                           
+   148                           ; 1 bytes @ 0x7
+   149  0027                     	ds	1
+   150                           
+   151                           	psect	maintext
+   152  03C0                     __pmaintext:	
+   153 ;;
+   154 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   155 ;;
+   156 ;; *************** function _main *****************
+   157 ;; Defined at:
+   158 ;;		line 31 in file "main.c"
+   159 ;; Parameters:    Size  Location     Type
+   160 ;;		None
+   161 ;; Auto vars:     Size  Location     Type
+   162 ;;  cReadButtonB    1    7[BANK0 ] unsigned char 
+   163 ;;  cButtonPrevi    1    6[BANK0 ] unsigned char 
+   164 ;; Return value:  Size  Location     Type
+   165 ;;                  1    wreg      void 
+   166 ;; Registers used:
+   167 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
+   168 ;; Tracked objects:
+   169 ;;		On entry : B00/0
+   170 ;;		On exit  : 0/0
+   171 ;;		Unchanged: 0/0
+   172 ;; Data sizes:     COMMON   BANK0
+   173 ;;      Params:         0       0
+   174 ;;      Locals:         0       2
+   175 ;;      Temps:          0       2
+   176 ;;      Totals:         0       4
+   177 ;;Total ram usage:        4 bytes
+   178 ;; Hardware stack levels required when called: 1
+   179 ;; This function calls:
+   180 ;;		_readButton
+   181 ;; This function is called by:
+   182 ;;		Startup code after reset
+   183 ;; This function uses a non-reentrant model
+   184 ;;
+   185                           
+   186                           
+   187                           ;psect for function _main
+   188  03C0                     _main:
+   189  03C0                     l670:	
+   190                           ;incstack = 0
+   191                           ; Regs used in _main: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+   192                           
+   193                           
+   194                           ;main.c: 33:     TRISC = 0b1111110;
+   195  03C0  307E               	movlw	126
+   196  03C1  1683               	bsf	3,5	;RP0=1, select bank1
+   197  03C2  0087               	movwf	7	;volatile
+   198  03C3                     l672:
+   199                           
+   200                           ;main.c: 36:     char cButtonPreviousStatus = 0;
+   201  03C3  1283               	bcf	3,5	;RP0=0, select bank0
+   202  03C4  01A6               	clrf	main@cButtonPreviousStatus
+   203  03C5                     l674:
+   204  03C5                     l676:
    205                           
-   206                           	psect	config
-   207                           
-   208                           ;Config register CONFIG @ 0x2007
-   209                           ;	Oscillator Selection bits
-   210                           ;	FOSC = INTRCIO, INTOSC oscillator: I/O function on RA4/OSC2/CLKOUT pin, I/O function o
+   206                           ;main.c: 40:     PORTC &= ~(1<<0);
+   207  03C5  30FE               	movlw	254
+   208  03C6  00A4               	movwf	??_main
+   209  03C7  0824               	movf	??_main,w
+   210  03C8  0587               	andwf	7,f	;volatile
+   211  03C9                     l678:
+   212                           
+   213                           ;main.c: 44:         cReadButtonBuffer = readButton(1);
+   214  03C9  3001               	movlw	1
+   215  03CA  00A0               	movwf	readButton@iPinButton
+   216  03CB  3000               	movlw	0
+   217  03CC  00A1               	movwf	readButton@iPinButton+1
+   218  03CD  2396               	fcall	_readButton
+   219  03CE  1283               	bcf	3,5	;RP0=0, select bank0
+   220  03CF  00A4               	movwf	??_main
+   221  03D0  0824               	movf	??_main,w
+   222  03D1  00A7               	movwf	main@cReadButtonBuffer
+   223  03D2                     l680:
+   224                           
+   225                           ;main.c: 47:         if(cReadButtonBuffer != cButtonPreviousStatus && cReadButtonBuffer)
+      +                          {
+   226  03D2  0827               	movf	main@cReadButtonBuffer,w
+   227  03D3  0626               	xorwf	main@cButtonPreviousStatus,w
+   228  03D4  1903               	skipnz
+   229  03D5  2BD7               	goto	u131
+   230  03D6  2BD8               	goto	u130
+   231  03D7                     u131:
+   232  03D7  2BF0               	goto	l690
+   233  03D8                     u130:
+   234  03D8                     l682:
+   235  03D8  0827               	movf	main@cReadButtonBuffer,w
+   236  03D9  1903               	btfsc	3,2
+   237  03DA  2BDC               	goto	u141
+   238  03DB  2BDD               	goto	u140
+   239  03DC                     u141:
+   240  03DC  2BF0               	goto	l690
+   241  03DD                     u140:
+   242  03DD                     l684:
+   243                           
+   244                           ;main.c: 48:             PORTC ^= (1<<0);
+   245  03DD  3001               	movlw	1
+   246  03DE  00A4               	movwf	??_main
+   247  03DF  0824               	movf	??_main,w
+   248  03E0  0687               	xorwf	7,f	;volatile
+   249  03E1                     l686:
+   250                           
+   251                           ;main.c: 49:             _delay((unsigned long)((10)*(4000000/4000.0)));
+   252  03E1  300D               	movlw	13
+   253  03E2  00A5               	movwf	??_main+1
+   254  03E3  30FB               	movlw	251
+   255  03E4  00A4               	movwf	??_main
+   256  03E5                     u177:
+   257  03E5  0BA4               	decfsz	??_main,f
+   258  03E6  2BE5               	goto	u177
+   259  03E7  0BA5               	decfsz	??_main+1,f
+   260  03E8  2BE5               	goto	u177
+   261  03E9  2BEA               	nop2
+   262  03EA                     l688:
+   263                           
+   264                           ;main.c: 50:             cButtonPreviousStatus = cReadButtonBuffer;
+   265  03EA  1283               	bcf	3,5	;RP0=0, select bank0
+   266  03EB  0827               	movf	main@cReadButtonBuffer,w
+   267  03EC  00A4               	movwf	??_main
+   268  03ED  0824               	movf	??_main,w
+   269  03EE  00A6               	movwf	main@cButtonPreviousStatus
+   270                           
+   271                           ;main.c: 53:         }else if(cReadButtonBuffer != cButtonPreviousStatus && !cReadButton
+      +                          Buffer){
+   272  03EF  2BC9               	goto	l678
+   273  03F0                     l690:
+   274  03F0  0827               	movf	main@cReadButtonBuffer,w
+   275  03F1  0626               	xorwf	main@cButtonPreviousStatus,w
+   276  03F2  1903               	skipnz
+   277  03F3  2BF5               	goto	u151
+   278  03F4  2BF6               	goto	u150
+   279  03F5                     u151:
+   280  03F5  2BC9               	goto	l678
+   281  03F6                     u150:
+   282  03F6                     l692:
+   283  03F6  0827               	movf	main@cReadButtonBuffer,w
+   284  03F7  1D03               	btfss	3,2
+   285  03F8  2BFA               	goto	u161
+   286  03F9  2BFB               	goto	u160
+   287  03FA                     u161:
+   288  03FA  2BC9               	goto	l678
+   289  03FB                     u160:
+   290  03FB  2BEA               	goto	l688
+   291  03FC  2800               	ljmp	start
+   292  03FD                     __end_of_main:
+   293                           
+   294                           	psect	text1
+   295  0396                     __ptext1:	
+   296 ;; *************** function _readButton *****************
+   297 ;; Defined at:
+   298 ;;		line 60 in file "main.c"
+   299 ;; Parameters:    Size  Location     Type
+   300 ;;  iPinButton      2    0[BANK0 ] int 
+   301 ;; Auto vars:     Size  Location     Type
+   302 ;;		None
+   303 ;; Return value:  Size  Location     Type
+   304 ;;                  1    wreg      unsigned char 
+   305 ;; Registers used:
+   306 ;;		wreg, status,2, status,0, btemp+1
+   307 ;; Tracked objects:
+   308 ;;		On entry : 0/0
+   309 ;;		On exit  : 0/0
+   310 ;;		Unchanged: 0/0
+   311 ;; Data sizes:     COMMON   BANK0
+   312 ;;      Params:         0       2
+   313 ;;      Locals:         0       0
+   314 ;;      Temps:          0       2
+   315 ;;      Totals:         0       4
+   316 ;;Total ram usage:        4 bytes
+   317 ;; Hardware stack levels used: 1
+   318 ;; This function calls:
+   319 ;;		Nothing
+   320 ;; This function is called by:
+   321 ;;		_main
+   322 ;; This function uses a non-reentrant model
+   323 ;;
+   324                           
+   325                           
+   326                           ;psect for function _readButton
+   327  0396                     _readButton:
+   328  0396                     l656:	
+   329                           ;incstack = 0
+   330                           ; Regs used in _readButton: [wreg+status,2+status,0+btemp+1]
+   331                           
+   332                           
+   333                           ;main.c: 65:     if(0 <= iPinButton && 5 >= iPinButton){
+   334  0396  1283               	bcf	3,5	;RP0=0, select bank0
+   335  0397  1BA1               	btfsc	readButton@iPinButton+1,7
+   336  0398  2B9A               	goto	u91
+   337  0399  2B9B               	goto	u90
+   338  039A                     u91:
+   339  039A  2BBE               	goto	l666
+   340  039B                     u90:
+   341  039B                     l658:
+   342  039B  0821               	movf	readButton@iPinButton+1,w
+   343  039C  3A80               	xorlw	128
+   344  039D  00DF               	movwf	btemp+1
+   345  039E  3080               	movlw	128
+   346  039F  025F               	subwf	btemp+1,w
+   347  03A0  1D03               	skipz
+   348  03A1  2BA4               	goto	u105
+   349  03A2  3006               	movlw	6
+   350  03A3  0220               	subwf	readButton@iPinButton,w
+   351  03A4                     u105:
+   352  03A4  1803               	skipnc
+   353  03A5  2BA7               	goto	u101
+   354  03A6  2BA8               	goto	u100
+   355  03A7                     u101:
+   356  03A7  2BBE               	goto	l666
+   357  03A8                     u100:
+   358  03A8                     l660:
+   359                           
+   360                           ;main.c: 66:         return (PORTC & (1<<iPinButton))>>iPinButton;
+   361  03A8  3001               	movlw	1
+   362  03A9  1283               	bcf	3,5	;RP0=0, select bank0
+   363  03AA  00A2               	movwf	??_readButton
+   364  03AB  0A20               	incf	readButton@iPinButton,w
+   365  03AC  2BAF               	goto	u114
+   366  03AD                     u115:
+   367  03AD  1003               	clrc
+   368  03AE  0DA2               	rlf	??_readButton,f
+   369  03AF                     u114:
+   370  03AF  3EFF               	addlw	-1
+   371  03B0  1D03               	skipz
+   372  03B1  2BAD               	goto	u115
+   373  03B2  0822               	movf	??_readButton,w
+   374  03B3  0507               	andwf	7,w	;volatile
+   375  03B4  00A3               	movwf	??_readButton+1
+   376  03B5  0A20               	incf	readButton@iPinButton,w
+   377  03B6  2BB9               	goto	u124
+   378  03B7                     u125:
+   379  03B7  1003               	clrc
+   380  03B8  0CA3               	rrf	??_readButton+1,f
+   381  03B9                     u124:
+   382  03B9  3EFF               	addlw	-1
+   383  03BA  1D03               	skipz
+   384  03BB  2BB7               	goto	u125
+   385  03BC  0823               	movf	??_readButton+1,w
+   386  03BD  2BBF               	goto	l23
+   387  03BE                     l666:
+   388                           
+   389                           ;main.c: 68:         return 0x00;
+   390  03BE  3000               	movlw	0
+   391  03BF                     l23:
+   392  03BF  0008               	return
+   393  03C0                     __end_of_readButton:
+   394  005E                     btemp	set	94	;btemp
+   395  005E                     wtemp0	set	94
+   396                           
+   397                           	psect	config
+   398                           
+   399                           ;Config register CONFIG @ 0x2007
+   400                           ;	Oscillator Selection bits
+   401                           ;	FOSC = INTRCIO, INTOSC oscillator: I/O function on RA4/OSC2/CLKOUT pin, I/O function o
       +                          n RA5/OSC1/CLKIN
-   211                           ;	Watchdog Timer Enable bit
-   212                           ;	WDTE = OFF, WDT disabled
-   213                           ;	Power-up Timer Enable bit
-   214                           ;	PWRTE = OFF, PWRT disabled
-   215                           ;	RA3/MCLR pin function select
-   216                           ;	MCLRE = OFF, RA3/MCLR pin function is digital I/O, MCLR internally tied to VDD
-   217                           ;	Brown-out Detect Enable bit
-   218                           ;	BOREN = OFF, BOD disabled
-   219                           ;	Code Protection bit
-   220                           ;	CP = OFF, Program Memory code protection is disabled
-   221                           ;	Data Code Protection bit
-   222                           ;	CPD = OFF, Data memory code protection is disabled
-   223  2007                     	org	8199
-   224  2007  3F94               	dw	16276
+   402                           ;	Watchdog Timer Enable bit
+   403                           ;	WDTE = OFF, WDT disabled
+   404                           ;	Power-up Timer Enable bit
+   405                           ;	PWRTE = OFF, PWRT disabled
+   406                           ;	RA3/MCLR pin function select
+   407                           ;	MCLRE = OFF, RA3/MCLR pin function is digital I/O, MCLR internally tied to VDD
+   408                           ;	Brown-out Detect Enable bit
+   409                           ;	BOREN = OFF, BOD disabled
+   410                           ;	Code Protection bit
+   411                           ;	CP = OFF, Program Memory code protection is disabled
+   412                           ;	Data Code Protection bit
+   413                           ;	CPD = OFF, Data memory code protection is disabled
+   414  2007                     	org	8199
+   415  2007  3F94               	dw	16276
 
 Data Sizes:
     Strings     0
@@ -249,7 +442,7 @@ Data Sizes:
 Auto Spaces:
     Space          Size  Autos    Used
     COMMON            0      0       0
-    BANK0            62      1       1
+    BANK0            62      8       8
 
 Pointer List with Targets:
 
@@ -261,22 +454,27 @@ Critical Paths under _main in COMMON
 
 Critical Paths under _main in BANK0
 
-    None.
+    _main->_readButton
 
 Call Graph Tables:
 
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 1     1      0       0
-                                              0 BANK0      1     1      0
+ (0) _main                                                 4     4      0     345
+                                              4 BANK0      4     4      0
+                         _readButton
  ---------------------------------------------------------------------------------
- Estimated maximum stack depth 0
+ (1) _readButton                                           4     2      2     164
+                                              0 BANK0      4     2      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
  ---------------------------------------------------------------------------------
 
  Call Graph Graphs:
 
  _main (ROOT)
+   _readButton
 
  Address spaces:
 Name               Size   Autos  Total    Cost      Usage
@@ -291,19 +489,32 @@ BITSFR1              0      0       0       2        0.0%
 SFR1                 0      0       0       2        0.0%
 STACK                0      0       0       2        0.0%
 BITBANK0            3E      0       0       3        0.0%
-BANK0               3E      1       1       4        1.6%
+BANK0               3E      8       8       4       12.9%
 ABS                  0      0       0       5        0.0%
 DATA                 0      0       0       6        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Mon Oct 25 12:09:06 2021
+Symbol Table                                                                                   Mon Oct 25 14:14:32 2021
 
-                     u20 03F5                       u21 03F4                      l620 03F7  
-                    l614 03ED                      l616 03F0                      l618 03F5  
-                   _main 03ED                     btemp 005E                     start 0000  
-                  ?_main 0020                    _PORTC 0007                    _TRISC 0087  
-                  status 0003                    wtemp0 005E          __initialization 03FD  
-           __end_of_main 03FD                   ??_main 0020  __end_of__initialization 03FD  
-             __pmaintext 03ED     end_of_initialization 03FD      start_initialization 03FD  
-              ___latbits 0000            __pcstackBANK0 0020            __size_of_main 0010  
+main@cButtonPreviousStatus 0026                         l23 03BF                         u90 039B  
+                       u91 039A                        l660 03A8                        l670 03C0  
+                      l656 0396                        l680 03D2                        l672 03C3  
+                      l658 039B                        l666 03BE                        l682 03D8  
+                      l690 03F0                        l674 03C5                        l692 03F6  
+                      l684 03DD                        l676 03C5                        l686 03E1  
+                      l678 03C9                        l688 03EA                        u100 03A8  
+                      u101 03A7                        u105 03A4                        u114 03AF  
+                      u130 03D8                        u115 03AD                        u131 03D7  
+                      u124 03B9                        u140 03DD                        u125 03B7  
+                      u141 03DC                        u150 03F6                        u151 03F5  
+                      u160 03FB                        u161 03FA                        u177 03E5  
+                     _main 03C0                       btemp 005E                       start 0000  
+                    ?_main 0020                      _PORTC 0007                      _TRISC 0087  
+                    status 0003                      wtemp0 005E            __initialization 03FD  
+             __end_of_main 03FD                     ??_main 0024    __end_of__initialization 03FD  
+               __pmaintext 03C0                 _readButton 0396                    __ptext1 0396  
+     readButton@iPinButton 0020       end_of_initialization 03FD                ?_readButton 0020  
+      start_initialization 03FD      main@cReadButtonBuffer 0027                  ___latbits 0000  
+            __pcstackBANK0 0020        __size_of_readButton 002A               ??_readButton 0022  
+       __end_of_readButton 03C0              __size_of_main 003D  

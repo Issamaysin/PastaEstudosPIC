@@ -6,6 +6,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "216
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f630.h: 216: extern volatile unsigned char PORTC __attribute__((address(0x007)));
 [v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"28 main.c
+[; ;main.c: 28: char readButton(int iPinButton);
+[v _readButton `(uc ~T0 @X0 0 ef1`i ]
+[v F427 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
+[v __delay `JF427 ~T0 @X0 0 e ]
+[p i __delay ]
 "9 ./CONFIG.h
 [p x FOSC  =  INTRCIO    ]
 "10
@@ -114,46 +121,101 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f630.h: 1195: __asm("EECON2 equ 09Dh");
 [; <" EECON2 equ 09Dh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"17 main.c
-[; ;main.c: 17: void main(void) {
+"31 main.c
+[; ;main.c: 31: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"20
-[; ;main.c: 20:     TRISC = 0b1111110;
+"33
+[; ;main.c: 33:     TRISC = 0b1111110;
 [e = _TRISC -> -> 126 `i `uc ]
-"22
-[; ;main.c: 22:     while(1){
+"36
+[; ;main.c: 36:     char cButtonPreviousStatus = 0;
+[v _cButtonPreviousStatus `uc ~T0 @X0 1 a ]
+[e = _cButtonPreviousStatus -> -> 0 `i `uc ]
+"37
+[; ;main.c: 37:     char cReadButtonBuffer = 0;
+[v _cReadButtonBuffer `uc ~T0 @X0 1 a ]
+[e = _cReadButtonBuffer -> -> 0 `i `uc ]
+"40
+[; ;main.c: 40:     PORTC &= ~(1<<0);
+[e =& _PORTC -> ~ << -> 1 `i -> 0 `i `Vuc ]
+"42
+[; ;main.c: 42:     while(1){
 [e :U 58 ]
 {
-"24
-[; ;main.c: 24:         if(PORTC & (1<<1)){
-[e $ ! != & -> _PORTC `i << -> 1 `i -> 1 `i -> 0 `i 60  ]
+"44
+[; ;main.c: 44:         cReadButtonBuffer = readButton(1);
+[e = _cReadButtonBuffer ( _readButton (1 -> 1 `i ]
+"47
+[; ;main.c: 47:         if(cReadButtonBuffer != cButtonPreviousStatus && cReadButtonBuffer){
+[e $ ! && != -> _cReadButtonBuffer `i -> _cButtonPreviousStatus `i != -> _cReadButtonBuffer `i -> 0 `i 60  ]
 {
-"25
-[; ;main.c: 25:             PORTC |= (1<<0);
-[e =| _PORTC -> << -> 1 `i -> 0 `i `Vuc ]
-"26
-[; ;main.c: 26:         }else{
+"48
+[; ;main.c: 48:             PORTC ^= (1<<0);
+[e =^ _PORTC -> << -> 1 `i -> 0 `i `Vuc ]
+"49
+[; ;main.c: 49:             _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"50
+[; ;main.c: 50:             cButtonPreviousStatus = cReadButtonBuffer;
+[e = _cButtonPreviousStatus _cReadButtonBuffer ]
+"53
+[; ;main.c: 53:         }else if(cReadButtonBuffer != cButtonPreviousStatus && !cReadButtonBuffer){
 }
 [e $U 61  ]
 [e :U 60 ]
+[e $ ! && != -> _cReadButtonBuffer `i -> _cButtonPreviousStatus `i ! != -> _cReadButtonBuffer `i -> 0 `i 62  ]
 {
-"27
-[; ;main.c: 27:             PORTC &= ~(1<<0);
-[e =& _PORTC -> ~ << -> 1 `i -> 0 `i `Vuc ]
-"28
-[; ;main.c: 28:         }
+"54
+[; ;main.c: 54:             cButtonPreviousStatus = cReadButtonBuffer;
+[e = _cButtonPreviousStatus _cReadButtonBuffer ]
+"55
+[; ;main.c: 55:         }
 }
+[e :U 62 ]
 [e :U 61 ]
-"29
-[; ;main.c: 29:     }
+"56
+[; ;main.c: 56:     }
 }
 [e :U 57 ]
 [e $U 58  ]
 [e :U 59 ]
-"30
-[; ;main.c: 30: }
+"57
+[; ;main.c: 57: }
 [e :UE 56 ]
+}
+"60
+[; ;main.c: 60: char readButton(int iPinButton){
+[v _readButton `(uc ~T0 @X0 1 ef1`i ]
+{
+[e :U _readButton ]
+[v _iPinButton `i ~T0 @X0 1 r1 ]
+[f ]
+"65
+[; ;main.c: 65:     if(0 <= iPinButton && 5 >= iPinButton){
+[e $ ! && <= -> 0 `i _iPinButton >= -> 5 `i _iPinButton 64  ]
+{
+"66
+[; ;main.c: 66:         return (PORTC & (1<<iPinButton))>>iPinButton;
+[e ) -> >> & -> _PORTC `i << -> 1 `i _iPinButton _iPinButton `uc ]
+[e $UE 63  ]
+"67
+[; ;main.c: 67:     }else{
+}
+[e $U 65  ]
+[e :U 64 ]
+{
+"68
+[; ;main.c: 68:         return 0x00;
+[e ) -> -> 0 `i `uc ]
+[e $UE 63  ]
+"69
+[; ;main.c: 69:     }
+}
+[e :U 65 ]
+"70
+[; ;main.c: 70: }
+[e :UE 63 ]
 }
