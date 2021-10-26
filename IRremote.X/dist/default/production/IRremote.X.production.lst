@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Tue Oct 26 16:59:06 2021
+                                                                                               Tue Oct 26 17:07:27 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	12F1822
@@ -498,7 +498,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    484 ;;
    485 ;; *************** function _main *****************
    486 ;; Defined at:
-   487 ;;		line 44 in file "main.c"
+   487 ;;		line 48 in file "main.c"
    488 ;; Parameters:    Size  Location     Type
    489 ;;		None
    490 ;; Auto vars:     Size  Location     Type
@@ -534,63 +534,63 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    520                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
    521                           
    522                           
-   523                           ;main.c: 49:     OSCCON = 0b1111100;
+   523                           ;main.c: 53:     OSCCON = 0b1111100;
    524  0033  307C               	movlw	124
    525  0034  0021               	movlb	1	; select bank1
    526  0035  0099               	movwf	25	;volatile
    527                           
-   528                           ;main.c: 52:     OPTION_REG = 0b0000100;
+   528                           ;main.c: 61:     OPTION_REG = 0b0000100;
    529  0036  3004               	movlw	4
    530  0037  0095               	movwf	21	;volatile
    531                           
-   532                           ;main.c: 53:     TMR0=131;
+   532                           ;main.c: 62:     TMR0=131;
    533  0038  3083               	movlw	131
    534  0039  0020               	movlb	0	; select bank0
    535  003A  0095               	movwf	21	;volatile
    536  003B                     l753:
    537                           
-   538                           ;main.c: 54:     GIE=1;
+   538                           ;main.c: 63:     GIE=1;
    539  003B  178B               	bsf	11,7	;volatile
    540  003C                     l755:
    541                           
-   542                           ;main.c: 55:     PEIE=1;
+   542                           ;main.c: 64:     PEIE=1;
    543  003C  170B               	bsf	11,6	;volatile
    544  003D                     l757:
    545                           
-   546                           ;main.c: 56:     TMR0IE=1;
+   546                           ;main.c: 65:     TMR0IE=1;
    547  003D  168B               	bsf	11,5	;volatile
    548  003E                     l759:
    549                           
-   550                           ;main.c: 60:     TMR2IE = 1;
+   550                           ;main.c: 74:     TMR2IE = 1;
    551  003E  0021               	movlb	1	; select bank1
    552  003F  1491               	bsf	17,1	;volatile
    553                           
-   554                           ;main.c: 61:     T2CON = 0b00111101;
+   554                           ;main.c: 75:     T2CON = 0b00111101;
    555  0040  303D               	movlw	61
    556  0041  0020               	movlb	0	; select bank0
    557  0042  009C               	movwf	28	;volatile
    558                           
-   559                           ;main.c: 62:     PR2 = 125;
+   559                           ;main.c: 76:     PR2 = 125;
    560  0043  307D               	movlw	125
    561  0044  009B               	movwf	27	;volatile
    562  0045                     l761:
    563                           
-   564                           ;main.c: 69:     ANSELA = 0x00;
+   564                           ;main.c: 83:     ANSELA = 0x00;
    565  0045  0023               	movlb	3	; select bank3
    566  0046  018C               	clrf	12	;volatile
    567  0047                     l763:
    568                           
-   569                           ;main.c: 70:     TRISA = 0b1111010;
+   569                           ;main.c: 84:     TRISA = 0b1111010;
    570  0047  307A               	movlw	122
    571  0048  0021               	movlb	1	; select bank1
    572  0049  008C               	movwf	12	;volatile
    573                           
-   574                           ;main.c: 71:     PORTA = 0x00;
+   574                           ;main.c: 85:     PORTA = 0x00;
    575  004A  0020               	movlb	0	; select bank0
    576  004B  018C               	clrf	12	;volatile
    577  004C                     l765:
    578                           
-   579                           ;main.c: 74:     unsigned long uiContadorTempo = 0;
+   579                           ;main.c: 88:     unsigned long uiContadorTempo = 0;
    580  004C  3000               	movlw	0
    581  004D  00AB               	movwf	main@uiContadorTempo+3
    582  004E  3000               	movlw	0
@@ -601,7 +601,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    587  0053  00A8               	movwf	main@uiContadorTempo
    588  0054                     l767:
    589                           
-   590                           ;main.c: 75:     unsigned long uiContadorTempo2 = 0;
+   590                           ;main.c: 89:     unsigned long uiContadorTempo2 = 0;
    591  0054  3000               	movlw	0
    592  0055  00AF               	movwf	main@uiContadorTempo2+3
    593  0056  3000               	movlw	0
@@ -612,7 +612,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    598  005B  00AC               	movwf	main@uiContadorTempo2
    599  005C                     l769:
    600                           
-   601                           ;main.c: 80:         if((uiCounterms - uiContadorTempo) > 1000){
+   601                           ;main.c: 94:         if((uiCounterms - uiContadorTempo) > 1000){
    602  005C  0020               	movlb	0	; select bank0
    603  005D  0828               	movf	main@uiContadorTempo,w
    604  005E  0224               	subwf	_uiCounterms,w
@@ -644,7 +644,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    630  0077                     u190:
    631  0077                     l771:
    632                           
-   633                           ;main.c: 81:             togglePin(2);
+   633                           ;main.c: 95:             togglePin(2);
    634  0077  3002               	movlw	2
    635  0078  00F0               	movwf	togglePin@iPin
    636  0079  3000               	movlw	0
@@ -652,7 +652,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    638  007B  3180  20B3  3180   	fcall	_togglePin
    639  007E                     l773:
    640                           
-   641                           ;main.c: 84:             uiContadorTempo = uiCounterms;
+   641                           ;main.c: 98:             uiContadorTempo = uiCounterms;
    642  007E  0020               	movlb	0	; select bank0
    643  007F  0827               	movf	_uiCounterms+3,w
    644  0080  00AB               	movwf	main@uiContadorTempo+3
@@ -664,7 +664,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    650  0086  00A8               	movwf	main@uiContadorTempo
    651  0087                     l775:
    652                           
-   653                           ;main.c: 88:         if((uiCountermsTimer2 - uiContadorTempo2) > 1000){
+   653                           ;main.c: 102:         if((uiCountermsTimer2 - uiContadorTempo2) > 1000){
    654  0087  0020               	movlb	0	; select bank0
    655  0088  082C               	movf	main@uiContadorTempo2,w
    656  0089  0220               	subwf	_uiCountermsTimer2,w
@@ -696,14 +696,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    682  00A2                     u200:
    683  00A2                     l777:
    684                           
-   685                           ;main.c: 89:             togglePin(0);
+   685                           ;main.c: 103:             togglePin(0);
    686  00A2  3000               	movlw	0
    687  00A3  00F0               	movwf	togglePin@iPin
    688  00A4  00F1               	movwf	togglePin@iPin+1
    689  00A5  3180  20B3  3180   	fcall	_togglePin
    690  00A8                     l779:
    691                           
-   692                           ;main.c: 92:             uiContadorTempo2 = uiCountermsTimer2;
+   692                           ;main.c: 106:             uiContadorTempo2 = uiCountermsTimer2;
    693  00A8  0020               	movlb	0	; select bank0
    694  00A9  0823               	movf	_uiCountermsTimer2+3,w
    695  00AA  00AF               	movwf	main@uiContadorTempo2+3
@@ -842,7 +842,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    828  0005  3180               	pagesel	$
    829  0006                     i1l739:
    830                           
-   831                           ;main.c: 31:     if(TMR0IF)
+   831                           ;main.c: 33:     if(TMR0IF)
    832  0006  1D0B               	btfss	11,2	;volatile
    833  0007  2809               	goto	u17_21
    834  0008  280A               	goto	u17_20
@@ -851,16 +851,16 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    837  000A                     u17_20:
    838  000A                     i1l741:
    839                           
-   840                           ;main.c: 32:     {;main.c: 33:         TMR0 = 131;
+   840                           ;main.c: 34:     {;main.c: 35:         TMR0 = 131;
    841  000A  3083               	movlw	131
    842  000B  0020               	movlb	0	; select bank0
    843  000C  0095               	movwf	21	;volatile
    844  000D                     i1l743:
    845                           
-   846                           ;main.c: 34:         TMR0IF = 0;
+   846                           ;main.c: 36:         TMR0IF = 0;
    847  000D  110B               	bcf	11,2	;volatile
    848                           
-   849                           ;main.c: 35:         uiCounterms++;
+   849                           ;main.c: 37:         uiCounterms++;
    850  000E  3001               	movlw	1
    851  000F  07A4               	addwf	_uiCounterms,f
    852  0010  3000               	movlw	0
@@ -871,7 +871,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    857  0015  3DA7               	addwfc	_uiCounterms+3,f
    858  0016                     i1l745:
    859                           
-   860                           ;main.c: 37:     if(TMR2IF){
+   860                           ;main.c: 41:     if(TMR2IF){
    861  0016  0020               	movlb	0	; select bank0
    862  0017  1C91               	btfss	17,1	;volatile
    863  0018  281A               	goto	u18_21
@@ -881,11 +881,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    867  001B                     u18_20:
    868  001B                     i1l747:
    869                           
-   870                           ;main.c: 38:         TMR2IF = 0;
+   870                           ;main.c: 42:         TMR2IF = 0;
    871  001B  1091               	bcf	17,1	;volatile
    872  001C                     i1l749:
    873                           
-   874                           ;main.c: 39:         uiCountermsTimer2++;
+   874                           ;main.c: 43:         uiCountermsTimer2++;
    875  001C  3001               	movlw	1
    876  001D  07A0               	addwf	_uiCountermsTimer2,f
    877  001E  3000               	movlw	0
@@ -1096,7 +1096,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Tue Oct 26 16:59:06 2021
+Symbol Table                                                                                   Tue Oct 26 17:07:27 2021
 
                      l65 00D0                      l733 00B3                      l735 00B7  
                     l751 0033                      l737 00C4                      l761 0045  

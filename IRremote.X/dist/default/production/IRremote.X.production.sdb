@@ -13,7 +13,7 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "30 C:\Users\User\MPLABXProjects\IRremote.X\main.c
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
-"44
+"48
 [v _main main `(v  1 e 1 0 ]
 "18 C:\Users\User\MPLABXProjects\IRremote.X\utils.c
 [v _togglePin togglePin `(v  1 e 1 0 ]
@@ -49,14 +49,14 @@
 [v _uiCounterms uiCounterms `ul  1 e 4 0 ]
 "22
 [v _uiCountermsTimer2 uiCountermsTimer2 `ul  1 e 4 0 ]
-"44
+"48
 [v _main main `(v  1 e 1 0 ]
 {
-"75
+"89
 [v main@uiContadorTempo2 uiContadorTempo2 `ul  1 a 4 4 ]
-"74
+"88
 [v main@uiContadorTempo uiContadorTempo `ul  1 a 4 0 ]
-"95
+"109
 } 0
 "18 C:\Users\User\MPLABXProjects\IRremote.X\utils.c
 [v _togglePin togglePin `(v  1 e 1 0 ]
@@ -67,5 +67,5 @@
 "30 C:\Users\User\MPLABXProjects\IRremote.X\main.c
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
 {
-"42
+"46
 } 0

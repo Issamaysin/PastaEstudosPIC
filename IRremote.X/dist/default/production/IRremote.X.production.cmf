@@ -20,7 +20,7 @@ cstackBANK0 BANK0 1 28 28 8 1
 intentry CODE 0 4 4 22 2
 bssBANK0 BANK0 1 20 20 8 1
 config CONFIG 4 8007 8007 2 2
-$C:\Users\User\AppData\Local\Temp\xcAs1es.o
+$C:\Users\User\AppData\Local\Temp\xcAsb88.o
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 26 26 1 2
 config CONFIG 4 8007 8007 2 2
@@ -95,57 +95,57 @@ STRING D1-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\IRremote.X.production.o
-27 cinit CODE >851:C:\Users\User\AppData\Local\Temp\xcAs1es.s
-27 cinit CODE >854:C:\Users\User\AppData\Local\Temp\xcAs1es.s
-27 cinit CODE >869:C:\Users\User\AppData\Local\Temp\xcAs1es.s
-28 cinit CODE >870:C:\Users\User\AppData\Local\Temp\xcAs1es.s
-29 cinit CODE >871:C:\Users\User\AppData\Local\Temp\xcAs1es.s
-2A cinit CODE >872:C:\Users\User\AppData\Local\Temp\xcAs1es.s
-2B cinit CODE >873:C:\Users\User\AppData\Local\Temp\xcAs1es.s
-2C cinit CODE >874:C:\Users\User\AppData\Local\Temp\xcAs1es.s
-2D cinit CODE >875:C:\Users\User\AppData\Local\Temp\xcAs1es.s
-2E cinit CODE >876:C:\Users\User\AppData\Local\Temp\xcAs1es.s
-2F cinit CODE >877:C:\Users\User\AppData\Local\Temp\xcAs1es.s
-30 cinit CODE >883:C:\Users\User\AppData\Local\Temp\xcAs1es.s
-30 cinit CODE >885:C:\Users\User\AppData\Local\Temp\xcAs1es.s
-31 cinit CODE >886:C:\Users\User\AppData\Local\Temp\xcAs1es.s
-32 cinit CODE >887:C:\Users\User\AppData\Local\Temp\xcAs1es.s
+27 cinit CODE >851:C:\Users\User\AppData\Local\Temp\xcAsb88.s
+27 cinit CODE >854:C:\Users\User\AppData\Local\Temp\xcAsb88.s
+27 cinit CODE >869:C:\Users\User\AppData\Local\Temp\xcAsb88.s
+28 cinit CODE >870:C:\Users\User\AppData\Local\Temp\xcAsb88.s
+29 cinit CODE >871:C:\Users\User\AppData\Local\Temp\xcAsb88.s
+2A cinit CODE >872:C:\Users\User\AppData\Local\Temp\xcAsb88.s
+2B cinit CODE >873:C:\Users\User\AppData\Local\Temp\xcAsb88.s
+2C cinit CODE >874:C:\Users\User\AppData\Local\Temp\xcAsb88.s
+2D cinit CODE >875:C:\Users\User\AppData\Local\Temp\xcAsb88.s
+2E cinit CODE >876:C:\Users\User\AppData\Local\Temp\xcAsb88.s
+2F cinit CODE >877:C:\Users\User\AppData\Local\Temp\xcAsb88.s
+30 cinit CODE >883:C:\Users\User\AppData\Local\Temp\xcAsb88.s
+30 cinit CODE >885:C:\Users\User\AppData\Local\Temp\xcAsb88.s
+31 cinit CODE >886:C:\Users\User\AppData\Local\Temp\xcAsb88.s
+32 cinit CODE >887:C:\Users\User\AppData\Local\Temp\xcAsb88.s
 4 intentry CODE >30:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-6 intentry CODE >31:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-A intentry CODE >33:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-D intentry CODE >34:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-E intentry CODE >35:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-16 intentry CODE >37:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-1B intentry CODE >38:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-1C intentry CODE >39:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-24 intentry CODE >42:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+6 intentry CODE >33:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+A intentry CODE >35:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+D intentry CODE >36:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+E intentry CODE >37:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+16 intentry CODE >41:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+1B intentry CODE >42:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+1C intentry CODE >43:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+24 intentry CODE >46:C:\Users\User\MPLABXProjects\IRremote.X\main.c
 B3 text1 CODE >18:C:\Users\User\MPLABXProjects\IRremote.X\utils.c
 B3 text1 CODE >19:C:\Users\User\MPLABXProjects\IRremote.X\utils.c
 BC text1 CODE >19:C:\Users\User\MPLABXProjects\IRremote.X\utils.c
 C0 text1 CODE >19:C:\Users\User\MPLABXProjects\IRremote.X\utils.c
 C4 text1 CODE >20:C:\Users\User\MPLABXProjects\IRremote.X\utils.c
 D0 text1 CODE >22:C:\Users\User\MPLABXProjects\IRremote.X\utils.c
-33 maintext CODE >44:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-33 maintext CODE >49:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-36 maintext CODE >52:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-38 maintext CODE >53:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-3B maintext CODE >54:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-3C maintext CODE >55:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-3D maintext CODE >56:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-3E maintext CODE >60:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-40 maintext CODE >61:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-43 maintext CODE >62:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-45 maintext CODE >69:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-47 maintext CODE >70:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-4A maintext CODE >71:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-4C maintext CODE >74:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-54 maintext CODE >75:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-5C maintext CODE >80:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-77 maintext CODE >81:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-7E maintext CODE >84:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-87 maintext CODE >88:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-A2 maintext CODE >89:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-A8 maintext CODE >92:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+33 maintext CODE >48:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+33 maintext CODE >53:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+36 maintext CODE >61:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+38 maintext CODE >62:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+3B maintext CODE >63:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+3C maintext CODE >64:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+3D maintext CODE >65:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+3E maintext CODE >74:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+40 maintext CODE >75:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+43 maintext CODE >76:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+45 maintext CODE >83:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+47 maintext CODE >84:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+4A maintext CODE >85:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+4C maintext CODE >88:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+54 maintext CODE >89:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+5C maintext CODE >94:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+77 maintext CODE >95:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+7E maintext CODE >98:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+87 maintext CODE >102:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+A2 maintext CODE >103:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+A8 maintext CODE >106:C:\Users\User\MPLABXProjects\IRremote.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -169,18 +169,18 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/default/production\IRremote.X.production.o
 _TMR0 15 0 ABS 0 - dist/default/production\IRremote.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs1es.o
+___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAsb88.o
 _main 66 0 CODE 0 maintext dist/default/production\IRremote.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\IRremote.X.production.o
-start 4C 0 CODE 0 init C:\Users\User\AppData\Local\Temp\xcAs1es.o
+start 4C 0 CODE 0 init C:\Users\User\AppData\Local\Temp\xcAsb88.o
 __size_of_main 0 0 ABS 0 - dist/default/production\IRremote.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs1es.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs1es.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs1es.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs1es.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs1es.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs1es.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAsb88.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAsb88.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAsb88.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAsb88.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAsb88.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAsb88.o
 wtemp0 7E 0 ABS 0 - dist/default/production\IRremote.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
@@ -189,8 +189,8 @@ __Lmaintext 0 0 ABS 0 maintext -
 _uiCounterms 24 0 BANK0 1 bssBANK0 dist/default/production\IRremote.X.production.o
 main@uiContadorTempo2 2C 0 BANK0 1 cstackBANK0 dist/default/production\IRremote.X.production.o
 _OPTION_REG 95 0 ABS 0 - dist/default/production\IRremote.X.production.o
-___stackhi 206F 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs1es.o
-___stacklo 2010 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs1es.o
+___stackhi 206F 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAsb88.o
+___stacklo 2010 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAsb88.o
 main@uiContadorTempo 28 0 BANK0 1 cstackBANK0 dist/default/production\IRremote.X.production.o
 start_initialization 4E 0 CODE 0 cinit dist/default/production\IRremote.X.production.o
 _OSCCON 99 0 ABS 0 - dist/default/production\IRremote.X.production.o
@@ -199,7 +199,7 @@ _TMR0IE 5D 0 ABS 0 - dist/default/production\IRremote.X.production.o
 _TMR0IF 5A 0 ABS 0 - dist/default/production\IRremote.X.production.o
 _TMR2IE 489 0 ABS 0 - dist/default/production\IRremote.X.production.o
 _TMR2IF 89 0 ABS 0 - dist/default/production\IRremote.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs1es.o
+___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAsb88.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 BANK2 1 bank2 -
@@ -334,7 +334,7 @@ __S1 78 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\xcAs1es.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\xcAsb88.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __end_of_my_isr_routine 4C 0 CODE 0 intentry dist/default/production\IRremote.X.production.o
 __Lbank10 0 0 BANK10 1 bank10 -

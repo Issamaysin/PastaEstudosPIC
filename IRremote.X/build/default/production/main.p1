@@ -314,133 +314,133 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _my_isr_routine ]
 [f ]
-"31
-[; ;main.c: 31:     if(TMR0IF)
-[e $ ! _TMR0IF 275  ]
-"32
-[; ;main.c: 32:     {
-{
 "33
-[; ;main.c: 33:         TMR0 = 131;
-[e = _TMR0 -> -> 131 `i `uc ]
+[; ;main.c: 33:     if(TMR0IF)
+[e $ ! _TMR0IF 275  ]
 "34
-[; ;main.c: 34:         TMR0IF = 0;
-[e = _TMR0IF -> -> 0 `i `b ]
+[; ;main.c: 34:     {
+{
 "35
-[; ;main.c: 35:         uiCounterms++;
-[e ++ _uiCounterms -> -> -> 1 `i `l `ul ]
+[; ;main.c: 35:         TMR0 = 131;
+[e = _TMR0 -> -> 131 `i `uc ]
 "36
-[; ;main.c: 36:     }
+[; ;main.c: 36:         TMR0IF = 0;
+[e = _TMR0IF -> -> 0 `i `b ]
+"37
+[; ;main.c: 37:         uiCounterms++;
+[e ++ _uiCounterms -> -> -> 1 `i `l `ul ]
+"38
+[; ;main.c: 38:     }
 }
 [e :U 275 ]
-"37
-[; ;main.c: 37:     if(TMR2IF){
+"41
+[; ;main.c: 41:     if(TMR2IF){
 [e $ ! _TMR2IF 276  ]
 {
-"38
-[; ;main.c: 38:         TMR2IF = 0;
+"42
+[; ;main.c: 42:         TMR2IF = 0;
 [e = _TMR2IF -> -> 0 `i `b ]
-"39
-[; ;main.c: 39:         uiCountermsTimer2++;
+"43
+[; ;main.c: 43:         uiCountermsTimer2++;
 [e ++ _uiCountermsTimer2 -> -> -> 1 `i `l `ul ]
-"40
-[; ;main.c: 40:     }
+"44
+[; ;main.c: 44:     }
 }
 [e :U 276 ]
-"42
-[; ;main.c: 42: }
+"46
+[; ;main.c: 46: }
 [e :UE 274 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"44
-[; ;main.c: 44: void main(void) {
+"48
+[; ;main.c: 48: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"49
-[; ;main.c: 49:     OSCCON = 0b1111100;
-[e = _OSCCON -> -> 124 `i `uc ]
-"52
-[; ;main.c: 52:     OPTION_REG = 0b0000100;
-[e = _OPTION_REG -> -> 4 `i `uc ]
 "53
-[; ;main.c: 53:     TMR0=131;
-[e = _TMR0 -> -> 131 `i `uc ]
-"54
-[; ;main.c: 54:     GIE=1;
-[e = _GIE -> -> 1 `i `b ]
-"55
-[; ;main.c: 55:     PEIE=1;
-[e = _PEIE -> -> 1 `i `b ]
-"56
-[; ;main.c: 56:     TMR0IE=1;
-[e = _TMR0IE -> -> 1 `i `b ]
-"60
-[; ;main.c: 60:     TMR2IE = 1;
-[e = _TMR2IE -> -> 1 `i `b ]
+[; ;main.c: 53:     OSCCON = 0b1111100;
+[e = _OSCCON -> -> 124 `i `uc ]
 "61
-[; ;main.c: 61:     T2CON = 0b00111101;
-[e = _T2CON -> -> 61 `i `uc ]
+[; ;main.c: 61:     OPTION_REG = 0b0000100;
+[e = _OPTION_REG -> -> 4 `i `uc ]
 "62
-[; ;main.c: 62:     PR2 = 125;
-[e = _PR2 -> -> 125 `i `uc ]
-"69
-[; ;main.c: 69:     ANSELA = 0x00;
-[e = _ANSELA -> -> 0 `i `uc ]
-"70
-[; ;main.c: 70:     TRISA = 0b1111010;
-[e = _TRISA -> -> 122 `i `uc ]
-"71
-[; ;main.c: 71:     PORTA = 0x00;
-[e = _PORTA -> -> 0 `i `uc ]
+[; ;main.c: 62:     TMR0=131;
+[e = _TMR0 -> -> 131 `i `uc ]
+"63
+[; ;main.c: 63:     GIE=1;
+[e = _GIE -> -> 1 `i `b ]
+"64
+[; ;main.c: 64:     PEIE=1;
+[e = _PEIE -> -> 1 `i `b ]
+"65
+[; ;main.c: 65:     TMR0IE=1;
+[e = _TMR0IE -> -> 1 `i `b ]
 "74
-[; ;main.c: 74:     unsigned long uiContadorTempo = 0;
+[; ;main.c: 74:     TMR2IE = 1;
+[e = _TMR2IE -> -> 1 `i `b ]
+"75
+[; ;main.c: 75:     T2CON = 0b00111101;
+[e = _T2CON -> -> 61 `i `uc ]
+"76
+[; ;main.c: 76:     PR2 = 125;
+[e = _PR2 -> -> 125 `i `uc ]
+"83
+[; ;main.c: 83:     ANSELA = 0x00;
+[e = _ANSELA -> -> 0 `i `uc ]
+"84
+[; ;main.c: 84:     TRISA = 0b1111010;
+[e = _TRISA -> -> 122 `i `uc ]
+"85
+[; ;main.c: 85:     PORTA = 0x00;
+[e = _PORTA -> -> 0 `i `uc ]
+"88
+[; ;main.c: 88:     unsigned long uiContadorTempo = 0;
 [v _uiContadorTempo `ul ~T0 @X0 1 a ]
 [e = _uiContadorTempo -> -> -> 0 `i `l `ul ]
-"75
-[; ;main.c: 75:     unsigned long uiContadorTempo2 = 0;
+"89
+[; ;main.c: 89:     unsigned long uiContadorTempo2 = 0;
 [v _uiContadorTempo2 `ul ~T0 @X0 1 a ]
 [e = _uiContadorTempo2 -> -> -> 0 `i `l `ul ]
-"77
-[; ;main.c: 77:     while(1){
+"91
+[; ;main.c: 91:     while(1){
 [e :U 279 ]
 {
-"80
-[; ;main.c: 80:         if((uiCounterms - uiContadorTempo) > 1000){
+"94
+[; ;main.c: 94:         if((uiCounterms - uiContadorTempo) > 1000){
 [e $ ! > - _uiCounterms _uiContadorTempo -> -> -> 1000 `i `l `ul 281  ]
 {
-"81
-[; ;main.c: 81:             togglePin(2);
+"95
+[; ;main.c: 95:             togglePin(2);
 [e ( _togglePin (1 -> 2 `i ]
-"84
-[; ;main.c: 84:             uiContadorTempo = uiCounterms;
+"98
+[; ;main.c: 98:             uiContadorTempo = uiCounterms;
 [e = _uiContadorTempo _uiCounterms ]
-"85
-[; ;main.c: 85:         }
+"99
+[; ;main.c: 99:         }
 }
 [e :U 281 ]
-"88
-[; ;main.c: 88:         if((uiCountermsTimer2 - uiContadorTempo2) > 1000){
+"102
+[; ;main.c: 102:         if((uiCountermsTimer2 - uiContadorTempo2) > 1000){
 [e $ ! > - _uiCountermsTimer2 _uiContadorTempo2 -> -> -> 1000 `i `l `ul 282  ]
 {
-"89
-[; ;main.c: 89:             togglePin(0);
+"103
+[; ;main.c: 103:             togglePin(0);
 [e ( _togglePin (1 -> 0 `i ]
-"92
-[; ;main.c: 92:             uiContadorTempo2 = uiCountermsTimer2;
+"106
+[; ;main.c: 106:             uiContadorTempo2 = uiCountermsTimer2;
 [e = _uiContadorTempo2 _uiCountermsTimer2 ]
-"93
-[; ;main.c: 93:         }
+"107
+[; ;main.c: 107:         }
 }
 [e :U 282 ]
-"94
-[; ;main.c: 94:     }
+"108
+[; ;main.c: 108:     }
 }
 [e :U 278 ]
 [e $U 279  ]
 [e :U 280 ]
-"95
-[; ;main.c: 95: }
+"109
+[; ;main.c: 109: }
 [e :UE 277 ]
 }

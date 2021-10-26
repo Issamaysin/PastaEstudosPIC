@@ -3405,12 +3405,16 @@ unsigned long uiCountermsTimer2 = 0;
 
 
 void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
+
+
     if(TMR0IF)
     {
         TMR0 = 131;
         TMR0IF = 0;
         uiCounterms++;
     }
+
+
     if(TMR2IF){
         TMR2IF = 0;
         uiCountermsTimer2++;
@@ -3426,14 +3430,17 @@ void main(void) {
     OSCCON = 0b1111100;
 
 
+
+
+
+
+
     OPTION_REG = 0b0000100;
     TMR0=131;
     GIE=1;
     PEIE=1;
     TMR0IE=1;
-
-
-
+# 74 "main.c"
     TMR2IE = 1;
     T2CON = 0b00111101;
     PR2 = 125;
