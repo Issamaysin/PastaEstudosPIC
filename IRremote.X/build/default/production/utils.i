@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "utils.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,32 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 11 "main.c"
-# 1 "./config.h" 1
-# 10 "./config.h"
-#pragma config FOSC = INTOSC
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config CLKOUTEN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-
-
-#pragma config WRT = OFF
-#pragma config PLLEN = ON
-#pragma config STVREN = ON
-#pragma config BORV = LO
-#pragma config LVP = OFF
-
-
-
-
-
+# 1 "utils.c" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -3375,8 +3350,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 2 3
-# 31 "./config.h" 2
-# 11 "main.c" 2
+# 1 "utils.c" 2
 
 
 # 1 "./utils.h" 1
@@ -3386,57 +3360,24 @@ void setPin(int iPin);
 void clearPin(int iPin);
 
 void togglePin(int iPin);
-# 13 "main.c" 2
+# 3 "utils.c" 2
 
 
 
-
-
-
-
-unsigned long uiCounterms = 0;
-# 29 "main.c"
-void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
-    if(TMR0IF)
-    {
-        TMR0 = 131;
-        TMR0IF = 0;
-        uiCounterms++;
+void setPin(int iPin){
+    if(0 <= iPin && 5 >= iPin){
+        PORTA |= (1<<iPin);
     }
 }
 
-void main(void) {
+void clearPin(int iPin){
+    if(0 <= iPin && 5 >= iPin){
+        PORTA &= ~(1<<iPin);
+    }
+}
 
-
-
-
-    OSCCON = 0b1111100;
-
-
-    OPTION_REG = 0b0000100;
-    TMR0=131;
-    GIE=1;
-    PEIE=1;
-    TMR0IE=1;
-
-
-
-    ANSELA = 0x00;
-    TRISA = 0b1111011;
-    PORTA = 0x00;
-
-
-    unsigned long uiContadorTempo = 0;
-
-    while(1){
-        if((uiCounterms - uiContadorTempo) > 1000){
-            togglePin(2);
-
-
-
-
-
-            uiContadorTempo = uiCounterms;
-        }
+void togglePin(int iPin){
+    if(0 <= iPin && 5 >= iPin){
+        PORTA ^= (1<<iPin);
     }
 }

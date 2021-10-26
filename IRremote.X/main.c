@@ -10,6 +10,7 @@
 
 #include "config.h"
 #include <PIC12F1822.h>
+#include "utils.h"
 
 /* Define dos pinos utilizados */
 #define pin_Led 2   
@@ -36,8 +37,10 @@ void __interrupt () my_isr_routine (void) {
 
 void main(void) {
     
-    
-    OSCCON = 0b1111111;
+    /* 
+     * Clock config: 16Mhz at FOSC determined clock
+    */
+    OSCCON = 0b1111100;
     
    /*****Port Configuration for Timer ******/
     OPTION_REG = 0b0000100;  // Timer0 with external freq and 32 as prescaler // Also Enables PULL UPs
@@ -56,12 +59,14 @@ void main(void) {
     unsigned long uiContadorTempo = 0;
     
     while(1){
-        PORTA ^= (1<<pin_Led);   //toggle led (RA2)
+        if((uiCounterms - uiContadorTempo) > 1000){
+            togglePin(pin_Led);   //toggle led (RA2)
         
         //Espera 1s
-        while((uiCounterms - uiContadorTempo) < 500){}
+        //while((uiCounterms - uiContadorTempo) < 500){}
         
         //atualiza contador de tempo
-        uiContadorTempo = uiCounterms;
+            uiContadorTempo = uiCounterms;
+        }
     }    
 }

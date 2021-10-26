@@ -1,60 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
-"6041 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\PIC12F1822.h
-[v _TMR0IF `Vb ~T0 @X0 0 e@90 ]
-"821
-[v _TMR0 `Vuc ~T0 @X0 0 e@21 ]
-[p mainexit ]
-"1645
-[v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
-"1394
-[v _OPTION_REG `Vuc ~T0 @X0 0 e@149 ]
-"5444
-[v _GIE `Vb ~T0 @X0 0 e@95 ]
-"5705
-[v _PEIE `Vb ~T0 @X0 0 e@94 ]
-"6038
-[v _TMR0IE `Vb ~T0 @X0 0 e@93 ]
-"2632
-[v _ANSELA `Vuc ~T0 @X0 0 e@396 ]
-"1242
-[v _TRISA `Vuc ~T0 @X0 0 e@140 ]
-"429
+"429 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\PIC12F1822.h
 [v _PORTA `Vuc ~T0 @X0 0 e@12 ]
-"21 ./utils.h
-[; ;./utils.h: 21: void togglePin(int iPin);
-[v _togglePin `(v ~T0 @X0 0 ef1`i ]
-"10 ./config.h
-[p x FOSC  =  INTOSC     ]
-"11
-[p x WDTE  =  OFF        ]
-"12
-[p x PWRTE  =  OFF       ]
-"13
-[p x MCLRE  =  OFF       ]
-"14
-[p x CP  =  OFF          ]
-"15
-[p x CPD  =  OFF         ]
-"16
-[p x BOREN  =  OFF       ]
-"17
-[p x CLKOUTEN  =  OFF    ]
-"18
-[p x IESO  =  OFF        ]
-"19
-[p x FCMEN  =  OFF       ]
-"22
-[p x WRT  =  OFF         ]
-"23
-[p x PLLEN  =  ON        ]
-"24
-[p x STVREN  =  ON       ]
-"25
-[p x BORV  =  LO         ]
-"26
-[p x LVP  =  OFF         ]
 "54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\PIC12F1822.h
 [; <" INDF0 equ 00h ;# ">
 "74
@@ -287,105 +233,69 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSL equ 0FEEh ;# ">
 "5033
 [; <" TOSH equ 0FEFh ;# ">
-"20 main.c
-[; ;main.c: 20: unsigned long uiCounterms = 0;
-[v _uiCounterms `ul ~T0 @X0 1 e ]
-[i _uiCounterms
--> -> -> 0 `i `l `ul
-]
-[v $root$_my_isr_routine `(v ~T0 @X0 0 e ]
-"29
-[; ;main.c: 29: void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
-[v _my_isr_routine `(v ~T1 @X0 1 ef ]
+"6 utils.c
+[; ;utils.c: 6: void setPin(int iPin){
+[v _setPin `(v ~T0 @X0 1 ef1`i ]
 {
-[e :U _my_isr_routine ]
+[e :U _setPin ]
+[v _iPin `i ~T0 @X0 1 r1 ]
 [f ]
-"30
-[; ;main.c: 30:     if(TMR0IF)
-[e $ ! _TMR0IF 275  ]
-"31
-[; ;main.c: 31:     {
+"7
+[; ;utils.c: 7:     if(0 <= iPin && 5 >= iPin){
+[e $ ! && <= -> 0 `i _iPin >= -> 5 `i _iPin 275  ]
 {
-"32
-[; ;main.c: 32:         TMR0 = 131;
-[e = _TMR0 -> -> 131 `i `uc ]
-"33
-[; ;main.c: 33:         TMR0IF = 0;
-[e = _TMR0IF -> -> 0 `i `b ]
-"34
-[; ;main.c: 34:         uiCounterms++;
-[e ++ _uiCounterms -> -> -> 1 `i `l `ul ]
-"35
-[; ;main.c: 35:     }
+"8
+[; ;utils.c: 8:         PORTA |= (1<<iPin);
+[e =| _PORTA -> << -> 1 `i _iPin `Vuc ]
+"9
+[; ;utils.c: 9:     }
 }
 [e :U 275 ]
-"36
-[; ;main.c: 36: }
+"10
+[; ;utils.c: 10: }
 [e :UE 274 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"38
-[; ;main.c: 38: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
+"12
+[; ;utils.c: 12: void clearPin(int iPin){
+[v _clearPin `(v ~T0 @X0 1 ef1`i ]
 {
-[e :U _main ]
+[e :U _clearPin ]
+[v _iPin `i ~T0 @X0 1 r1 ]
 [f ]
-"43
-[; ;main.c: 43:     OSCCON = 0b1111100;
-[e = _OSCCON -> -> 124 `i `uc ]
-"46
-[; ;main.c: 46:     OPTION_REG = 0b0000100;
-[e = _OPTION_REG -> -> 4 `i `uc ]
-"47
-[; ;main.c: 47:     TMR0=131;
-[e = _TMR0 -> -> 131 `i `uc ]
-"48
-[; ;main.c: 48:     GIE=1;
-[e = _GIE -> -> 1 `i `b ]
-"49
-[; ;main.c: 49:     PEIE=1;
-[e = _PEIE -> -> 1 `i `b ]
-"50
-[; ;main.c: 50:     TMR0IE=1;
-[e = _TMR0IE -> -> 1 `i `b ]
-"54
-[; ;main.c: 54:     ANSELA = 0x00;
-[e = _ANSELA -> -> 0 `i `uc ]
-"55
-[; ;main.c: 55:     TRISA = 0b1111011;
-[e = _TRISA -> -> 123 `i `uc ]
-"56
-[; ;main.c: 56:     PORTA = 0x00;
-[e = _PORTA -> -> 0 `i `uc ]
-"59
-[; ;main.c: 59:     unsigned long uiContadorTempo = 0;
-[v _uiContadorTempo `ul ~T0 @X0 1 a ]
-[e = _uiContadorTempo -> -> -> 0 `i `l `ul ]
-"61
-[; ;main.c: 61:     while(1){
-[e :U 278 ]
+"13
+[; ;utils.c: 13:     if(0 <= iPin && 5 >= iPin){
+[e $ ! && <= -> 0 `i _iPin >= -> 5 `i _iPin 277  ]
 {
-"62
-[; ;main.c: 62:         if((uiCounterms - uiContadorTempo) > 1000){
-[e $ ! > - _uiCounterms _uiContadorTempo -> -> -> 1000 `i `l `ul 280  ]
-{
-"63
-[; ;main.c: 63:             togglePin(2);
-[e ( _togglePin (1 -> 2 `i ]
-"69
-[; ;main.c: 69:             uiContadorTempo = uiCounterms;
-[e = _uiContadorTempo _uiCounterms ]
-"70
-[; ;main.c: 70:         }
-}
-[e :U 280 ]
-"71
-[; ;main.c: 71:     }
+"14
+[; ;utils.c: 14:         PORTA &= ~(1<<iPin);
+[e =& _PORTA -> ~ << -> 1 `i _iPin `Vuc ]
+"15
+[; ;utils.c: 15:     }
 }
 [e :U 277 ]
-[e $U 278  ]
-[e :U 279 ]
-"72
-[; ;main.c: 72: }
+"16
+[; ;utils.c: 16: }
 [e :UE 276 ]
+}
+"18
+[; ;utils.c: 18: void togglePin(int iPin){
+[v _togglePin `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _togglePin ]
+[v _iPin `i ~T0 @X0 1 r1 ]
+[f ]
+"19
+[; ;utils.c: 19:     if(0 <= iPin && 5 >= iPin){
+[e $ ! && <= -> 0 `i _iPin >= -> 5 `i _iPin 279  ]
+{
+"20
+[; ;utils.c: 20:         PORTA ^= (1<<iPin);
+[e =^ _PORTA -> << -> 1 `i _iPin `Vuc ]
+"21
+[; ;utils.c: 21:     }
+}
+[e :U 279 ]
+"22
+[; ;utils.c: 22: }
+[e :UE 278 ]
 }

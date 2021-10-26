@@ -11,10 +11,12 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"28 C:\Users\User\MPLABXProjects\IRremote.X\main.c
+"29 C:\Users\User\MPLABXProjects\IRremote.X\main.c
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
-"37
+"38
 [v _main main `(v  1 e 1 0 ]
+"18 C:\Users\User\MPLABXProjects\IRremote.X\utils.c
+[v _togglePin togglePin `(v  1 e 1 0 ]
 "429 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\PIC12F1822.h
 [v _PORTA PORTA `VEuc  1 e 1 @12 ]
 "821
@@ -35,17 +37,23 @@
 [v _TMR0IE TMR0IE `VEb  1 e 0 @93 ]
 "6041
 [v _TMR0IF TMR0IF `VEb  1 e 0 @90 ]
-"19 C:\Users\User\MPLABXProjects\IRremote.X\main.c
+"20 C:\Users\User\MPLABXProjects\IRremote.X\main.c
 [v _uiCounterms uiCounterms `ul  1 e 4 0 ]
-"37
+"38
 [v _main main `(v  1 e 1 0 ]
 {
-"56
-[v main@uiContadorTempo uiContadorTempo `ul  1 a 4 4 ]
-"67
+"59
+[v main@uiContadorTempo uiContadorTempo `ul  1 a 4 8 ]
+"72
 } 0
-"28
+"18 C:\Users\User\MPLABXProjects\IRremote.X\utils.c
+[v _togglePin togglePin `(v  1 e 1 0 ]
+{
+[v togglePin@iPin iPin `i  1 p 2 0 ]
+"22
+} 0
+"29 C:\Users\User\MPLABXProjects\IRremote.X\main.c
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
 {
-"35
+"36
 } 0
