@@ -11,9 +11,9 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"29 C:\Users\User\MPLABXProjects\IRremote.X\main.c
+"30 C:\Users\User\MPLABXProjects\IRremote.X\main.c
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
-"38
+"44
 [v _main main `(v  1 e 1 0 ]
 "18 C:\Users\User\MPLABXProjects\IRremote.X\utils.c
 [v _togglePin togglePin `(v  1 e 1 0 ]
@@ -21,6 +21,10 @@
 [v _PORTA PORTA `VEuc  1 e 1 @12 ]
 "821
 [v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
+"1057
+[v _PR2 PR2 `VEuc  1 e 1 @27 ]
+"1077
+[v _T2CON T2CON `VEuc  1 e 1 @28 ]
 "1242
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1394
@@ -37,14 +41,22 @@
 [v _TMR0IE TMR0IE `VEb  1 e 0 @93 ]
 "6041
 [v _TMR0IF TMR0IF `VEb  1 e 0 @90 ]
-"20 C:\Users\User\MPLABXProjects\IRremote.X\main.c
+"6071
+[v _TMR2IE TMR2IE `VEb  1 e 0 @1161 ]
+"6074
+[v _TMR2IF TMR2IF `VEb  1 e 0 @137 ]
+"21 C:\Users\User\MPLABXProjects\IRremote.X\main.c
 [v _uiCounterms uiCounterms `ul  1 e 4 0 ]
-"38
+"22
+[v _uiCountermsTimer2 uiCountermsTimer2 `ul  1 e 4 0 ]
+"44
 [v _main main `(v  1 e 1 0 ]
 {
-"59
-[v main@uiContadorTempo uiContadorTempo `ul  1 a 4 8 ]
-"72
+"75
+[v main@uiContadorTempo2 uiContadorTempo2 `ul  1 a 4 4 ]
+"74
+[v main@uiContadorTempo uiContadorTempo `ul  1 a 4 0 ]
+"95
 } 0
 "18 C:\Users\User\MPLABXProjects\IRremote.X\utils.c
 [v _togglePin togglePin `(v  1 e 1 0 ]
@@ -52,8 +64,8 @@
 [v togglePin@iPin iPin `i  1 p 2 0 ]
 "22
 } 0
-"29 C:\Users\User\MPLABXProjects\IRremote.X\main.c
+"30 C:\Users\User\MPLABXProjects\IRremote.X\main.c
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
 {
-"36
+"42
 } 0

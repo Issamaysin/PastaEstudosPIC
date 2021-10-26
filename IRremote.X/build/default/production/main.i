@@ -3394,8 +3394,16 @@ void togglePin(int iPin);
 
 
 
+
 unsigned long uiCounterms = 0;
-# 29 "main.c"
+unsigned long uiCountermsTimer2 = 0;
+
+
+
+
+
+
+
 void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
     if(TMR0IF)
     {
@@ -3403,6 +3411,11 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
         TMR0IF = 0;
         uiCounterms++;
     }
+    if(TMR2IF){
+        TMR2IF = 0;
+        uiCountermsTimer2++;
+    }
+
 }
 
 void main(void) {
@@ -3421,22 +3434,39 @@ void main(void) {
 
 
 
+    TMR2IE = 1;
+    T2CON = 0b00111101;
+    PR2 = 125;
+
+
+
+
+
+
     ANSELA = 0x00;
-    TRISA = 0b1111011;
+    TRISA = 0b1111010;
     PORTA = 0x00;
 
 
     unsigned long uiContadorTempo = 0;
+    unsigned long uiContadorTempo2 = 0;
 
     while(1){
+
+
         if((uiCounterms - uiContadorTempo) > 1000){
             togglePin(2);
 
 
-
-
-
             uiContadorTempo = uiCounterms;
+        }
+
+
+        if((uiCountermsTimer2 - uiContadorTempo2) > 1000){
+            togglePin(0);
+
+
+            uiContadorTempo2 = uiCountermsTimer2;
         }
     }
 }
