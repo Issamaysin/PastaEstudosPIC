@@ -1,0 +1,389 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"6041 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\PIC12F1822.h
+[v _TMR0IF `Vb ~T0 @X0 0 e@90 ]
+"821
+[v _TMR0 `Vuc ~T0 @X0 0 e@21 ]
+[p mainexit ]
+"1645
+[v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
+"1394
+[v _OPTION_REG `Vuc ~T0 @X0 0 e@149 ]
+"5444
+[v _GIE `Vb ~T0 @X0 0 e@95 ]
+"5705
+[v _PEIE `Vb ~T0 @X0 0 e@94 ]
+"6038
+[v _TMR0IE `Vb ~T0 @X0 0 e@93 ]
+"2632
+[v _ANSELA `Vuc ~T0 @X0 0 e@396 ]
+"1242
+[v _TRISA `Vuc ~T0 @X0 0 e@140 ]
+"429
+[v _PORTA `Vuc ~T0 @X0 0 e@12 ]
+"10 ./config.h
+[p x FOSC  =  INTOSC     ]
+"11
+[p x WDTE  =  OFF        ]
+"12
+[p x PWRTE  =  OFF       ]
+"13
+[p x MCLRE  =  OFF       ]
+"14
+[p x CP  =  OFF          ]
+"15
+[p x CPD  =  OFF         ]
+"16
+[p x BOREN  =  OFF       ]
+"17
+[p x CLKOUTEN  =  OFF    ]
+"18
+[p x IESO  =  OFF        ]
+"19
+[p x FCMEN  =  OFF       ]
+"22
+[p x WRT  =  OFF         ]
+"23
+[p x PLLEN  =  ON        ]
+"24
+[p x STVREN  =  ON       ]
+"25
+[p x BORV  =  LO         ]
+"26
+[p x LVP  =  OFF         ]
+"54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\PIC12F1822.h
+[; <" INDF0 equ 00h ;# ">
+"74
+[; <" INDF1 equ 01h ;# ">
+"94
+[; <" PCL equ 02h ;# ">
+"114
+[; <" STATUS equ 03h ;# ">
+"177
+[; <" FSR0L equ 04h ;# ">
+"197
+[; <" FSR0H equ 05h ;# ">
+"221
+[; <" FSR1L equ 06h ;# ">
+"241
+[; <" FSR1H equ 07h ;# ">
+"261
+[; <" BSR equ 08h ;# ">
+"313
+[; <" WREG equ 09h ;# ">
+"333
+[; <" PCLATH equ 0Ah ;# ">
+"353
+[; <" INTCON equ 0Bh ;# ">
+"431
+[; <" PORTA equ 0Ch ;# ">
+"721
+[; <" PIR1 equ 011h ;# ">
+"783
+[; <" PIR2 equ 012h ;# ">
+"823
+[; <" TMR0 equ 015h ;# ">
+"843
+[; <" TMR1 equ 016h ;# ">
+"850
+[; <" TMR1L equ 016h ;# ">
+"870
+[; <" TMR1H equ 017h ;# ">
+"890
+[; <" T1CON equ 018h ;# ">
+"962
+[; <" T1GCON equ 019h ;# ">
+"1039
+[; <" TMR2 equ 01Ah ;# ">
+"1059
+[; <" PR2 equ 01Bh ;# ">
+"1079
+[; <" T2CON equ 01Ch ;# ">
+"1150
+[; <" CPSCON0 equ 01Eh ;# ">
+"1210
+[; <" CPSCON1 equ 01Fh ;# ">
+"1244
+[; <" TRISA equ 08Ch ;# ">
+"1294
+[; <" PIE1 equ 091h ;# ">
+"1356
+[; <" PIE2 equ 092h ;# ">
+"1396
+[; <" OPTION_REG equ 095h ;# ">
+"1479
+[; <" PCON equ 096h ;# ">
+"1530
+[; <" WDTCON equ 097h ;# ">
+"1589
+[; <" OSCTUNE equ 098h ;# ">
+"1647
+[; <" OSCCON equ 099h ;# ">
+"1719
+[; <" OSCSTAT equ 09Ah ;# ">
+"1781
+[; <" ADRES equ 09Bh ;# ">
+"1788
+[; <" ADRESL equ 09Bh ;# ">
+"1808
+[; <" ADRESH equ 09Ch ;# ">
+"1828
+[; <" ADCON0 equ 09Dh ;# ">
+"1917
+[; <" ADCON1 equ 09Eh ;# ">
+"1983
+[; <" LATA equ 010Ch ;# ">
+"2028
+[; <" CM1CON0 equ 0111h ;# ">
+"2085
+[; <" CM1CON1 equ 0112h ;# ">
+"2139
+[; <" CMOUT equ 0115h ;# ">
+"2159
+[; <" BORCON equ 0116h ;# ">
+"2186
+[; <" FVRCON equ 0117h ;# ">
+"2262
+[; <" DACCON0 equ 0118h ;# ">
+"2317
+[; <" DACCON1 equ 0119h ;# ">
+"2369
+[; <" SRCON0 equ 011Ah ;# ">
+"2440
+[; <" SRCON1 equ 011Bh ;# ">
+"2492
+[; <" APFCON equ 011Dh ;# ">
+"2497
+[; <" APFCON0 equ 011Dh ;# ">
+"2634
+[; <" ANSELA equ 018Ch ;# ">
+"2681
+[; <" EEADR equ 0191h ;# ">
+"2688
+[; <" EEADRL equ 0191h ;# ">
+"2708
+[; <" EEADRH equ 0192h ;# ">
+"2728
+[; <" EEDAT equ 0193h ;# ">
+"2735
+[; <" EEDATL equ 0193h ;# ">
+"2740
+[; <" EEDATA equ 0193h ;# ">
+"2773
+[; <" EEDATH equ 0194h ;# ">
+"2793
+[; <" EECON1 equ 0195h ;# ">
+"2855
+[; <" EECON2 equ 0196h ;# ">
+"2875
+[; <" RCREG equ 0199h ;# ">
+"2895
+[; <" TXREG equ 019Ah ;# ">
+"2915
+[; <" SP1BRG equ 019Bh ;# ">
+"2922
+[; <" SP1BRGL equ 019Bh ;# ">
+"2927
+[; <" SPBRG equ 019Bh ;# ">
+"2931
+[; <" SPBRGL equ 019Bh ;# ">
+"2976
+[; <" SP1BRGH equ 019Ch ;# ">
+"2981
+[; <" SPBRGH equ 019Ch ;# ">
+"3014
+[; <" RCSTA equ 019Dh ;# ">
+"3076
+[; <" TXSTA equ 019Eh ;# ">
+"3138
+[; <" BAUDCON equ 019Fh ;# ">
+"3190
+[; <" WPUA equ 020Ch ;# ">
+"3248
+[; <" SSP1BUF equ 0211h ;# ">
+"3253
+[; <" SSPBUF equ 0211h ;# ">
+"3286
+[; <" SSP1ADD equ 0212h ;# ">
+"3291
+[; <" SSPADD equ 0212h ;# ">
+"3324
+[; <" SSP1MSK equ 0213h ;# ">
+"3329
+[; <" SSPMSK equ 0213h ;# ">
+"3362
+[; <" SSP1STAT equ 0214h ;# ">
+"3367
+[; <" SSPSTAT equ 0214h ;# ">
+"3484
+[; <" SSP1CON1 equ 0215h ;# ">
+"3489
+[; <" SSPCON1 equ 0215h ;# ">
+"3493
+[; <" SSPCON equ 0215h ;# ">
+"3688
+[; <" SSP1CON2 equ 0216h ;# ">
+"3693
+[; <" SSPCON2 equ 0216h ;# ">
+"3810
+[; <" SSP1CON3 equ 0217h ;# ">
+"3815
+[; <" SSPCON3 equ 0217h ;# ">
+"3932
+[; <" CCPR1 equ 0291h ;# ">
+"3939
+[; <" CCPR1L equ 0291h ;# ">
+"3959
+[; <" CCPR1H equ 0292h ;# ">
+"3979
+[; <" CCP1CON equ 0293h ;# ">
+"4061
+[; <" PWM1CON equ 0294h ;# ">
+"4131
+[; <" CCP1AS equ 0295h ;# ">
+"4136
+[; <" ECCP1AS equ 0295h ;# ">
+"4293
+[; <" PSTR1CON equ 0296h ;# ">
+"4337
+[; <" IOCAP equ 0391h ;# ">
+"4395
+[; <" IOCAN equ 0392h ;# ">
+"4453
+[; <" IOCAF equ 0393h ;# ">
+"4511
+[; <" CLKRCON equ 039Ah ;# ">
+"4587
+[; <" MDCON equ 039Ch ;# ">
+"4638
+[; <" MDSRC equ 039Dh ;# ">
+"4691
+[; <" MDCARL equ 039Eh ;# ">
+"4756
+[; <" MDCARH equ 039Fh ;# ">
+"4821
+[; <" STATUS_SHAD equ 0FE4h ;# ">
+"4853
+[; <" WREG_SHAD equ 0FE5h ;# ">
+"4873
+[; <" BSR_SHAD equ 0FE6h ;# ">
+"4893
+[; <" PCLATH_SHAD equ 0FE7h ;# ">
+"4913
+[; <" FSR0L_SHAD equ 0FE8h ;# ">
+"4933
+[; <" FSR0H_SHAD equ 0FE9h ;# ">
+"4953
+[; <" FSR1L_SHAD equ 0FEAh ;# ">
+"4973
+[; <" FSR1H_SHAD equ 0FEBh ;# ">
+"4993
+[; <" STKPTR equ 0FEDh ;# ">
+"5013
+[; <" TOSL equ 0FEEh ;# ">
+"5033
+[; <" TOSH equ 0FEFh ;# ">
+"19 main.c
+[; ;main.c: 19: unsigned long uiCounterms = 0;
+[v _uiCounterms `ul ~T0 @X0 1 e ]
+[i _uiCounterms
+-> -> -> 0 `i `l `ul
+]
+[v $root$_my_isr_routine `(v ~T0 @X0 0 e ]
+"28
+[; ;main.c: 28: void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
+[v _my_isr_routine `(v ~T1 @X0 1 ef ]
+{
+[e :U _my_isr_routine ]
+[f ]
+"29
+[; ;main.c: 29:     if(TMR0IF)
+[e $ ! _TMR0IF 275  ]
+"30
+[; ;main.c: 30:     {
+{
+"31
+[; ;main.c: 31:         TMR0 = 131;
+[e = _TMR0 -> -> 131 `i `uc ]
+"32
+[; ;main.c: 32:         TMR0IF = 0;
+[e = _TMR0IF -> -> 0 `i `b ]
+"33
+[; ;main.c: 33:         uiCounterms++;
+[e ++ _uiCounterms -> -> -> 1 `i `l `ul ]
+"34
+[; ;main.c: 34:     }
+}
+[e :U 275 ]
+"35
+[; ;main.c: 35: }
+[e :UE 274 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"37
+[; ;main.c: 37: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"40
+[; ;main.c: 40:     OSCCON = 0b1111111;
+[e = _OSCCON -> -> 127 `i `uc ]
+"43
+[; ;main.c: 43:     OPTION_REG = 0b0000100;
+[e = _OPTION_REG -> -> 4 `i `uc ]
+"44
+[; ;main.c: 44:     TMR0=131;
+[e = _TMR0 -> -> 131 `i `uc ]
+"45
+[; ;main.c: 45:     GIE=1;
+[e = _GIE -> -> 1 `i `b ]
+"46
+[; ;main.c: 46:     PEIE=1;
+[e = _PEIE -> -> 1 `i `b ]
+"47
+[; ;main.c: 47:     TMR0IE=1;
+[e = _TMR0IE -> -> 1 `i `b ]
+"51
+[; ;main.c: 51:     ANSELA = 0x00;
+[e = _ANSELA -> -> 0 `i `uc ]
+"52
+[; ;main.c: 52:     TRISA = 0b1111011;
+[e = _TRISA -> -> 123 `i `uc ]
+"53
+[; ;main.c: 53:     PORTA = 0x00;
+[e = _PORTA -> -> 0 `i `uc ]
+"56
+[; ;main.c: 56:     unsigned long uiContadorTempo = 0;
+[v _uiContadorTempo `ul ~T0 @X0 1 a ]
+[e = _uiContadorTempo -> -> -> 0 `i `l `ul ]
+"58
+[; ;main.c: 58:     while(1){
+[e :U 278 ]
+{
+"59
+[; ;main.c: 59:         PORTA ^= (1<<2);
+[e =^ _PORTA -> << -> 1 `i -> 2 `i `Vuc ]
+"62
+[; ;main.c: 62:         while((uiCounterms - uiContadorTempo) < 500){}
+[e $U 280  ]
+[e :U 281 ]
+{
+}
+[e :U 280 ]
+[e $ < - _uiCounterms _uiContadorTempo -> -> -> 500 `i `l `ul 281  ]
+[e :U 282 ]
+"65
+[; ;main.c: 65:         uiContadorTempo = uiCounterms;
+[e = _uiContadorTempo _uiCounterms ]
+"66
+[; ;main.c: 66:     }
+}
+[e :U 277 ]
+[e $U 278  ]
+[e :U 279 ]
+"67
+[; ;main.c: 67: }
+[e :UE 276 ]
+}
