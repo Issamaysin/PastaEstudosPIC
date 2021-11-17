@@ -1,47 +1,50 @@
 /*
  * File:   main.c
  * Author: Renato Pepe
- * Description:     
- * Controlador:     
- * Created on 16 de novembro de 2021, 16:07
+ * Description:  Dice Roller gadget: dispositivo com 5 botoes e um display
+ *                  de 7 segmentos de 4 digitos, controlados por uma PIC16F687,
+ *                  que emula digitalmente uma jogada de dados, range de 1d2 até 9d20.   
+ * Controlador:  PIC16F687
+ * Created on 16 de novembro de 2021
  */
 
-
+/* Includes */
 #include "config.h"
 #include <PIC16F687.h>
 #include "utils.h"
+
+
 /* Define dos pinos utilizados */
 
 
 
-
 /* Variaveis globais */
-//Timer counter, increments each milisecond 
+//Timer counter, incrementa a cada milisegundo
 unsigned long uiCounterms = 0;
-
-
 
 /* *****************************************************************************/
  /* Method name:        my_isr_routine                                         */
- /* Method description: Rotina de interrupção ISR,                     l       */
+ /* Method description: Rotina de interrupção ISR, trata do timer0             */
  /* Input params:       n/a                                                    */
  /* Output params:      n/a                                                    */
  /* ****************************************************************************/
 void __interrupt () my_isr_routine (void) {
     
    /* Modulo de interrupção do Timer0 */
-    if(T0IF) // Timer flag has been triggered due to timer overflow
+    if(T0IF) // Timer flag triggered
     {   
-        T0IF = 0;     // Clear timer interrupt flag
-        TMR0 = 133;     //Load the timer Value
+        T0IF = 0;      // Clear interrupt flag
+        TMR0 = 133;    //Carrega o valor para resetar o timer.
         
-        uiCounterms++;  //update global timer counter
+        uiCounterms++; //atualiza contador global de tempo
     
         //Pra atualizar os displays:
         // 200Hz com interrup a cada 1ms: 
         //  a cada 5 interrupt (contador%5 == 0) troca pro outro display
     
     } 
+    
+    //add buttons interrupt
 }
 
 void main(void) {
@@ -64,7 +67,7 @@ void main(void) {
    /*
     *   Port Configuration for Timer0
     *   set timer0 reading external frequency with 16 prescaler and enables pullups
-    *   set the TMR0 register at 131 to obtain the desired interruption time (1ms)
+    *   set the TMR0 register at 133 to obtain the desired interruption time (1ms)
     *   enable global, peripherial, and timer0 interruptions
    */
     OPTION_REG = 0b00000011; 
@@ -86,6 +89,7 @@ void main(void) {
     //contador local de tempo
     unsigned long uiContadorTempo = 0;
 
+    //Texto em 7segs para teste.
     char text[6];
     text[0] = 0b01110111; //A
     text[1] = 0b01111100; //b
@@ -95,6 +99,8 @@ void main(void) {
     text[5] = 0b01110001; //F
     
     //char buttonStatus = 0;
+    
+    //Escreve a primeira letra
     int indice = 0;
     PORTC = text[indice];
     indice++;
@@ -102,8 +108,9 @@ void main(void) {
     while(1){
       
         //Checa se o contador global ultrapassou 1000ms do local.
-        if((uiCounterms - uiContadorTempo) > 1000 ){
-            PORTC = text[indice];
+        if((uiCounterms - uiContadorTempo) > 1000 ){     
+            //escreve a proxima letra e atualiza o indice
+            PORTC = text[indice]; 
             indice++;
             if(indice > 5){
                 indice = 0;

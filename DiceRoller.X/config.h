@@ -1,11 +1,11 @@
 /* 
- * File:   
- * Author: 
- * Comments:
- * Revision history: 
+ * File:        config.h
+ * Author:      Renato Pepe
+ * Comments:    Arquivo de configurações iniciais (geradas pela IDE)
+ * Created on:  16 de novembro de 2021
  */
-// This is a guard condition so that contents of this file are not included
-// more than once.  
+
+ 
 #ifndef XC_HEADER_TEMPLATE_H
 #define	XC_HEADER_TEMPLATE_H
 

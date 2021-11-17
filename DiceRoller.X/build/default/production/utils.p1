@@ -1,6 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"166 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
-[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
 "54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
 [; <" INDF equ 00h ;# ">
 "61
@@ -123,69 +121,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON2 equ 018Dh ;# ">
 "2761
 [; <" SRCON equ 019Eh ;# ">
-"12 utils.c
-[; ;utils.c: 12: void setPin(int iPin){
+"13 utils.c
+[; ;utils.c: 13: void setPin(int iPin){
 [v _setPin `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _setPin ]
 [v _iPin `i ~T0 @X0 1 r1 ]
 [f ]
-"19
-[; ;utils.c: 19:     if(0 <= iPin && 5 >= iPin){
-[e $ ! && <= -> 0 `i _iPin >= -> 5 `i _iPin 118  ]
-{
-"20
-[; ;utils.c: 20:         PORTA |= (1<<iPin);
-[e =| _PORTA -> << -> 1 `i _iPin `Vuc ]
-"21
-[; ;utils.c: 21:     }
-}
-[e :U 118 ]
-"22
-[; ;utils.c: 22: }
+"24
+[; ;utils.c: 24: }
 [e :UE 117 ]
 }
-"24
-[; ;utils.c: 24: void clearPin(int iPin){
+"26
+[; ;utils.c: 26: void clearPin(int iPin){
 [v _clearPin `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _clearPin ]
 [v _iPin `i ~T0 @X0 1 r1 ]
 [f ]
-"25
-[; ;utils.c: 25:     if(0 <= iPin && 5 >= iPin){
-[e $ ! && <= -> 0 `i _iPin >= -> 5 `i _iPin 120  ]
-{
-"26
-[; ;utils.c: 26:         PORTA &= ~(1<<iPin);
-[e =& _PORTA -> ~ << -> 1 `i _iPin `Vuc ]
-"27
-[; ;utils.c: 27:     }
-}
-[e :U 120 ]
-"28
-[; ;utils.c: 28: }
-[e :UE 119 ]
-}
 "30
-[; ;utils.c: 30: void togglePin(int iPin){
+[; ;utils.c: 30: }
+[e :UE 118 ]
+}
+"32
+[; ;utils.c: 32: void togglePin(int iPin){
 [v _togglePin `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _togglePin ]
 [v _iPin `i ~T0 @X0 1 r1 ]
 [f ]
-"31
-[; ;utils.c: 31:     if(0 <= iPin && 5 >= iPin){
-[e $ ! && <= -> 0 `i _iPin >= -> 5 `i _iPin 122  ]
-{
-"32
-[; ;utils.c: 32:         PORTA ^= (1<<iPin);
-[e =^ _PORTA -> << -> 1 `i _iPin `Vuc ]
-"33
-[; ;utils.c: 33:     }
-}
-[e :U 122 ]
 "34
 [; ;utils.c: 34: }
-[e :UE 121 ]
+[e :UE 119 ]
 }

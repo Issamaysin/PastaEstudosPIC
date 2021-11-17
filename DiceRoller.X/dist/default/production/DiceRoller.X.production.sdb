@@ -11,14 +11,12 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"30 C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
+"31 C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
-"47
+"50
 [v _main main `(v  1 e 1 0 ]
 "59 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
-"166
-[v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "216
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "255
@@ -41,21 +39,21 @@
 [v _T0IE T0IE `VEb  1 e 0 @93 ]
 "3386
 [v _T0IF T0IF `VEb  1 e 0 @90 ]
-"20 C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
+"23 C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
 [v _uiCounterms uiCounterms `ul  1 e 4 0 ]
-"47
+"50
 [v _main main `(v  1 e 1 0 ]
 {
-"89
+"93
 [v main@text text `[6]uc  1 a 6 4 ]
-"87
+"90
 [v main@uiContadorTempo uiContadorTempo `ul  1 a 4 0 ]
-"98
+"104
 [v main@indice indice `i  1 a 2 10 ]
-"116
+"123
 } 0
-"30
+"31
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
 {
-"45
+"48
 } 0

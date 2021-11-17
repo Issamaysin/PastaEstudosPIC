@@ -1943,35 +1943,24 @@ extern __bank0 __bit __timeout;
 
 
 # 1 "./utils.h" 1
-
-
-
+# 12 "./utils.h"
 void setPin(int iPin);
 void clearPin(int iPin);
 void togglePin(int iPin);
 # 10 "utils.c" 2
 
 
+
 void setPin(int iPin){
-
-
-
-
-
-
-    if(0 <= iPin && 5 >= iPin){
-        PORTA |= (1<<iPin);
-    }
+# 24 "utils.c"
 }
 
 void clearPin(int iPin){
-    if(0 <= iPin && 5 >= iPin){
-        PORTA &= ~(1<<iPin);
-    }
+
+
+
 }
 
 void togglePin(int iPin){
-    if(0 <= iPin && 5 >= iPin){
-        PORTA ^= (1<<iPin);
-    }
+
 }

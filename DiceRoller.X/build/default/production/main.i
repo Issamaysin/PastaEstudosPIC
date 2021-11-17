@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 10 "main.c"
+# 12 "main.c"
 # 1 "./config.h" 1
 # 18 "./config.h"
 #pragma config FOSC = INTRCIO
@@ -1950,27 +1950,24 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
 # 31 "./config.h" 2
-# 10 "main.c" 2
-
-
-# 1 "./utils.h" 1
-
-
-
-void setPin(int iPin);
-void clearPin(int iPin);
-void togglePin(int iPin);
 # 12 "main.c" 2
 
 
-
-
-
-
-
-
+# 1 "./utils.h" 1
+# 12 "./utils.h"
+void setPin(int iPin);
+void clearPin(int iPin);
+void togglePin(int iPin);
+# 14 "main.c" 2
+# 23 "main.c"
 unsigned long uiCounterms = 0;
-# 30 "main.c"
+
+
+
+
+
+
+
 void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 
 
@@ -1986,16 +1983,18 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 
 
     }
+
+
 }
 
 void main(void) {
-# 57 "main.c"
+# 60 "main.c"
     OSCCON |= (1<<0);
     OSCCON &= ~(1<<1);
     OSCCON |= (1<<2);
     OSCCON &= ~(1<<3);
     OSCCON |= (0b01110000);
-# 70 "main.c"
+# 73 "main.c"
     OPTION_REG = 0b00000011;
     TMR0= 133;
 
@@ -2015,6 +2014,7 @@ void main(void) {
 
     unsigned long uiContadorTempo = 0;
 
+
     char text[6];
     text[0] = 0b01110111;
     text[1] = 0b01111100;
@@ -2022,6 +2022,8 @@ void main(void) {
     text[3] = 0b01011110;
     text[4] = 0b01111001;
     text[5] = 0b01110001;
+
+
 
 
     int indice = 0;
@@ -2032,6 +2034,7 @@ void main(void) {
 
 
         if((uiCounterms - uiContadorTempo) > 1000 ){
+
             PORTC = text[indice];
             indice++;
             if(indice > 5){
