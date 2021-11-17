@@ -1,0 +1,191 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"166 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
+[; <" INDF equ 00h ;# ">
+"61
+[; <" TMR0 equ 01h ;# ">
+"68
+[; <" PCL equ 02h ;# ">
+"75
+[; <" STATUS equ 03h ;# ">
+"161
+[; <" FSR equ 04h ;# ">
+"168
+[; <" PORTA equ 05h ;# ">
+"218
+[; <" PORTB equ 06h ;# ">
+"257
+[; <" PORTC equ 07h ;# ">
+"319
+[; <" PCLATH equ 0Ah ;# ">
+"326
+[; <" INTCON equ 0Bh ;# ">
+"388
+[; <" PIR1 equ 0Ch ;# ">
+"441
+[; <" PIR2 equ 0Dh ;# ">
+"480
+[; <" TMR1 equ 0Eh ;# ">
+"487
+[; <" TMR1L equ 0Eh ;# ">
+"494
+[; <" TMR1H equ 0Fh ;# ">
+"501
+[; <" T1CON equ 010h ;# ">
+"572
+[; <" SSPBUF equ 013h ;# ">
+"579
+[; <" SSPCON equ 014h ;# ">
+"649
+[; <" RCSTA equ 018h ;# ">
+"711
+[; <" TXREG equ 019h ;# ">
+"718
+[; <" RCREG equ 01Ah ;# ">
+"725
+[; <" ADRESH equ 01Eh ;# ">
+"732
+[; <" ADCON0 equ 01Fh ;# ">
+"827
+[; <" OPTION_REG equ 081h ;# ">
+"897
+[; <" TRISA equ 085h ;# ">
+"947
+[; <" TRISB equ 086h ;# ">
+"986
+[; <" TRISC equ 087h ;# ">
+"1048
+[; <" PIE1 equ 08Ch ;# ">
+"1101
+[; <" PIE2 equ 08Dh ;# ">
+"1140
+[; <" PCON equ 08Eh ;# ">
+"1179
+[; <" OSCCON equ 08Fh ;# ">
+"1244
+[; <" OSCTUNE equ 090h ;# ">
+"1296
+[; <" SSPADD equ 093h ;# ">
+"1303
+[; <" SSPMSK equ 093h ;# ">
+"1308
+[; <" MSK equ 093h ;# ">
+"1425
+[; <" SSPSTAT equ 094h ;# ">
+"1594
+[; <" WPUA equ 095h ;# ">
+"1599
+[; <" WPU equ 095h ;# ">
+"1748
+[; <" IOCA equ 096h ;# ">
+"1753
+[; <" IOC equ 096h ;# ">
+"1922
+[; <" WDTCON equ 097h ;# ">
+"1975
+[; <" TXSTA equ 098h ;# ">
+"2046
+[; <" SPBRG equ 099h ;# ">
+"2108
+[; <" SPBRGH equ 09Ah ;# ">
+"2170
+[; <" BAUDCTL equ 09Bh ;# ">
+"2222
+[; <" ADRESL equ 09Eh ;# ">
+"2229
+[; <" ADCON1 equ 09Fh ;# ">
+"2271
+[; <" EEDAT equ 010Ch ;# ">
+"2276
+[; <" EEDATA equ 010Ch ;# ">
+"2283
+[; <" EEADR equ 010Dh ;# ">
+"2290
+[; <" WPUB equ 0115h ;# ">
+"2338
+[; <" IOCB equ 0116h ;# ">
+"2377
+[; <" VRCON equ 0118h ;# ">
+"2447
+[; <" CM1CON0 equ 0119h ;# ">
+"2512
+[; <" CM2CON0 equ 011Ah ;# ">
+"2577
+[; <" CM2CON1 equ 011Bh ;# ">
+"2616
+[; <" ANSEL equ 011Eh ;# ">
+"2678
+[; <" ANSELH equ 011Fh ;# ">
+"2716
+[; <" EECON1 equ 018Ch ;# ">
+"2754
+[; <" EECON2 equ 018Dh ;# ">
+"2761
+[; <" SRCON equ 019Eh ;# ">
+"12 utils.c
+[; ;utils.c: 12: void setPin(int iPin){
+[v _setPin `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _setPin ]
+[v _iPin `i ~T0 @X0 1 r1 ]
+[f ]
+"19
+[; ;utils.c: 19:     if(0 <= iPin && 5 >= iPin){
+[e $ ! && <= -> 0 `i _iPin >= -> 5 `i _iPin 118  ]
+{
+"20
+[; ;utils.c: 20:         PORTA |= (1<<iPin);
+[e =| _PORTA -> << -> 1 `i _iPin `Vuc ]
+"21
+[; ;utils.c: 21:     }
+}
+[e :U 118 ]
+"22
+[; ;utils.c: 22: }
+[e :UE 117 ]
+}
+"24
+[; ;utils.c: 24: void clearPin(int iPin){
+[v _clearPin `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _clearPin ]
+[v _iPin `i ~T0 @X0 1 r1 ]
+[f ]
+"25
+[; ;utils.c: 25:     if(0 <= iPin && 5 >= iPin){
+[e $ ! && <= -> 0 `i _iPin >= -> 5 `i _iPin 120  ]
+{
+"26
+[; ;utils.c: 26:         PORTA &= ~(1<<iPin);
+[e =& _PORTA -> ~ << -> 1 `i _iPin `Vuc ]
+"27
+[; ;utils.c: 27:     }
+}
+[e :U 120 ]
+"28
+[; ;utils.c: 28: }
+[e :UE 119 ]
+}
+"30
+[; ;utils.c: 30: void togglePin(int iPin){
+[v _togglePin `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _togglePin ]
+[v _iPin `i ~T0 @X0 1 r1 ]
+[f ]
+"31
+[; ;utils.c: 31:     if(0 <= iPin && 5 >= iPin){
+[e $ ! && <= -> 0 `i _iPin >= -> 5 `i _iPin 122  ]
+{
+"32
+[; ;utils.c: 32:         PORTA ^= (1<<iPin);
+[e =^ _PORTA -> << -> 1 `i _iPin `Vuc ]
+"33
+[; ;utils.c: 33:     }
+}
+[e :U 122 ]
+"34
+[; ;utils.c: 34: }
+[e :UE 121 ]
+}

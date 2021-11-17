@@ -1,0 +1,336 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"3386 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
+[v _T0IF `Vb ~T0 @X0 0 e@90 ]
+"59
+[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
+[p mainexit ]
+"1177
+[v _OSCCON `Vuc ~T0 @X0 0 e@143 ]
+"825
+[v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
+"3065
+[v _GIE `Vb ~T0 @X0 0 e@95 ]
+"3206
+[v _PEIE `Vb ~T0 @X0 0 e@94 ]
+"3383
+[v _T0IE `Vb ~T0 @X0 0 e@93 ]
+"3092
+[v _INTE `Vb ~T0 @X0 0 e@92 ]
+"945
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"984
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"216
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"255
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"18 ./config.h
+[p x FOSC  =  INTRCIO    ]
+"19
+[p x WDTE  =  OFF        ]
+"20
+[p x PWRTE  =  OFF       ]
+"21
+[p x MCLRE  =  OFF       ]
+"22
+[p x CP  =  OFF          ]
+"23
+[p x CPD  =  OFF         ]
+"24
+[p x BOREN  =  OFF       ]
+"25
+[p x IESO  =  OFF        ]
+"26
+[p x FCMEN  =  OFF       ]
+"54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
+[; <" INDF equ 00h ;# ">
+"61
+[; <" TMR0 equ 01h ;# ">
+"68
+[; <" PCL equ 02h ;# ">
+"75
+[; <" STATUS equ 03h ;# ">
+"161
+[; <" FSR equ 04h ;# ">
+"168
+[; <" PORTA equ 05h ;# ">
+"218
+[; <" PORTB equ 06h ;# ">
+"257
+[; <" PORTC equ 07h ;# ">
+"319
+[; <" PCLATH equ 0Ah ;# ">
+"326
+[; <" INTCON equ 0Bh ;# ">
+"388
+[; <" PIR1 equ 0Ch ;# ">
+"441
+[; <" PIR2 equ 0Dh ;# ">
+"480
+[; <" TMR1 equ 0Eh ;# ">
+"487
+[; <" TMR1L equ 0Eh ;# ">
+"494
+[; <" TMR1H equ 0Fh ;# ">
+"501
+[; <" T1CON equ 010h ;# ">
+"572
+[; <" SSPBUF equ 013h ;# ">
+"579
+[; <" SSPCON equ 014h ;# ">
+"649
+[; <" RCSTA equ 018h ;# ">
+"711
+[; <" TXREG equ 019h ;# ">
+"718
+[; <" RCREG equ 01Ah ;# ">
+"725
+[; <" ADRESH equ 01Eh ;# ">
+"732
+[; <" ADCON0 equ 01Fh ;# ">
+"827
+[; <" OPTION_REG equ 081h ;# ">
+"897
+[; <" TRISA equ 085h ;# ">
+"947
+[; <" TRISB equ 086h ;# ">
+"986
+[; <" TRISC equ 087h ;# ">
+"1048
+[; <" PIE1 equ 08Ch ;# ">
+"1101
+[; <" PIE2 equ 08Dh ;# ">
+"1140
+[; <" PCON equ 08Eh ;# ">
+"1179
+[; <" OSCCON equ 08Fh ;# ">
+"1244
+[; <" OSCTUNE equ 090h ;# ">
+"1296
+[; <" SSPADD equ 093h ;# ">
+"1303
+[; <" SSPMSK equ 093h ;# ">
+"1308
+[; <" MSK equ 093h ;# ">
+"1425
+[; <" SSPSTAT equ 094h ;# ">
+"1594
+[; <" WPUA equ 095h ;# ">
+"1599
+[; <" WPU equ 095h ;# ">
+"1748
+[; <" IOCA equ 096h ;# ">
+"1753
+[; <" IOC equ 096h ;# ">
+"1922
+[; <" WDTCON equ 097h ;# ">
+"1975
+[; <" TXSTA equ 098h ;# ">
+"2046
+[; <" SPBRG equ 099h ;# ">
+"2108
+[; <" SPBRGH equ 09Ah ;# ">
+"2170
+[; <" BAUDCTL equ 09Bh ;# ">
+"2222
+[; <" ADRESL equ 09Eh ;# ">
+"2229
+[; <" ADCON1 equ 09Fh ;# ">
+"2271
+[; <" EEDAT equ 010Ch ;# ">
+"2276
+[; <" EEDATA equ 010Ch ;# ">
+"2283
+[; <" EEADR equ 010Dh ;# ">
+"2290
+[; <" WPUB equ 0115h ;# ">
+"2338
+[; <" IOCB equ 0116h ;# ">
+"2377
+[; <" VRCON equ 0118h ;# ">
+"2447
+[; <" CM1CON0 equ 0119h ;# ">
+"2512
+[; <" CM2CON0 equ 011Ah ;# ">
+"2577
+[; <" CM2CON1 equ 011Bh ;# ">
+"2616
+[; <" ANSEL equ 011Eh ;# ">
+"2678
+[; <" ANSELH equ 011Fh ;# ">
+"2716
+[; <" EECON1 equ 018Ch ;# ">
+"2754
+[; <" EECON2 equ 018Dh ;# ">
+"2761
+[; <" SRCON equ 019Eh ;# ">
+"20 main.c
+[; ;main.c: 20: unsigned long uiCounterms = 0;
+[v _uiCounterms `ul ~T0 @X0 1 e ]
+[i _uiCounterms
+-> -> -> 0 `i `l `ul
+]
+[v $root$_my_isr_routine `(v ~T0 @X0 0 e ]
+"30
+[; ;main.c: 30: void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
+[v _my_isr_routine `(v ~T1 @X0 1 ef ]
+{
+[e :U _my_isr_routine ]
+[f ]
+"33
+[; ;main.c: 33:     if(T0IF)
+[e $ ! _T0IF 118  ]
+"34
+[; ;main.c: 34:     {
+{
+"35
+[; ;main.c: 35:         T0IF = 0;
+[e = _T0IF -> -> 0 `i `b ]
+"36
+[; ;main.c: 36:         TMR0 = 133;
+[e = _TMR0 -> -> 133 `i `uc ]
+"38
+[; ;main.c: 38:         uiCounterms++;
+[e ++ _uiCounterms -> -> -> 1 `i `l `ul ]
+"44
+[; ;main.c: 44:     }
+}
+[e :U 118 ]
+"45
+[; ;main.c: 45: }
+[e :UE 117 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"47
+[; ;main.c: 47: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"57
+[; ;main.c: 57:     OSCCON |= (1<<0);
+[e =| _OSCCON -> << -> 1 `i -> 0 `i `Vuc ]
+"58
+[; ;main.c: 58:     OSCCON &= ~(1<<1);
+[e =& _OSCCON -> ~ << -> 1 `i -> 1 `i `Vuc ]
+"59
+[; ;main.c: 59:     OSCCON |= (1<<2);
+[e =| _OSCCON -> << -> 1 `i -> 2 `i `Vuc ]
+"60
+[; ;main.c: 60:     OSCCON &= ~(1<<3);
+[e =& _OSCCON -> ~ << -> 1 `i -> 3 `i `Vuc ]
+"61
+[; ;main.c: 61:     OSCCON |= (0b01110000);
+[e =| _OSCCON -> -> 112 `i `Vuc ]
+"70
+[; ;main.c: 70:     OPTION_REG = 0b00000011;
+[e = _OPTION_REG -> -> 3 `i `uc ]
+"71
+[; ;main.c: 71:     TMR0= 133;
+[e = _TMR0 -> -> 133 `i `uc ]
+"73
+[; ;main.c: 73:     GIE=1;
+[e = _GIE -> -> 1 `i `b ]
+"74
+[; ;main.c: 74:     PEIE=1;
+[e = _PEIE -> -> 1 `i `b ]
+"75
+[; ;main.c: 75:     T0IE=1;
+[e = _T0IE -> -> 1 `i `b ]
+"76
+[; ;main.c: 76:     INTE = 0;
+[e = _INTE -> -> 0 `i `b ]
+"77
+[; ;main.c: 77:     T0IF = 0;
+[e = _T0IF -> -> 0 `i `b ]
+"81
+[; ;main.c: 81:     TRISB = 0x00;
+[e = _TRISB -> -> 0 `i `uc ]
+"82
+[; ;main.c: 82:     TRISC = 0x00;
+[e = _TRISC -> -> 0 `i `uc ]
+"83
+[; ;main.c: 83:     PORTB = 0b11100000;
+[e = _PORTB -> -> 224 `i `uc ]
+"84
+[; ;main.c: 84:     PORTC = 0b11111111;
+[e = _PORTC -> -> 255 `i `uc ]
+"87
+[; ;main.c: 87:     unsigned long uiContadorTempo = 0;
+[v _uiContadorTempo `ul ~T0 @X0 1 a ]
+[e = _uiContadorTempo -> -> -> 0 `i `l `ul ]
+"89
+[; ;main.c: 89:     char text[6];
+[v _text `uc ~T0 @X0 -> 6 `i a ]
+"90
+[; ;main.c: 90:     text[0] = 0b01110111;
+[e = *U + &U _text * -> -> -> 0 `i `ui `ux -> -> # *U &U _text `ui `ux -> -> 119 `i `uc ]
+"91
+[; ;main.c: 91:     text[1] = 0b01111100;
+[e = *U + &U _text * -> -> -> 1 `i `ui `ux -> -> # *U &U _text `ui `ux -> -> 124 `i `uc ]
+"92
+[; ;main.c: 92:     text[2] = 0b00111001;
+[e = *U + &U _text * -> -> -> 2 `i `ui `ux -> -> # *U &U _text `ui `ux -> -> 57 `i `uc ]
+"93
+[; ;main.c: 93:     text[3] = 0b01011110;
+[e = *U + &U _text * -> -> -> 3 `i `ui `ux -> -> # *U &U _text `ui `ux -> -> 94 `i `uc ]
+"94
+[; ;main.c: 94:     text[4] = 0b01111001;
+[e = *U + &U _text * -> -> -> 4 `i `ui `ux -> -> # *U &U _text `ui `ux -> -> 121 `i `uc ]
+"95
+[; ;main.c: 95:     text[5] = 0b01110001;
+[e = *U + &U _text * -> -> -> 5 `i `ui `ux -> -> # *U &U _text `ui `ux -> -> 113 `i `uc ]
+"98
+[; ;main.c: 98:     int indice = 0;
+[v _indice `i ~T0 @X0 1 a ]
+[e = _indice -> 0 `i ]
+"99
+[; ;main.c: 99:     PORTC = text[indice];
+[e = _PORTC -> *U + &U _text * -> -> _indice `ui `ux -> -> # *U &U _text `ui `ux `uc ]
+"100
+[; ;main.c: 100:     indice++;
+[e ++ _indice -> 1 `i ]
+"102
+[; ;main.c: 102:     while(1){
+[e :U 121 ]
+{
+"105
+[; ;main.c: 105:         if((uiCounterms - uiContadorTempo) > 1000 ){
+[e $ ! > - _uiCounterms _uiContadorTempo -> -> -> 1000 `i `l `ul 123  ]
+{
+"106
+[; ;main.c: 106:             PORTC = text[indice];
+[e = _PORTC -> *U + &U _text * -> -> _indice `ui `ux -> -> # *U &U _text `ui `ux `uc ]
+"107
+[; ;main.c: 107:             indice++;
+[e ++ _indice -> 1 `i ]
+"108
+[; ;main.c: 108:             if(indice > 5){
+[e $ ! > _indice -> 5 `i 124  ]
+{
+"109
+[; ;main.c: 109:                 indice = 0;
+[e = _indice -> 0 `i ]
+"110
+[; ;main.c: 110:             }
+}
+[e :U 124 ]
+"111
+[; ;main.c: 111:             uiContadorTempo = uiCounterms;
+[e = _uiContadorTempo _uiCounterms ]
+"112
+[; ;main.c: 112:         }
+}
+[e :U 123 ]
+"113
+[; ;main.c: 113:     }
+}
+[e :U 120 ]
+[e $U 121  ]
+[e :U 122 ]
+"116
+[; ;main.c: 116: }
+[e :UE 119 ]
+}
