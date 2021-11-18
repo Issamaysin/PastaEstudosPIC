@@ -11,10 +11,9 @@
 /* Includes */
 #include "config.h"
 #include <PIC16F687.h>
+#include "board.h"
 #include "utils.h"
 
-
-/* Define dos pinos utilizados */
 
 
 
@@ -38,16 +37,49 @@ void __interrupt () my_isr_routine (void) {
         
         uiCounterms++; //atualiza contador global de tempo
     
-        //Pra atualizar os displays:
-        // 200Hz com interrup a cada 1ms: 
-        //  a cada 5 interrupt (contador%5 == 0) troca pro outro display
-    
+        //Chama função de atualizar os displays a cada 5ms, (com 4 displays = 50Hz)
+        if(0 == (uiCounterms%5)){
+            shiftDisplays();
+        }
     } 
     
     //add buttons interrupt
 }
 
+void configBoard();
+
+
 void main(void) {
+    
+    configBoard();
+   
+    //inicializa valores nos pinos de output
+    PORTB = 0b11100000; //set RB7~RB6 and RB4 as high (display off)
+    PORTA = 0b100000; //RA5 turned on (display is off)
+    PORTC = 0x00;  //turn off all segments.
+    
+    
+    //Cria e inicializa vetor que representa o display de 7 segmentos e 4 digitos
+    Display display7seg[4];
+    Display7seg4digitsVetor = display7seg;
+    initDisplay();
+
+    
+    writeCharOnDisplay('4', 0);
+    writeCharOnDisplay('d', 1);
+    writeCharOnDisplay('9', 2);
+    writeCharOnDisplay('p', 3);
+    
+    while(1){
+      
+       
+    }
+        
+        //end
+}
+
+// Faz a configuração das portas e pinos, timer, clock...
+void configBoard(){
     
     /* 
      * Clock config:
@@ -63,8 +95,7 @@ void main(void) {
     OSCCON &= ~(1<<3);   
     OSCCON |= (0b01110000); 
     
-    
-   /*
+    /*
     *   Port Configuration for Timer0
     *   set timer0 reading external frequency with 16 prescaler and enables pullups
     *   set the TMR0 register at 133 to obtain the desired interruption time (1ms)
@@ -79,48 +110,16 @@ void main(void) {
     INTE = 0; //disables ra2 interrupt
     T0IF = 0; //set interruption flag to 0.
 
-    
-    //TRISA = 0b100000; // set A5 to input -> button
-    TRISB = 0x00; //set all port B pins as output
+    //Seta os pinos dos botoes como input e os demais como output
+    TRISA = 0b010111; // set A5 to input -> button
+    TRISB = 0b00100000; //set all port B pins, but RB5, as output
     TRISC = 0x00; //set all port C pins as output
-    PORTB = 0b11100000; //set RB7~RB5 as high and RB4 as low
-    PORTC = 0b11111111;  //turn on all segments.
     
-    //contador local de tempo
-    unsigned long uiContadorTempo = 0;
-
-    //Texto em 7segs para teste.
-    char text[6];
-    text[0] = 0b01110111; //A
-    text[1] = 0b01111100; //b
-    text[2] = 0b00111001; //C
-    text[3] = 0b01011110; //d
-    text[4] = 0b01111001; //E
-    text[5] = 0b01110001; //F
-    
-    //char buttonStatus = 0;
-    
-    //Escreve a primeira letra
-    int indice = 0;
-    PORTC = text[indice];
-    indice++;
-    
-    while(1){
-      
-        //Checa se o contador global ultrapassou 1000ms do local.
-        if((uiCounterms - uiContadorTempo) > 1000 ){     
-            //escreve a proxima letra e atualiza o indice
-            PORTC = text[indice]; 
-            indice++;
-            if(indice > 5){
-                indice = 0;
-            }
-            uiContadorTempo = uiCounterms; //atualiza contador local
-        }
-    }
-        
-        //end
 }
+
+
+
+
 
 
 
