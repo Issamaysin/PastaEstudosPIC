@@ -1,12 +1,34 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"16 ./utils.h
+[; ;./utils.h: 16: typedef struct Display{
+[s S117 `i 1 `i 1 `uc 1 ]
+[n S117 Display pin port data ]
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
 "3386 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
 [v _T0IF `Vb ~T0 @X0 0 e@90 ]
 "59
 [v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
+"27 ./utils.h
+[; ;./utils.h: 27: void shiftDisplays();
+[v _shiftDisplays `(v ~T0 @X0 0 e? ]
 [p mainexit ]
-"1177
+"49 main.c
+[; ;main.c: 49: void configBoard();
+[v _configBoard `(v ~T0 @X0 0 e? ]
+"216 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"166
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"255
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"30 ./utils.h
+[; ;./utils.h: 30: void initDisplay();
+[v _initDisplay `(v ~T0 @X0 0 e? ]
+"33
+[; ;./utils.h: 33: void writeCharOnDisplay(char chCharacter, int iDisplay);
+[v _writeCharOnDisplay `(v ~T0 @X0 0 ef2`uc`i ]
+"1177 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
 [v _OSCCON `Vuc ~T0 @X0 0 e@143 ]
 "825
 [v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
@@ -18,14 +40,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _T0IE `Vb ~T0 @X0 0 e@93 ]
 "3092
 [v _INTE `Vb ~T0 @X0 0 e@92 ]
+"895
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
 "945
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
 "984
 [v _TRISC `Vuc ~T0 @X0 0 e@135 ]
-"216
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"255
-[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "18 ./config.h
 [p x FOSC  =  INTRCIO    ]
 "19
@@ -166,171 +186,168 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON2 equ 018Dh ;# ">
 "2761
 [; <" SRCON equ 019Eh ;# ">
-"23 main.c
-[; ;main.c: 23: unsigned long uiCounterms = 0;
+"23 ./utils.h
+[; ;./utils.h: 23: Display *Display7seg4digitsVetor;
+[v _Display7seg4digitsVetor `*S117 ~T0 @X0 1 e ]
+"24
+[; ;./utils.h: 24: int indiceDisplay = 0;
+[v _indiceDisplay `i ~T0 @X0 1 e ]
+[i _indiceDisplay
+-> 0 `i
+]
+"22 main.c
+[; ;main.c: 22: unsigned long uiCounterms = 0;
 [v _uiCounterms `ul ~T0 @X0 1 e ]
 [i _uiCounterms
 -> -> -> 0 `i `l `ul
 ]
 [v $root$_my_isr_routine `(v ~T0 @X0 0 e ]
-"31
-[; ;main.c: 31: void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
+"30
+[; ;main.c: 30: void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 [v _my_isr_routine `(v ~T1 @X0 1 ef ]
 {
 [e :U _my_isr_routine ]
 [f ]
+"33
+[; ;main.c: 33:     if(T0IF)
+[e $ ! _T0IF 119  ]
 "34
-[; ;main.c: 34:     if(T0IF)
-[e $ ! _T0IF 118  ]
-"35
-[; ;main.c: 35:     {
+[; ;main.c: 34:     {
 {
-"36
-[; ;main.c: 36:         T0IF = 0;
+"35
+[; ;main.c: 35:         T0IF = 0;
 [e = _T0IF -> -> 0 `i `b ]
-"37
-[; ;main.c: 37:         TMR0 = 133;
+"36
+[; ;main.c: 36:         TMR0 = 133;
 [e = _TMR0 -> -> 133 `i `uc ]
-"39
-[; ;main.c: 39:         uiCounterms++;
+"38
+[; ;main.c: 38:         uiCounterms++;
 [e ++ _uiCounterms -> -> -> 1 `i `l `ul ]
-"45
-[; ;main.c: 45:     }
+"41
+[; ;main.c: 41:         if(0 == (uiCounterms%5)){
+[e $ ! == -> -> -> 0 `i `l `ul % _uiCounterms -> -> -> 5 `i `l `ul 120  ]
+{
+"42
+[; ;main.c: 42:             shiftDisplays();
+[e ( _shiftDisplays ..  ]
+"43
+[; ;main.c: 43:         }
 }
-[e :U 118 ]
-"48
-[; ;main.c: 48: }
-[e :UE 117 ]
+[e :U 120 ]
+"44
+[; ;main.c: 44:     }
+}
+[e :U 119 ]
+"47
+[; ;main.c: 47: }
+[e :UE 118 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"50
-[; ;main.c: 50: void main(void) {
+"52
+[; ;main.c: 52: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"60
-[; ;main.c: 60:     OSCCON |= (1<<0);
-[e =| _OSCCON -> << -> 1 `i -> 0 `i `Vuc ]
-"61
-[; ;main.c: 61:     OSCCON &= ~(1<<1);
-[e =& _OSCCON -> ~ << -> 1 `i -> 1 `i `Vuc ]
-"62
-[; ;main.c: 62:     OSCCON |= (1<<2);
-[e =| _OSCCON -> << -> 1 `i -> 2 `i `Vuc ]
-"63
-[; ;main.c: 63:     OSCCON &= ~(1<<3);
-[e =& _OSCCON -> ~ << -> 1 `i -> 3 `i `Vuc ]
-"64
-[; ;main.c: 64:     OSCCON |= (0b01110000);
-[e =| _OSCCON -> -> 112 `i `Vuc ]
-"73
-[; ;main.c: 73:     OPTION_REG = 0b00000011;
-[e = _OPTION_REG -> -> 3 `i `uc ]
-"74
-[; ;main.c: 74:     TMR0= 133;
-[e = _TMR0 -> -> 133 `i `uc ]
-"76
-[; ;main.c: 76:     GIE=1;
-[e = _GIE -> -> 1 `i `b ]
-"77
-[; ;main.c: 77:     PEIE=1;
-[e = _PEIE -> -> 1 `i `b ]
-"78
-[; ;main.c: 78:     T0IE=1;
-[e = _T0IE -> -> 1 `i `b ]
-"79
-[; ;main.c: 79:     INTE = 0;
-[e = _INTE -> -> 0 `i `b ]
-"80
-[; ;main.c: 80:     T0IF = 0;
-[e = _T0IF -> -> 0 `i `b ]
-"84
-[; ;main.c: 84:     TRISB = 0x00;
-[e = _TRISB -> -> 0 `i `uc ]
-"85
-[; ;main.c: 85:     TRISC = 0x00;
-[e = _TRISC -> -> 0 `i `uc ]
-"86
-[; ;main.c: 86:     PORTB = 0b11100000;
+"54
+[; ;main.c: 54:     configBoard();
+[e ( _configBoard ..  ]
+"57
+[; ;main.c: 57:     PORTB = 0b11100000;
 [e = _PORTB -> -> 224 `i `uc ]
-"87
-[; ;main.c: 87:     PORTC = 0b11111111;
-[e = _PORTC -> -> 255 `i `uc ]
-"90
-[; ;main.c: 90:     unsigned long uiContadorTempo = 0;
-[v _uiContadorTempo `ul ~T0 @X0 1 a ]
-[e = _uiContadorTempo -> -> -> 0 `i `l `ul ]
-"93
-[; ;main.c: 93:     char text[6];
-[v _text `uc ~T0 @X0 -> 6 `i a ]
-"94
-[; ;main.c: 94:     text[0] = 0b01110111;
-[e = *U + &U _text * -> -> -> 0 `i `ui `ux -> -> # *U &U _text `ui `ux -> -> 119 `i `uc ]
-"95
-[; ;main.c: 95:     text[1] = 0b01111100;
-[e = *U + &U _text * -> -> -> 1 `i `ui `ux -> -> # *U &U _text `ui `ux -> -> 124 `i `uc ]
-"96
-[; ;main.c: 96:     text[2] = 0b00111001;
-[e = *U + &U _text * -> -> -> 2 `i `ui `ux -> -> # *U &U _text `ui `ux -> -> 57 `i `uc ]
-"97
-[; ;main.c: 97:     text[3] = 0b01011110;
-[e = *U + &U _text * -> -> -> 3 `i `ui `ux -> -> # *U &U _text `ui `ux -> -> 94 `i `uc ]
-"98
-[; ;main.c: 98:     text[4] = 0b01111001;
-[e = *U + &U _text * -> -> -> 4 `i `ui `ux -> -> # *U &U _text `ui `ux -> -> 121 `i `uc ]
-"99
-[; ;main.c: 99:     text[5] = 0b01110001;
-[e = *U + &U _text * -> -> -> 5 `i `ui `ux -> -> # *U &U _text `ui `ux -> -> 113 `i `uc ]
-"104
-[; ;main.c: 104:     int indice = 0;
-[v _indice `i ~T0 @X0 1 a ]
-[e = _indice -> 0 `i ]
-"105
-[; ;main.c: 105:     PORTC = text[indice];
-[e = _PORTC -> *U + &U _text * -> -> _indice `ui `ux -> -> # *U &U _text `ui `ux `uc ]
-"106
-[; ;main.c: 106:     indice++;
-[e ++ _indice -> 1 `i ]
-"108
-[; ;main.c: 108:     while(1){
-[e :U 121 ]
-{
-"111
-[; ;main.c: 111:         if((uiCounterms - uiContadorTempo) > 1000 ){
-[e $ ! > - _uiCounterms _uiContadorTempo -> -> -> 1000 `i `l `ul 123  ]
-{
-"113
-[; ;main.c: 113:             PORTC = text[indice];
-[e = _PORTC -> *U + &U _text * -> -> _indice `ui `ux -> -> # *U &U _text `ui `ux `uc ]
-"114
-[; ;main.c: 114:             indice++;
-[e ++ _indice -> 1 `i ]
-"115
-[; ;main.c: 115:             if(indice > 5){
-[e $ ! > _indice -> 5 `i 124  ]
-{
-"116
-[; ;main.c: 116:                 indice = 0;
-[e = _indice -> 0 `i ]
-"117
-[; ;main.c: 117:             }
-}
-[e :U 124 ]
-"118
-[; ;main.c: 118:             uiContadorTempo = uiCounterms;
-[e = _uiContadorTempo _uiCounterms ]
-"119
-[; ;main.c: 119:         }
-}
+"58
+[; ;main.c: 58:     PORTA = 0b100000;
+[e = _PORTA -> -> 32 `i `uc ]
+"59
+[; ;main.c: 59:     PORTC = 0x00;
+[e = _PORTC -> -> 0 `i `uc ]
+"63
+[; ;main.c: 63:     Display display7seg[4];
+[v _display7seg `S117 ~T0 @X0 -> 4 `i a ]
+"64
+[; ;main.c: 64:     Display7seg4digitsVetor = display7seg;
+[e = _Display7seg4digitsVetor &U _display7seg ]
+"65
+[; ;main.c: 65:     initDisplay();
+[e ( _initDisplay ..  ]
+"68
+[; ;main.c: 68:     writeCharOnDisplay('4', 0);
+[e ( _writeCharOnDisplay (2 , -> -> 52 `ui `uc -> 0 `i ]
+"69
+[; ;main.c: 69:     writeCharOnDisplay('d', 1);
+[e ( _writeCharOnDisplay (2 , -> -> 100 `ui `uc -> 1 `i ]
+"70
+[; ;main.c: 70:     writeCharOnDisplay('9', 2);
+[e ( _writeCharOnDisplay (2 , -> -> 57 `ui `uc -> 2 `i ]
+"71
+[; ;main.c: 71:     writeCharOnDisplay('p', 3);
+[e ( _writeCharOnDisplay (2 , -> -> 112 `ui `uc -> 3 `i ]
+"73
+[; ;main.c: 73:     while(1){
 [e :U 123 ]
-"120
-[; ;main.c: 120:     }
+{
+"76
+[; ;main.c: 76:     }
 }
-[e :U 120 ]
-[e $U 121  ]
 [e :U 122 ]
-"123
-[; ;main.c: 123: }
-[e :UE 119 ]
+[e $U 123  ]
+[e :U 124 ]
+"79
+[; ;main.c: 79: }
+[e :UE 121 ]
+}
+"82
+[; ;main.c: 82: void configBoard(){
+[v _configBoard `(v ~T0 @X0 1 ef ]
+{
+[e :U _configBoard ]
+[f ]
+"92
+[; ;main.c: 92:     OSCCON |= (1<<0);
+[e =| _OSCCON -> << -> 1 `i -> 0 `i `Vuc ]
+"93
+[; ;main.c: 93:     OSCCON &= ~(1<<1);
+[e =& _OSCCON -> ~ << -> 1 `i -> 1 `i `Vuc ]
+"94
+[; ;main.c: 94:     OSCCON |= (1<<2);
+[e =| _OSCCON -> << -> 1 `i -> 2 `i `Vuc ]
+"95
+[; ;main.c: 95:     OSCCON &= ~(1<<3);
+[e =& _OSCCON -> ~ << -> 1 `i -> 3 `i `Vuc ]
+"96
+[; ;main.c: 96:     OSCCON |= (0b01110000);
+[e =| _OSCCON -> -> 112 `i `Vuc ]
+"104
+[; ;main.c: 104:     OPTION_REG = 0b00000011;
+[e = _OPTION_REG -> -> 3 `i `uc ]
+"105
+[; ;main.c: 105:     TMR0= 133;
+[e = _TMR0 -> -> 133 `i `uc ]
+"107
+[; ;main.c: 107:     GIE=1;
+[e = _GIE -> -> 1 `i `b ]
+"108
+[; ;main.c: 108:     PEIE=1;
+[e = _PEIE -> -> 1 `i `b ]
+"109
+[; ;main.c: 109:     T0IE=1;
+[e = _T0IE -> -> 1 `i `b ]
+"110
+[; ;main.c: 110:     INTE = 0;
+[e = _INTE -> -> 0 `i `b ]
+"111
+[; ;main.c: 111:     T0IF = 0;
+[e = _T0IF -> -> 0 `i `b ]
+"114
+[; ;main.c: 114:     TRISA = 0b010111;
+[e = _TRISA -> -> 23 `i `uc ]
+"115
+[; ;main.c: 115:     TRISB = 0b00100000;
+[e = _TRISB -> -> 32 `i `uc ]
+"116
+[; ;main.c: 116:     TRISC = 0x00;
+[e = _TRISC -> -> 0 `i `uc ]
+"118
+[; ;main.c: 118: }
+[e :UE 125 ]
 }

@@ -1,4 +1,14 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"16 ./utils.h
+[; ;./utils.h: 16: typedef struct Display{
+[s S117 `i 1 `i 1 `uc 1 ]
+[n S117 Display pin port data ]
+"166 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"216
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"255
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
 [; <" INDF equ 00h ;# ">
 "61
@@ -121,36 +131,580 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON2 equ 018Dh ;# ">
 "2761
 [; <" SRCON equ 019Eh ;# ">
-"13 utils.c
-[; ;utils.c: 13: void setPin(int iPin){
-[v _setPin `(v ~T0 @X0 1 ef1`i ]
+"23 ./utils.h
+[; ;./utils.h: 23: Display *Display7seg4digitsVetor;
+[v _Display7seg4digitsVetor `*S117 ~T0 @X0 1 e ]
+"24
+[; ;./utils.h: 24: int indiceDisplay = 0;
+[v _indiceDisplay `i ~T0 @X0 1 e ]
+[i _indiceDisplay
+-> 0 `i
+]
+"14 utils.c
+[; ;utils.c: 14: void setPin(int iPin, int iPort){
+[v _setPin `(v ~T0 @X0 1 ef2`i`i ]
 {
 [e :U _setPin ]
 [v _iPin `i ~T0 @X0 1 r1 ]
+[v _iPort `i ~T0 @X0 1 r2 ]
 [f ]
-"24
-[; ;utils.c: 24: }
-[e :UE 117 ]
+"17
+[; ;utils.c: 17:     switch(iPort){
+[e $U 120  ]
+{
+"18
+[; ;utils.c: 18:         case 0:
+[e :U 121 ]
+"19
+[; ;utils.c: 19:             if(iPin >= 0 && iPin <= 5){
+[e $ ! && >= _iPin -> 0 `i <= _iPin -> 5 `i 122  ]
+{
+"20
+[; ;utils.c: 20:                 PORTA |= (1<<iPin);
+[e =| _PORTA -> << -> 1 `i _iPin `Vuc ]
+"21
+[; ;utils.c: 21:             }else{
 }
+[e $U 123  ]
+[e :U 122 ]
+{
+"22
+[; ;utils.c: 22:                 return;
+[e $UE 118  ]
+"23
+[; ;utils.c: 23:             }
+}
+[e :U 123 ]
+"24
+[; ;utils.c: 24:             break;
+[e $U 119  ]
+"25
+[; ;utils.c: 25:         case 1:
+[e :U 124 ]
 "26
-[; ;utils.c: 26: void clearPin(int iPin){
-[v _clearPin `(v ~T0 @X0 1 ef1`i ]
+[; ;utils.c: 26:              if(iPin >= 4 && iPin <= 7){
+[e $ ! && >= _iPin -> 4 `i <= _iPin -> 7 `i 125  ]
+{
+"27
+[; ;utils.c: 27:                 PORTB |= (1<<iPin);
+[e =| _PORTB -> << -> 1 `i _iPin `Vuc ]
+"28
+[; ;utils.c: 28:             }else{
+}
+[e $U 126  ]
+[e :U 125 ]
+{
+"29
+[; ;utils.c: 29:                 return;
+[e $UE 118  ]
+"30
+[; ;utils.c: 30:             }
+}
+[e :U 126 ]
+"31
+[; ;utils.c: 31:             break;
+[e $U 119  ]
+"32
+[; ;utils.c: 32:         case 2:
+[e :U 127 ]
+"33
+[; ;utils.c: 33:              if(iPin >= 0 && iPin <= 7){
+[e $ ! && >= _iPin -> 0 `i <= _iPin -> 7 `i 128  ]
+{
+"34
+[; ;utils.c: 34:                 PORTC |= (1<<iPin);
+[e =| _PORTC -> << -> 1 `i _iPin `Vuc ]
+"35
+[; ;utils.c: 35:             }else{
+}
+[e $U 129  ]
+[e :U 128 ]
+{
+"36
+[; ;utils.c: 36:                 return;
+[e $UE 118  ]
+"37
+[; ;utils.c: 37:             }
+}
+[e :U 129 ]
+"38
+[; ;utils.c: 38:             break;
+[e $U 119  ]
+"39
+[; ;utils.c: 39:         default:
+[e :U 130 ]
+"40
+[; ;utils.c: 40:             return;
+[e $UE 118  ]
+"41
+[; ;utils.c: 41:             break;
+[e $U 119  ]
+"42
+[; ;utils.c: 42:     }
+}
+[e $U 119  ]
+[e :U 120 ]
+[e [\ _iPort , $ -> 0 `i 121
+ , $ -> 1 `i 124
+ , $ -> 2 `i 127
+ 130 ]
+[e :U 119 ]
+"44
+[; ;utils.c: 44: }
+[e :UE 118 ]
+}
+"46
+[; ;utils.c: 46: void clearPin(int iPin, int iPort){
+[v _clearPin `(v ~T0 @X0 1 ef2`i`i ]
 {
 [e :U _clearPin ]
 [v _iPin `i ~T0 @X0 1 r1 ]
+[v _iPort `i ~T0 @X0 1 r2 ]
 [f ]
-"30
-[; ;utils.c: 30: }
-[e :UE 118 ]
+"49
+[; ;utils.c: 49:     switch(iPort){
+[e $U 133  ]
+{
+"50
+[; ;utils.c: 50:         case 0:
+[e :U 134 ]
+"51
+[; ;utils.c: 51:             if(iPin >= 0 && iPin <= 5){
+[e $ ! && >= _iPin -> 0 `i <= _iPin -> 5 `i 135  ]
+{
+"52
+[; ;utils.c: 52:                 PORTA &= ~(1<<iPin);
+[e =& _PORTA -> ~ << -> 1 `i _iPin `Vuc ]
+"53
+[; ;utils.c: 53:             }else{
 }
-"32
-[; ;utils.c: 32: void togglePin(int iPin){
-[v _togglePin `(v ~T0 @X0 1 ef1`i ]
+[e $U 136  ]
+[e :U 135 ]
+{
+"54
+[; ;utils.c: 54:                 return;
+[e $UE 131  ]
+"55
+[; ;utils.c: 55:             }
+}
+[e :U 136 ]
+"56
+[; ;utils.c: 56:             break;
+[e $U 132  ]
+"57
+[; ;utils.c: 57:         case 1:
+[e :U 137 ]
+"58
+[; ;utils.c: 58:              if(iPin >= 4 && iPin <= 7){
+[e $ ! && >= _iPin -> 4 `i <= _iPin -> 7 `i 138  ]
+{
+"59
+[; ;utils.c: 59:                 PORTB &= ~(1<<iPin);
+[e =& _PORTB -> ~ << -> 1 `i _iPin `Vuc ]
+"60
+[; ;utils.c: 60:             }else{
+}
+[e $U 139  ]
+[e :U 138 ]
+{
+"61
+[; ;utils.c: 61:                 return;
+[e $UE 131  ]
+"62
+[; ;utils.c: 62:             }
+}
+[e :U 139 ]
+"63
+[; ;utils.c: 63:             break;
+[e $U 132  ]
+"64
+[; ;utils.c: 64:         case 2:
+[e :U 140 ]
+"65
+[; ;utils.c: 65:              if(iPin >= 0 && iPin <= 7){
+[e $ ! && >= _iPin -> 0 `i <= _iPin -> 7 `i 141  ]
+{
+"66
+[; ;utils.c: 66:                 PORTC &= ~(1<<iPin);
+[e =& _PORTC -> ~ << -> 1 `i _iPin `Vuc ]
+"67
+[; ;utils.c: 67:             }else{
+}
+[e $U 142  ]
+[e :U 141 ]
+{
+"68
+[; ;utils.c: 68:                 return;
+[e $UE 131  ]
+"69
+[; ;utils.c: 69:             }
+}
+[e :U 142 ]
+"70
+[; ;utils.c: 70:             break;
+[e $U 132  ]
+"71
+[; ;utils.c: 71:         default:
+[e :U 143 ]
+"72
+[; ;utils.c: 72:             return;
+[e $UE 131  ]
+"73
+[; ;utils.c: 73:             break;
+[e $U 132  ]
+"74
+[; ;utils.c: 74:     }
+}
+[e $U 132  ]
+[e :U 133 ]
+[e [\ _iPort , $ -> 0 `i 134
+ , $ -> 1 `i 137
+ , $ -> 2 `i 140
+ 143 ]
+[e :U 132 ]
+"75
+[; ;utils.c: 75: }
+[e :UE 131 ]
+}
+"79
+[; ;utils.c: 79: void togglePin(int iPin, int iPort){
+[v _togglePin `(v ~T0 @X0 1 ef2`i`i ]
 {
 [e :U _togglePin ]
 [v _iPin `i ~T0 @X0 1 r1 ]
+[v _iPort `i ~T0 @X0 1 r2 ]
 [f ]
-"34
-[; ;utils.c: 34: }
-[e :UE 119 ]
+"81
+[; ;utils.c: 81:     switch(iPort){
+[e $U 146  ]
+{
+"82
+[; ;utils.c: 82:         case 0:
+[e :U 147 ]
+"83
+[; ;utils.c: 83:             if(iPin >= 0 && iPin <= 5){
+[e $ ! && >= _iPin -> 0 `i <= _iPin -> 5 `i 148  ]
+{
+"84
+[; ;utils.c: 84:                 PORTA ^= (1<<iPin);
+[e =^ _PORTA -> << -> 1 `i _iPin `Vuc ]
+"85
+[; ;utils.c: 85:             }else{
+}
+[e $U 149  ]
+[e :U 148 ]
+{
+"86
+[; ;utils.c: 86:                 return;
+[e $UE 144  ]
+"87
+[; ;utils.c: 87:             }
+}
+[e :U 149 ]
+"88
+[; ;utils.c: 88:             break;
+[e $U 145  ]
+"89
+[; ;utils.c: 89:         case 1:
+[e :U 150 ]
+"90
+[; ;utils.c: 90:              if(iPin >= 4 && iPin <= 7){
+[e $ ! && >= _iPin -> 4 `i <= _iPin -> 7 `i 151  ]
+{
+"92
+[; ;utils.c: 92:                 PORTB ^= (1<<iPin);
+[e =^ _PORTB -> << -> 1 `i _iPin `Vuc ]
+"93
+[; ;utils.c: 93:             }else{
+}
+[e $U 152  ]
+[e :U 151 ]
+{
+"94
+[; ;utils.c: 94:                 return;
+[e $UE 144  ]
+"95
+[; ;utils.c: 95:             }
+}
+[e :U 152 ]
+"96
+[; ;utils.c: 96:             break;
+[e $U 145  ]
+"97
+[; ;utils.c: 97:         case 2:
+[e :U 153 ]
+"98
+[; ;utils.c: 98:              if(iPin >= 0 && iPin <= 7){
+[e $ ! && >= _iPin -> 0 `i <= _iPin -> 7 `i 154  ]
+{
+"99
+[; ;utils.c: 99:                 PORTC ^= (1<<iPin);
+[e =^ _PORTC -> << -> 1 `i _iPin `Vuc ]
+"100
+[; ;utils.c: 100:             }else{
+}
+[e $U 155  ]
+[e :U 154 ]
+{
+"101
+[; ;utils.c: 101:                 return;
+[e $UE 144  ]
+"102
+[; ;utils.c: 102:             }
+}
+[e :U 155 ]
+"103
+[; ;utils.c: 103:             break;
+[e $U 145  ]
+"104
+[; ;utils.c: 104:         default:
+[e :U 156 ]
+"105
+[; ;utils.c: 105:             return;
+[e $UE 144  ]
+"106
+[; ;utils.c: 106:             break;
+[e $U 145  ]
+"107
+[; ;utils.c: 107:     }
+}
+[e $U 145  ]
+[e :U 146 ]
+[e [\ _iPort , $ -> 0 `i 147
+ , $ -> 1 `i 150
+ , $ -> 2 `i 153
+ 156 ]
+[e :U 145 ]
+"108
+[; ;utils.c: 108: }
+[e :UE 144 ]
+}
+"110
+[; ;utils.c: 110: void shiftDisplays(){
+[v _shiftDisplays `(v ~T0 @X0 1 ef ]
+{
+[e :U _shiftDisplays ]
+[f ]
+"113
+[; ;utils.c: 113:     setPin((Display7seg4digitsVetor+indiceDisplay)->pin, (Display7seg4digitsVetor+indiceDisplay)->port);
+[e ( _setPin (2 , . *U + _Display7seg4digitsVetor * -> _indiceDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 0 . *U + _Display7seg4digitsVetor * -> _indiceDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 1 ]
+"116
+[; ;utils.c: 116:     if(++indiceDisplay > 3){
+[e $ ! > =+ _indiceDisplay -> 1 `i -> 3 `i 158  ]
+{
+"117
+[; ;utils.c: 117:         indiceDisplay = 0;
+[e = _indiceDisplay -> 0 `i ]
+"118
+[; ;utils.c: 118:     }
+}
+[e :U 158 ]
+"121
+[; ;utils.c: 121:     PORTC = (Display7seg4digitsVetor+indiceDisplay)->data;
+[e = _PORTC -> . *U + _Display7seg4digitsVetor * -> _indiceDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 2 `uc ]
+"124
+[; ;utils.c: 124:     clearPin((Display7seg4digitsVetor+indiceDisplay)->pin, (Display7seg4digitsVetor+indiceDisplay)->port);
+[e ( _clearPin (2 , . *U + _Display7seg4digitsVetor * -> _indiceDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 0 . *U + _Display7seg4digitsVetor * -> _indiceDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 1 ]
+"125
+[; ;utils.c: 125: }
+[e :UE 157 ]
+}
+"129
+[; ;utils.c: 129: void initDisplay(){
+[v _initDisplay `(v ~T0 @X0 1 ef ]
+{
+[e :U _initDisplay ]
+[f ]
+"131
+[; ;utils.c: 131:     Display7seg4digitsVetor[0].data = 0b01110111;
+[e = . *U + _Display7seg4digitsVetor * -> -> 0 `i `x -> -> # *U _Display7seg4digitsVetor `i `x 2 -> -> 119 `i `uc ]
+"132
+[; ;utils.c: 132:     Display7seg4digitsVetor[0].pin = 4;
+[e = . *U + _Display7seg4digitsVetor * -> -> 0 `i `x -> -> # *U _Display7seg4digitsVetor `i `x 0 -> 4 `i ]
+"133
+[; ;utils.c: 133:     Display7seg4digitsVetor[0].port = 1;
+[e = . *U + _Display7seg4digitsVetor * -> -> 0 `i `x -> -> # *U _Display7seg4digitsVetor `i `x 1 -> 1 `i ]
+"135
+[; ;utils.c: 135:     Display7seg4digitsVetor[1].data = 0b01111100;
+[e = . *U + _Display7seg4digitsVetor * -> -> 1 `i `x -> -> # *U _Display7seg4digitsVetor `i `x 2 -> -> 124 `i `uc ]
+"136
+[; ;utils.c: 136:     Display7seg4digitsVetor[1].pin = 5;
+[e = . *U + _Display7seg4digitsVetor * -> -> 1 `i `x -> -> # *U _Display7seg4digitsVetor `i `x 0 -> 5 `i ]
+"137
+[; ;utils.c: 137:     Display7seg4digitsVetor[1].port = 0;
+[e = . *U + _Display7seg4digitsVetor * -> -> 1 `i `x -> -> # *U _Display7seg4digitsVetor `i `x 1 -> 0 `i ]
+"139
+[; ;utils.c: 139:     Display7seg4digitsVetor[2].data = 0b00111111;
+[e = . *U + _Display7seg4digitsVetor * -> -> 2 `i `x -> -> # *U _Display7seg4digitsVetor `i `x 2 -> -> 63 `i `uc ]
+"140
+[; ;utils.c: 140:     Display7seg4digitsVetor[2].pin = 6;
+[e = . *U + _Display7seg4digitsVetor * -> -> 2 `i `x -> -> # *U _Display7seg4digitsVetor `i `x 0 -> 6 `i ]
+"141
+[; ;utils.c: 141:     Display7seg4digitsVetor[2].port = 1;
+[e = . *U + _Display7seg4digitsVetor * -> -> 2 `i `x -> -> # *U _Display7seg4digitsVetor `i `x 1 -> 1 `i ]
+"143
+[; ;utils.c: 143:     Display7seg4digitsVetor[3].data = 0b00000110;
+[e = . *U + _Display7seg4digitsVetor * -> -> 3 `i `x -> -> # *U _Display7seg4digitsVetor `i `x 2 -> -> 6 `i `uc ]
+"144
+[; ;utils.c: 144:     Display7seg4digitsVetor[3].pin = 7;
+[e = . *U + _Display7seg4digitsVetor * -> -> 3 `i `x -> -> # *U _Display7seg4digitsVetor `i `x 0 -> 7 `i ]
+"145
+[; ;utils.c: 145:     Display7seg4digitsVetor[3].port = 1;
+[e = . *U + _Display7seg4digitsVetor * -> -> 3 `i `x -> -> # *U _Display7seg4digitsVetor `i `x 1 -> 1 `i ]
+"146
+[; ;utils.c: 146: }
+[e :UE 159 ]
+}
+"148
+[; ;utils.c: 148: void writeCharOnDisplay(char chCharacter, int iDisplay){
+[v _writeCharOnDisplay `(v ~T0 @X0 1 ef2`uc`i ]
+{
+[e :U _writeCharOnDisplay ]
+[v _chCharacter `uc ~T0 @X0 1 r1 ]
+[v _iDisplay `i ~T0 @X0 1 r2 ]
+[f ]
+"150
+[; ;utils.c: 150:     if(iDisplay < 0 || iDisplay > 3){
+[e $ ! || < _iDisplay -> 0 `i > _iDisplay -> 3 `i 161  ]
+{
+"151
+[; ;utils.c: 151:         return;
+[e $UE 160  ]
+"152
+[; ;utils.c: 152:     }
+}
+[e :U 161 ]
+"158
+[; ;utils.c: 158:     switch(chCharacter){
+[e $U 163  ]
+{
+"159
+[; ;utils.c: 159:         case '0':
+[e :U 164 ]
+"160
+[; ;utils.c: 160:             Display7seg4digitsVetor[iDisplay].data = 0b00111111;
+[e = . *U + _Display7seg4digitsVetor * -> _iDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 2 -> -> 63 `i `uc ]
+"161
+[; ;utils.c: 161:             break;
+[e $U 162  ]
+"162
+[; ;utils.c: 162:         case '1':
+[e :U 165 ]
+"163
+[; ;utils.c: 163:             Display7seg4digitsVetor[iDisplay].data = 0b00000110;
+[e = . *U + _Display7seg4digitsVetor * -> _iDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 2 -> -> 6 `i `uc ]
+"164
+[; ;utils.c: 164:             break;
+[e $U 162  ]
+"165
+[; ;utils.c: 165:         case '2':
+[e :U 166 ]
+"166
+[; ;utils.c: 166:             Display7seg4digitsVetor[iDisplay].data = 0b01011011;
+[e = . *U + _Display7seg4digitsVetor * -> _iDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 2 -> -> 91 `i `uc ]
+"167
+[; ;utils.c: 167:             break;
+[e $U 162  ]
+"168
+[; ;utils.c: 168:         case '3':
+[e :U 167 ]
+"169
+[; ;utils.c: 169:             Display7seg4digitsVetor[iDisplay].data = 0b01001111;
+[e = . *U + _Display7seg4digitsVetor * -> _iDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 2 -> -> 79 `i `uc ]
+"170
+[; ;utils.c: 170:             break;
+[e $U 162  ]
+"171
+[; ;utils.c: 171:         case '4':
+[e :U 168 ]
+"172
+[; ;utils.c: 172:             Display7seg4digitsVetor[iDisplay].data = 0b01100110;
+[e = . *U + _Display7seg4digitsVetor * -> _iDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 2 -> -> 102 `i `uc ]
+"173
+[; ;utils.c: 173:             break;
+[e $U 162  ]
+"174
+[; ;utils.c: 174:         case '5':
+[e :U 169 ]
+"175
+[; ;utils.c: 175:             Display7seg4digitsVetor[iDisplay].data = 0b01101101;
+[e = . *U + _Display7seg4digitsVetor * -> _iDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 2 -> -> 109 `i `uc ]
+"176
+[; ;utils.c: 176:             break;
+[e $U 162  ]
+"177
+[; ;utils.c: 177:         case '6':
+[e :U 170 ]
+"178
+[; ;utils.c: 178:             Display7seg4digitsVetor[iDisplay].data = 0b01111101;
+[e = . *U + _Display7seg4digitsVetor * -> _iDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 2 -> -> 125 `i `uc ]
+"179
+[; ;utils.c: 179:             break;
+[e $U 162  ]
+"180
+[; ;utils.c: 180:         case '7':
+[e :U 171 ]
+"181
+[; ;utils.c: 181:             Display7seg4digitsVetor[iDisplay].data = 0b01000111;
+[e = . *U + _Display7seg4digitsVetor * -> _iDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 2 -> -> 71 `i `uc ]
+"182
+[; ;utils.c: 182:             break;
+[e $U 162  ]
+"183
+[; ;utils.c: 183:         case'8':
+[e :U 172 ]
+"184
+[; ;utils.c: 184:             Display7seg4digitsVetor[iDisplay].data = 0b01111111;
+[e = . *U + _Display7seg4digitsVetor * -> _iDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 2 -> -> 127 `i `uc ]
+"185
+[; ;utils.c: 185:             break;
+[e $U 162  ]
+"186
+[; ;utils.c: 186:         case '9':
+[e :U 173 ]
+"187
+[; ;utils.c: 187:             Display7seg4digitsVetor[iDisplay].data = 0b01100111;
+[e = . *U + _Display7seg4digitsVetor * -> _iDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 2 -> -> 103 `i `uc ]
+"188
+[; ;utils.c: 188:             break;
+[e $U 162  ]
+"189
+[; ;utils.c: 189:         case 'd':
+[e :U 174 ]
+"190
+[; ;utils.c: 190:             Display7seg4digitsVetor[iDisplay].data = 0b01011110;
+[e = . *U + _Display7seg4digitsVetor * -> _iDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 2 -> -> 94 `i `uc ]
+"191
+[; ;utils.c: 191:             break;
+[e $U 162  ]
+"192
+[; ;utils.c: 192:         default:
+[e :U 175 ]
+"193
+[; ;utils.c: 193:             Display7seg4digitsVetor[iDisplay].data = 0b01110111;
+[e = . *U + _Display7seg4digitsVetor * -> _iDisplay `x -> -> # *U _Display7seg4digitsVetor `i `x 2 -> -> 119 `i `uc ]
+"194
+[; ;utils.c: 194:             break;
+[e $U 162  ]
+"195
+[; ;utils.c: 195:     }
+}
+[e $U 162  ]
+[e :U 163 ]
+[e [\ -> _chCharacter `i , $ -> -> 48 `ui `i 164
+ , $ -> -> 49 `ui `i 165
+ , $ -> -> 50 `ui `i 166
+ , $ -> -> 51 `ui `i 167
+ , $ -> -> 52 `ui `i 168
+ , $ -> -> 53 `ui `i 169
+ , $ -> -> 54 `ui `i 170
+ , $ -> -> 55 `ui `i 171
+ , $ -> -> 56 `ui `i 172
+ , $ -> -> 57 `ui `i 173
+ , $ -> -> 100 `ui `i 174
+ 175 ]
+[e :U 162 ]
+"196
+[; ;utils.c: 196: }
+[e :UE 160 ]
 }

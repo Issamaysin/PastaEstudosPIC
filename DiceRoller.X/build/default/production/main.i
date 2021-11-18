@@ -1953,13 +1953,59 @@ extern __bank0 __bit __timeout;
 # 12 "main.c" 2
 
 
-# 1 "./utils.h" 1
-# 12 "./utils.h"
-void setPin(int iPin);
-void clearPin(int iPin);
-void togglePin(int iPin);
+# 1 "./board.h" 1
+# 12 "./board.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stddef.h" 1 3
+
+
+
+# 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__size_t.h" 1 3
+
+
+
+typedef unsigned size_t;
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stddef.h" 2 3
+
+# 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__null.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stddef.h" 2 3
+
+typedef int ptrdiff_t;
+# 12 "./board.h" 2
 # 14 "main.c" 2
-# 23 "main.c"
+
+# 1 "./utils.h" 1
+# 16 "./utils.h"
+typedef struct Display{
+    int pin;
+    int port;
+    char data;
+}Display;
+
+
+Display *Display7seg4digitsVetor;
+int indiceDisplay = 0;
+
+
+void shiftDisplays();
+
+
+void initDisplay();
+
+
+void writeCharOnDisplay(char chCharacter, int iDisplay);
+
+
+void setPin(int iPin, int iPort);
+void clearPin(int iPin, int iPort);
+void togglePin(int iPin, int iPort);
+# 15 "main.c" 2
+
+
+
+
+
+
+
 unsigned long uiCounterms = 0;
 
 
@@ -1979,7 +2025,39 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
         uiCounterms++;
 
 
+        if(0 == (uiCounterms%5)){
+            shiftDisplays();
+        }
+    }
 
+
+}
+
+void configBoard();
+
+
+void main(void) {
+
+    configBoard();
+
+
+    PORTB = 0b11100000;
+    PORTA = 0b100000;
+    PORTC = 0x00;
+
+
+
+    Display display7seg[4];
+    Display7seg4digitsVetor = display7seg;
+    initDisplay();
+
+
+    writeCharOnDisplay('4', 0);
+    writeCharOnDisplay('d', 1);
+    writeCharOnDisplay('9', 2);
+    writeCharOnDisplay('p', 3);
+
+    while(1){
 
 
     }
@@ -1987,14 +2065,21 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 
 }
 
-void main(void) {
-# 60 "main.c"
+
+void configBoard(){
+# 92 "main.c"
     OSCCON |= (1<<0);
     OSCCON &= ~(1<<1);
     OSCCON |= (1<<2);
     OSCCON &= ~(1<<3);
     OSCCON |= (0b01110000);
-# 73 "main.c"
+
+
+
+
+
+
+
     OPTION_REG = 0b00000011;
     TMR0= 133;
 
@@ -2005,44 +2090,8 @@ void main(void) {
     T0IF = 0;
 
 
-
-    TRISB = 0x00;
+    TRISA = 0b010111;
+    TRISB = 0b00100000;
     TRISC = 0x00;
-    PORTB = 0b11100000;
-    PORTC = 0b11111111;
-
-
-    unsigned long uiContadorTempo = 0;
-
-
-    char text[6];
-    text[0] = 0b01110111;
-    text[1] = 0b01111100;
-    text[2] = 0b00111001;
-    text[3] = 0b01011110;
-    text[4] = 0b01111001;
-    text[5] = 0b01110001;
-
-
-
-
-    int indice = 0;
-    PORTC = text[indice];
-    indice++;
-
-    while(1){
-
-
-        if((uiCounterms - uiContadorTempo) > 1000 ){
-
-            PORTC = text[indice];
-            indice++;
-            if(indice > 5){
-                indice = 0;
-            }
-            uiContadorTempo = uiCounterms;
-        }
-    }
-
 
 }
