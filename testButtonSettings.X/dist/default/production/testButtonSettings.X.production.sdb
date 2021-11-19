@@ -1,0 +1,51 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F687 ]
+[d frameptr 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"38 C:\Users\User\MPLABXProjects\testButtonSettings.X\main.c
+[v _interruptRoutine interruptRoutine `II(v  1 e 1 0 ]
+"50
+[v _main main `(v  1 e 1 0 ]
+"216 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"895
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"945
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1177
+[v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
+"1746
+[v _IOCA IOCA `VEuc  1 e 1 @150 ]
+"2614
+[v _ANSEL ANSEL `VEuc  1 e 1 @286 ]
+"3065
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"3206
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"3245
+[v _RABIE RABIE `VEb  1 e 0 @91 ]
+"3248
+[v _RABIF RABIF `VEb  1 e 0 @88 ]
+"3578
+[v _WPUA2 WPUA2 `VEb  1 e 0 @1194 ]
+"3632
+[v _nRABPU nRABPU `VEb  1 e 0 @1039 ]
+"50 C:\Users\User\MPLABXProjects\testButtonSettings.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"98
+} 0
+"38
+[v _interruptRoutine interruptRoutine `II(v  1 e 1 0 ]
+{
+"47
+} 0

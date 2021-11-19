@@ -1,0 +1,268 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"3248 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
+[v _RABIF `Vb ~T0 @X0 0 e@88 ]
+"216
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+[p mainexit ]
+"1177
+[v _OSCCON `Vuc ~T0 @X0 0 e@143 ]
+"2614
+[v _ANSEL `Vuc ~T0 @X0 0 e@286 ]
+"945
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"895
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"3065
+[v _GIE `Vb ~T0 @X0 0 e@95 ]
+"3206
+[v _PEIE `Vb ~T0 @X0 0 e@94 ]
+"3245
+[v _RABIE `Vb ~T0 @X0 0 e@91 ]
+"1746
+[v _IOCA `Vuc ~T0 @X0 0 e@150 ]
+"3632
+[v _nRABPU `Vb ~T0 @X0 0 e@1039 ]
+"3578
+[v _WPUA2 `Vb ~T0 @X0 0 e@1194 ]
+"18 main.c
+[p x FOSC  =  INTRCIO    ]
+"19
+[p x WDTE  =  OFF        ]
+"20
+[p x PWRTE  =  OFF       ]
+"21
+[p x MCLRE  =  OFF       ]
+"22
+[p x CP  =  OFF          ]
+"23
+[p x CPD  =  OFF         ]
+"24
+[p x BOREN  =  OFF       ]
+"25
+[p x IESO  =  OFF        ]
+"26
+[p x FCMEN  =  OFF       ]
+"54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
+[; <" INDF equ 00h ;# ">
+"61
+[; <" TMR0 equ 01h ;# ">
+"68
+[; <" PCL equ 02h ;# ">
+"75
+[; <" STATUS equ 03h ;# ">
+"161
+[; <" FSR equ 04h ;# ">
+"168
+[; <" PORTA equ 05h ;# ">
+"218
+[; <" PORTB equ 06h ;# ">
+"257
+[; <" PORTC equ 07h ;# ">
+"319
+[; <" PCLATH equ 0Ah ;# ">
+"326
+[; <" INTCON equ 0Bh ;# ">
+"388
+[; <" PIR1 equ 0Ch ;# ">
+"441
+[; <" PIR2 equ 0Dh ;# ">
+"480
+[; <" TMR1 equ 0Eh ;# ">
+"487
+[; <" TMR1L equ 0Eh ;# ">
+"494
+[; <" TMR1H equ 0Fh ;# ">
+"501
+[; <" T1CON equ 010h ;# ">
+"572
+[; <" SSPBUF equ 013h ;# ">
+"579
+[; <" SSPCON equ 014h ;# ">
+"649
+[; <" RCSTA equ 018h ;# ">
+"711
+[; <" TXREG equ 019h ;# ">
+"718
+[; <" RCREG equ 01Ah ;# ">
+"725
+[; <" ADRESH equ 01Eh ;# ">
+"732
+[; <" ADCON0 equ 01Fh ;# ">
+"827
+[; <" OPTION_REG equ 081h ;# ">
+"897
+[; <" TRISA equ 085h ;# ">
+"947
+[; <" TRISB equ 086h ;# ">
+"986
+[; <" TRISC equ 087h ;# ">
+"1048
+[; <" PIE1 equ 08Ch ;# ">
+"1101
+[; <" PIE2 equ 08Dh ;# ">
+"1140
+[; <" PCON equ 08Eh ;# ">
+"1179
+[; <" OSCCON equ 08Fh ;# ">
+"1244
+[; <" OSCTUNE equ 090h ;# ">
+"1296
+[; <" SSPADD equ 093h ;# ">
+"1303
+[; <" SSPMSK equ 093h ;# ">
+"1308
+[; <" MSK equ 093h ;# ">
+"1425
+[; <" SSPSTAT equ 094h ;# ">
+"1594
+[; <" WPUA equ 095h ;# ">
+"1599
+[; <" WPU equ 095h ;# ">
+"1748
+[; <" IOCA equ 096h ;# ">
+"1753
+[; <" IOC equ 096h ;# ">
+"1922
+[; <" WDTCON equ 097h ;# ">
+"1975
+[; <" TXSTA equ 098h ;# ">
+"2046
+[; <" SPBRG equ 099h ;# ">
+"2108
+[; <" SPBRGH equ 09Ah ;# ">
+"2170
+[; <" BAUDCTL equ 09Bh ;# ">
+"2222
+[; <" ADRESL equ 09Eh ;# ">
+"2229
+[; <" ADCON1 equ 09Fh ;# ">
+"2271
+[; <" EEDAT equ 010Ch ;# ">
+"2276
+[; <" EEDATA equ 010Ch ;# ">
+"2283
+[; <" EEADR equ 010Dh ;# ">
+"2290
+[; <" WPUB equ 0115h ;# ">
+"2338
+[; <" IOCB equ 0116h ;# ">
+"2377
+[; <" VRCON equ 0118h ;# ">
+"2447
+[; <" CM1CON0 equ 0119h ;# ">
+"2512
+[; <" CM2CON0 equ 011Ah ;# ">
+"2577
+[; <" CM2CON1 equ 011Bh ;# ">
+"2616
+[; <" ANSEL equ 011Eh ;# ">
+"2678
+[; <" ANSELH equ 011Fh ;# ">
+"2716
+[; <" EECON1 equ 018Ch ;# ">
+"2754
+[; <" EECON2 equ 018Dh ;# ">
+"2761
+[; <" SRCON equ 019Eh ;# ">
+[v $root$_interruptRoutine `(v ~T0 @X0 0 e ]
+"38 main.c
+[; ;main.c: 38: void __attribute__((picinterrupt(("")))) interruptRoutine(){
+[v _interruptRoutine `(v ~T1 @X0 1 ef ]
+{
+[e :U _interruptRoutine ]
+[f ]
+"40
+[; ;main.c: 40:     if(RABIF){
+[e $ ! _RABIF 118  ]
+{
+"42
+[; ;main.c: 42:         PORTB ^= (1<<7);
+[e =^ _PORTB -> << -> 1 `i -> 7 `i `Vuc ]
+"43
+[; ;main.c: 43:         RABIF = 0;
+[e = _RABIF -> -> 0 `i `b ]
+"44
+[; ;main.c: 44:     }
+}
+[e :U 118 ]
+"47
+[; ;main.c: 47: }
+[e :UE 117 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"50
+[; ;main.c: 50: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"60
+[; ;main.c: 60:     OSCCON |= (1<<0);
+[e =| _OSCCON -> << -> 1 `i -> 0 `i `Vuc ]
+"61
+[; ;main.c: 61:     OSCCON &= ~(1<<1);
+[e =& _OSCCON -> ~ << -> 1 `i -> 1 `i `Vuc ]
+"62
+[; ;main.c: 62:     OSCCON |= (1<<2);
+[e =| _OSCCON -> << -> 1 `i -> 2 `i `Vuc ]
+"63
+[; ;main.c: 63:     OSCCON &= ~(1<<3);
+[e =& _OSCCON -> ~ << -> 1 `i -> 3 `i `Vuc ]
+"64
+[; ;main.c: 64:     OSCCON |= (0b01110000);
+[e =| _OSCCON -> -> 112 `i `Vuc ]
+"68
+[; ;main.c: 68:     ANSEL = 0x00;
+[e = _ANSEL -> -> 0 `i `uc ]
+"69
+[; ;main.c: 69:     TRISB = 0b00000000;
+[e = _TRISB -> -> 0 `i `uc ]
+"70
+[; ;main.c: 70:     TRISA = 0x00 + (1<<2) ;
+[e = _TRISA -> + -> 0 `i << -> 1 `i -> 2 `i `uc ]
+"71
+[; ;main.c: 71:     PORTB = 0x00;
+[e = _PORTB -> -> 0 `i `uc ]
+"74
+[; ;main.c: 74:     GIE=1;
+[e = _GIE -> -> 1 `i `b ]
+"75
+[; ;main.c: 75:     PEIE=1;
+[e = _PEIE -> -> 1 `i `b ]
+"76
+[; ;main.c: 76:     RABIE = 1;
+[e = _RABIE -> -> 1 `i `b ]
+"77
+[; ;main.c: 77:     RABIF = 0;
+[e = _RABIF -> -> 0 `i `b ]
+"79
+[; ;main.c: 79:     IOCA = 0b00000100;
+[e = _IOCA -> -> 4 `i `uc ]
+"81
+[; ;main.c: 81:     nRABPU = 0;
+[e = _nRABPU -> -> 0 `i `b ]
+"85
+[; ;main.c: 85:     WPUA2 = 1;
+[e = _WPUA2 -> -> 1 `i `b ]
+"87
+[; ;main.c: 87:     PORTB |= (1<<7);
+[e =| _PORTB -> << -> 1 `i -> 7 `i `Vuc ]
+"91
+[; ;main.c: 91:     while(1){
+[e :U 121 ]
+{
+"94
+[; ;main.c: 94:     }
+}
+[e :U 120 ]
+[e $U 121  ]
+[e :U 122 ]
+"97
+[; ;main.c: 97:     return;
+[e $UE 119  ]
+"98
+[; ;main.c: 98: }
+[e :UE 119 ]
+}
