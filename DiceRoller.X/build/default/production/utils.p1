@@ -7,8 +7,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./utils.h: 29: typedef struct Button {
 [s S118 `uc 1 `uc 1 `uc 1 ]
 [n S118 Button pin port status ]
-"47
-[; ;./utils.h: 47: state deviceCurrentState = MENU;
+"52
+[; ;./utils.h: 52: state deviceCurrentState = MENU;
 [c E1007 0 1 .. ]
 [n E1007 state ROLL MENU  ]
 "166 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
@@ -72,6 +72,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _IOCA `Vuc ~T0 @X0 0 e@150 ]
 "2336
 [v _IOCB `Vuc ~T0 @X0 0 e@278 ]
+"85 ./utils.h
+[; ;./utils.h: 85: unsigned long randomNumber();
+[v _randomNumber `(ul ~T0 @X0 0 e? ]
+"15 utils.c
+[; ;utils.c: 15: extern unsigned long randomSeed;
+[v _randomSeed `ul ~T0 @X0 0 e ]
 "54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
 [; <" INDF equ 00h ;# ">
 "61
@@ -200,11 +206,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "44
 [; ;./utils.h: 44: Button Botoes[5];
 [v _Botoes `S118 ~T0 @X0 -> 5 `i e ]
-"47
-[; ;./utils.h: 47: state deviceCurrentState = MENU;
+"52
+[; ;./utils.h: 52: state deviceCurrentState = MENU;
 [v _deviceCurrentState `E1007 ~T0 @X0 1 e ]
 [i _deviceCurrentState
 . `E1007 1
+]
+"58
+[; ;./utils.h: 58: unsigned char diceState[2] = {1,6};
+[v _diceState `uc ~T0 @X0 -> 2 `i e ]
+[i _diceState
+:U ..
+-> -> 1 `i `uc
+-> -> 6 `i `uc
+..
 ]
 "18 utils.c
 [; ;utils.c: 18: void setPin(unsigned char ucPin, unsigned char ucPort){
@@ -960,4 +975,312 @@ Version 4.0 HI-TECH Software Intermediate Code
 "327
 [; ;utils.c: 327: }
 [e :UE 180 ]
+}
+"334
+[; ;utils.c: 334: void deviceStateMachine(unsigned char ucButton){
+[v _deviceStateMachine `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _deviceStateMachine ]
+[v _ucButton `uc ~T0 @X0 1 r1 ]
+[f ]
+"337
+[; ;utils.c: 337:     if(1 == ucButton){
+[e $ ! == -> 1 `i -> _ucButton `i 182  ]
+{
+"338
+[; ;utils.c: 338:         deviceCurrentState = ROLL;
+[e = _deviceCurrentState . `E1007 0 ]
+"340
+[; ;utils.c: 340:         int ulTotalRoll = 0;
+[v _ulTotalRoll `i ~T0 @X0 1 a ]
+[e = _ulTotalRoll -> 0 `i ]
+"342
+[; ;utils.c: 342:         int i;
+[v _i `i ~T0 @X0 1 a ]
+"343
+[; ;utils.c: 343:         for(i = 0; i < diceState[0]; i++){
+{
+[e = _i -> 0 `i ]
+[e $U 186  ]
+[e :U 183 ]
+{
+"344
+[; ;utils.c: 344:             ulTotalRoll += (int)(randomNumber())%diceState[1];
+[e =+ _ulTotalRoll % -> ( _randomNumber ..  `i -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i ]
+"345
+[; ;utils.c: 345:         }
+}
+[e ++ _i -> 1 `i ]
+[e :U 186 ]
+[e $ < _i -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i 183  ]
+[e :U 184 ]
+}
+"349
+[; ;utils.c: 349:         return;
+[e $UE 181  ]
+"350
+[; ;utils.c: 350:     }else if (deviceCurrentState == ROLL){
+}
+[e $U 187  ]
+[e :U 182 ]
+[e $ ! == -> _deviceCurrentState `ui -> . `E1007 0 `ui 188  ]
+{
+"351
+[; ;utils.c: 351:         deviceCurrentState = MENU;
+[e = _deviceCurrentState . `E1007 1 ]
+"353
+[; ;utils.c: 353:         writeCharOnDisplay('0' + diceState[0], 0);
+[e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `ui `uc -> -> 0 `i `uc ]
+"354
+[; ;utils.c: 354:         writeCharOnDisplay('d', 1);
+[e ( _writeCharOnDisplay (2 , -> -> 100 `ui `uc -> -> 1 `i `uc ]
+"355
+[; ;utils.c: 355:         writeCharOnDisplay('0' + diceState[1]/10, 2);
+[e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> / -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 10 `i `ui `uc -> -> 2 `i `uc ]
+"356
+[; ;utils.c: 356:         writeCharOnDisplay('0' + diceState[1]%10, 3);
+[e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> % -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 10 `i `ui `uc -> -> 3 `i `uc ]
+"357
+[; ;utils.c: 357:         return;
+[e $UE 181  ]
+"358
+[; ;utils.c: 358:     }
+}
+[e :U 188 ]
+[e :U 187 ]
+"362
+[; ;utils.c: 362:     switch(ucButton){
+[e $U 190  ]
+{
+"363
+[; ;utils.c: 363:         case 2:
+[e :U 191 ]
+"364
+[; ;utils.c: 364:             if(diceState[0] < 9 ){
+[e $ ! < -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 9 `i 192  ]
+{
+"365
+[; ;utils.c: 365:                 diceState[0]++;
+[e ++ *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 1 `i `uc ]
+"366
+[; ;utils.c: 366:             }
+}
+[e :U 192 ]
+"367
+[; ;utils.c: 367:             break;
+[e $U 189  ]
+"369
+[; ;utils.c: 369:         case 3:
+[e :U 193 ]
+"370
+[; ;utils.c: 370:             if(diceState[0] > 1){
+[e $ ! > -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 1 `i 194  ]
+{
+"371
+[; ;utils.c: 371:                 diceState[0]--;
+[e -- *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 1 `i `uc ]
+"372
+[; ;utils.c: 372:             }
+}
+[e :U 194 ]
+"373
+[; ;utils.c: 373:             break;
+[e $U 189  ]
+"375
+[; ;utils.c: 375:         case 4:
+[e :U 195 ]
+"376
+[; ;utils.c: 376:             if(diceState[1] < 20){
+[e $ ! < -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 20 `i 196  ]
+{
+"377
+[; ;utils.c: 377:                 switch(diceState[1]){
+[e $U 198  ]
+{
+"378
+[; ;utils.c: 378:                     case 12:
+[e :U 199 ]
+"379
+[; ;utils.c: 379:                         diceState[1] = 20;
+[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 20 `i `uc ]
+"380
+[; ;utils.c: 380:                         break;
+[e $U 197  ]
+"381
+[; ;utils.c: 381:                     case 10:
+[e :U 200 ]
+"382
+[; ;utils.c: 382:                         diceState[1] = 12;
+[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 12 `i `uc ]
+"383
+[; ;utils.c: 383:                         break;
+[e $U 197  ]
+"384
+[; ;utils.c: 384:                     case 8:
+[e :U 201 ]
+"385
+[; ;utils.c: 385:                         diceState[1] = 10;
+[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 10 `i `uc ]
+"386
+[; ;utils.c: 386:                         break;
+[e $U 197  ]
+"387
+[; ;utils.c: 387:                     case 6:
+[e :U 202 ]
+"388
+[; ;utils.c: 388:                         diceState[1] = 8;
+[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 8 `i `uc ]
+"389
+[; ;utils.c: 389:                         break;
+[e $U 197  ]
+"390
+[; ;utils.c: 390:                     default:
+[e :U 203 ]
+"391
+[; ;utils.c: 391:                         diceState[1]++;
+[e ++ *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 1 `i `uc ]
+"392
+[; ;utils.c: 392:                         break;
+[e $U 197  ]
+"393
+[; ;utils.c: 393:                 }
+}
+[e $U 197  ]
+[e :U 198 ]
+[e [\ -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i , $ -> 12 `i 199
+ , $ -> 10 `i 200
+ , $ -> 8 `i 201
+ , $ -> 6 `i 202
+ 203 ]
+[e :U 197 ]
+"394
+[; ;utils.c: 394:             }
+}
+[e :U 196 ]
+"396
+[; ;utils.c: 396:             break;
+[e $U 189  ]
+"397
+[; ;utils.c: 397:         case 5:
+[e :U 204 ]
+"399
+[; ;utils.c: 399:             if(diceState[1] > 2){
+[e $ ! > -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 2 `i 205  ]
+{
+"400
+[; ;utils.c: 400:                 switch(diceState[1]){
+[e $U 207  ]
+{
+"401
+[; ;utils.c: 401:                     case 20:
+[e :U 208 ]
+"402
+[; ;utils.c: 402:                         diceState[1] = 12;
+[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 12 `i `uc ]
+"403
+[; ;utils.c: 403:                         break;
+[e $U 206  ]
+"404
+[; ;utils.c: 404:                     case 12:
+[e :U 209 ]
+"405
+[; ;utils.c: 405:                         diceState[1] = 10;
+[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 10 `i `uc ]
+"406
+[; ;utils.c: 406:                         break;
+[e $U 206  ]
+"407
+[; ;utils.c: 407:                     case 10:
+[e :U 210 ]
+"408
+[; ;utils.c: 408:                         diceState[1] = 8;
+[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 8 `i `uc ]
+"409
+[; ;utils.c: 409:                         break;
+[e $U 206  ]
+"410
+[; ;utils.c: 410:                     case 8:
+[e :U 211 ]
+"411
+[; ;utils.c: 411:                         diceState[1] = 6;
+[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 6 `i `uc ]
+"412
+[; ;utils.c: 412:                         break;
+[e $U 206  ]
+"413
+[; ;utils.c: 413:                     default:
+[e :U 212 ]
+"414
+[; ;utils.c: 414:                         diceState[1]--;
+[e -- *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 1 `i `uc ]
+"415
+[; ;utils.c: 415:                         break;
+[e $U 206  ]
+"416
+[; ;utils.c: 416:                 }
+}
+[e $U 206  ]
+[e :U 207 ]
+[e [\ -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i , $ -> 20 `i 208
+ , $ -> 12 `i 209
+ , $ -> 10 `i 210
+ , $ -> 8 `i 211
+ 212 ]
+[e :U 206 ]
+"417
+[; ;utils.c: 417:             }
+}
+[e :U 205 ]
+"418
+[; ;utils.c: 418:             break;
+[e $U 189  ]
+"419
+[; ;utils.c: 419:         default:
+[e :U 213 ]
+"420
+[; ;utils.c: 420:             break;
+[e $U 189  ]
+"421
+[; ;utils.c: 421:     }
+}
+[e $U 189  ]
+[e :U 190 ]
+[e [\ -> _ucButton `i , $ -> 2 `i 191
+ , $ -> 3 `i 193
+ , $ -> 4 `i 195
+ , $ -> 5 `i 204
+ 213 ]
+[e :U 189 ]
+"423
+[; ;utils.c: 423:         writeCharOnDisplay('0' + diceState[0], 0);
+[e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `ui `uc -> -> 0 `i `uc ]
+"424
+[; ;utils.c: 424:         writeCharOnDisplay('d', 1);
+[e ( _writeCharOnDisplay (2 , -> -> 100 `ui `uc -> -> 1 `i `uc ]
+"425
+[; ;utils.c: 425:         writeCharOnDisplay('0' + diceState[1]/10, 2);
+[e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> / -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 10 `i `ui `uc -> -> 2 `i `uc ]
+"426
+[; ;utils.c: 426:         writeCharOnDisplay('0' + diceState[1]%10, 3);
+[e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> % -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 10 `i `ui `uc -> -> 3 `i `uc ]
+"429
+[; ;utils.c: 429: }
+[e :UE 181 ]
+}
+"431
+[; ;utils.c: 431: unsigned long randomNumber(){
+[v _randomNumber `(ul ~T0 @X0 1 ef ]
+{
+[e :U _randomNumber ]
+[f ]
+"432
+[; ;utils.c: 432:     randomSeed = (37*randomSeed + 98)%1373;
+[e = _randomSeed % + * -> -> -> 37 `i `l `ul _randomSeed -> -> -> 98 `i `l `ul -> -> -> 1373 `i `l `ul ]
+"433
+[; ;utils.c: 433:     return randomSeed;
+[e ) _randomSeed ]
+[e $UE 214  ]
+"434
+[; ;utils.c: 434: }
+[e :UE 214 ]
 }

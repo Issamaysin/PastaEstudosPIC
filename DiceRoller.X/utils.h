@@ -79,7 +79,10 @@ void setPin(unsigned char ucPin, unsigned char ucPort);
 void clearPin(unsigned char ucPin, unsigned char ucPort);
 void togglePin(unsigned char ucPin, unsigned char ucPort);
 
+//botoes [1,5], maquina de estado que executa a funcao dos botoes.
+void deviceStateMachine(unsigned char ucButton);
 
+unsigned long randomNumber();
 
 #endif
 

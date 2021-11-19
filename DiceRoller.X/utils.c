@@ -12,7 +12,7 @@
 
 
 extern int indiceDisplay;
-
+extern unsigned long randomSeed;
 
 //set input pin as high on port
 void setPin(unsigned char ucPin, unsigned char ucPort){
@@ -337,10 +337,15 @@ void deviceStateMachine(unsigned char ucButton){
     if(1 == ucButton){
         deviceCurrentState = ROLL;
         //Chamar aqui função que rola os dados com o valor da variavel global e escreve no display o resultado.
-        writeCharOnDisplay('8', 0);
-        writeCharOnDisplay('8', 1);
-        writeCharOnDisplay('8', 2);
-        writeCharOnDisplay('8', 3);
+        int ulTotalRoll = 0;
+        
+        int i;
+        for(i = 0; i < diceState[0]; i++){
+            ulTotalRoll += (int)(randomNumber())%diceState[1]; //randomNumber();
+        }
+        
+        
+        
         return; //Encera a funcao, já rolou o dado e imprimiu o valor no display
     }else if (deviceCurrentState == ROLL){
         deviceCurrentState = MENU;
@@ -362,24 +367,71 @@ void deviceStateMachine(unsigned char ucButton){
             break;
             
         case 3: //diminui o numero de dados jogados
-            
+            if(diceState[0] > 1){
+                diceState[0]--;
+            }
             break;
             
         case 4: //muda para um dado de mais lados
+            if(diceState[1] < 20){
+                switch(diceState[1]){
+                    case 12:
+                        diceState[1] = 20;
+                        break;
+                    case 10:
+                        diceState[1] = 12;
+                        break;
+                    case 8:
+                        diceState[1] = 10;
+                        break;
+                    case 6:
+                        diceState[1] = 8;
+                        break;
+                    default:
+                        diceState[1]++;
+                        break;
+                }
+            }
             
             break;
         case 5: //muda para um dado de menos lados.
                 
+            if(diceState[1] > 2){
+                switch(diceState[1]){
+                    case 20:
+                        diceState[1] = 12;
+                        break;
+                    case 12:
+                        diceState[1] = 10;
+                        break;
+                    case 10:
+                        diceState[1] = 8;
+                        break;
+                    case 8:
+                        diceState[1] = 6;
+                        break;
+                    default:
+                        diceState[1]--;
+                        break;
+                }
+            }
             break;        
         default:
             break;
     }
     
+        writeCharOnDisplay('0' + diceState[0], 0);
+        writeCharOnDisplay('d', 1);
+        writeCharOnDisplay('0' + diceState[1]/10, 2);
+        writeCharOnDisplay('0' + diceState[1]%10, 3);
     
-    
+       
 }
 
-
+unsigned long randomNumber(){
+    randomSeed = (37*randomSeed + 98)%1373;
+    return randomSeed;
+}
 
 
 

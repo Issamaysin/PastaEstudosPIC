@@ -1991,7 +1991,19 @@ Display Display7seg4digitsVetor[4];
 Button Botoes[5];
 
 
+
+
+
+
+
 state deviceCurrentState = MENU;
+
+
+
+
+
+unsigned char diceState[2] = {1,6};
+
 
 
 
@@ -2013,12 +2025,17 @@ void configBoard();
 void setPin(unsigned char ucPin, unsigned char ucPort);
 void clearPin(unsigned char ucPin, unsigned char ucPort);
 void togglePin(unsigned char ucPin, unsigned char ucPort);
+
+
+void deviceStateMachine(unsigned char ucButton);
+
+unsigned long randomNumber();
 # 11 "utils.c" 2
 
 
 
 extern int indiceDisplay;
-
+extern unsigned long randomSeed;
 
 
 void setPin(unsigned char ucPin, unsigned char ucPort){
@@ -2310,4 +2327,111 @@ void configBoard(){
     IOCA = 0b00010000;
     IOCB = 0b11110000;
 
+}
+
+
+
+
+
+
+void deviceStateMachine(unsigned char ucButton){
+
+
+    if(1 == ucButton){
+        deviceCurrentState = ROLL;
+
+        int ulTotalRoll = 0;
+
+        int i;
+        for(i = 0; i < diceState[0]; i++){
+            ulTotalRoll += (int)(randomNumber())%diceState[1];
+        }
+
+
+
+        return;
+    }else if (deviceCurrentState == ROLL){
+        deviceCurrentState = MENU;
+
+        writeCharOnDisplay('0' + diceState[0], 0);
+        writeCharOnDisplay('d', 1);
+        writeCharOnDisplay('0' + diceState[1]/10, 2);
+        writeCharOnDisplay('0' + diceState[1]%10, 3);
+        return;
+    }
+
+
+
+    switch(ucButton){
+        case 2:
+            if(diceState[0] < 9 ){
+                diceState[0]++;
+            }
+            break;
+
+        case 3:
+            if(diceState[0] > 1){
+                diceState[0]--;
+            }
+            break;
+
+        case 4:
+            if(diceState[1] < 20){
+                switch(diceState[1]){
+                    case 12:
+                        diceState[1] = 20;
+                        break;
+                    case 10:
+                        diceState[1] = 12;
+                        break;
+                    case 8:
+                        diceState[1] = 10;
+                        break;
+                    case 6:
+                        diceState[1] = 8;
+                        break;
+                    default:
+                        diceState[1]++;
+                        break;
+                }
+            }
+
+            break;
+        case 5:
+
+            if(diceState[1] > 2){
+                switch(diceState[1]){
+                    case 20:
+                        diceState[1] = 12;
+                        break;
+                    case 12:
+                        diceState[1] = 10;
+                        break;
+                    case 10:
+                        diceState[1] = 8;
+                        break;
+                    case 8:
+                        diceState[1] = 6;
+                        break;
+                    default:
+                        diceState[1]--;
+                        break;
+                }
+            }
+            break;
+        default:
+            break;
+    }
+
+        writeCharOnDisplay('0' + diceState[0], 0);
+        writeCharOnDisplay('d', 1);
+        writeCharOnDisplay('0' + diceState[1]/10, 2);
+        writeCharOnDisplay('0' + diceState[1]%10, 3);
+
+
+}
+
+unsigned long randomNumber(){
+    randomSeed = (37*randomSeed + 98)%1373;
+    return randomSeed;
 }

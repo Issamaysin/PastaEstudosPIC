@@ -2039,8 +2039,6 @@ void togglePin(unsigned char ucPin, unsigned char ucPort);
 
 
 void deviceStateMachine(unsigned char ucButton);
-
-unsigned long randomNumber();
 # 15 "main.c" 2
 
 
@@ -2125,7 +2123,7 @@ void main(void) {
 
             if((readButtonStatus[i] != Botoes[i].status) && readButtonStatus[i] == 0){
 
-                randomSeed = uiCounterms + 47;
+                randomSeed = uiCounterms;
 
                 Botoes[i].status = readButtonStatus[i];
                 break;
@@ -2134,8 +2132,6 @@ void main(void) {
             }
      }
 
-   randomNumber();
-   randomNumber();
 
       while(1){
 
@@ -2146,11 +2142,12 @@ void main(void) {
         }
 
 
+
         for (i = 0; i < 5; i++){
 
             if((readButtonStatus[i] != Botoes[i].status) && readButtonStatus[i] == 0){
 
-                deviceStateMachine(i + 1);
+                deviceStateMachine(1+i);
 
                 Botoes[i].status = readButtonStatus[i];
             }else if((readButtonStatus[i] != Botoes[i].status) && readButtonStatus[i] == 1){
