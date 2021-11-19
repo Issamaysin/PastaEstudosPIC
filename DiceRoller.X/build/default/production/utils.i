@@ -1963,16 +1963,39 @@ typedef int ptrdiff_t;
 # 10 "utils.c" 2
 
 # 1 "./utils.h" 1
-# 16 "./utils.h"
+# 12 "./utils.h"
+typedef enum state { ROLL, MENU} state;
+# 22 "./utils.h"
 typedef struct Display{
-    int pin;
-    int port;
-    char data;
+    unsigned char pin;
+    unsigned char port;
+    unsigned char data;
 }Display;
 
 
-Display *Display7seg4digitsVetor;
-int indiceDisplay = 0;
+typedef struct Button {
+    unsigned char pin;
+    unsigned char port;
+    unsigned char status;
+}Button;
+
+
+
+
+
+
+
+Display Display7seg4digitsVetor[4];
+
+
+Button Botoes[5];
+
+
+state deviceCurrentState = MENU;
+
+
+
+
 
 
 void shiftDisplays();
@@ -1981,37 +2004,44 @@ void shiftDisplays();
 void initDisplay();
 
 
-void writeCharOnDisplay(char chCharacter, int iDisplay);
+void writeCharOnDisplay(unsigned char ucCharacter, unsigned char ucDisplay);
 
+void initButtons();
 
-void setPin(int iPin, int iPort);
-void clearPin(int iPin, int iPort);
-void togglePin(int iPin, int iPort);
+void configBoard();
+
+void setPin(unsigned char ucPin, unsigned char ucPort);
+void clearPin(unsigned char ucPin, unsigned char ucPort);
+void togglePin(unsigned char ucPin, unsigned char ucPort);
 # 11 "utils.c" 2
 
 
 
-void setPin(int iPin, int iPort){
+extern int indiceDisplay;
 
 
-    switch(iPort){
+
+void setPin(unsigned char ucPin, unsigned char ucPort){
+
+
+    switch(ucPort){
         case 0:
-            if(iPin >= 0 && iPin <= 5){
-                PORTA |= (1<<iPin);
+            if(ucPin >= 0 && ucPin <= 5){
+                PORTA |= (1<<ucPin);
             }else{
                 return;
             }
             break;
         case 1:
-             if(iPin >= 4 && iPin <= 7){
-                PORTB |= (1<<iPin);
+             if(ucPin >= 4 && ucPin <= 7){
+                PORTB |= (1<<ucPin);
             }else{
                 return;
             }
             break;
         case 2:
-             if(iPin >= 0 && iPin <= 7){
-                PORTC |= (1<<iPin);
+             if(ucPin >= 0 && ucPin <= 7){
+                PORTC |= (1<<ucPin);
             }else{
                 return;
             }
@@ -2023,27 +2053,27 @@ void setPin(int iPin, int iPort){
 
 }
 
-void clearPin(int iPin, int iPort){
 
+void clearPin(unsigned char ucPin, unsigned char ucPort){
 
-    switch(iPort){
+    switch(ucPort){
         case 0:
-            if(iPin >= 0 && iPin <= 5){
-                PORTA &= ~(1<<iPin);
+            if(ucPin >= 0 && ucPin <= 5){
+                PORTA &= ~(1<<ucPin);
             }else{
                 return;
             }
             break;
         case 1:
-             if(iPin >= 4 && iPin <= 7){
-                PORTB &= ~(1<<iPin);
+             if(ucPin >= 4 && ucPin <= 7){
+                PORTB &= ~(1<<ucPin);
             }else{
                 return;
             }
             break;
         case 2:
-             if(iPin >= 0 && iPin <= 7){
-                PORTC &= ~(1<<iPin);
+             if(ucPin >= 0 && ucPin <= 7){
+                PORTC &= ~(1<<ucPin);
             }else{
                 return;
             }
@@ -2056,27 +2086,26 @@ void clearPin(int iPin, int iPort){
 
 
 
-void togglePin(int iPin, int iPort){
+void togglePin(unsigned char ucPin, unsigned char ucPort){
 
-    switch(iPort){
+    switch(ucPort){
         case 0:
-            if(iPin >= 0 && iPin <= 5){
-                PORTA ^= (1<<iPin);
+            if(ucPin >= 0 && ucPin <= 5){
+                PORTA ^= (1<<ucPin);
             }else{
                 return;
             }
             break;
         case 1:
-             if(iPin >= 4 && iPin <= 7){
-
-                PORTB ^= (1<<iPin);
+             if(ucPin >= 4 && ucPin <= 7){
+                PORTB ^= (1<<ucPin);
             }else{
                 return;
             }
             break;
         case 2:
-             if(iPin >= 0 && iPin <= 7){
-                PORTC ^= (1<<iPin);
+             if(ucPin >= 0 && ucPin <= 7){
+                PORTC ^= (1<<ucPin);
             }else{
                 return;
             }
@@ -2087,47 +2116,93 @@ void togglePin(int iPin, int iPort){
     }
 }
 
-void shiftDisplays(){
-
-
-    setPin((Display7seg4digitsVetor+indiceDisplay)->pin, (Display7seg4digitsVetor+indiceDisplay)->port);
-
-
-    if(++indiceDisplay > 3){
-        indiceDisplay = 0;
-    }
-
-
-    PORTC = (Display7seg4digitsVetor+indiceDisplay)->data;
-
-
-    clearPin((Display7seg4digitsVetor+indiceDisplay)->pin, (Display7seg4digitsVetor+indiceDisplay)->port);
-}
 
 
 
 void initDisplay(){
 
-    Display7seg4digitsVetor[0].data = 0b01110111;
-    Display7seg4digitsVetor[0].pin = 4;
-    Display7seg4digitsVetor[0].port = 1;
+    Display7seg4digitsVetor[0].data = 0x00;
+    Display7seg4digitsVetor[0].pin = 0;
+    Display7seg4digitsVetor[0].port = 0;
 
-    Display7seg4digitsVetor[1].data = 0b01111100;
+    Display7seg4digitsVetor[1].data = 0x00;
     Display7seg4digitsVetor[1].pin = 5;
     Display7seg4digitsVetor[1].port = 0;
 
-    Display7seg4digitsVetor[2].data = 0b00111111;
-    Display7seg4digitsVetor[2].pin = 6;
-    Display7seg4digitsVetor[2].port = 1;
+    Display7seg4digitsVetor[2].data = 0x00;
+    Display7seg4digitsVetor[2].pin = 1;
+    Display7seg4digitsVetor[2].port = 0;
 
-    Display7seg4digitsVetor[3].data = 0b00000110;
-    Display7seg4digitsVetor[3].pin = 7;
-    Display7seg4digitsVetor[3].port = 1;
+    Display7seg4digitsVetor[3].data = 0x00;
+    Display7seg4digitsVetor[3].pin = 2;
+    Display7seg4digitsVetor[3].port = 0;
 }
 
-void writeCharOnDisplay(char chCharacter, int iDisplay){
 
-    if(iDisplay < 0 || iDisplay > 3){
+void initButtons(){
+    Botoes[0].pin = 4;
+    Botoes[0].port = 1;
+    Botoes[0].status = 1;
+
+    Botoes[1].pin = 6;
+    Botoes[1].port = 1;
+    Botoes[1].status = 1;
+
+    Botoes[2].pin = 7;
+    Botoes[2].port = 1;
+    Botoes[2].status = 1;
+
+    Botoes[3].pin = 4;
+    Botoes[3].port = 0;
+    Botoes[3].status = 1;
+
+    Botoes[4].pin = 5;
+    Botoes[4].port = 1;
+    Botoes[4].status = 1;
+
+}
+
+
+
+void shiftDisplays(){
+
+
+    setPin(Display7seg4digitsVetor[indiceDisplay].pin, Display7seg4digitsVetor[indiceDisplay].port);
+
+    indiceDisplay++;
+
+
+    if(indiceDisplay > 3){
+        indiceDisplay = 0;
+    }
+
+
+    PORTC = (Display7seg4digitsVetor[indiceDisplay].data);
+
+
+    clearPin(Display7seg4digitsVetor[indiceDisplay].pin, Display7seg4digitsVetor[indiceDisplay].port);
+
+
+
+
+
+    if(0 != indiceDisplay){
+
+        setPin(0, 0);
+    }else{
+        clearPin(0, 0);
+
+    }
+
+
+}
+
+
+
+
+void writeCharOnDisplay(unsigned char ucCharacter, unsigned char ucDisplay){
+
+    if(ucDisplay < 0 || ucDisplay > 3){
         return;
     }
 
@@ -2135,42 +2210,104 @@ void writeCharOnDisplay(char chCharacter, int iDisplay){
 
 
 
-    switch(chCharacter){
+    switch(ucCharacter){
         case '0':
-            Display7seg4digitsVetor[iDisplay].data = 0b00111111;
+            Display7seg4digitsVetor[ucDisplay].data = 0b00111111;
             break;
         case '1':
-            Display7seg4digitsVetor[iDisplay].data = 0b00000110;
+            Display7seg4digitsVetor[ucDisplay].data = 0b00000110;
             break;
         case '2':
-            Display7seg4digitsVetor[iDisplay].data = 0b01011011;
+            Display7seg4digitsVetor[ucDisplay].data = 0b01011011;
             break;
         case '3':
-            Display7seg4digitsVetor[iDisplay].data = 0b01001111;
+            Display7seg4digitsVetor[ucDisplay].data = 0b01001111;
             break;
         case '4':
-            Display7seg4digitsVetor[iDisplay].data = 0b01100110;
+            Display7seg4digitsVetor[ucDisplay].data = 0b01100110;
             break;
         case '5':
-            Display7seg4digitsVetor[iDisplay].data = 0b01101101;
+            Display7seg4digitsVetor[ucDisplay].data = 0b01101101;
             break;
         case '6':
-            Display7seg4digitsVetor[iDisplay].data = 0b01111101;
+            Display7seg4digitsVetor[ucDisplay].data = 0b01111101;
             break;
         case '7':
-            Display7seg4digitsVetor[iDisplay].data = 0b01000111;
+            Display7seg4digitsVetor[ucDisplay].data = 0b00000111;
             break;
         case'8':
-            Display7seg4digitsVetor[iDisplay].data = 0b01111111;
+            Display7seg4digitsVetor[ucDisplay].data = 0b01111111;
             break;
         case '9':
-            Display7seg4digitsVetor[iDisplay].data = 0b01100111;
+            Display7seg4digitsVetor[ucDisplay].data = 0b01100111;
             break;
         case 'd':
-            Display7seg4digitsVetor[iDisplay].data = 0b01011110;
+            Display7seg4digitsVetor[ucDisplay].data = 0b01011110;
             break;
         default:
-            Display7seg4digitsVetor[iDisplay].data = 0b01110111;
+            Display7seg4digitsVetor[ucDisplay].data = 0b01110111;
             break;
     }
+}
+
+
+
+
+void configBoard(){
+# 260 "utils.c"
+    OSCCON |= (1<<0);
+    OSCCON &= ~(1<<1);
+    OSCCON |= (1<<2);
+    OSCCON &= ~(1<<3);
+    OSCCON |= (0b01110000);
+
+
+    ANSEL = 0x00;
+    ANSELH = 0x00;
+
+
+
+
+
+    TRISA = 0b00010000;
+    TRISB = 0b11110000;
+    TRISC = 0x00;
+
+
+    PORTA = 0xff;
+    PORTB = 0xff;
+    PORTC = 0x00;
+# 295 "utils.c"
+    nRABPU = 0;
+
+    T0CS = 0;
+
+    PSA = 0;
+
+    PS0 = 1;
+    PS1 = 1;
+    PS2 = 0;
+
+
+    TMR0= 133;
+    GIE=1;
+    PEIE=1;
+    T0IE=1;
+    RABIE = 1;
+    T0IF = 0;
+    RABIF = 0;
+
+
+
+    WPUA4 = 1;
+    WPUB4 = 1;
+    WPUB5 = 1;
+    WPUB6 = 1;
+    WPUB7 = 1;
+
+
+
+    IOCA = 0b00010000;
+    IOCB = 0b11110000;
+
 }

@@ -1,51 +1,44 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"16 ./utils.h
-[; ;./utils.h: 16: typedef struct Display{
-[s S117 `i 1 `i 1 `uc 1 ]
+"22 ./utils.h
+[; ;./utils.h: 22: typedef struct Display{
+[s S117 `uc 1 `uc 1 `uc 1 ]
 [n S117 Display pin port data ]
+"29
+[; ;./utils.h: 29: typedef struct Button {
+[s S118 `uc 1 `uc 1 `uc 1 ]
+[n S118 Button pin port status ]
+"47
+[; ;./utils.h: 47: state deviceCurrentState = MENU;
+[c E1007 0 1 .. ]
+[n E1007 state ROLL MENU  ]
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
 "3386 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
 [v _T0IF `Vb ~T0 @X0 0 e@90 ]
 "59
 [v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
-"27 ./utils.h
-[; ;./utils.h: 27: void shiftDisplays();
-[v _shiftDisplays `(v ~T0 @X0 0 e? ]
-[p mainexit ]
-"49 main.c
-[; ;main.c: 49: void configBoard();
-[v _configBoard `(v ~T0 @X0 0 e? ]
-"216 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
+"3248
+[v _RABIF `Vb ~T0 @X0 0 e@88 ]
+"216
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "166
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
-"255
-[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
-"30 ./utils.h
-[; ;./utils.h: 30: void initDisplay();
+[p mainexit ]
+"64 ./utils.h
+[; ;./utils.h: 64: void configBoard();
+[v _configBoard `(v ~T0 @X0 0 e? ]
+"57
+[; ;./utils.h: 57: void initDisplay();
 [v _initDisplay `(v ~T0 @X0 0 e? ]
-"33
-[; ;./utils.h: 33: void writeCharOnDisplay(char chCharacter, int iDisplay);
-[v _writeCharOnDisplay `(v ~T0 @X0 0 ef2`uc`i ]
-"1177 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
-[v _OSCCON `Vuc ~T0 @X0 0 e@143 ]
-"825
-[v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
-"3065
-[v _GIE `Vb ~T0 @X0 0 e@95 ]
-"3206
-[v _PEIE `Vb ~T0 @X0 0 e@94 ]
-"3383
-[v _T0IE `Vb ~T0 @X0 0 e@93 ]
-"3092
-[v _INTE `Vb ~T0 @X0 0 e@92 ]
-"895
-[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
-"945
-[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
-"984
-[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"62
+[; ;./utils.h: 62: void initButtons();
+[v _initButtons `(v ~T0 @X0 0 e? ]
+"60
+[; ;./utils.h: 60: void writeCharOnDisplay(unsigned char ucCharacter, unsigned char ucDisplay);
+[v _writeCharOnDisplay `(v ~T0 @X0 0 ef2`uc`uc ]
+"54
+[; ;./utils.h: 54: void shiftDisplays();
+[v _shiftDisplays `(v ~T0 @X0 0 e? ]
 "18 ./config.h
 [p x FOSC  =  INTRCIO    ]
 "19
@@ -61,7 +54,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [p x BOREN  =  OFF       ]
 "25
-[p x IESO  =  OFF        ]
+[p x IESO  =  ON       ]
 "26
 [p x FCMEN  =  OFF       ]
 "54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
@@ -186,14 +179,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON2 equ 018Dh ;# ">
 "2761
 [; <" SRCON equ 019Eh ;# ">
-"23 ./utils.h
-[; ;./utils.h: 23: Display *Display7seg4digitsVetor;
-[v _Display7seg4digitsVetor `*S117 ~T0 @X0 1 e ]
-"24
-[; ;./utils.h: 24: int indiceDisplay = 0;
-[v _indiceDisplay `i ~T0 @X0 1 e ]
-[i _indiceDisplay
--> 0 `i
+"41 ./utils.h
+[; ;./utils.h: 41: Display Display7seg4digitsVetor[4];
+[v _Display7seg4digitsVetor `S117 ~T0 @X0 -> 4 `i e ]
+"44
+[; ;./utils.h: 44: Button Botoes[5];
+[v _Botoes `S118 ~T0 @X0 -> 5 `i e ]
+"47
+[; ;./utils.h: 47: state deviceCurrentState = MENU;
+[v _deviceCurrentState `E1007 ~T0 @X0 1 e ]
+[i _deviceCurrentState
+. `E1007 1
 ]
 "22 main.c
 [; ;main.c: 22: unsigned long uiCounterms = 0;
@@ -201,153 +197,272 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _uiCounterms
 -> -> -> 0 `i `l `ul
 ]
+"25
+[; ;main.c: 25: int indiceDisplay = 0;
+[v _indiceDisplay `i ~T0 @X0 1 e ]
+[i _indiceDisplay
+-> 0 `i
+]
+"28
+[; ;main.c: 28: unsigned long uiButtonDebounce = 0;
+[v _uiButtonDebounce `ul ~T0 @X0 1 e ]
+[i _uiButtonDebounce
+-> -> -> 0 `i `l `ul
+]
+"32
+[; ;main.c: 32: unsigned char readButtonStatus[5] = {1, 1, 1, 1, 1};
+[v _readButtonStatus `uc ~T0 @X0 -> 5 `i e ]
+[i _readButtonStatus
+:U ..
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+..
+]
 [v $root$_my_isr_routine `(v ~T0 @X0 0 e ]
-"30
-[; ;main.c: 30: void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
+"40
+[; ;main.c: 40: void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 [v _my_isr_routine `(v ~T1 @X0 1 ef ]
 {
 [e :U _my_isr_routine ]
 [f ]
-"33
-[; ;main.c: 33:     if(T0IF)
-[e $ ! _T0IF 119  ]
-"34
-[; ;main.c: 34:     {
-{
-"35
-[; ;main.c: 35:         T0IF = 0;
-[e = _T0IF -> -> 0 `i `b ]
-"36
-[; ;main.c: 36:         TMR0 = 133;
-[e = _TMR0 -> -> 133 `i `uc ]
-"38
-[; ;main.c: 38:         uiCounterms++;
-[e ++ _uiCounterms -> -> -> 1 `i `l `ul ]
-"41
-[; ;main.c: 41:         if(0 == (uiCounterms%5)){
-[e $ ! == -> -> -> 0 `i `l `ul % _uiCounterms -> -> -> 5 `i `l `ul 120  ]
-{
-"42
-[; ;main.c: 42:             shiftDisplays();
-[e ( _shiftDisplays ..  ]
 "43
-[; ;main.c: 43:         }
+[; ;main.c: 43:     if(T0IF)
+[e $ ! _T0IF 120  ]
+"44
+[; ;main.c: 44:     {
+{
+"45
+[; ;main.c: 45:         T0IF = 0;
+[e = _T0IF -> -> 0 `i `b ]
+"46
+[; ;main.c: 46:         TMR0 = 133;
+[e = _TMR0 -> -> 133 `i `uc ]
+"47
+[; ;main.c: 47:         uiCounterms++;
+[e ++ _uiCounterms -> -> -> 1 `i `l `ul ]
+"49
+[; ;main.c: 49:     }
 }
 [e :U 120 ]
-"44
-[; ;main.c: 44:     }
+"52
+[; ;main.c: 52:     if(RABIF){
+[e $ ! _RABIF 121  ]
+{
+"54
+[; ;main.c: 54:         if(uiCounterms - uiButtonDebounce > 19){
+[e $ ! > - _uiCounterms _uiButtonDebounce -> -> -> 19 `i `l `ul 122  ]
+{
+"56
+[; ;main.c: 56:             readButtonStatus[0] = (PORTB & (1<<4))>>4;
+[e = *U + &U _readButtonStatus * -> -> -> 0 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux -> >> & -> _PORTB `i << -> 1 `i -> 4 `i -> 4 `i `uc ]
+"57
+[; ;main.c: 57:             readButtonStatus[1] = (PORTB & (1<<6))>>6;
+[e = *U + &U _readButtonStatus * -> -> -> 1 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux -> >> & -> _PORTB `i << -> 1 `i -> 6 `i -> 6 `i `uc ]
+"58
+[; ;main.c: 58:             readButtonStatus[2] = (PORTB & (1<<7))>>7;
+[e = *U + &U _readButtonStatus * -> -> -> 2 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux -> >> & -> _PORTB `i << -> 1 `i -> 7 `i -> 7 `i `uc ]
+"59
+[; ;main.c: 59:             readButtonStatus[3] = (PORTA & (1<<4))>>4;
+[e = *U + &U _readButtonStatus * -> -> -> 3 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux -> >> & -> _PORTA `i << -> 1 `i -> 4 `i -> 4 `i `uc ]
+"60
+[; ;main.c: 60:             readButtonStatus[4] = (PORTB & (1<<5))>>5;
+[e = *U + &U _readButtonStatus * -> -> -> 4 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux -> >> & -> _PORTB `i << -> 1 `i -> 5 `i -> 5 `i `uc ]
+"63
+[; ;main.c: 63:             uiButtonDebounce = uiCounterms;
+[e = _uiButtonDebounce _uiCounterms ]
+"64
+[; ;main.c: 64:         }
 }
-[e :U 119 ]
-"47
-[; ;main.c: 47: }
-[e :UE 118 ]
+[e :U 122 ]
+"66
+[; ;main.c: 66:         RABIF = 0;
+[e = _RABIF -> -> 0 `i `b ]
+"67
+[; ;main.c: 67:     }
+}
+[e :U 121 ]
+"68
+[; ;main.c: 68: }
+[e :UE 119 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"52
-[; ;main.c: 52: void main(void) {
+"70
+[; ;main.c: 70: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"54
-[; ;main.c: 54:     configBoard();
-[e ( _configBoard ..  ]
-"57
-[; ;main.c: 57:     PORTB = 0b11100000;
-[e = _PORTB -> -> 224 `i `uc ]
-"58
-[; ;main.c: 58:     PORTA = 0b100000;
-[e = _PORTA -> -> 32 `i `uc ]
-"59
-[; ;main.c: 59:     PORTC = 0x00;
-[e = _PORTC -> -> 0 `i `uc ]
-"63
-[; ;main.c: 63:     Display display7seg[4];
-[v _display7seg `S117 ~T0 @X0 -> 4 `i a ]
-"64
-[; ;main.c: 64:     Display7seg4digitsVetor = display7seg;
-[e = _Display7seg4digitsVetor &U _display7seg ]
-"65
-[; ;main.c: 65:     initDisplay();
-[e ( _initDisplay ..  ]
-"68
-[; ;main.c: 68:     writeCharOnDisplay('4', 0);
-[e ( _writeCharOnDisplay (2 , -> -> 52 `ui `uc -> 0 `i ]
-"69
-[; ;main.c: 69:     writeCharOnDisplay('d', 1);
-[e ( _writeCharOnDisplay (2 , -> -> 100 `ui `uc -> 1 `i ]
-"70
-[; ;main.c: 70:     writeCharOnDisplay('9', 2);
-[e ( _writeCharOnDisplay (2 , -> -> 57 `ui `uc -> 2 `i ]
-"71
-[; ;main.c: 71:     writeCharOnDisplay('p', 3);
-[e ( _writeCharOnDisplay (2 , -> -> 112 `ui `uc -> 3 `i ]
 "73
-[; ;main.c: 73:     while(1){
-[e :U 123 ]
-{
+[; ;main.c: 73:     configBoard();
+[e ( _configBoard ..  ]
 "76
-[; ;main.c: 76:     }
-}
-[e :U 122 ]
-[e $U 123  ]
-[e :U 124 ]
-"79
-[; ;main.c: 79: }
-[e :UE 121 ]
-}
+[; ;main.c: 76:     initDisplay();
+[e ( _initDisplay ..  ]
+"77
+[; ;main.c: 77:     initButtons();
+[e ( _initButtons ..  ]
+"80
+[; ;main.c: 80:     writeCharOnDisplay('0', 0);
+[e ( _writeCharOnDisplay (2 , -> -> 48 `ui `uc -> -> 0 `i `uc ]
+"81
+[; ;main.c: 81:     writeCharOnDisplay('1', 1);
+[e ( _writeCharOnDisplay (2 , -> -> 49 `ui `uc -> -> 1 `i `uc ]
 "82
-[; ;main.c: 82: void configBoard(){
-[v _configBoard `(v ~T0 @X0 1 ef ]
+[; ;main.c: 82:     writeCharOnDisplay('2', 2);
+[e ( _writeCharOnDisplay (2 , -> -> 50 `ui `uc -> -> 2 `i `uc ]
+"83
+[; ;main.c: 83:     writeCharOnDisplay('3', 3);
+[e ( _writeCharOnDisplay (2 , -> -> 51 `ui `uc -> -> 3 `i `uc ]
+"87
+[; ;main.c: 87:     while(1){
+[e :U 125 ]
 {
-[e :U _configBoard ]
-[f ]
+"91
+[; ;main.c: 91:         if(0 == (uiCounterms%5)){
+[e $ ! == -> -> -> 0 `i `l `ul % _uiCounterms -> -> -> 5 `i `l `ul 127  ]
+{
 "92
-[; ;main.c: 92:     OSCCON |= (1<<0);
-[e =| _OSCCON -> << -> 1 `i -> 0 `i `Vuc ]
+[; ;main.c: 92:             shiftDisplays();
+[e ( _shiftDisplays ..  ]
 "93
-[; ;main.c: 93:     OSCCON &= ~(1<<1);
-[e =& _OSCCON -> ~ << -> 1 `i -> 1 `i `Vuc ]
-"94
-[; ;main.c: 94:     OSCCON |= (1<<2);
-[e =| _OSCCON -> << -> 1 `i -> 2 `i `Vuc ]
-"95
-[; ;main.c: 95:     OSCCON &= ~(1<<3);
-[e =& _OSCCON -> ~ << -> 1 `i -> 3 `i `Vuc ]
-"96
-[; ;main.c: 96:     OSCCON |= (0b01110000);
-[e =| _OSCCON -> -> 112 `i `Vuc ]
+[; ;main.c: 93:         }
+}
+[e :U 127 ]
+"103
+[; ;main.c: 103:         if((readButtonStatus[0] != Botoes[0].status) && readButtonStatus[0] == 0){
+[e $ ! && != -> *U + &U _readButtonStatus * -> -> -> 0 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> . *U + &U _Botoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 `i == -> *U + &U _readButtonStatus * -> -> -> 0 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> 0 `i 128  ]
+{
 "104
-[; ;main.c: 104:     OPTION_REG = 0b00000011;
-[e = _OPTION_REG -> -> 3 `i `uc ]
+[; ;main.c: 104:             writeCharOnDisplay('d', 2);
+[e ( _writeCharOnDisplay (2 , -> -> 100 `ui `uc -> -> 2 `i `uc ]
 "105
-[; ;main.c: 105:     TMR0= 133;
-[e = _TMR0 -> -> 133 `i `uc ]
+[; ;main.c: 105:             Botoes[0].status = readButtonStatus[0];
+[e = . *U + &U _Botoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 *U + &U _readButtonStatus * -> -> -> 0 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux ]
+"106
+[; ;main.c: 106:         }else if((readButtonStatus[0] != Botoes[0].status) && readButtonStatus[0] == 1){
+}
+[e $U 129  ]
+[e :U 128 ]
+[e $ ! && != -> *U + &U _readButtonStatus * -> -> -> 0 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> . *U + &U _Botoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 `i == -> *U + &U _readButtonStatus * -> -> -> 0 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> 1 `i 130  ]
+{
 "107
-[; ;main.c: 107:     GIE=1;
-[e = _GIE -> -> 1 `i `b ]
+[; ;main.c: 107:             Botoes[0].status = readButtonStatus[0];
+[e = . *U + &U _Botoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 *U + &U _readButtonStatus * -> -> -> 0 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux ]
 "108
-[; ;main.c: 108:     PEIE=1;
-[e = _PEIE -> -> 1 `i `b ]
-"109
-[; ;main.c: 109:     T0IE=1;
-[e = _T0IE -> -> 1 `i `b ]
+[; ;main.c: 108:         }
+}
+[e :U 130 ]
+[e :U 129 ]
 "110
-[; ;main.c: 110:     INTE = 0;
-[e = _INTE -> -> 0 `i `b ]
+[; ;main.c: 110:         if((readButtonStatus[1] != Botoes[1].status) && readButtonStatus[1] == 0){
+[e $ ! && != -> *U + &U _readButtonStatus * -> -> -> 1 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> . *U + &U _Botoes * -> -> -> 1 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 `i == -> *U + &U _readButtonStatus * -> -> -> 1 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> 0 `i 131  ]
+{
 "111
-[; ;main.c: 111:     T0IF = 0;
-[e = _T0IF -> -> 0 `i `b ]
+[; ;main.c: 111:             writeCharOnDisplay('9', 2);
+[e ( _writeCharOnDisplay (2 , -> -> 57 `ui `uc -> -> 2 `i `uc ]
+"112
+[; ;main.c: 112:             Botoes[1].status = readButtonStatus[1];
+[e = . *U + &U _Botoes * -> -> -> 1 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 *U + &U _readButtonStatus * -> -> -> 1 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux ]
+"113
+[; ;main.c: 113:         }else if((readButtonStatus[1] != Botoes[1].status) && readButtonStatus[1] == 1){
+}
+[e $U 132  ]
+[e :U 131 ]
+[e $ ! && != -> *U + &U _readButtonStatus * -> -> -> 1 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> . *U + &U _Botoes * -> -> -> 1 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 `i == -> *U + &U _readButtonStatus * -> -> -> 1 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> 1 `i 133  ]
+{
 "114
-[; ;main.c: 114:     TRISA = 0b010111;
-[e = _TRISA -> -> 23 `i `uc ]
+[; ;main.c: 114:             Botoes[1].status = readButtonStatus[1];
+[e = . *U + &U _Botoes * -> -> -> 1 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 *U + &U _readButtonStatus * -> -> -> 1 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux ]
 "115
-[; ;main.c: 115:     TRISB = 0b00100000;
-[e = _TRISB -> -> 32 `i `uc ]
-"116
-[; ;main.c: 116:     TRISC = 0x00;
-[e = _TRISC -> -> 0 `i `uc ]
+[; ;main.c: 115:         }
+}
+[e :U 133 ]
+[e :U 132 ]
+"117
+[; ;main.c: 117:         if((readButtonStatus[2] != Botoes[2].status) && readButtonStatus[2] == 0){
+[e $ ! && != -> *U + &U _readButtonStatus * -> -> -> 2 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> . *U + &U _Botoes * -> -> -> 2 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 `i == -> *U + &U _readButtonStatus * -> -> -> 2 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> 0 `i 134  ]
+{
 "118
-[; ;main.c: 118: }
-[e :UE 125 ]
+[; ;main.c: 118:             writeCharOnDisplay('0', 2);
+[e ( _writeCharOnDisplay (2 , -> -> 48 `ui `uc -> -> 2 `i `uc ]
+"119
+[; ;main.c: 119:             Botoes[2].status = readButtonStatus[2];
+[e = . *U + &U _Botoes * -> -> -> 2 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 *U + &U _readButtonStatus * -> -> -> 2 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux ]
+"120
+[; ;main.c: 120:         }else if((readButtonStatus[2] != Botoes[2].status) && readButtonStatus[2] == 1){
+}
+[e $U 135  ]
+[e :U 134 ]
+[e $ ! && != -> *U + &U _readButtonStatus * -> -> -> 2 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> . *U + &U _Botoes * -> -> -> 2 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 `i == -> *U + &U _readButtonStatus * -> -> -> 2 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> 1 `i 136  ]
+{
+"121
+[; ;main.c: 121:             Botoes[2].status = readButtonStatus[2];
+[e = . *U + &U _Botoes * -> -> -> 2 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 *U + &U _readButtonStatus * -> -> -> 2 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux ]
+"122
+[; ;main.c: 122:         }
+}
+[e :U 136 ]
+[e :U 135 ]
+"125
+[; ;main.c: 125:         if((readButtonStatus[3] != Botoes[3].status) && readButtonStatus[3] == 0){
+[e $ ! && != -> *U + &U _readButtonStatus * -> -> -> 3 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> . *U + &U _Botoes * -> -> -> 3 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 `i == -> *U + &U _readButtonStatus * -> -> -> 3 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> 0 `i 137  ]
+{
+"126
+[; ;main.c: 126:             writeCharOnDisplay('6', 2);
+[e ( _writeCharOnDisplay (2 , -> -> 54 `ui `uc -> -> 2 `i `uc ]
+"127
+[; ;main.c: 127:             Botoes[3].status = readButtonStatus[3];
+[e = . *U + &U _Botoes * -> -> -> 3 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 *U + &U _readButtonStatus * -> -> -> 3 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux ]
+"128
+[; ;main.c: 128:         }else if((readButtonStatus[0] != Botoes[3].status) && readButtonStatus[3] == 1){
+}
+[e $U 138  ]
+[e :U 137 ]
+[e $ ! && != -> *U + &U _readButtonStatus * -> -> -> 0 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> . *U + &U _Botoes * -> -> -> 3 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 `i == -> *U + &U _readButtonStatus * -> -> -> 3 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> 1 `i 139  ]
+{
+"129
+[; ;main.c: 129:             Botoes[3].status = readButtonStatus[3];
+[e = . *U + &U _Botoes * -> -> -> 3 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 *U + &U _readButtonStatus * -> -> -> 3 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux ]
+"130
+[; ;main.c: 130:         }
+}
+[e :U 139 ]
+[e :U 138 ]
+"132
+[; ;main.c: 132:         if((readButtonStatus[4] != Botoes[4].status) && readButtonStatus[4] == 0){
+[e $ ! && != -> *U + &U _readButtonStatus * -> -> -> 4 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> . *U + &U _Botoes * -> -> -> 4 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 `i == -> *U + &U _readButtonStatus * -> -> -> 4 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> 0 `i 140  ]
+{
+"133
+[; ;main.c: 133:             writeCharOnDisplay('8', 2);
+[e ( _writeCharOnDisplay (2 , -> -> 56 `ui `uc -> -> 2 `i `uc ]
+"134
+[; ;main.c: 134:             Botoes[4].status = readButtonStatus[4];
+[e = . *U + &U _Botoes * -> -> -> 4 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 *U + &U _readButtonStatus * -> -> -> 4 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux ]
+"135
+[; ;main.c: 135:         }else if((readButtonStatus[4] != Botoes[4].status) && readButtonStatus[4] == 1){
+}
+[e $U 141  ]
+[e :U 140 ]
+[e $ ! && != -> *U + &U _readButtonStatus * -> -> -> 4 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> . *U + &U _Botoes * -> -> -> 4 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 `i == -> *U + &U _readButtonStatus * -> -> -> 4 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> 1 `i 142  ]
+{
+"136
+[; ;main.c: 136:             Botoes[4].status = readButtonStatus[4];
+[e = . *U + &U _Botoes * -> -> -> 4 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 2 *U + &U _readButtonStatus * -> -> -> 4 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux ]
+"137
+[; ;main.c: 137:         }
+}
+[e :U 142 ]
+[e :U 141 ]
+"142
+[; ;main.c: 142:     }
+}
+[e :U 124 ]
+[e $U 125  ]
+[e :U 126 ]
+"145
+[; ;main.c: 145: }
+[e :UE 123 ]
 }
