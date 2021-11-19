@@ -55,12 +55,11 @@ void __interrupt () my_isr_routine (void) {
         //Só chama esse bloco a cada 20ms
         if(uiCounterms - uiButtonDebounce > 19){
             //Atualiza status atual dos botões com a lida do pin
-            readButtonStatus[0] = (PORTB & (1<<pinBotao1))>>pinBotao1; 
-            readButtonStatus[1] = (PORTB & (1<<pinBotao2))>>pinBotao2;
-            readButtonStatus[2] = (PORTB & (1<<pinBotao3))>>pinBotao3;
+            readButtonStatus[0] = (PORTA & (1<<pinBotao1))>>pinBotao1; 
+            readButtonStatus[1] = (PORTA & (1<<pinBotao2))>>pinBotao2;
+            readButtonStatus[2] = (PORTA & (1<<pinBotao3))>>pinBotao3;
             readButtonStatus[3] = (PORTA & (1<<pinBotao4))>>pinBotao4;
-            readButtonStatus[4] = (PORTB & (1<<pinBotao5))>>pinBotao5;
-
+            readButtonStatus[4] = (PORTA & (1<<pinBotao5))>>pinBotao5;
             //reseta contador
             uiButtonDebounce = uiCounterms;
         }
@@ -77,30 +76,19 @@ void main(void) {
     //Inicializa vetores que representam os displays e botoes.
     initDisplay();
     initButtons();
-
-
-    //Escreve pra testes, tirar daqui dps
-    writeCharOnDisplay('d', 0);
-    writeCharOnDisplay('d', 1);
-    writeCharOnDisplay('d', 2);
-    writeCharOnDisplay('d', 3);
-
-     unsigned char i = 0;
+    
 
      while(1){
          
            if(0 == (uiCounterms%5)){
                 shiftDisplays();
             }
-         
-            if((readButtonStatus[i] != Botoes[i].status) && readButtonStatus[i] == 0){
-            
+            if((readButtonStatus[0] != Botoes[0].status) && readButtonStatus[0] == 0){
                 randomSeed = uiCounterms + 47;
-
-                Botoes[i].status = readButtonStatus[i];
+                Botoes[0].status = readButtonStatus[0];
                 break;
-            }else if((readButtonStatus[i] != Botoes[i].status) && readButtonStatus[i] == 1){
-                Botoes[i].status = readButtonStatus[i];
+            }else if((readButtonStatus[0] != Botoes[0].status) && readButtonStatus[0] == 1){
+                Botoes[0].status = readButtonStatus[0];
             }
      }
      
@@ -114,7 +102,8 @@ void main(void) {
         if(0 == (uiCounterms%5)){
             shiftDisplays();
         }
-
+        
+        int i;
         //Checa se algum botão foi lido e chama a função necessária para a operação do botão.
         for (i = 0; i < 5; i++){
             

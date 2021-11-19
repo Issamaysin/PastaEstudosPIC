@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "utils.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,19 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 12 "main.c"
-# 1 "./config.h" 1
-# 18 "./config.h"
-#pragma config FOSC = INTRCIO
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = ON
-#pragma config FCMEN = OFF
+# 1 "utils.c" 2
+
+
 
 
 
@@ -1949,8 +1939,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 31 "./config.h" 2
-# 12 "main.c" 2
+# 8 "utils.c" 2
 
 
 # 1 "./board.h" 1
@@ -1971,7 +1960,7 @@ typedef unsigned size_t;
 
 typedef int ptrdiff_t;
 # 12 "./board.h" 2
-# 14 "main.c" 2
+# 10 "utils.c" 2
 
 # 1 "./utils.h" 1
 # 12 "./utils.h"
@@ -1979,12 +1968,14 @@ typedef enum state { ROLL, MENU} state;
 # 22 "./utils.h"
 typedef struct Display{
     unsigned char pin;
+    unsigned char port;
     unsigned char data;
 }Display;
 
 
 typedef struct Button {
     unsigned char pin;
+    unsigned char port;
     unsigned char status;
 }Button;
 
@@ -2041,113 +2032,364 @@ void deviceStateMachine(unsigned char ucButton);
 unsigned long randomNumber();
 
 void rollDice();
-# 15 "main.c" 2
+# 11 "utils.c" 2
 
 
 
+extern int indiceDisplay;
+extern unsigned long randomSeed;
 
 
+void setPin(unsigned char ucPin, unsigned char ucPort){
 
 
-unsigned long uiCounterms = 0;
-
-
-int indiceDisplay = 0;
-
-
-unsigned long uiButtonDebounce = 0;
-
-unsigned long randomSeed = 0;
-
-
-
-unsigned char readButtonStatus[5] = {1, 1, 1, 1, 1};
-
-
-
-
-
-
-
-void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
-
-
-    if(T0IF)
-    {
-        T0IF = 0;
-        TMR0 = 133;
-        uiCounterms++;
-
+    switch(ucPort){
+        case 0:
+                PORTA |= (1<<ucPin);
+            break;
+        case 1:
+                PORTB |= (1<<ucPin);
+            break;
+        case 2:
+                PORTC |= (1<<ucPin);
+            break;
+        default:
+            return;
+            break;
     }
 
+}
 
-    if(RABIF){
 
-        if(uiCounterms - uiButtonDebounce > 19){
+void clearPin(unsigned char ucPin, unsigned char ucPort){
 
-            readButtonStatus[0] = (PORTA & (1<<0))>>0;
-            readButtonStatus[1] = (PORTA & (1<<1))>>1;
-            readButtonStatus[2] = (PORTA & (1<<2))>>2;
-            readButtonStatus[3] = (PORTA & (1<<4))>>4;
-            readButtonStatus[4] = (PORTA & (1<<5))>>5;
-
-            uiButtonDebounce = uiCounterms;
-        }
-
-        RABIF = 0;
+    switch(ucPort){
+        case 0:
+                PORTA &= ~(1<<ucPin);
+            break;
+        case 1:
+                PORTB &= ~(1<<ucPin);
+            break;
+        case 2:
+                PORTC &= ~(1<<ucPin);
+            break;
+        default:
+            return;
+            break;
     }
 }
 
-void main(void) {
 
 
-    configBoard();
+void togglePin(unsigned char ucPin, unsigned char ucPort){
 
-
-    initDisplay();
-    initButtons();
-
-
-     while(1){
-
-           if(0 == (uiCounterms%5)){
-                shiftDisplays();
-            }
-            if((readButtonStatus[0] != Botoes[0].status) && readButtonStatus[0] == 0){
-                randomSeed = uiCounterms + 47;
-                Botoes[0].status = readButtonStatus[0];
-                break;
-            }else if((readButtonStatus[0] != Botoes[0].status) && readButtonStatus[0] == 1){
-                Botoes[0].status = readButtonStatus[0];
-            }
-     }
-
-   randomNumber();
-   randomNumber();
-
-      while(1){
+    switch(ucPort){
+        case 0:
+                PORTA ^= (1<<ucPin);
+            break;
+        case 1:
+                PORTB ^= (1<<ucPin);
+            break;
+        case 2:
+                PORTC ^= (1<<ucPin);
+            break;
+        default:
+            return;
+            break;
+    }
+}
 
 
 
-        if(0 == (uiCounterms%5)){
-            shiftDisplays();
-        }
 
-        int i;
+void initDisplay(){
 
-        for (i = 0; i < 5; i++){
+    Display7seg4digitsVetor[0].data = 0x00;
+    Display7seg4digitsVetor[0].pin = 4;
+    Display7seg4digitsVetor[0].port = 1;
 
-            if((readButtonStatus[i] != Botoes[i].status) && readButtonStatus[i] == 0){
+    Display7seg4digitsVetor[1].data = 0x00;
+    Display7seg4digitsVetor[1].pin = 5;
+    Display7seg4digitsVetor[1].port = 1;
 
-                deviceStateMachine(i + 1);
+    Display7seg4digitsVetor[2].data = 0x00;
+    Display7seg4digitsVetor[2].pin = 6;
+    Display7seg4digitsVetor[2].port = 1;
 
-                Botoes[i].status = readButtonStatus[i];
-            }else if((readButtonStatus[i] != Botoes[i].status) && readButtonStatus[i] == 1){
-                Botoes[i].status = readButtonStatus[i];
-            }
+    Display7seg4digitsVetor[3].data = 0x00;
+    Display7seg4digitsVetor[3].pin = 7;
+    Display7seg4digitsVetor[3].port = 1;
+}
 
-        }
+
+void initButtons(){
+    Botoes[0].pin = 0;
+    Botoes[0].port = 0;
+    Botoes[0].status = 1;
+
+    Botoes[1].pin = 1;
+    Botoes[1].port = 0;
+    Botoes[1].status = 1;
+
+    Botoes[2].pin = 2;
+    Botoes[2].port = 0;
+    Botoes[2].status = 1;
+
+    Botoes[3].pin = 4;
+    Botoes[3].port = 0;
+    Botoes[3].status = 1;
+
+    Botoes[4].pin = 5;
+    Botoes[4].port = 0;
+    Botoes[4].status = 1;
+
+}
+
+
+
+void shiftDisplays(){
+
+
+    setPin(Display7seg4digitsVetor[indiceDisplay].pin, Display7seg4digitsVetor[indiceDisplay].port);
+
+
+    if(++indiceDisplay > 3){
+        indiceDisplay = 0;
     }
 
 
+    PORTC = (Display7seg4digitsVetor[indiceDisplay].data);
+
+
+    clearPin(Display7seg4digitsVetor[indiceDisplay].pin, Display7seg4digitsVetor[indiceDisplay].port);
+}
+
+
+
+
+void writeCharOnDisplay(unsigned char ucCharacter, unsigned char ucDisplay){
+
+    if(ucDisplay < 0 || ucDisplay > 3){
+        return;
+    }
+
+
+
+
+
+    switch(ucCharacter){
+        case '0':
+            Display7seg4digitsVetor[ucDisplay].data = 0b00111111;
+            break;
+        case '1':
+            Display7seg4digitsVetor[ucDisplay].data = 0b00000110;
+            break;
+        case '2':
+            Display7seg4digitsVetor[ucDisplay].data = 0b01011011;
+            break;
+        case '3':
+            Display7seg4digitsVetor[ucDisplay].data = 0b01001111;
+            break;
+        case '4':
+            Display7seg4digitsVetor[ucDisplay].data = 0b01100110;
+            break;
+        case '5':
+            Display7seg4digitsVetor[ucDisplay].data = 0b01101101;
+            break;
+        case '6':
+            Display7seg4digitsVetor[ucDisplay].data = 0b01111101;
+            break;
+        case '7':
+            Display7seg4digitsVetor[ucDisplay].data = 0b00000111;
+            break;
+        case'8':
+            Display7seg4digitsVetor[ucDisplay].data = 0b01111111;
+            break;
+        case '9':
+            Display7seg4digitsVetor[ucDisplay].data = 0b01100111;
+            break;
+        case 'd':
+            Display7seg4digitsVetor[ucDisplay].data = 0b01011110;
+            break;
+        default:
+            Display7seg4digitsVetor[ucDisplay].data = 0b01110111;
+            break;
+    }
+}
+
+
+
+
+void configBoard(){
+# 208 "utils.c"
+    OSCCON |= (1<<0);
+    OSCCON &= ~(1<<1);
+    OSCCON |= (1<<2);
+    OSCCON &= ~(1<<3);
+    OSCCON |= (0b01110000);
+
+
+    ANSEL = 0x00;
+    ANSELH = 0x00;
+
+
+
+
+
+    TRISA = 0b00110111;
+    TRISB = 0x00;
+    TRISC = 0x00;
+
+
+    PORTA = 0xff;
+    PORTB = 0xff;
+    PORTC = 0x00;
+# 243 "utils.c"
+    nRABPU = 0;
+
+    T0CS = 0;
+
+    PSA = 0;
+
+    PS0 = 1;
+    PS1 = 1;
+    PS2 = 0;
+
+
+    TMR0= 133;
+    GIE=1;
+    PEIE=1;
+    T0IE=1;
+    RABIE = 1;
+    T0IF = 0;
+    RABIF = 0;
+
+
+
+    WPUA0 = 1;
+    WPUA1 = 1;
+    WPUA2 = 1;
+    WPUA4 = 1;
+    WPUA5 = 1;
+
+
+
+    IOCA = 0b00110111;
+
+}
+
+
+
+
+
+
+void deviceStateMachine(unsigned char ucButton){
+
+
+    if(1 == ucButton){
+        deviceCurrentState = ROLL;
+
+        rollDice();
+
+        return;
+    }else if (deviceCurrentState == ROLL){
+        deviceCurrentState = MENU;
+
+        writeCharOnDisplay('0' + diceState[0], 0);
+        writeCharOnDisplay('d', 1);
+        writeCharOnDisplay('0' + diceState[1]/10, 2);
+        writeCharOnDisplay('0' + diceState[1]%10, 3);
+        return;
+    }
+
+
+
+    switch(ucButton){
+        case 2:
+            if(diceState[0] < 9 ){
+                diceState[0]++;
+            }
+            break;
+
+        case 3:
+            if(diceState[0] > 1){
+                diceState[0]--;
+            }
+            break;
+
+        case 4:
+            if(diceState[1] < 20){
+                switch(diceState[1]){
+                    case 12:
+                        diceState[1] = 20;
+                        break;
+                    case 10:
+                        diceState[1] = 12;
+                        break;
+                    case 8:
+                        diceState[1] = 10;
+                        break;
+                    case 6:
+                        diceState[1] = 8;
+                        break;
+                    default:
+                        diceState[1]++;
+                        break;
+                }
+            }
+
+            break;
+        case 5:
+
+            if(diceState[1] > 2){
+                switch(diceState[1]){
+                    case 20:
+                        diceState[1] = 12;
+                        break;
+                    case 12:
+                        diceState[1] = 10;
+                        break;
+                    case 10:
+                        diceState[1] = 8;
+                        break;
+                    case 8:
+                        diceState[1] = 6;
+                        break;
+                    default:
+                        diceState[1]--;
+                        break;
+                }
+            }
+            break;
+        default:
+            break;
+    }
+
+        writeCharOnDisplay('0' + diceState[0], 0);
+        writeCharOnDisplay('d', 1);
+        writeCharOnDisplay('0' + diceState[1]/10, 2);
+        writeCharOnDisplay('0' + diceState[1]%10, 3);
+
+
+}
+
+unsigned long randomNumber(){
+    randomSeed = (37*randomSeed + 98)%1373;
+    return randomSeed;
+}
+
+
+
+
+void rollDice(){
+    int i;
+    unsigned long ulTotal = 0;
+    for(i = 0; i < diceState[0]; i++){
+        ulTotal += randomNumber()%diceState[1] + 1;
+    }
+
+    writeCharOnDisplay('0' + (unsigned char)(ulTotal%10) ,3);
+    writeCharOnDisplay('0' + (unsigned char)((ulTotal/10)%10) ,2);
+    writeCharOnDisplay('0' + (unsigned char)((ulTotal/100)%10) ,1);
+    writeCharOnDisplay('0' + (unsigned char)((ulTotal/1000)%10) ,0);
 }

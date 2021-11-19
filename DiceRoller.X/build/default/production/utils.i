@@ -1968,14 +1968,12 @@ typedef enum state { ROLL, MENU} state;
 # 22 "./utils.h"
 typedef struct Display{
     unsigned char pin;
-    unsigned char port;
     unsigned char data;
 }Display;
 
 
 typedef struct Button {
     unsigned char pin;
-    unsigned char port;
     unsigned char status;
 }Button;
 
@@ -2030,6 +2028,8 @@ void togglePin(unsigned char ucPin, unsigned char ucPort);
 void deviceStateMachine(unsigned char ucButton);
 
 unsigned long randomNumber();
+
+void rollDice();
 # 11 "utils.c" 2
 
 
@@ -2043,25 +2043,13 @@ void setPin(unsigned char ucPin, unsigned char ucPort){
 
     switch(ucPort){
         case 0:
-            if(ucPin >= 0 && ucPin <= 5){
                 PORTA |= (1<<ucPin);
-            }else{
-                return;
-            }
             break;
         case 1:
-             if(ucPin >= 4 && ucPin <= 7){
                 PORTB |= (1<<ucPin);
-            }else{
-                return;
-            }
             break;
         case 2:
-             if(ucPin >= 0 && ucPin <= 7){
                 PORTC |= (1<<ucPin);
-            }else{
-                return;
-            }
             break;
         default:
             return;
@@ -2075,25 +2063,13 @@ void clearPin(unsigned char ucPin, unsigned char ucPort){
 
     switch(ucPort){
         case 0:
-            if(ucPin >= 0 && ucPin <= 5){
                 PORTA &= ~(1<<ucPin);
-            }else{
-                return;
-            }
             break;
         case 1:
-             if(ucPin >= 4 && ucPin <= 7){
                 PORTB &= ~(1<<ucPin);
-            }else{
-                return;
-            }
             break;
         case 2:
-             if(ucPin >= 0 && ucPin <= 7){
                 PORTC &= ~(1<<ucPin);
-            }else{
-                return;
-            }
             break;
         default:
             return;
@@ -2107,25 +2083,13 @@ void togglePin(unsigned char ucPin, unsigned char ucPort){
 
     switch(ucPort){
         case 0:
-            if(ucPin >= 0 && ucPin <= 5){
                 PORTA ^= (1<<ucPin);
-            }else{
-                return;
-            }
             break;
         case 1:
-             if(ucPin >= 4 && ucPin <= 7){
                 PORTB ^= (1<<ucPin);
-            }else{
-                return;
-            }
             break;
         case 2:
-             if(ucPin >= 0 && ucPin <= 7){
                 PORTC ^= (1<<ucPin);
-            }else{
-                return;
-            }
             break;
         default:
             return;
@@ -2139,42 +2103,33 @@ void togglePin(unsigned char ucPin, unsigned char ucPort){
 void initDisplay(){
 
     Display7seg4digitsVetor[0].data = 0x00;
-    Display7seg4digitsVetor[0].pin = 0;
-    Display7seg4digitsVetor[0].port = 0;
+    Display7seg4digitsVetor[0].pin = 4;
 
     Display7seg4digitsVetor[1].data = 0x00;
     Display7seg4digitsVetor[1].pin = 5;
-    Display7seg4digitsVetor[1].port = 0;
 
     Display7seg4digitsVetor[2].data = 0x00;
-    Display7seg4digitsVetor[2].pin = 1;
-    Display7seg4digitsVetor[2].port = 0;
+    Display7seg4digitsVetor[2].pin = 6;
 
     Display7seg4digitsVetor[3].data = 0x00;
-    Display7seg4digitsVetor[3].pin = 2;
-    Display7seg4digitsVetor[3].port = 0;
+    Display7seg4digitsVetor[3].pin = 7;
 }
 
 
 void initButtons(){
-    Botoes[0].pin = 4;
-    Botoes[0].port = 1;
+    Botoes[0].pin = 0;
     Botoes[0].status = 1;
 
-    Botoes[1].pin = 6;
-    Botoes[1].port = 1;
+    Botoes[1].pin = 1;
     Botoes[1].status = 1;
 
-    Botoes[2].pin = 7;
-    Botoes[2].port = 1;
+    Botoes[2].pin = 2;
     Botoes[2].status = 1;
 
     Botoes[3].pin = 4;
-    Botoes[3].port = 0;
     Botoes[3].status = 1;
 
     Botoes[4].pin = 5;
-    Botoes[4].port = 1;
     Botoes[4].status = 1;
 
 }
@@ -2184,12 +2139,10 @@ void initButtons(){
 void shiftDisplays(){
 
 
-    setPin(Display7seg4digitsVetor[indiceDisplay].pin, Display7seg4digitsVetor[indiceDisplay].port);
-
-    indiceDisplay++;
+    setPin(Display7seg4digitsVetor[indiceDisplay].pin, 1);
 
 
-    if(indiceDisplay > 3){
+    if(++indiceDisplay > 3){
         indiceDisplay = 0;
     }
 
@@ -2197,32 +2150,13 @@ void shiftDisplays(){
     PORTC = (Display7seg4digitsVetor[indiceDisplay].data);
 
 
-    clearPin(Display7seg4digitsVetor[indiceDisplay].pin, Display7seg4digitsVetor[indiceDisplay].port);
-
-
-
-
-
-    if(0 != indiceDisplay){
-
-        setPin(0, 0);
-    }else{
-        clearPin(0, 0);
-
-    }
-
-
+    clearPin(Display7seg4digitsVetor[indiceDisplay].pin, 1);
 }
 
 
 
 
 void writeCharOnDisplay(unsigned char ucCharacter, unsigned char ucDisplay){
-
-    if(ucDisplay < 0 || ucDisplay > 3){
-        return;
-    }
-
 
 
 
@@ -2261,9 +2195,6 @@ void writeCharOnDisplay(unsigned char ucCharacter, unsigned char ucDisplay){
         case 'd':
             Display7seg4digitsVetor[ucDisplay].data = 0b01011110;
             break;
-        default:
-            Display7seg4digitsVetor[ucDisplay].data = 0b01110111;
-            break;
     }
 }
 
@@ -2271,7 +2202,7 @@ void writeCharOnDisplay(unsigned char ucCharacter, unsigned char ucDisplay){
 
 
 void configBoard(){
-# 260 "utils.c"
+# 191 "utils.c"
     OSCCON |= (1<<0);
     OSCCON &= ~(1<<1);
     OSCCON |= (1<<2);
@@ -2280,21 +2211,21 @@ void configBoard(){
 
 
     ANSEL = 0x00;
-    ANSELH = 0x00;
 
 
 
 
 
-    TRISA = 0b00010000;
-    TRISB = 0b11110000;
+
+    TRISA = 0b00110111;
+    TRISB = 0x00;
     TRISC = 0x00;
 
 
     PORTA = 0xff;
     PORTB = 0xff;
-    PORTC = 0x00;
-# 295 "utils.c"
+    PORTC = 0xff;
+# 222 "utils.c"
     nRABPU = 0;
 
     T0CS = 0;
@@ -2316,16 +2247,13 @@ void configBoard(){
 
 
 
+    WPUA0 = 1;
+    WPUA1 = 1;
+    WPUA2 = 1;
     WPUA4 = 1;
-    WPUB4 = 1;
-    WPUB5 = 1;
-    WPUB6 = 1;
-    WPUB7 = 1;
+    WPUA5 = 1;
 
-
-
-    IOCA = 0b00010000;
-    IOCB = 0b11110000;
+    IOCA = 0b00110111;
 
 }
 
@@ -2340,14 +2268,7 @@ void deviceStateMachine(unsigned char ucButton){
     if(1 == ucButton){
         deviceCurrentState = ROLL;
 
-        int ulTotalRoll = 0;
-
-        int i;
-        for(i = 0; i < diceState[0]; i++){
-            ulTotalRoll += (int)(randomNumber())%diceState[1];
-        }
-
-
+        rollDice();
 
         return;
     }else if (deviceCurrentState == ROLL){
@@ -2434,4 +2355,20 @@ void deviceStateMachine(unsigned char ucButton){
 unsigned long randomNumber(){
     randomSeed = (37*randomSeed + 98)%1373;
     return randomSeed;
+}
+
+
+
+
+void rollDice(){
+    int i;
+    unsigned int ulTotal = 0;
+    for(i = 0; i < diceState[0]; i++){
+        ulTotal += ((unsigned int)randomNumber())%diceState[1] + 1;
+    }
+
+    writeCharOnDisplay('0' + (unsigned char)(ulTotal%10) ,3);
+    writeCharOnDisplay('0' + (unsigned char)((ulTotal/10)%10) ,2);
+    writeCharOnDisplay('0' + (unsigned char)((ulTotal/100)%10) ,1);
+    writeCharOnDisplay('0' + (unsigned char)((ulTotal/1000)%10) ,0);
 }

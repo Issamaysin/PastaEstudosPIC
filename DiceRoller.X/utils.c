@@ -20,25 +20,13 @@ void setPin(unsigned char ucPin, unsigned char ucPort){
     /*  Liga o bit correspondente aos pino e porta passados por parametro */
     switch(ucPort){
         case PORT_A:
-            if(ucPin >= 0 && ucPin <= 5){
                 PORTA |= (1<<ucPin);
-            }else{
-                return;
-            }
             break;
         case PORT_B:
-             if(ucPin >= 4 && ucPin <= 7){
                 PORTB |= (1<<ucPin);
-            }else{
-                return;
-            }
             break;
         case PORT_C:
-             if(ucPin >= 0 && ucPin <= 7){
                 PORTC |= (1<<ucPin);
-            }else{
-                return;
-            }
             break;
         default:
             return;
@@ -52,25 +40,13 @@ void clearPin(unsigned char ucPin, unsigned char ucPort){
    /*  Desliga o bit correspondente aos pino e porta passados por parametro */
     switch(ucPort){
         case PORT_A:
-            if(ucPin >= 0 && ucPin <= 5){
                 PORTA &= ~(1<<ucPin);
-            }else{
-                return;
-            }
             break;
         case PORT_B:
-             if(ucPin >= 4 && ucPin <= 7){
                 PORTB &= ~(1<<ucPin);
-            }else{
-                return;
-            }
             break;
         case PORT_C:
-             if(ucPin >= 0 && ucPin <= 7){
                 PORTC &= ~(1<<ucPin);
-            }else{
-                return;
-            }
             break;
         default:
             return;
@@ -84,25 +60,13 @@ void togglePin(unsigned char ucPin, unsigned char ucPort){
      /*  Toggle o bit correspondente aos pino e porta passados por parametro */
     switch(ucPort){
         case PORT_A:
-            if(ucPin >= 0 && ucPin <= 5){
                 PORTA ^= (1<<ucPin);
-            }else{
-                return;
-            }
             break;
         case PORT_B:
-             if(ucPin >= 4 && ucPin <= 7){
                 PORTB ^= (1<<ucPin);
-            }else{
-                return;
-            }
             break;
         case PORT_C:
-             if(ucPin >= 0 && ucPin <= 7){
                 PORTC ^= (1<<ucPin);
-            }else{
-                return;
-            }
             break;
         default:
             return;
@@ -117,41 +81,32 @@ void initDisplay(){
         
     Display7seg4digitsVetor[0].data = 0x00;
     Display7seg4digitsVetor[0].pin = pinDisplay1;
-    Display7seg4digitsVetor[0].port = portDisplay1;
     
     Display7seg4digitsVetor[1].data = 0x00;
     Display7seg4digitsVetor[1].pin = pinDisplay2;
-    Display7seg4digitsVetor[1].port = portDisplay2;
       
     Display7seg4digitsVetor[2].data = 0x00;
     Display7seg4digitsVetor[2].pin = pinDisplay3;
-    Display7seg4digitsVetor[2].port = portDisplay3;
       
     Display7seg4digitsVetor[3].data = 0x00;
     Display7seg4digitsVetor[3].pin = pinDisplay4;
-    Display7seg4digitsVetor[3].port = portDisplay4;
 }
 
 //Inicializa os botões, escreve os pins e portas no vetor de botoes.
 void initButtons(){
     Botoes[0].pin = pinBotao1;
-    Botoes[0].port = portBotao1;
     Botoes[0].status = 1;
     
     Botoes[1].pin = pinBotao2;
-    Botoes[1].port = portBotao2;
     Botoes[1].status = 1;
     
     Botoes[2].pin = pinBotao3;
-    Botoes[2].port = portBotao3;
     Botoes[2].status = 1;
     
     Botoes[3].pin = pinBotao4;
-    Botoes[3].port = portBotao4;
     Botoes[3].status = 1;
     
     Botoes[4].pin = pinBotao5;
-    Botoes[4].port = portBotao5;
     Botoes[4].status = 1;
      
 }
@@ -161,12 +116,10 @@ void initButtons(){
 void shiftDisplays(){
     
     //desliga display que está ligado atualmente
-    setPin(Display7seg4digitsVetor[indiceDisplay].pin, Display7seg4digitsVetor[indiceDisplay].port);
-    
-    indiceDisplay++; 
+    setPin(Display7seg4digitsVetor[indiceDisplay].pin, portDisplay);
     
     //atualiza qual display está em execução
-    if(indiceDisplay > 3){
+    if(++indiceDisplay > 3){
         indiceDisplay = 0;
     }
     
@@ -174,32 +127,13 @@ void shiftDisplays(){
     PORTC = (Display7seg4digitsVetor[indiceDisplay].data);
     
     //liga display
-    clearPin(Display7seg4digitsVetor[indiceDisplay].pin, Display7seg4digitsVetor[indiceDisplay].port);
-    
-    
-    //Obs: dispay 1 aparenta ter 1 bug:
-    //  ao dar clear no bit de um outro display, mesmo que em outra PORT, o display1 liga
-    //  testei exaustivamente as funçoes clear e set, mas só consegui resolver ligando/desligando forçadamente o display1.
-    if(0 != indiceDisplay){
-        //PORTA |= (1<<0);
-        setPin(pinDisplay1, portDisplay1);
-    }else{
-        clearPin(pinDisplay1, portDisplay1);
-        //PORTA &= ~(1<<0);
-    }
-     
-     
+    clearPin(Display7seg4digitsVetor[indiceDisplay].pin, portDisplay);
 }
     
 
 
 
 void writeCharOnDisplay(unsigned char ucCharacter, unsigned char ucDisplay){
-    /* End method if display is not [0,3] */
-    if(ucDisplay < 0 || ucDisplay > 3){
-        return;
-    }
-    
     /* 
      * Writes the character on the respective display
      *  will write 'A' if no character matches for debugging 
@@ -238,9 +172,6 @@ void writeCharOnDisplay(unsigned char ucCharacter, unsigned char ucDisplay){
         case 'd':
             Display7seg4digitsVetor[ucDisplay].data = 0b01011110;
             break;
-        default:
-            Display7seg4digitsVetor[ucDisplay].data = 0b01110111;
-            break;
     } 
 }
 
@@ -265,24 +196,21 @@ void configBoard(){
     
     //Seta todos pinos do adc como i/o
     ANSEL = 0x00;
-    ANSELH = 0x00;
+    
     //Seta os pinos dos botoes como input e os demais como output
     //TRISA = 0b010111; // set A3 e A5 como output e resto como INPUT
     //TRISB = 0b00100000; //set all port B pins, but RB5, as output
     //TRISC = 0x00; //set all port C pins as output
     
-    TRISA = 0b00010000;             //Botao em RA4 como input, resto como output
-    TRISB = 0b11110000;             //R4 ~ RB7 como input (botoes)
+    TRISA = 0b00110111;             //Botoes em RA0, RA1, RA2, RA4, RA5 como input
+    TRISB = 0x00;                   //R4 ~ RB7 como output (controle display)
     TRISC = 0x00;                   //Todos como output, controla os leds.
     
     //PORTA = 0b100111;
     PORTA = 0xff;
     PORTB = 0xff;
-    PORTC = 0x00;
-            
-        
-    
-    
+    PORTC = 0xff;
+
     /*
     *   Port Configuration for Timer0
     *   set timer0 reading external frequency with 16 prescaler and enables pullups
@@ -290,7 +218,6 @@ void configBoard(){
     *   enable global, peripherial, and timer0 interruptions
    */
   
-    
     //Pull up enabled
     nRABPU = 0;
     //Timer0 source is internal clock
@@ -313,16 +240,13 @@ void configBoard(){
     
 
            //enables pull ups on buttons
+    WPUA0 = 1;
+    WPUA1 = 1;
+    WPUA2 = 1;
     WPUA4 = 1;
-    WPUB4 = 1;
-    WPUB5 = 1;
-    WPUB6 = 1;
-    WPUB7 = 1;
-    
-    
-    
-    IOCA = 0b00010000;   //enable interrupt on change para RA4.
-    IOCB = 0b11110000; //enable interrupt on change para RB4~RB7.
+    WPUA5 = 1;
+
+    IOCA = 0b00110111;   //enable interrupt on change para RA4.
     
 }
 
@@ -337,14 +261,7 @@ void deviceStateMachine(unsigned char ucButton){
     if(1 == ucButton){
         deviceCurrentState = ROLL;
         //Chamar aqui função que rola os dados com o valor da variavel global e escreve no display o resultado.
-        int ulTotalRoll = 0;
-        
-        int i;
-        for(i = 0; i < diceState[0]; i++){
-            ulTotalRoll += (int)(randomNumber())%diceState[1]; //randomNumber();
-        }
-        
-        
+        rollDice();
         
         return; //Encera a funcao, já rolou o dado e imprimiu o valor no display
     }else if (deviceCurrentState == ROLL){
@@ -436,7 +353,18 @@ unsigned long randomNumber(){
 
 
 
-
+void rollDice(){
+    int i;
+    unsigned int ulTotal = 0;
+    for(i = 0; i < diceState[0]; i++){
+        ulTotal += ((unsigned int)randomNumber())%diceState[1] + 1;
+    }
+    
+    writeCharOnDisplay('0' + (unsigned char)(ulTotal%10) ,3);
+    writeCharOnDisplay('0' + (unsigned char)((ulTotal/10)%10) ,2);
+    writeCharOnDisplay('0' + (unsigned char)((ulTotal/100)%10) ,1);
+    writeCharOnDisplay('0' + (unsigned char)((ulTotal/1000)%10) ,0);
+}
 
 
 

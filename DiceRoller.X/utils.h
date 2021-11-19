@@ -21,14 +21,12 @@ typedef enum state { ROLL, MENU} state;
 // o estado atual de cada display.
 typedef struct Display{
     unsigned char pin; //pino que controla display
-    unsigned char port; //port que display está ligado
     unsigned char data; //instrução do caracter que será mostrado no display  
 }Display;
 
 //Representa um botao.
 typedef struct Button {
     unsigned char pin;     //pino que o botao esta conectado
-    unsigned char port;    //port que o botao esta conectado
     unsigned char status; //status da ultima leitura do botao (0 = off)
 }Button;
 
@@ -83,6 +81,8 @@ void togglePin(unsigned char ucPin, unsigned char ucPort);
 void deviceStateMachine(unsigned char ucButton);
 
 unsigned long randomNumber();
+
+void rollDice();
 
 #endif
 

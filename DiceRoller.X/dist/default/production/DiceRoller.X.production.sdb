@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F687 ]
 [d frameptr 0 ]
-"52 C:\Users\User\MPLABXProjects\DiceRoller.X/utils.h
+"50 C:\Users\User\MPLABXProjects\DiceRoller.X/utils.h
 [e E1007 state `uc
 ROLL 0
 MENU 1
@@ -18,12 +18,14 @@ MENU 1
 [v ___awmod __awmod `(i  1 e 2 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\llmod.c
 [v ___llmod __llmod `(ul  1 e 4 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8.c
-[v ___bmul __bmul `(uc  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\pic\__eeprom.c
@@ -32,35 +34,37 @@ MENU 1
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "42 C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
-"72
+"71
 [v _main main `(v  1 e 1 0 ]
 "18 C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
 [v _setPin setPin `(v  1 e 1 0 ]
-"51
+"39
 [v _clearPin clearPin `(v  1 e 1 0 ]
-"116
+"80
 [v _initDisplay initDisplay `(v  1 e 1 0 ]
-"136
+"96
 [v _initButtons initButtons `(v  1 e 1 0 ]
-"161
+"116
 [v _shiftDisplays shiftDisplays `(v  1 e 1 0 ]
-"197
+"136
 [v _writeCharOnDisplay writeCharOnDisplay `(v  1 e 1 0 ]
-"250
+"181
 [v _configBoard configBoard `(v  1 e 1 0 ]
-"334
+"258
 [v _deviceStateMachine deviceStateMachine `(v  1 e 1 0 ]
-"431
+"348
 [v _randomNumber randomNumber `(ul  1 e 4 0 ]
-[s S22 Display 3 `uc 1 pin 1 0 `uc 1 port 1 1 `uc 1 data 1 2 ]
-"41 C:\Users\User\MPLABXProjects\DiceRoller.X/utils.h
-[v _Display7seg4digitsVetor Display7seg4digitsVetor `[4]S22  1 e 12 0 ]
-[s S26 Button 3 `uc 1 pin 1 0 `uc 1 port 1 1 `uc 1 status 1 2 ]
-"44
-[v _Botoes Botoes `[5]S26  1 e 15 0 ]
-"52
+"356
+[v _rollDice rollDice `(v  1 e 1 0 ]
+[s S22 Display 2 `uc 1 pin 1 0 `uc 1 data 1 1 ]
+"39 C:\Users\User\MPLABXProjects\DiceRoller.X/utils.h
+[v _Display7seg4digitsVetor Display7seg4digitsVetor `[4]S22  1 e 8 0 ]
+[s S25 Button 2 `uc 1 pin 1 0 `uc 1 status 1 1 ]
+"42
+[v _Botoes Botoes `[5]S25  1 e 10 0 ]
+"50
 [v _deviceCurrentState deviceCurrentState `E1007  1 e 1 0 ]
-"58
+"56
 [v _diceState diceState `[2]uc  1 e 2 0 ]
 "59 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
@@ -80,12 +84,8 @@ MENU 1
 [v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
 "1746
 [v _IOCA IOCA `VEuc  1 e 1 @150 ]
-"2336
-[v _IOCB IOCB `VEuc  1 e 1 @278 ]
 "2614
 [v _ANSEL ANSEL `VEuc  1 e 1 @286 ]
-"2676
-[v _ANSELH ANSELH `VEuc  1 e 1 @287 ]
 "3065
 [v _GIE GIE `VEb  1 e 0 @95 ]
 "3206
@@ -108,16 +108,16 @@ MENU 1
 [v _T0IE T0IE `VEb  1 e 0 @93 ]
 "3386
 [v _T0IF T0IF `VEb  1 e 0 @90 ]
+"3572
+[v _WPUA0 WPUA0 `VEb  1 e 0 @1192 ]
+"3575
+[v _WPUA1 WPUA1 `VEb  1 e 0 @1193 ]
+"3578
+[v _WPUA2 WPUA2 `VEb  1 e 0 @1194 ]
 "3581
 [v _WPUA4 WPUA4 `VEb  1 e 0 @1196 ]
-"3587
-[v _WPUB4 WPUB4 `VEb  1 e 0 @2220 ]
-"3590
-[v _WPUB5 WPUB5 `VEb  1 e 0 @2221 ]
-"3593
-[v _WPUB6 WPUB6 `VEb  1 e 0 @2222 ]
-"3596
-[v _WPUB7 WPUB7 `VEb  1 e 0 @2223 ]
+"3584
+[v _WPUA5 WPUA5 `VEb  1 e 0 @1197 ]
 "3632
 [v _nRABPU nRABPU `VEb  1 e 0 @1039 ]
 "22 C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
@@ -130,87 +130,77 @@ MENU 1
 [v _randomSeed randomSeed `ul  1 e 4 0 ]
 "34
 [v _readButtonStatus readButtonStatus `[5]uc  1 e 5 0 ]
-"72
+"71
 [v _main main `(v  1 e 1 0 ]
 {
-"88
-[v main@i i `uc  1 a 1 54 ]
-"134
+"106
+[v main@i i `i  1 a 2 57 ]
+"123
 } 0
-"161 C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+"116 C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
 [v _shiftDisplays shiftDisplays `(v  1 e 1 0 ]
 {
-"192
+"131
 } 0
 "18
 [v _setPin setPin `(v  1 e 1 0 ]
 {
 [v setPin@ucPin ucPin `uc  1 a 1 wreg ]
 [v setPin@ucPin ucPin `uc  1 a 1 wreg ]
-[v setPin@ucPort ucPort `uc  1 p 1 4 ]
-[v setPin@ucPin ucPin `uc  1 a 1 7 ]
-"48
+[v setPin@ucPort ucPort `uc  1 p 1 0 ]
+[v setPin@ucPin ucPin `uc  1 a 1 3 ]
+"36
 } 0
-"51
+"39
 [v _clearPin clearPin `(v  1 e 1 0 ]
 {
 [v clearPin@ucPin ucPin `uc  1 a 1 wreg ]
 [v clearPin@ucPin ucPin `uc  1 a 1 wreg ]
-[v clearPin@ucPort ucPort `uc  1 p 1 4 ]
-[v clearPin@ucPin ucPin `uc  1 a 1 7 ]
-"79
+[v clearPin@ucPort ucPort `uc  1 p 1 0 ]
+[v clearPin@ucPin ucPin `uc  1 a 1 3 ]
+"55
 } 0
-"116
+"80
 [v _initDisplay initDisplay `(v  1 e 1 0 ]
 {
-"133
+"93
 } 0
-"136
+"96
 [v _initButtons initButtons `(v  1 e 1 0 ]
 {
-"157
+"112
 } 0
-"334
+"258
 [v _deviceStateMachine deviceStateMachine `(v  1 e 1 0 ]
 {
 [v deviceStateMachine@ucButton ucButton `uc  1 a 1 wreg ]
-"342
-[v deviceStateMachine@i i `i  1 a 2 47 ]
-"340
-[v deviceStateMachine@ulTotalRoll ulTotalRoll `i  1 a 2 45 ]
-"334
 [v deviceStateMachine@ucButton ucButton `uc  1 a 1 wreg ]
-"337
-[v deviceStateMachine@ucButton ucButton `uc  1 a 1 49 ]
-"429
+"261
+[v deviceStateMachine@ucButton ucButton `uc  1 a 1 52 ]
+"346
 } 0
-"197
+"356
+[v _rollDice rollDice `(v  1 e 1 0 ]
+{
+"358
+[v rollDice@ulTotal ulTotal `ui  1 a 2 47 ]
+"357
+[v rollDice@i i `i  1 a 2 45 ]
+"367
+} 0
+"136
 [v _writeCharOnDisplay writeCharOnDisplay `(v  1 e 1 0 ]
 {
 [v writeCharOnDisplay@ucCharacter ucCharacter `uc  1 a 1 wreg ]
 [v writeCharOnDisplay@ucCharacter ucCharacter `uc  1 a 1 wreg ]
-[v writeCharOnDisplay@ucDisplay ucDisplay `uc  1 p 1 38 ]
-"199
-[v writeCharOnDisplay@ucCharacter ucCharacter `uc  1 a 1 41 ]
-"245
+[v writeCharOnDisplay@ucDisplay ucDisplay `uc  1 p 1 37 ]
+[v writeCharOnDisplay@ucCharacter ucCharacter `uc  1 a 1 40 ]
+"176
 } 0
-"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8.c
-[v ___bmul __bmul `(uc  1 e 1 0 ]
-{
-[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
-"6
-[v ___bmul@product product `uc  1 a 1 2 ]
-"4
-[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
-[v ___bmul@multiplicand multiplicand `uc  1 p 1 0 ]
-"6
-[v ___bmul@multiplier multiplier `uc  1 a 1 3 ]
-"51
-} 0
-"431 C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+"348
 [v _randomNumber randomNumber `(ul  1 e 4 0 ]
 {
-"434
+"351
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
@@ -232,15 +222,37 @@ MENU 1
 [v ___llmod@dividend dividend `ul  1 p 4 17 ]
 "25
 } 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 36 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 31 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 33 ]
+"25
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 6 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
+} 0
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
 {
 "10
-[v ___awmod@sign sign `uc  1 a 1 37 ]
-[v ___awmod@counter counter `uc  1 a 1 36 ]
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
 "5
-[v ___awmod@divisor divisor `i  1 p 2 31 ]
-[v ___awmod@dividend dividend `i  1 p 2 33 ]
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
 "34
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
@@ -256,13 +268,13 @@ MENU 1
 [v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
 } 0
-"250 C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+"181 C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
 [v _configBoard configBoard `(v  1 e 1 0 ]
 {
-"327
+"251
 } 0
 "42 C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
 {
-"70
+"69
 } 0

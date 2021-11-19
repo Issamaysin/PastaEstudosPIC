@@ -18,25 +18,18 @@
       
         
 /* Define dos pinos utilizados */
-#define pinDisplay1 0
+#define pinDisplay1 4
 #define pinDisplay2 5   
-#define pinDisplay3 1
-#define pinDisplay4 2
-#define portDisplay1 PORT_A
-#define portDisplay2 PORT_A
-#define portDisplay3 PORT_A
-#define portDisplay4 PORT_A
+#define pinDisplay3 6
+#define pinDisplay4 7
+#define portDisplay PORT_B
 
-#define pinBotao1   4
-#define pinBotao2   6
-#define pinBotao3   7
+#define pinBotao1   0
+#define pinBotao2   1
+#define pinBotao3   2
 #define pinBotao4   4
 #define pinBotao5   5
-#define portBotao1  PORT_B
-#define portBotao2  PORT_B
-#define portBotao3  PORT_B
-#define portBotao4  PORT_A
-#define portBotao5  PORT_B
+#define portBotao PORT_A
              
         
         
