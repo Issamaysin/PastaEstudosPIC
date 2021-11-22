@@ -1954,41 +1954,30 @@ extern __bank0 __bit __timeout;
 
 
 # 1 "./board.h" 1
-# 12 "./board.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stddef.h" 1 3
-
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__size_t.h" 1 3
-
-
-
-typedef unsigned size_t;
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stddef.h" 2 3
-
-# 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__null.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stddef.h" 2 3
-
-typedef int ptrdiff_t;
-# 12 "./board.h" 2
 # 14 "main.c" 2
 
 # 1 "./utils.h" 1
-# 12 "./utils.h"
+# 16 "./utils.h"
 typedef enum state { ROLL, MENU} state;
-# 22 "./utils.h"
+
+
+
+
+
 typedef struct Display{
     unsigned char pin;
     unsigned char data;
 }Display;
 
 
+
+
+
+
 typedef struct Button {
     unsigned char pin;
     unsigned char status;
 }Button;
-
-
 
 
 
@@ -2012,38 +2001,47 @@ state deviceCurrentState = MENU;
 
 
 unsigned char diceState[2] = {1,6};
-
-
-
-
-
-
-
+# 72 "./utils.h"
 void shiftDisplays();
 
 
+
+
+
+
+
 void initDisplay();
-
-
+# 92 "./utils.h"
 void writeCharOnDisplay(unsigned char ucCharacter, unsigned char ucDisplay);
 
+
+
+
+
+
+
 void initButtons();
-
+# 109 "./utils.h"
 void configBoard();
-
+# 120 "./utils.h"
 void setPin(unsigned char ucPin, unsigned char ucPort);
+# 129 "./utils.h"
 void clearPin(unsigned char ucPin, unsigned char ucPort);
+# 138 "./utils.h"
 void togglePin(unsigned char ucPin, unsigned char ucPort);
-
-
+# 153 "./utils.h"
 void deviceStateMachine(unsigned char ucButton);
 
-unsigned long randomNumber();
 
+
+
+
+
+
+unsigned long randomNumber();
+# 170 "./utils.h"
 void rollDice();
 # 15 "main.c" 2
-
-
 
 
 
@@ -2057,18 +2055,14 @@ int indiceDisplay = 0;
 
 unsigned long uiButtonDebounce = 0;
 
+
 unsigned long randomSeed = 0;
 
 
 
+
 unsigned char readButtonStatus[5] = {1, 1, 1, 1, 1};
-
-
-
-
-
-
-
+# 43 "main.c"
 void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 
 
@@ -2077,6 +2071,7 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
         T0IF = 0;
         TMR0 = 133;
         uiCounterms++;
+
 
     }
 
@@ -2091,6 +2086,7 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
             readButtonStatus[3] = (PORTA & (1<<4))>>4;
             readButtonStatus[4] = (PORTA & (1<<5))>>5;
 
+
             uiButtonDebounce = uiCounterms;
         }
 
@@ -2104,15 +2100,22 @@ void main(void) {
     configBoard();
 
 
+
     initDisplay();
     initButtons();
 
 
-     while(1){
 
-           if(0 == (uiCounterms%5)){
-                shiftDisplays();
-            }
+
+
+        while(1){
+
+
+        if(0 == (uiCounterms%5)){
+            shiftDisplays();
+        }
+
+
             if((readButtonStatus[0] != Botoes[0].status) && readButtonStatus[0] == 0){
                 randomSeed = uiCounterms + 47;
                 Botoes[0].status = readButtonStatus[0];
@@ -2122,32 +2125,29 @@ void main(void) {
             }
      }
 
-   randomNumber();
-   randomNumber();
 
-      while(1){
+     randomNumber();
+     randomNumber();
 
+     while(1){
 
 
         if(0 == (uiCounterms%5)){
             shiftDisplays();
         }
 
-        int i;
+        unsigned char i;
+
 
         for (i = 0; i < 5; i++){
 
             if((readButtonStatus[i] != Botoes[i].status) && readButtonStatus[i] == 0){
-
                 deviceStateMachine(i + 1);
-
                 Botoes[i].status = readButtonStatus[i];
             }else if((readButtonStatus[i] != Botoes[i].status) && readButtonStatus[i] == 1){
                 Botoes[i].status = readButtonStatus[i];
             }
-
         }
     }
-
 
 }

@@ -1,15 +1,14 @@
 
 /* 
- * File:   
- * Author: 
- * Comments:
- * Revision history: 
+ * File:   Board.h
+ * Author: Renato Pepe
+ * Comments: Contem as definições relativos aos pinos e portas do programa
+ * Created on 16 de novembro de 2021
  */
 
 #ifndef BOARD_H
 #define	BOARD_H
       
-#include <stddef.h>
 
 //Portas    
 #define PORT_A 0

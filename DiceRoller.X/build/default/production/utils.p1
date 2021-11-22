@@ -3,23 +3,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./utils.h: 22: typedef struct Display{
 [s S117 `uc 1 `uc 1 ]
 [n S117 Display pin data ]
-"28
-[; ;./utils.h: 28: typedef struct Button {
+"32
+[; ;./utils.h: 32: typedef struct Button {
 [s S118 `uc 1 `uc 1 ]
 [n S118 Button pin status ]
-"50
-[; ;./utils.h: 50: state deviceCurrentState = MENU;
-[c E1007 0 1 .. ]
-[n E1007 state ROLL MENU  ]
-"166 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
-[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
-"216
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"255
-[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"52
+[; ;./utils.h: 52: state deviceCurrentState = MENU;
+[c E1005 0 1 .. ]
+[n E1005 state ROLL MENU  ]
+"120
+[; ;./utils.h: 120: void setPin(unsigned char ucPin, unsigned char ucPort);
+[v _setPin `(v ~T0 @X0 0 ef2`uc`uc ]
 "14 utils.c
 [; ;utils.c: 14: extern int indiceDisplay;
 [v _indiceDisplay `i ~T0 @X0 0 e ]
+"255 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"129 ./utils.h
+[; ;./utils.h: 129: void clearPin(unsigned char ucPin, unsigned char ucPort);
+[v _clearPin `(v ~T0 @X0 0 ef2`uc`uc ]
 "1177 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
 [v _OSCCON `Vuc ~T0 @X0 0 e@143 ]
 "2614
@@ -30,6 +32,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
 "984
 [v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"166
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"216
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "3632
 [v _nRABPU `Vb ~T0 @X0 0 e@1039 ]
 "3380
@@ -56,20 +62,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _T0IF `Vb ~T0 @X0 0 e@90 ]
 "3248
 [v _RABIF `Vb ~T0 @X0 0 e@88 ]
-"3572
-[v _WPUA0 `Vb ~T0 @X0 0 e@1192 ]
-"3575
-[v _WPUA1 `Vb ~T0 @X0 0 e@1193 ]
-"3578
-[v _WPUA2 `Vb ~T0 @X0 0 e@1194 ]
-"3581
-[v _WPUA4 `Vb ~T0 @X0 0 e@1196 ]
-"3584
-[v _WPUA5 `Vb ~T0 @X0 0 e@1197 ]
+"1592
+[v _WPUA `Vuc ~T0 @X0 0 e@149 ]
 "1746
 [v _IOCA `Vuc ~T0 @X0 0 e@150 ]
-"85 ./utils.h
-[; ;./utils.h: 85: void rollDice();
+"170 ./utils.h
+[; ;./utils.h: 170: void rollDice();
 [v _rollDice `(v ~T0 @X0 0 e? ]
 "15 utils.c
 [; ;utils.c: 15: extern unsigned long randomSeed;
@@ -196,20 +194,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON2 equ 018Dh ;# ">
 "2761
 [; <" SRCON equ 019Eh ;# ">
-"39 ./utils.h
-[; ;./utils.h: 39: Display Display7seg4digitsVetor[4];
+"41 ./utils.h
+[; ;./utils.h: 41: Display Display7seg4digitsVetor[4];
 [v _Display7seg4digitsVetor `S117 ~T0 @X0 -> 4 `i e ]
-"42
-[; ;./utils.h: 42: Button Botoes[5];
+"44
+[; ;./utils.h: 44: Button Botoes[5];
 [v _Botoes `S118 ~T0 @X0 -> 5 `i e ]
-"50
-[; ;./utils.h: 50: state deviceCurrentState = MENU;
-[v _deviceCurrentState `E1007 ~T0 @X0 1 e ]
+"52
+[; ;./utils.h: 52: state deviceCurrentState = MENU;
+[v _deviceCurrentState `E1005 ~T0 @X0 1 e ]
 [i _deviceCurrentState
-. `E1007 1
+. `E1005 1
 ]
-"56
-[; ;./utils.h: 56: unsigned char diceState[2] = {1,6};
+"58
+[; ;./utils.h: 58: unsigned char diceState[2] = {1,6};
 [v _diceState `uc ~T0 @X0 -> 2 `i e ]
 [i _diceState
 :U ..
@@ -217,678 +215,668 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 6 `i `uc
 ..
 ]
-"18 utils.c
-[; ;utils.c: 18: void setPin(unsigned char ucPin, unsigned char ucPort){
-[v _setPin `(v ~T0 @X0 1 ef2`uc`uc ]
-{
-[e :U _setPin ]
-[v _ucPin `uc ~T0 @X0 1 r1 ]
-[v _ucPort `uc ~T0 @X0 1 r2 ]
-[f ]
-"21
-[; ;utils.c: 21:     switch(ucPort){
-[e $U 121  ]
-{
-"22
-[; ;utils.c: 22:         case 0:
-[e :U 122 ]
-"23
-[; ;utils.c: 23:                 PORTA |= (1<<ucPin);
-[e =| _PORTA -> << -> 1 `i -> _ucPin `i `Vuc ]
-"24
-[; ;utils.c: 24:             break;
-[e $U 120  ]
-"25
-[; ;utils.c: 25:         case 1:
-[e :U 123 ]
-"26
-[; ;utils.c: 26:                 PORTB |= (1<<ucPin);
-[e =| _PORTB -> << -> 1 `i -> _ucPin `i `Vuc ]
-"27
-[; ;utils.c: 27:             break;
-[e $U 120  ]
-"28
-[; ;utils.c: 28:         case 2:
-[e :U 124 ]
-"29
-[; ;utils.c: 29:                 PORTC |= (1<<ucPin);
-[e =| _PORTC -> << -> 1 `i -> _ucPin `i `Vuc ]
-"30
-[; ;utils.c: 30:             break;
-[e $U 120  ]
-"31
-[; ;utils.c: 31:         default:
-[e :U 125 ]
-"32
-[; ;utils.c: 32:             return;
-[e $UE 119  ]
-"33
-[; ;utils.c: 33:             break;
-[e $U 120  ]
-"34
-[; ;utils.c: 34:     }
-}
-[e $U 120  ]
-[e :U 121 ]
-[e [\ -> _ucPort `i , $ -> 0 `i 122
- , $ -> 1 `i 123
- , $ -> 2 `i 124
- 125 ]
-[e :U 120 ]
-"36
-[; ;utils.c: 36: }
-[e :UE 119 ]
-}
-"39
-[; ;utils.c: 39: void clearPin(unsigned char ucPin, unsigned char ucPort){
-[v _clearPin `(v ~T0 @X0 1 ef2`uc`uc ]
-{
-[e :U _clearPin ]
-[v _ucPin `uc ~T0 @X0 1 r1 ]
-[v _ucPort `uc ~T0 @X0 1 r2 ]
-[f ]
-"41
-[; ;utils.c: 41:     switch(ucPort){
-[e $U 128  ]
-{
-"42
-[; ;utils.c: 42:         case 0:
-[e :U 129 ]
-"43
-[; ;utils.c: 43:                 PORTA &= ~(1<<ucPin);
-[e =& _PORTA -> ~ << -> 1 `i -> _ucPin `i `Vuc ]
-"44
-[; ;utils.c: 44:             break;
-[e $U 127  ]
-"45
-[; ;utils.c: 45:         case 1:
-[e :U 130 ]
-"46
-[; ;utils.c: 46:                 PORTB &= ~(1<<ucPin);
-[e =& _PORTB -> ~ << -> 1 `i -> _ucPin `i `Vuc ]
-"47
-[; ;utils.c: 47:             break;
-[e $U 127  ]
-"48
-[; ;utils.c: 48:         case 2:
-[e :U 131 ]
-"49
-[; ;utils.c: 49:                 PORTC &= ~(1<<ucPin);
-[e =& _PORTC -> ~ << -> 1 `i -> _ucPin `i `Vuc ]
-"50
-[; ;utils.c: 50:             break;
-[e $U 127  ]
-"51
-[; ;utils.c: 51:         default:
-[e :U 132 ]
-"52
-[; ;utils.c: 52:             return;
-[e $UE 126  ]
-"53
-[; ;utils.c: 53:             break;
-[e $U 127  ]
-"54
-[; ;utils.c: 54:     }
-}
-[e $U 127  ]
-[e :U 128 ]
-[e [\ -> _ucPort `i , $ -> 0 `i 129
- , $ -> 1 `i 130
- , $ -> 2 `i 131
- 132 ]
-[e :U 127 ]
-"55
-[; ;utils.c: 55: }
-[e :UE 126 ]
-}
-"59
-[; ;utils.c: 59: void togglePin(unsigned char ucPin, unsigned char ucPort){
-[v _togglePin `(v ~T0 @X0 1 ef2`uc`uc ]
-{
-[e :U _togglePin ]
-[v _ucPin `uc ~T0 @X0 1 r1 ]
-[v _ucPort `uc ~T0 @X0 1 r2 ]
-[f ]
-"61
-[; ;utils.c: 61:     switch(ucPort){
-[e $U 135  ]
-{
-"62
-[; ;utils.c: 62:         case 0:
-[e :U 136 ]
-"63
-[; ;utils.c: 63:                 PORTA ^= (1<<ucPin);
-[e =^ _PORTA -> << -> 1 `i -> _ucPin `i `Vuc ]
-"64
-[; ;utils.c: 64:             break;
-[e $U 134  ]
-"65
-[; ;utils.c: 65:         case 1:
-[e :U 137 ]
-"66
-[; ;utils.c: 66:                 PORTB ^= (1<<ucPin);
-[e =^ _PORTB -> << -> 1 `i -> _ucPin `i `Vuc ]
-"67
-[; ;utils.c: 67:             break;
-[e $U 134  ]
-"68
-[; ;utils.c: 68:         case 2:
-[e :U 138 ]
-"69
-[; ;utils.c: 69:                 PORTC ^= (1<<ucPin);
-[e =^ _PORTC -> << -> 1 `i -> _ucPin `i `Vuc ]
-"70
-[; ;utils.c: 70:             break;
-[e $U 134  ]
-"71
-[; ;utils.c: 71:         default:
-[e :U 139 ]
-"72
-[; ;utils.c: 72:             return;
-[e $UE 133  ]
-"73
-[; ;utils.c: 73:             break;
-[e $U 134  ]
-"74
-[; ;utils.c: 74:     }
-}
-[e $U 134  ]
-[e :U 135 ]
-[e [\ -> _ucPort `i , $ -> 0 `i 136
- , $ -> 1 `i 137
- , $ -> 2 `i 138
- 139 ]
-[e :U 134 ]
-"75
-[; ;utils.c: 75: }
-[e :UE 133 ]
-}
-"80
-[; ;utils.c: 80: void initDisplay(){
-[v _initDisplay `(v ~T0 @X0 1 ef ]
-{
-[e :U _initDisplay ]
-[f ]
-"82
-[; ;utils.c: 82:     Display7seg4digitsVetor[0].data = 0x00;
-[e = . *U + &U _Display7seg4digitsVetor * -> -> -> 0 `i `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 0 `i `uc ]
-"83
-[; ;utils.c: 83:     Display7seg4digitsVetor[0].pin = 4;
-[e = . *U + &U _Display7seg4digitsVetor * -> -> -> 0 `i `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 0 -> -> 4 `i `uc ]
-"85
-[; ;utils.c: 85:     Display7seg4digitsVetor[1].data = 0x00;
-[e = . *U + &U _Display7seg4digitsVetor * -> -> -> 1 `i `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 0 `i `uc ]
-"86
-[; ;utils.c: 86:     Display7seg4digitsVetor[1].pin = 5;
-[e = . *U + &U _Display7seg4digitsVetor * -> -> -> 1 `i `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 0 -> -> 5 `i `uc ]
-"88
-[; ;utils.c: 88:     Display7seg4digitsVetor[2].data = 0x00;
-[e = . *U + &U _Display7seg4digitsVetor * -> -> -> 2 `i `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 0 `i `uc ]
-"89
-[; ;utils.c: 89:     Display7seg4digitsVetor[2].pin = 6;
-[e = . *U + &U _Display7seg4digitsVetor * -> -> -> 2 `i `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 0 -> -> 6 `i `uc ]
-"91
-[; ;utils.c: 91:     Display7seg4digitsVetor[3].data = 0x00;
-[e = . *U + &U _Display7seg4digitsVetor * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 0 `i `uc ]
-"92
-[; ;utils.c: 92:     Display7seg4digitsVetor[3].pin = 7;
-[e = . *U + &U _Display7seg4digitsVetor * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 0 -> -> 7 `i `uc ]
-"93
-[; ;utils.c: 93: }
-[e :UE 140 ]
-}
-"96
-[; ;utils.c: 96: void initButtons(){
-[v _initButtons `(v ~T0 @X0 1 ef ]
-{
-[e :U _initButtons ]
-[f ]
-"97
-[; ;utils.c: 97:     Botoes[0].pin = 0;
-[e = . *U + &U _Botoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 0 -> -> 0 `i `uc ]
-"98
-[; ;utils.c: 98:     Botoes[0].status = 1;
-[e = . *U + &U _Botoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 -> -> 1 `i `uc ]
-"100
-[; ;utils.c: 100:     Botoes[1].pin = 1;
-[e = . *U + &U _Botoes * -> -> -> 1 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 0 -> -> 1 `i `uc ]
-"101
-[; ;utils.c: 101:     Botoes[1].status = 1;
-[e = . *U + &U _Botoes * -> -> -> 1 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 -> -> 1 `i `uc ]
-"103
-[; ;utils.c: 103:     Botoes[2].pin = 2;
-[e = . *U + &U _Botoes * -> -> -> 2 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 0 -> -> 2 `i `uc ]
-"104
-[; ;utils.c: 104:     Botoes[2].status = 1;
-[e = . *U + &U _Botoes * -> -> -> 2 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 -> -> 1 `i `uc ]
-"106
-[; ;utils.c: 106:     Botoes[3].pin = 4;
-[e = . *U + &U _Botoes * -> -> -> 3 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 0 -> -> 4 `i `uc ]
-"107
-[; ;utils.c: 107:     Botoes[3].status = 1;
-[e = . *U + &U _Botoes * -> -> -> 3 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 -> -> 1 `i `uc ]
-"109
-[; ;utils.c: 109:     Botoes[4].pin = 5;
-[e = . *U + &U _Botoes * -> -> -> 4 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 0 -> -> 5 `i `uc ]
-"110
-[; ;utils.c: 110:     Botoes[4].status = 1;
-[e = . *U + &U _Botoes * -> -> -> 4 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 -> -> 1 `i `uc ]
-"112
-[; ;utils.c: 112: }
-[e :UE 141 ]
-}
-"116
-[; ;utils.c: 116: void shiftDisplays(){
+"26 utils.c
+[; ;utils.c: 26: void shiftDisplays(){
 [v _shiftDisplays `(v ~T0 @X0 1 ef ]
 {
 [e :U _shiftDisplays ]
 [f ]
-"119
-[; ;utils.c: 119:     setPin(Display7seg4digitsVetor[indiceDisplay].pin, 1);
+"29
+[; ;utils.c: 29:     setPin(Display7seg4digitsVetor[indiceDisplay].pin, 1);
 [e ( _setPin (2 , . *U + &U _Display7seg4digitsVetor * -> -> _indiceDisplay `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 0 -> -> 1 `i `uc ]
-"122
-[; ;utils.c: 122:     if(++indiceDisplay > 3){
-[e $ ! > =+ _indiceDisplay -> 1 `i -> 3 `i 143  ]
+"32
+[; ;utils.c: 32:     if(++indiceDisplay > 3){
+[e $ ! > =+ _indiceDisplay -> 1 `i -> 3 `i 120  ]
 {
-"123
-[; ;utils.c: 123:         indiceDisplay = 0;
+"33
+[; ;utils.c: 33:         indiceDisplay = 0;
 [e = _indiceDisplay -> 0 `i ]
-"124
-[; ;utils.c: 124:     }
+"34
+[; ;utils.c: 34:     }
 }
-[e :U 143 ]
-"127
-[; ;utils.c: 127:     PORTC = (Display7seg4digitsVetor[indiceDisplay].data);
+[e :U 120 ]
+"37
+[; ;utils.c: 37:     PORTC = (Display7seg4digitsVetor[indiceDisplay].data);
 [e = _PORTC . *U + &U _Display7seg4digitsVetor * -> -> _indiceDisplay `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 ]
-"130
-[; ;utils.c: 130:     clearPin(Display7seg4digitsVetor[indiceDisplay].pin, 1);
+"40
+[; ;utils.c: 40:     clearPin(Display7seg4digitsVetor[indiceDisplay].pin, 1);
 [e ( _clearPin (2 , . *U + &U _Display7seg4digitsVetor * -> -> _indiceDisplay `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 0 -> -> 1 `i `uc ]
-"131
-[; ;utils.c: 131: }
-[e :UE 142 ]
+"41
+[; ;utils.c: 41: }
+[e :UE 119 ]
 }
-"136
-[; ;utils.c: 136: void writeCharOnDisplay(unsigned char ucCharacter, unsigned char ucDisplay){
+"49
+[; ;utils.c: 49: void initDisplay(){
+[v _initDisplay `(v ~T0 @X0 1 ef ]
+{
+[e :U _initDisplay ]
+[f ]
+"52
+[; ;utils.c: 52:     Display7seg4digitsVetor[0].data = 0b00000110;
+[e = . *U + &U _Display7seg4digitsVetor * -> -> -> 0 `i `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 6 `i `uc ]
+"53
+[; ;utils.c: 53:     Display7seg4digitsVetor[0].pin = 4;
+[e = . *U + &U _Display7seg4digitsVetor * -> -> -> 0 `i `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 0 -> -> 4 `i `uc ]
+"55
+[; ;utils.c: 55:     Display7seg4digitsVetor[1].data = 0b01011110;
+[e = . *U + &U _Display7seg4digitsVetor * -> -> -> 1 `i `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 94 `i `uc ]
+"56
+[; ;utils.c: 56:     Display7seg4digitsVetor[1].pin = 5;
+[e = . *U + &U _Display7seg4digitsVetor * -> -> -> 1 `i `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 0 -> -> 5 `i `uc ]
+"58
+[; ;utils.c: 58:     Display7seg4digitsVetor[2].data = 0b00111111;
+[e = . *U + &U _Display7seg4digitsVetor * -> -> -> 2 `i `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 63 `i `uc ]
+"59
+[; ;utils.c: 59:     Display7seg4digitsVetor[2].pin = 6;
+[e = . *U + &U _Display7seg4digitsVetor * -> -> -> 2 `i `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 0 -> -> 6 `i `uc ]
+"61
+[; ;utils.c: 61:     Display7seg4digitsVetor[3].data = 0b01111101;
+[e = . *U + &U _Display7seg4digitsVetor * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 125 `i `uc ]
+"62
+[; ;utils.c: 62:     Display7seg4digitsVetor[3].pin = 7;
+[e = . *U + &U _Display7seg4digitsVetor * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 0 -> -> 7 `i `uc ]
+"63
+[; ;utils.c: 63: }
+[e :UE 121 ]
+}
+"75
+[; ;utils.c: 75: void writeCharOnDisplay(unsigned char ucCharacter, unsigned char ucDisplay){
 [v _writeCharOnDisplay `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _writeCharOnDisplay ]
 [v _ucCharacter `uc ~T0 @X0 1 r1 ]
 [v _ucDisplay `uc ~T0 @X0 1 r2 ]
 [f ]
-"141
-[; ;utils.c: 141:     switch(ucCharacter){
-[e $U 146  ]
+"78
+[; ;utils.c: 78:     switch(ucCharacter){
+[e $U 124  ]
 {
-"142
-[; ;utils.c: 142:         case '0':
-[e :U 147 ]
-"143
-[; ;utils.c: 143:             Display7seg4digitsVetor[ucDisplay].data = 0b00111111;
+"79
+[; ;utils.c: 79:         case '0':
+[e :U 125 ]
+"80
+[; ;utils.c: 80:             Display7seg4digitsVetor[ucDisplay].data = 0b00111111;
 [e = . *U + &U _Display7seg4digitsVetor * -> _ucDisplay `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 63 `i `uc ]
-"144
-[; ;utils.c: 144:             break;
-[e $U 145  ]
-"145
-[; ;utils.c: 145:         case '1':
-[e :U 148 ]
-"146
-[; ;utils.c: 146:             Display7seg4digitsVetor[ucDisplay].data = 0b00000110;
+"81
+[; ;utils.c: 81:             break;
+[e $U 123  ]
+"82
+[; ;utils.c: 82:         case '1':
+[e :U 126 ]
+"83
+[; ;utils.c: 83:             Display7seg4digitsVetor[ucDisplay].data = 0b00000110;
 [e = . *U + &U _Display7seg4digitsVetor * -> _ucDisplay `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 6 `i `uc ]
-"147
-[; ;utils.c: 147:             break;
-[e $U 145  ]
-"148
-[; ;utils.c: 148:         case '2':
-[e :U 149 ]
-"149
-[; ;utils.c: 149:             Display7seg4digitsVetor[ucDisplay].data = 0b01011011;
+"84
+[; ;utils.c: 84:             break;
+[e $U 123  ]
+"85
+[; ;utils.c: 85:         case '2':
+[e :U 127 ]
+"86
+[; ;utils.c: 86:             Display7seg4digitsVetor[ucDisplay].data = 0b01011011;
 [e = . *U + &U _Display7seg4digitsVetor * -> _ucDisplay `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 91 `i `uc ]
-"150
-[; ;utils.c: 150:             break;
-[e $U 145  ]
-"151
-[; ;utils.c: 151:         case '3':
-[e :U 150 ]
-"152
-[; ;utils.c: 152:             Display7seg4digitsVetor[ucDisplay].data = 0b01001111;
+"87
+[; ;utils.c: 87:             break;
+[e $U 123  ]
+"88
+[; ;utils.c: 88:         case '3':
+[e :U 128 ]
+"89
+[; ;utils.c: 89:             Display7seg4digitsVetor[ucDisplay].data = 0b01001111;
 [e = . *U + &U _Display7seg4digitsVetor * -> _ucDisplay `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 79 `i `uc ]
-"153
-[; ;utils.c: 153:             break;
-[e $U 145  ]
-"154
-[; ;utils.c: 154:         case '4':
-[e :U 151 ]
-"155
-[; ;utils.c: 155:             Display7seg4digitsVetor[ucDisplay].data = 0b01100110;
+"90
+[; ;utils.c: 90:             break;
+[e $U 123  ]
+"91
+[; ;utils.c: 91:         case '4':
+[e :U 129 ]
+"92
+[; ;utils.c: 92:             Display7seg4digitsVetor[ucDisplay].data = 0b01100110;
 [e = . *U + &U _Display7seg4digitsVetor * -> _ucDisplay `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 102 `i `uc ]
-"156
-[; ;utils.c: 156:             break;
-[e $U 145  ]
-"157
-[; ;utils.c: 157:         case '5':
-[e :U 152 ]
-"158
-[; ;utils.c: 158:             Display7seg4digitsVetor[ucDisplay].data = 0b01101101;
+"93
+[; ;utils.c: 93:             break;
+[e $U 123  ]
+"94
+[; ;utils.c: 94:         case '5':
+[e :U 130 ]
+"95
+[; ;utils.c: 95:             Display7seg4digitsVetor[ucDisplay].data = 0b01101101;
 [e = . *U + &U _Display7seg4digitsVetor * -> _ucDisplay `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 109 `i `uc ]
-"159
-[; ;utils.c: 159:             break;
-[e $U 145  ]
-"160
-[; ;utils.c: 160:         case '6':
-[e :U 153 ]
-"161
-[; ;utils.c: 161:             Display7seg4digitsVetor[ucDisplay].data = 0b01111101;
+"96
+[; ;utils.c: 96:             break;
+[e $U 123  ]
+"97
+[; ;utils.c: 97:         case '6':
+[e :U 131 ]
+"98
+[; ;utils.c: 98:             Display7seg4digitsVetor[ucDisplay].data = 0b01111101;
 [e = . *U + &U _Display7seg4digitsVetor * -> _ucDisplay `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 125 `i `uc ]
-"162
-[; ;utils.c: 162:             break;
-[e $U 145  ]
-"163
-[; ;utils.c: 163:         case '7':
-[e :U 154 ]
-"164
-[; ;utils.c: 164:             Display7seg4digitsVetor[ucDisplay].data = 0b00000111;
+"99
+[; ;utils.c: 99:             break;
+[e $U 123  ]
+"100
+[; ;utils.c: 100:         case '7':
+[e :U 132 ]
+"101
+[; ;utils.c: 101:             Display7seg4digitsVetor[ucDisplay].data = 0b00000111;
 [e = . *U + &U _Display7seg4digitsVetor * -> _ucDisplay `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 7 `i `uc ]
-"165
-[; ;utils.c: 165:             break;
-[e $U 145  ]
-"166
-[; ;utils.c: 166:         case'8':
-[e :U 155 ]
-"167
-[; ;utils.c: 167:             Display7seg4digitsVetor[ucDisplay].data = 0b01111111;
+"102
+[; ;utils.c: 102:             break;
+[e $U 123  ]
+"103
+[; ;utils.c: 103:         case'8':
+[e :U 133 ]
+"104
+[; ;utils.c: 104:             Display7seg4digitsVetor[ucDisplay].data = 0b01111111;
 [e = . *U + &U _Display7seg4digitsVetor * -> _ucDisplay `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 127 `i `uc ]
-"168
-[; ;utils.c: 168:             break;
-[e $U 145  ]
-"169
-[; ;utils.c: 169:         case '9':
-[e :U 156 ]
-"170
-[; ;utils.c: 170:             Display7seg4digitsVetor[ucDisplay].data = 0b01100111;
+"105
+[; ;utils.c: 105:             break;
+[e $U 123  ]
+"106
+[; ;utils.c: 106:         case '9':
+[e :U 134 ]
+"107
+[; ;utils.c: 107:             Display7seg4digitsVetor[ucDisplay].data = 0b01100111;
 [e = . *U + &U _Display7seg4digitsVetor * -> _ucDisplay `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 103 `i `uc ]
-"171
-[; ;utils.c: 171:             break;
-[e $U 145  ]
-"172
-[; ;utils.c: 172:         case 'd':
-[e :U 157 ]
-"173
-[; ;utils.c: 173:             Display7seg4digitsVetor[ucDisplay].data = 0b01011110;
+"108
+[; ;utils.c: 108:             break;
+[e $U 123  ]
+"109
+[; ;utils.c: 109:         case 'd':
+[e :U 135 ]
+"110
+[; ;utils.c: 110:             Display7seg4digitsVetor[ucDisplay].data = 0b01011110;
 [e = . *U + &U _Display7seg4digitsVetor * -> _ucDisplay `ux -> -> # *U &U _Display7seg4digitsVetor `ui `ux 1 -> -> 94 `i `uc ]
-"174
-[; ;utils.c: 174:             break;
-[e $U 145  ]
-"175
-[; ;utils.c: 175:     }
+"111
+[; ;utils.c: 111:             break;
+[e $U 123  ]
+"112
+[; ;utils.c: 112:     }
 }
-[e $U 145  ]
-[e :U 146 ]
-[e [\ -> _ucCharacter `i , $ -> -> 48 `ui `i 147
- , $ -> -> 49 `ui `i 148
- , $ -> -> 50 `ui `i 149
- , $ -> -> 51 `ui `i 150
- , $ -> -> 52 `ui `i 151
- , $ -> -> 53 `ui `i 152
- , $ -> -> 54 `ui `i 153
- , $ -> -> 55 `ui `i 154
- , $ -> -> 56 `ui `i 155
- , $ -> -> 57 `ui `i 156
- , $ -> -> 100 `ui `i 157
- 145 ]
-[e :U 145 ]
-"176
-[; ;utils.c: 176: }
-[e :UE 144 ]
+[e $U 123  ]
+[e :U 124 ]
+[e [\ -> _ucCharacter `i , $ -> -> 48 `ui `i 125
+ , $ -> -> 49 `ui `i 126
+ , $ -> -> 50 `ui `i 127
+ , $ -> -> 51 `ui `i 128
+ , $ -> -> 52 `ui `i 129
+ , $ -> -> 53 `ui `i 130
+ , $ -> -> 54 `ui `i 131
+ , $ -> -> 55 `ui `i 132
+ , $ -> -> 56 `ui `i 133
+ , $ -> -> 57 `ui `i 134
+ , $ -> -> 100 `ui `i 135
+ 123 ]
+[e :U 123 ]
+"113
+[; ;utils.c: 113: }
+[e :UE 122 ]
 }
-"181
-[; ;utils.c: 181: void configBoard(){
+"122
+[; ;utils.c: 122: void initButtons(){
+[v _initButtons `(v ~T0 @X0 1 ef ]
+{
+[e :U _initButtons ]
+[f ]
+"123
+[; ;utils.c: 123:     Botoes[0].pin = 0;
+[e = . *U + &U _Botoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 0 -> -> 0 `i `uc ]
+"124
+[; ;utils.c: 124:     Botoes[0].status = 1;
+[e = . *U + &U _Botoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 -> -> 1 `i `uc ]
+"126
+[; ;utils.c: 126:     Botoes[1].pin = 1;
+[e = . *U + &U _Botoes * -> -> -> 1 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 0 -> -> 1 `i `uc ]
+"127
+[; ;utils.c: 127:     Botoes[1].status = 1;
+[e = . *U + &U _Botoes * -> -> -> 1 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 -> -> 1 `i `uc ]
+"129
+[; ;utils.c: 129:     Botoes[2].pin = 2;
+[e = . *U + &U _Botoes * -> -> -> 2 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 0 -> -> 2 `i `uc ]
+"130
+[; ;utils.c: 130:     Botoes[2].status = 1;
+[e = . *U + &U _Botoes * -> -> -> 2 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 -> -> 1 `i `uc ]
+"132
+[; ;utils.c: 132:     Botoes[3].pin = 4;
+[e = . *U + &U _Botoes * -> -> -> 3 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 0 -> -> 4 `i `uc ]
+"133
+[; ;utils.c: 133:     Botoes[3].status = 1;
+[e = . *U + &U _Botoes * -> -> -> 3 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 -> -> 1 `i `uc ]
+"135
+[; ;utils.c: 135:     Botoes[4].pin = 5;
+[e = . *U + &U _Botoes * -> -> -> 4 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 0 -> -> 5 `i `uc ]
+"136
+[; ;utils.c: 136:     Botoes[4].status = 1;
+[e = . *U + &U _Botoes * -> -> -> 4 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 -> -> 1 `i `uc ]
+"138
+[; ;utils.c: 138: }
+[e :UE 136 ]
+}
+"148
+[; ;utils.c: 148: void configBoard(){
 [v _configBoard `(v ~T0 @X0 1 ef ]
 {
 [e :U _configBoard ]
 [f ]
-"191
-[; ;utils.c: 191:     OSCCON |= (1<<0);
+"158
+[; ;utils.c: 158:     OSCCON |= (1<<0);
 [e =| _OSCCON -> << -> 1 `i -> 0 `i `Vuc ]
-"192
-[; ;utils.c: 192:     OSCCON &= ~(1<<1);
+"159
+[; ;utils.c: 159:     OSCCON &= ~(1<<1);
 [e =& _OSCCON -> ~ << -> 1 `i -> 1 `i `Vuc ]
-"193
-[; ;utils.c: 193:     OSCCON |= (1<<2);
+"160
+[; ;utils.c: 160:     OSCCON |= (1<<2);
 [e =| _OSCCON -> << -> 1 `i -> 2 `i `Vuc ]
-"194
-[; ;utils.c: 194:     OSCCON &= ~(1<<3);
+"161
+[; ;utils.c: 161:     OSCCON &= ~(1<<3);
 [e =& _OSCCON -> ~ << -> 1 `i -> 3 `i `Vuc ]
-"195
-[; ;utils.c: 195:     OSCCON |= (0b01110000);
+"162
+[; ;utils.c: 162:     OSCCON |= (0b01110000);
 [e =| _OSCCON -> -> 112 `i `Vuc ]
-"198
-[; ;utils.c: 198:     ANSEL = 0x00;
+"165
+[; ;utils.c: 165:     ANSEL = 0x00;
 [e = _ANSEL -> -> 0 `i `uc ]
-"205
-[; ;utils.c: 205:     TRISA = 0b00110111;
+"168
+[; ;utils.c: 168:     TRISA = 0b00110111;
 [e = _TRISA -> -> 55 `i `uc ]
-"206
-[; ;utils.c: 206:     TRISB = 0x00;
+"169
+[; ;utils.c: 169:     TRISB = 0x00;
 [e = _TRISB -> -> 0 `i `uc ]
-"207
-[; ;utils.c: 207:     TRISC = 0x00;
+"170
+[; ;utils.c: 170:     TRISC = 0x00;
 [e = _TRISC -> -> 0 `i `uc ]
-"210
-[; ;utils.c: 210:     PORTA = 0xff;
+"173
+[; ;utils.c: 173:     PORTA = 0xff;
 [e = _PORTA -> -> 255 `i `uc ]
-"211
-[; ;utils.c: 211:     PORTB = 0xff;
-[e = _PORTB -> -> 255 `i `uc ]
-"212
-[; ;utils.c: 212:     PORTC = 0xff;
+"174
+[; ;utils.c: 174:     PORTB = 0x00;
+[e = _PORTB -> -> 0 `i `uc ]
+"175
+[; ;utils.c: 175:     PORTC = 0xff;
 [e = _PORTC -> -> 255 `i `uc ]
-"222
-[; ;utils.c: 222:     nRABPU = 0;
+"178
+[; ;utils.c: 178:     nRABPU = 0;
 [e = _nRABPU -> -> 0 `i `b ]
-"224
-[; ;utils.c: 224:     T0CS = 0;
+"186
+[; ;utils.c: 186:     T0CS = 0;
 [e = _T0CS -> -> 0 `i `b ]
-"226
-[; ;utils.c: 226:     PSA = 0;
+"187
+[; ;utils.c: 187:     PSA = 0;
 [e = _PSA -> -> 0 `i `b ]
-"228
-[; ;utils.c: 228:     PS0 = 1;
+"188
+[; ;utils.c: 188:     PS0 = 1;
 [e = _PS0 -> -> 1 `i `b ]
-"229
-[; ;utils.c: 229:     PS1 = 1;
+"189
+[; ;utils.c: 189:     PS1 = 1;
 [e = _PS1 -> -> 1 `i `b ]
-"230
-[; ;utils.c: 230:     PS2 = 0;
+"190
+[; ;utils.c: 190:     PS2 = 0;
 [e = _PS2 -> -> 0 `i `b ]
-"233
-[; ;utils.c: 233:     TMR0= 133;
+"196
+[; ;utils.c: 196:     TMR0= 133;
 [e = _TMR0 -> -> 133 `i `uc ]
-"234
-[; ;utils.c: 234:     GIE=1;
+"204
+[; ;utils.c: 204:     GIE=1;
 [e = _GIE -> -> 1 `i `b ]
-"235
-[; ;utils.c: 235:     PEIE=1;
+"205
+[; ;utils.c: 205:     PEIE=1;
 [e = _PEIE -> -> 1 `i `b ]
-"236
-[; ;utils.c: 236:     T0IE=1;
+"206
+[; ;utils.c: 206:     T0IE=1;
 [e = _T0IE -> -> 1 `i `b ]
-"237
-[; ;utils.c: 237:     RABIE = 1;
+"207
+[; ;utils.c: 207:     RABIE = 1;
 [e = _RABIE -> -> 1 `i `b ]
-"238
-[; ;utils.c: 238:     T0IF = 0;
+"210
+[; ;utils.c: 210:     T0IF = 0;
 [e = _T0IF -> -> 0 `i `b ]
-"239
-[; ;utils.c: 239:     RABIF = 0;
+"211
+[; ;utils.c: 211:     RABIF = 0;
 [e = _RABIF -> -> 0 `i `b ]
-"243
-[; ;utils.c: 243:     WPUA0 = 1;
-[e = _WPUA0 -> -> 1 `i `b ]
-"244
-[; ;utils.c: 244:     WPUA1 = 1;
-[e = _WPUA1 -> -> 1 `i `b ]
-"245
-[; ;utils.c: 245:     WPUA2 = 1;
-[e = _WPUA2 -> -> 1 `i `b ]
-"246
-[; ;utils.c: 246:     WPUA4 = 1;
-[e = _WPUA4 -> -> 1 `i `b ]
-"247
-[; ;utils.c: 247:     WPUA5 = 1;
-[e = _WPUA5 -> -> 1 `i `b ]
-"249
-[; ;utils.c: 249:     IOCA = 0b00110111;
+"214
+[; ;utils.c: 214:     WPUA = 0b111111;
+[e = _WPUA -> -> 63 `i `uc ]
+"217
+[; ;utils.c: 217:     IOCA = 0b00110111;
 [e = _IOCA -> -> 55 `i `uc ]
-"251
-[; ;utils.c: 251: }
-[e :UE 158 ]
+"219
+[; ;utils.c: 219: }
+[e :UE 137 ]
 }
-"258
-[; ;utils.c: 258: void deviceStateMachine(unsigned char ucButton){
+"230
+[; ;utils.c: 230: void setPin(unsigned char ucPin, unsigned char ucPort){
+[v _setPin `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _setPin ]
+[v _ucPin `uc ~T0 @X0 1 r1 ]
+[v _ucPort `uc ~T0 @X0 1 r2 ]
+[f ]
+"233
+[; ;utils.c: 233:     switch(ucPort){
+[e $U 140  ]
+{
+"234
+[; ;utils.c: 234:         case 0:
+[e :U 141 ]
+"235
+[; ;utils.c: 235:                 PORTA |= (1<<ucPin);
+[e =| _PORTA -> << -> 1 `i -> _ucPin `i `Vuc ]
+"236
+[; ;utils.c: 236:             break;
+[e $U 139  ]
+"237
+[; ;utils.c: 237:         case 1:
+[e :U 142 ]
+"238
+[; ;utils.c: 238:                 PORTB |= (1<<ucPin);
+[e =| _PORTB -> << -> 1 `i -> _ucPin `i `Vuc ]
+"239
+[; ;utils.c: 239:             break;
+[e $U 139  ]
+"240
+[; ;utils.c: 240:         case 2:
+[e :U 143 ]
+"241
+[; ;utils.c: 241:                 PORTC |= (1<<ucPin);
+[e =| _PORTC -> << -> 1 `i -> _ucPin `i `Vuc ]
+"242
+[; ;utils.c: 242:             break;
+[e $U 139  ]
+"243
+[; ;utils.c: 243:         default:
+[e :U 144 ]
+"244
+[; ;utils.c: 244:             return;
+[e $UE 138  ]
+"245
+[; ;utils.c: 245:             break;
+[e $U 139  ]
+"246
+[; ;utils.c: 246:     }
+}
+[e $U 139  ]
+[e :U 140 ]
+[e [\ -> _ucPort `i , $ -> 0 `i 141
+ , $ -> 1 `i 142
+ , $ -> 2 `i 143
+ 144 ]
+[e :U 139 ]
+"248
+[; ;utils.c: 248: }
+[e :UE 138 ]
+}
+"257
+[; ;utils.c: 257: void clearPin(unsigned char ucPin, unsigned char ucPort){
+[v _clearPin `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _clearPin ]
+[v _ucPin `uc ~T0 @X0 1 r1 ]
+[v _ucPort `uc ~T0 @X0 1 r2 ]
+[f ]
+"259
+[; ;utils.c: 259:     switch(ucPort){
+[e $U 147  ]
+{
+"260
+[; ;utils.c: 260:         case 0:
+[e :U 148 ]
+"261
+[; ;utils.c: 261:                 PORTA &= ~(1<<ucPin);
+[e =& _PORTA -> ~ << -> 1 `i -> _ucPin `i `Vuc ]
+"262
+[; ;utils.c: 262:             break;
+[e $U 146  ]
+"263
+[; ;utils.c: 263:         case 1:
+[e :U 149 ]
+"264
+[; ;utils.c: 264:                 PORTB &= ~(1<<ucPin);
+[e =& _PORTB -> ~ << -> 1 `i -> _ucPin `i `Vuc ]
+"265
+[; ;utils.c: 265:             break;
+[e $U 146  ]
+"266
+[; ;utils.c: 266:         case 2:
+[e :U 150 ]
+"267
+[; ;utils.c: 267:                 PORTC &= ~(1<<ucPin);
+[e =& _PORTC -> ~ << -> 1 `i -> _ucPin `i `Vuc ]
+"268
+[; ;utils.c: 268:             break;
+[e $U 146  ]
+"269
+[; ;utils.c: 269:         default:
+[e :U 151 ]
+"270
+[; ;utils.c: 270:             return;
+[e $UE 145  ]
+"271
+[; ;utils.c: 271:             break;
+[e $U 146  ]
+"272
+[; ;utils.c: 272:     }
+}
+[e $U 146  ]
+[e :U 147 ]
+[e [\ -> _ucPort `i , $ -> 0 `i 148
+ , $ -> 1 `i 149
+ , $ -> 2 `i 150
+ 151 ]
+[e :U 146 ]
+"273
+[; ;utils.c: 273: }
+[e :UE 145 ]
+}
+"283
+[; ;utils.c: 283: void togglePin(unsigned char ucPin, unsigned char ucPort){
+[v _togglePin `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _togglePin ]
+[v _ucPin `uc ~T0 @X0 1 r1 ]
+[v _ucPort `uc ~T0 @X0 1 r2 ]
+[f ]
+"285
+[; ;utils.c: 285:     switch(ucPort){
+[e $U 154  ]
+{
+"286
+[; ;utils.c: 286:         case 0:
+[e :U 155 ]
+"287
+[; ;utils.c: 287:                 PORTA ^= (1<<ucPin);
+[e =^ _PORTA -> << -> 1 `i -> _ucPin `i `Vuc ]
+"288
+[; ;utils.c: 288:             break;
+[e $U 153  ]
+"289
+[; ;utils.c: 289:         case 1:
+[e :U 156 ]
+"290
+[; ;utils.c: 290:                 PORTB ^= (1<<ucPin);
+[e =^ _PORTB -> << -> 1 `i -> _ucPin `i `Vuc ]
+"291
+[; ;utils.c: 291:             break;
+[e $U 153  ]
+"292
+[; ;utils.c: 292:         case 2:
+[e :U 157 ]
+"293
+[; ;utils.c: 293:                 PORTC ^= (1<<ucPin);
+[e =^ _PORTC -> << -> 1 `i -> _ucPin `i `Vuc ]
+"294
+[; ;utils.c: 294:             break;
+[e $U 153  ]
+"295
+[; ;utils.c: 295:         default:
+[e :U 158 ]
+"296
+[; ;utils.c: 296:             return;
+[e $UE 152  ]
+"297
+[; ;utils.c: 297:             break;
+[e $U 153  ]
+"298
+[; ;utils.c: 298:     }
+}
+[e $U 153  ]
+[e :U 154 ]
+[e [\ -> _ucPort `i , $ -> 0 `i 155
+ , $ -> 1 `i 156
+ , $ -> 2 `i 157
+ 158 ]
+[e :U 153 ]
+"299
+[; ;utils.c: 299: }
+[e :UE 152 ]
+}
+"317
+[; ;utils.c: 317: void deviceStateMachine(unsigned char ucButton){
 [v _deviceStateMachine `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _deviceStateMachine ]
 [v _ucButton `uc ~T0 @X0 1 r1 ]
 [f ]
-"261
-[; ;utils.c: 261:     if(1 == ucButton){
+"320
+[; ;utils.c: 320:     if(1 == ucButton){
 [e $ ! == -> 1 `i -> _ucButton `i 160  ]
 {
-"262
-[; ;utils.c: 262:         deviceCurrentState = ROLL;
-[e = _deviceCurrentState . `E1007 0 ]
-"264
-[; ;utils.c: 264:         rollDice();
+"321
+[; ;utils.c: 321:         deviceCurrentState = ROLL;
+[e = _deviceCurrentState . `E1005 0 ]
+"323
+[; ;utils.c: 323:         rollDice();
 [e ( _rollDice ..  ]
-"266
-[; ;utils.c: 266:         return;
+"324
+[; ;utils.c: 324:         return;
 [e $UE 159  ]
-"267
-[; ;utils.c: 267:     }else if (deviceCurrentState == ROLL){
+"325
+[; ;utils.c: 325:     }
 }
 [e $U 161  ]
+"326
+[; ;utils.c: 326:     else if (deviceCurrentState == ROLL){
 [e :U 160 ]
-[e $ ! == -> _deviceCurrentState `ui -> . `E1007 0 `ui 162  ]
+[e $ ! == -> _deviceCurrentState `ui -> . `E1005 0 `ui 162  ]
 {
-"268
-[; ;utils.c: 268:         deviceCurrentState = MENU;
-[e = _deviceCurrentState . `E1007 1 ]
-"270
-[; ;utils.c: 270:         writeCharOnDisplay('0' + diceState[0], 0);
+"327
+[; ;utils.c: 327:         deviceCurrentState = MENU;
+[e = _deviceCurrentState . `E1005 1 ]
+"329
+[; ;utils.c: 329:         writeCharOnDisplay('0' + diceState[0], 0);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `ui `uc -> -> 0 `i `uc ]
-"271
-[; ;utils.c: 271:         writeCharOnDisplay('d', 1);
+"330
+[; ;utils.c: 330:         writeCharOnDisplay('d', 1);
 [e ( _writeCharOnDisplay (2 , -> -> 100 `ui `uc -> -> 1 `i `uc ]
-"272
-[; ;utils.c: 272:         writeCharOnDisplay('0' + diceState[1]/10, 2);
+"331
+[; ;utils.c: 331:         writeCharOnDisplay('0' + diceState[1]/10, 2);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> / -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 10 `i `ui `uc -> -> 2 `i `uc ]
-"273
-[; ;utils.c: 273:         writeCharOnDisplay('0' + diceState[1]%10, 3);
+"332
+[; ;utils.c: 332:         writeCharOnDisplay('0' + diceState[1]%10, 3);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> % -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 10 `i `ui `uc -> -> 3 `i `uc ]
-"274
-[; ;utils.c: 274:         return;
+"333
+[; ;utils.c: 333:         return;
 [e $UE 159  ]
-"275
-[; ;utils.c: 275:     }
+"334
+[; ;utils.c: 334:     }
 }
 [e :U 162 ]
 [e :U 161 ]
-"279
-[; ;utils.c: 279:     switch(ucButton){
+"338
+[; ;utils.c: 338:     switch(ucButton){
 [e $U 164  ]
 {
-"280
-[; ;utils.c: 280:         case 2:
+"339
+[; ;utils.c: 339:         case 2:
 [e :U 165 ]
-"281
-[; ;utils.c: 281:             if(diceState[0] < 9 ){
+"340
+[; ;utils.c: 340:             if(diceState[0] < 9 ){
 [e $ ! < -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 9 `i 166  ]
 {
-"282
-[; ;utils.c: 282:                 diceState[0]++;
+"341
+[; ;utils.c: 341:                 diceState[0]++;
 [e ++ *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 1 `i `uc ]
-"283
-[; ;utils.c: 283:             }
+"342
+[; ;utils.c: 342:             }
 }
 [e :U 166 ]
-"284
-[; ;utils.c: 284:             break;
+"343
+[; ;utils.c: 343:             break;
 [e $U 163  ]
-"286
-[; ;utils.c: 286:         case 3:
+"345
+[; ;utils.c: 345:         case 3:
 [e :U 167 ]
-"287
-[; ;utils.c: 287:             if(diceState[0] > 1){
+"346
+[; ;utils.c: 346:             if(diceState[0] > 1){
 [e $ ! > -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 1 `i 168  ]
 {
-"288
-[; ;utils.c: 288:                 diceState[0]--;
+"347
+[; ;utils.c: 347:                 diceState[0]--;
 [e -- *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 1 `i `uc ]
-"289
-[; ;utils.c: 289:             }
+"348
+[; ;utils.c: 348:             }
 }
 [e :U 168 ]
-"290
-[; ;utils.c: 290:             break;
+"349
+[; ;utils.c: 349:             break;
 [e $U 163  ]
-"292
-[; ;utils.c: 292:         case 4:
+"351
+[; ;utils.c: 351:         case 4:
 [e :U 169 ]
-"293
-[; ;utils.c: 293:             if(diceState[1] < 20){
+"352
+[; ;utils.c: 352:             if(diceState[1] < 20){
 [e $ ! < -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 20 `i 170  ]
 {
-"294
-[; ;utils.c: 294:                 switch(diceState[1]){
+"353
+[; ;utils.c: 353:                 switch(diceState[1]){
 [e $U 172  ]
 {
-"295
-[; ;utils.c: 295:                     case 12:
+"354
+[; ;utils.c: 354:                     case 12:
 [e :U 173 ]
-"296
-[; ;utils.c: 296:                         diceState[1] = 20;
+"355
+[; ;utils.c: 355:                         diceState[1] = 20;
 [e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 20 `i `uc ]
-"297
-[; ;utils.c: 297:                         break;
+"356
+[; ;utils.c: 356:                         break;
 [e $U 171  ]
-"298
-[; ;utils.c: 298:                     case 10:
+"357
+[; ;utils.c: 357:                     case 10:
 [e :U 174 ]
-"299
-[; ;utils.c: 299:                         diceState[1] = 12;
+"358
+[; ;utils.c: 358:                         diceState[1] = 12;
 [e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 12 `i `uc ]
-"300
-[; ;utils.c: 300:                         break;
+"359
+[; ;utils.c: 359:                         break;
 [e $U 171  ]
-"301
-[; ;utils.c: 301:                     case 8:
+"360
+[; ;utils.c: 360:                     case 8:
 [e :U 175 ]
-"302
-[; ;utils.c: 302:                         diceState[1] = 10;
+"361
+[; ;utils.c: 361:                         diceState[1] = 10;
 [e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 10 `i `uc ]
-"303
-[; ;utils.c: 303:                         break;
+"362
+[; ;utils.c: 362:                         break;
 [e $U 171  ]
-"304
-[; ;utils.c: 304:                     case 6:
+"363
+[; ;utils.c: 363:                     case 6:
 [e :U 176 ]
-"305
-[; ;utils.c: 305:                         diceState[1] = 8;
+"364
+[; ;utils.c: 364:                         diceState[1] = 8;
 [e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 8 `i `uc ]
-"306
-[; ;utils.c: 306:                         break;
+"365
+[; ;utils.c: 365:                         break;
 [e $U 171  ]
-"307
-[; ;utils.c: 307:                     default:
+"366
+[; ;utils.c: 366:                     default:
 [e :U 177 ]
-"308
-[; ;utils.c: 308:                         diceState[1]++;
+"367
+[; ;utils.c: 367:                         diceState[1]++;
 [e ++ *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 1 `i `uc ]
-"309
-[; ;utils.c: 309:                         break;
+"368
+[; ;utils.c: 368:                         break;
 [e $U 171  ]
-"310
-[; ;utils.c: 310:                 }
+"369
+[; ;utils.c: 369:                 }
 }
 [e $U 171  ]
 [e :U 172 ]
@@ -898,71 +886,71 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 6 `i 176
  177 ]
 [e :U 171 ]
-"311
-[; ;utils.c: 311:             }
+"370
+[; ;utils.c: 370:             }
 }
 [e :U 170 ]
-"313
-[; ;utils.c: 313:             break;
+"372
+[; ;utils.c: 372:             break;
 [e $U 163  ]
-"314
-[; ;utils.c: 314:         case 5:
+"373
+[; ;utils.c: 373:         case 5:
 [e :U 178 ]
-"316
-[; ;utils.c: 316:             if(diceState[1] > 2){
+"375
+[; ;utils.c: 375:             if(diceState[1] > 2){
 [e $ ! > -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 2 `i 179  ]
 {
-"317
-[; ;utils.c: 317:                 switch(diceState[1]){
+"376
+[; ;utils.c: 376:                 switch(diceState[1]){
 [e $U 181  ]
 {
-"318
-[; ;utils.c: 318:                     case 20:
+"377
+[; ;utils.c: 377:                     case 20:
 [e :U 182 ]
-"319
-[; ;utils.c: 319:                         diceState[1] = 12;
+"378
+[; ;utils.c: 378:                         diceState[1] = 12;
 [e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 12 `i `uc ]
-"320
-[; ;utils.c: 320:                         break;
+"379
+[; ;utils.c: 379:                         break;
 [e $U 180  ]
-"321
-[; ;utils.c: 321:                     case 12:
+"380
+[; ;utils.c: 380:                     case 12:
 [e :U 183 ]
-"322
-[; ;utils.c: 322:                         diceState[1] = 10;
+"381
+[; ;utils.c: 381:                         diceState[1] = 10;
 [e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 10 `i `uc ]
-"323
-[; ;utils.c: 323:                         break;
+"382
+[; ;utils.c: 382:                         break;
 [e $U 180  ]
-"324
-[; ;utils.c: 324:                     case 10:
+"383
+[; ;utils.c: 383:                     case 10:
 [e :U 184 ]
-"325
-[; ;utils.c: 325:                         diceState[1] = 8;
+"384
+[; ;utils.c: 384:                         diceState[1] = 8;
 [e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 8 `i `uc ]
-"326
-[; ;utils.c: 326:                         break;
+"385
+[; ;utils.c: 385:                         break;
 [e $U 180  ]
-"327
-[; ;utils.c: 327:                     case 8:
+"386
+[; ;utils.c: 386:                     case 8:
 [e :U 185 ]
-"328
-[; ;utils.c: 328:                         diceState[1] = 6;
+"387
+[; ;utils.c: 387:                         diceState[1] = 6;
 [e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 6 `i `uc ]
-"329
-[; ;utils.c: 329:                         break;
+"388
+[; ;utils.c: 388:                         break;
 [e $U 180  ]
-"330
-[; ;utils.c: 330:                     default:
+"389
+[; ;utils.c: 389:                     default:
 [e :U 186 ]
-"331
-[; ;utils.c: 331:                         diceState[1]--;
+"390
+[; ;utils.c: 390:                         diceState[1]--;
 [e -- *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 1 `i `uc ]
-"332
-[; ;utils.c: 332:                         break;
+"391
+[; ;utils.c: 391:                         break;
 [e $U 180  ]
-"333
-[; ;utils.c: 333:                 }
+"392
+[; ;utils.c: 392:                 }
 }
 [e $U 180  ]
 [e :U 181 ]
@@ -972,21 +960,21 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 8 `i 185
  186 ]
 [e :U 180 ]
-"334
-[; ;utils.c: 334:             }
+"393
+[; ;utils.c: 393:             }
 }
 [e :U 179 ]
-"335
-[; ;utils.c: 335:             break;
+"394
+[; ;utils.c: 394:             break;
 [e $U 163  ]
-"336
-[; ;utils.c: 336:         default:
+"395
+[; ;utils.c: 395:         default:
 [e :U 187 ]
-"337
-[; ;utils.c: 337:             break;
+"396
+[; ;utils.c: 396:             break;
 [e $U 163  ]
-"338
-[; ;utils.c: 338:     }
+"397
+[; ;utils.c: 397:     }
 }
 [e $U 163  ]
 [e :U 164 ]
@@ -996,83 +984,83 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 5 `i 178
  187 ]
 [e :U 163 ]
-"340
-[; ;utils.c: 340:         writeCharOnDisplay('0' + diceState[0], 0);
+"400
+[; ;utils.c: 400:         writeCharOnDisplay('0' + diceState[0], 0);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `ui `uc -> -> 0 `i `uc ]
-"341
-[; ;utils.c: 341:         writeCharOnDisplay('d', 1);
+"401
+[; ;utils.c: 401:         writeCharOnDisplay('d', 1);
 [e ( _writeCharOnDisplay (2 , -> -> 100 `ui `uc -> -> 1 `i `uc ]
-"342
-[; ;utils.c: 342:         writeCharOnDisplay('0' + diceState[1]/10, 2);
+"402
+[; ;utils.c: 402:         writeCharOnDisplay('0' + diceState[1]/10, 2);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> / -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 10 `i `ui `uc -> -> 2 `i `uc ]
-"343
-[; ;utils.c: 343:         writeCharOnDisplay('0' + diceState[1]%10, 3);
+"403
+[; ;utils.c: 403:         writeCharOnDisplay('0' + diceState[1]%10, 3);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> % -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 10 `i `ui `uc -> -> 3 `i `uc ]
-"346
-[; ;utils.c: 346: }
+"406
+[; ;utils.c: 406: }
 [e :UE 159 ]
 }
-"348
-[; ;utils.c: 348: unsigned long randomNumber(){
+"415
+[; ;utils.c: 415: unsigned long randomNumber(){
 [v _randomNumber `(ul ~T0 @X0 1 ef ]
 {
 [e :U _randomNumber ]
 [f ]
-"349
-[; ;utils.c: 349:     randomSeed = (37*randomSeed + 98)%1373;
+"416
+[; ;utils.c: 416:     randomSeed = (37*randomSeed + 98)%1373;
 [e = _randomSeed % + * -> -> -> 37 `i `l `ul _randomSeed -> -> -> 98 `i `l `ul -> -> -> 1373 `i `l `ul ]
-"350
-[; ;utils.c: 350:     return randomSeed;
+"417
+[; ;utils.c: 417:     return randomSeed;
 [e ) _randomSeed ]
 [e $UE 188  ]
-"351
-[; ;utils.c: 351: }
+"418
+[; ;utils.c: 418: }
 [e :UE 188 ]
 }
-"356
-[; ;utils.c: 356: void rollDice(){
+"429
+[; ;utils.c: 429: void rollDice(){
 [v _rollDice `(v ~T0 @X0 1 ef ]
 {
 [e :U _rollDice ]
 [f ]
-"357
-[; ;utils.c: 357:     int i;
-[v _i `i ~T0 @X0 1 a ]
-"358
-[; ;utils.c: 358:     unsigned int ulTotal = 0;
+"430
+[; ;utils.c: 430:     unsigned char i;
+[v _i `uc ~T0 @X0 1 a ]
+"431
+[; ;utils.c: 431:     unsigned int ulTotal = 0;
 [v _ulTotal `ui ~T0 @X0 1 a ]
 [e = _ulTotal -> -> 0 `i `ui ]
-"359
-[; ;utils.c: 359:     for(i = 0; i < diceState[0]; i++){
+"433
+[; ;utils.c: 433:     for(i = 0; i < diceState[0]; i++){
 {
-[e = _i -> 0 `i ]
+[e = _i -> -> 0 `i `uc ]
 [e $U 193  ]
 [e :U 190 ]
 {
-"360
-[; ;utils.c: 360:         ulTotal += ((unsigned int)randomNumber())%diceState[1] + 1;
+"434
+[; ;utils.c: 434:         ulTotal += ((unsigned int)randomNumber())%diceState[1] + 1;
 [e =+ _ulTotal + % -> ( _randomNumber ..  `ui -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `ui -> -> 1 `i `ui ]
-"361
-[; ;utils.c: 361:     }
+"435
+[; ;utils.c: 435:     }
 }
-[e ++ _i -> 1 `i ]
+[e ++ _i -> -> 1 `i `uc ]
 [e :U 193 ]
-[e $ < _i -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i 190  ]
+[e $ < -> _i `i -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i 190  ]
 [e :U 191 ]
 }
-"363
-[; ;utils.c: 363:     writeCharOnDisplay('0' + (unsigned char)(ulTotal%10) ,3);
+"437
+[; ;utils.c: 437:     writeCharOnDisplay('0' + (unsigned char)(ulTotal%10) ,3);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> -> % _ulTotal -> -> 10 `i `ui `uc `ui `uc -> -> 3 `i `uc ]
-"364
-[; ;utils.c: 364:     writeCharOnDisplay('0' + (unsigned char)((ulTotal/10)%10) ,2);
+"438
+[; ;utils.c: 438:     writeCharOnDisplay('0' + (unsigned char)((ulTotal/10)%10) ,2);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> -> % / _ulTotal -> -> 10 `i `ui -> -> 10 `i `ui `uc `ui `uc -> -> 2 `i `uc ]
-"365
-[; ;utils.c: 365:     writeCharOnDisplay('0' + (unsigned char)((ulTotal/100)%10) ,1);
+"439
+[; ;utils.c: 439:     writeCharOnDisplay('0' + (unsigned char)((ulTotal/100)%10) ,1);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> -> % / _ulTotal -> -> 100 `i `ui -> -> 10 `i `ui `uc `ui `uc -> -> 1 `i `uc ]
-"366
-[; ;utils.c: 366:     writeCharOnDisplay('0' + (unsigned char)((ulTotal/1000)%10) ,0);
+"440
+[; ;utils.c: 440:     writeCharOnDisplay('0' + (unsigned char)((ulTotal/1000)%10) ,0);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> -> % / _ulTotal -> -> 1000 `i `ui -> -> 10 `i `ui `uc `ui `uc -> -> 0 `i `uc ]
-"367
-[; ;utils.c: 367: }
+"441
+[; ;utils.c: 441: }
 [e :UE 189 ]
 }

@@ -3,12 +3,12 @@
 [d edition pro ]
 [d chip 16F687 ]
 [d frameptr 0 ]
-"50 C:\Users\User\MPLABXProjects\DiceRoller.X/utils.h
-[e E1007 state `uc
+"52 C:\Users\User\MPLABXProjects\DiceRoller.X/utils.h
+[e E1005 state `uc
 ROLL 0
 MENU 1
 ]
-[e E1007 state `uc
+[e E1005 state `uc
 ROLL 0
 MENU 1
 ]
@@ -32,39 +32,39 @@ MENU 1
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"42 C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
+"43 C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
-"71
+"74
 [v _main main `(v  1 e 1 0 ]
-"18 C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-[v _setPin setPin `(v  1 e 1 0 ]
-"39
-[v _clearPin clearPin `(v  1 e 1 0 ]
-"80
-[v _initDisplay initDisplay `(v  1 e 1 0 ]
-"96
-[v _initButtons initButtons `(v  1 e 1 0 ]
-"116
+"26 C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
 [v _shiftDisplays shiftDisplays `(v  1 e 1 0 ]
-"136
+"49
+[v _initDisplay initDisplay `(v  1 e 1 0 ]
+"75
 [v _writeCharOnDisplay writeCharOnDisplay `(v  1 e 1 0 ]
-"181
+"122
+[v _initButtons initButtons `(v  1 e 1 0 ]
+"148
 [v _configBoard configBoard `(v  1 e 1 0 ]
-"258
+"230
+[v _setPin setPin `(v  1 e 1 0 ]
+"257
+[v _clearPin clearPin `(v  1 e 1 0 ]
+"317
 [v _deviceStateMachine deviceStateMachine `(v  1 e 1 0 ]
-"348
+"415
 [v _randomNumber randomNumber `(ul  1 e 4 0 ]
-"356
+"429
 [v _rollDice rollDice `(v  1 e 1 0 ]
 [s S22 Display 2 `uc 1 pin 1 0 `uc 1 data 1 1 ]
-"39 C:\Users\User\MPLABXProjects\DiceRoller.X/utils.h
+"41 C:\Users\User\MPLABXProjects\DiceRoller.X/utils.h
 [v _Display7seg4digitsVetor Display7seg4digitsVetor `[4]S22  1 e 8 0 ]
 [s S25 Button 2 `uc 1 pin 1 0 `uc 1 status 1 1 ]
-"42
+"44
 [v _Botoes Botoes `[5]S25  1 e 10 0 ]
-"50
-[v _deviceCurrentState deviceCurrentState `E1007  1 e 1 0 ]
-"56
+"52
+[v _deviceCurrentState deviceCurrentState `E1005  1 e 1 0 ]
+"58
 [v _diceState diceState `[2]uc  1 e 2 0 ]
 "59 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
@@ -82,6 +82,8 @@ MENU 1
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1177
 [v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
+"1592
+[v _WPUA WPUA `VEuc  1 e 1 @149 ]
 "1746
 [v _IOCA IOCA `VEuc  1 e 1 @150 ]
 "2614
@@ -108,99 +110,89 @@ MENU 1
 [v _T0IE T0IE `VEb  1 e 0 @93 ]
 "3386
 [v _T0IF T0IF `VEb  1 e 0 @90 ]
-"3572
-[v _WPUA0 WPUA0 `VEb  1 e 0 @1192 ]
-"3575
-[v _WPUA1 WPUA1 `VEb  1 e 0 @1193 ]
-"3578
-[v _WPUA2 WPUA2 `VEb  1 e 0 @1194 ]
-"3581
-[v _WPUA4 WPUA4 `VEb  1 e 0 @1196 ]
-"3584
-[v _WPUA5 WPUA5 `VEb  1 e 0 @1197 ]
 "3632
 [v _nRABPU nRABPU `VEb  1 e 0 @1039 ]
-"22 C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
+"20 C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
 [v _uiCounterms uiCounterms `ul  1 e 4 0 ]
-"25
+"23
 [v _indiceDisplay indiceDisplay `i  1 e 2 0 ]
-"28
+"26
 [v _uiButtonDebounce uiButtonDebounce `ul  1 e 4 0 ]
-"30
+"29
 [v _randomSeed randomSeed `ul  1 e 4 0 ]
 "34
 [v _readButtonStatus readButtonStatus `[5]uc  1 e 5 0 ]
-"71
+"74
 [v _main main `(v  1 e 1 0 ]
 {
-"106
-[v main@i i `i  1 a 2 57 ]
-"123
+"116
+[v main@i i `uc  1 a 1 0 ]
+"130
 } 0
-"116 C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+"26 C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
 [v _shiftDisplays shiftDisplays `(v  1 e 1 0 ]
 {
-"131
+"41
 } 0
-"18
+"230
 [v _setPin setPin `(v  1 e 1 0 ]
 {
 [v setPin@ucPin ucPin `uc  1 a 1 wreg ]
 [v setPin@ucPin ucPin `uc  1 a 1 wreg ]
 [v setPin@ucPort ucPort `uc  1 p 1 0 ]
 [v setPin@ucPin ucPin `uc  1 a 1 3 ]
-"36
+"248
 } 0
-"39
+"257
 [v _clearPin clearPin `(v  1 e 1 0 ]
 {
 [v clearPin@ucPin ucPin `uc  1 a 1 wreg ]
 [v clearPin@ucPin ucPin `uc  1 a 1 wreg ]
 [v clearPin@ucPort ucPort `uc  1 p 1 0 ]
 [v clearPin@ucPin ucPin `uc  1 a 1 3 ]
-"55
+"273
 } 0
-"80
+"49
 [v _initDisplay initDisplay `(v  1 e 1 0 ]
 {
-"93
+"63
 } 0
-"96
+"122
 [v _initButtons initButtons `(v  1 e 1 0 ]
 {
-"112
+"138
 } 0
-"258
+"317
 [v _deviceStateMachine deviceStateMachine `(v  1 e 1 0 ]
 {
 [v deviceStateMachine@ucButton ucButton `uc  1 a 1 wreg ]
 [v deviceStateMachine@ucButton ucButton `uc  1 a 1 wreg ]
-"261
-[v deviceStateMachine@ucButton ucButton `uc  1 a 1 52 ]
-"346
+"320
+[v deviceStateMachine@ucButton ucButton `uc  1 a 1 51 ]
+"406
 } 0
-"356
+"429
 [v _rollDice rollDice `(v  1 e 1 0 ]
 {
-"358
-[v rollDice@ulTotal ulTotal `ui  1 a 2 47 ]
-"357
-[v rollDice@i i `i  1 a 2 45 ]
-"367
+"431
+[v rollDice@ulTotal ulTotal `ui  1 a 2 46 ]
+"430
+[v rollDice@i i `uc  1 a 1 45 ]
+"441
 } 0
-"136
+"75
 [v _writeCharOnDisplay writeCharOnDisplay `(v  1 e 1 0 ]
 {
 [v writeCharOnDisplay@ucCharacter ucCharacter `uc  1 a 1 wreg ]
 [v writeCharOnDisplay@ucCharacter ucCharacter `uc  1 a 1 wreg ]
 [v writeCharOnDisplay@ucDisplay ucDisplay `uc  1 p 1 37 ]
 [v writeCharOnDisplay@ucCharacter ucCharacter `uc  1 a 1 40 ]
-"176
+"113
 } 0
-"348
+"415
 [v _randomNumber randomNumber `(ul  1 e 4 0 ]
 {
-"351
+"418
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
@@ -268,13 +260,13 @@ MENU 1
 [v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
 } 0
-"181 C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+"148 C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
 [v _configBoard configBoard `(v  1 e 1 0 ]
 {
-"251
+"219
 } 0
-"42 C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
+"43 C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
 {
-"69
+"72
 } 0

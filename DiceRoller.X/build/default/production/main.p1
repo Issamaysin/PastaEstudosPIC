@@ -3,14 +3,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./utils.h: 22: typedef struct Display{
 [s S117 `uc 1 `uc 1 ]
 [n S117 Display pin data ]
-"28
-[; ;./utils.h: 28: typedef struct Button {
+"32
+[; ;./utils.h: 32: typedef struct Button {
 [s S118 `uc 1 `uc 1 ]
 [n S118 Button pin status ]
-"50
-[; ;./utils.h: 50: state deviceCurrentState = MENU;
-[c E1007 0 1 .. ]
-[n E1007 state ROLL MENU  ]
+"52
+[; ;./utils.h: 52: state deviceCurrentState = MENU;
+[c E1005 0 1 .. ]
+[n E1005 state ROLL MENU  ]
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
 "3386 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
@@ -22,23 +22,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 "166
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
 [p mainexit ]
-"74 ./utils.h
-[; ;./utils.h: 74: void configBoard();
+"109 ./utils.h
+[; ;./utils.h: 109: void configBoard();
 [v _configBoard `(v ~T0 @X0 0 e? ]
-"67
-[; ;./utils.h: 67: void initDisplay();
+"80
+[; ;./utils.h: 80: void initDisplay();
 [v _initDisplay `(v ~T0 @X0 0 e? ]
-"72
-[; ;./utils.h: 72: void initButtons();
+"100
+[; ;./utils.h: 100: void initButtons();
 [v _initButtons `(v ~T0 @X0 0 e? ]
-"64
-[; ;./utils.h: 64: void shiftDisplays();
+"72
+[; ;./utils.h: 72: void shiftDisplays();
 [v _shiftDisplays `(v ~T0 @X0 0 e? ]
-"83
-[; ;./utils.h: 83: unsigned long randomNumber();
+"161
+[; ;./utils.h: 161: unsigned long randomNumber();
 [v _randomNumber `(ul ~T0 @X0 0 e? ]
-"81
-[; ;./utils.h: 81: void deviceStateMachine(unsigned char ucButton);
+"153
+[; ;./utils.h: 153: void deviceStateMachine(unsigned char ucButton);
 [v _deviceStateMachine `(v ~T0 @X0 0 ef1`uc ]
 "18 ./config.h
 [p x FOSC  =  INTRCIO    ]
@@ -180,20 +180,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON2 equ 018Dh ;# ">
 "2761
 [; <" SRCON equ 019Eh ;# ">
-"39 ./utils.h
-[; ;./utils.h: 39: Display Display7seg4digitsVetor[4];
+"41 ./utils.h
+[; ;./utils.h: 41: Display Display7seg4digitsVetor[4];
 [v _Display7seg4digitsVetor `S117 ~T0 @X0 -> 4 `i e ]
-"42
-[; ;./utils.h: 42: Button Botoes[5];
+"44
+[; ;./utils.h: 44: Button Botoes[5];
 [v _Botoes `S118 ~T0 @X0 -> 5 `i e ]
-"50
-[; ;./utils.h: 50: state deviceCurrentState = MENU;
-[v _deviceCurrentState `E1007 ~T0 @X0 1 e ]
+"52
+[; ;./utils.h: 52: state deviceCurrentState = MENU;
+[v _deviceCurrentState `E1005 ~T0 @X0 1 e ]
 [i _deviceCurrentState
-. `E1007 1
+. `E1005 1
 ]
-"56
-[; ;./utils.h: 56: unsigned char diceState[2] = {1,6};
+"58
+[; ;./utils.h: 58: unsigned char diceState[2] = {1,6};
 [v _diceState `uc ~T0 @X0 -> 2 `i e ]
 [i _diceState
 :U ..
@@ -201,26 +201,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 6 `i `uc
 ..
 ]
-"22 main.c
-[; ;main.c: 22: unsigned long uiCounterms = 0;
+"20 main.c
+[; ;main.c: 20: unsigned long uiCounterms = 0;
 [v _uiCounterms `ul ~T0 @X0 1 e ]
 [i _uiCounterms
 -> -> -> 0 `i `l `ul
 ]
-"25
-[; ;main.c: 25: int indiceDisplay = 0;
+"23
+[; ;main.c: 23: int indiceDisplay = 0;
 [v _indiceDisplay `i ~T0 @X0 1 e ]
 [i _indiceDisplay
 -> 0 `i
 ]
-"28
-[; ;main.c: 28: unsigned long uiButtonDebounce = 0;
+"26
+[; ;main.c: 26: unsigned long uiButtonDebounce = 0;
 [v _uiButtonDebounce `ul ~T0 @X0 1 e ]
 [i _uiButtonDebounce
 -> -> -> 0 `i `l `ul
 ]
-"30
-[; ;main.c: 30: unsigned long randomSeed = 0;
+"29
+[; ;main.c: 29: unsigned long randomSeed = 0;
 [v _randomSeed `ul ~T0 @X0 1 e ]
 [i _randomSeed
 -> -> -> 0 `i `l `ul
@@ -238,208 +238,208 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v $root$_my_isr_routine `(v ~T0 @X0 0 e ]
-"42
-[; ;main.c: 42: void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
+"43
+[; ;main.c: 43: void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 [v _my_isr_routine `(v ~T1 @X0 1 ef ]
 {
 [e :U _my_isr_routine ]
 [f ]
-"45
-[; ;main.c: 45:     if(T0IF)
-[e $ ! _T0IF 120  ]
 "46
-[; ;main.c: 46:     {
-{
+[; ;main.c: 46:     if(T0IF)
+[e $ ! _T0IF 120  ]
 "47
-[; ;main.c: 47:         T0IF = 0;
-[e = _T0IF -> -> 0 `i `b ]
+[; ;main.c: 47:     {
+{
 "48
-[; ;main.c: 48:         TMR0 = 133;
-[e = _TMR0 -> -> 133 `i `uc ]
+[; ;main.c: 48:         T0IF = 0;
+[e = _T0IF -> -> 0 `i `b ]
 "49
-[; ;main.c: 49:         uiCounterms++;
+[; ;main.c: 49:         TMR0 = 133;
+[e = _TMR0 -> -> 133 `i `uc ]
+"50
+[; ;main.c: 50:         uiCounterms++;
 [e ++ _uiCounterms -> -> -> 1 `i `l `ul ]
-"51
-[; ;main.c: 51:     }
+"53
+[; ;main.c: 53:     }
 }
 [e :U 120 ]
-"54
-[; ;main.c: 54:     if(RABIF){
+"56
+[; ;main.c: 56:     if(RABIF){
 [e $ ! _RABIF 121  ]
 {
-"56
-[; ;main.c: 56:         if(uiCounterms - uiButtonDebounce > 19){
+"58
+[; ;main.c: 58:         if(uiCounterms - uiButtonDebounce > 19){
 [e $ ! > - _uiCounterms _uiButtonDebounce -> -> -> 19 `i `l `ul 122  ]
 {
-"58
-[; ;main.c: 58:             readButtonStatus[0] = (PORTA & (1<<0))>>0;
-[e = *U + &U _readButtonStatus * -> -> -> 0 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux -> >> & -> _PORTA `i << -> 1 `i -> 0 `i -> 0 `i `uc ]
-"59
-[; ;main.c: 59:             readButtonStatus[1] = (PORTA & (1<<1))>>1;
-[e = *U + &U _readButtonStatus * -> -> -> 1 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux -> >> & -> _PORTA `i << -> 1 `i -> 1 `i -> 1 `i `uc ]
 "60
-[; ;main.c: 60:             readButtonStatus[2] = (PORTA & (1<<2))>>2;
-[e = *U + &U _readButtonStatus * -> -> -> 2 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux -> >> & -> _PORTA `i << -> 1 `i -> 2 `i -> 2 `i `uc ]
+[; ;main.c: 60:             readButtonStatus[0] = (PORTA & (1<<0))>>0;
+[e = *U + &U _readButtonStatus * -> -> -> 0 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux -> >> & -> _PORTA `i << -> 1 `i -> 0 `i -> 0 `i `uc ]
 "61
-[; ;main.c: 61:             readButtonStatus[3] = (PORTA & (1<<4))>>4;
-[e = *U + &U _readButtonStatus * -> -> -> 3 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux -> >> & -> _PORTA `i << -> 1 `i -> 4 `i -> 4 `i `uc ]
+[; ;main.c: 61:             readButtonStatus[1] = (PORTA & (1<<1))>>1;
+[e = *U + &U _readButtonStatus * -> -> -> 1 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux -> >> & -> _PORTA `i << -> 1 `i -> 1 `i -> 1 `i `uc ]
 "62
-[; ;main.c: 62:             readButtonStatus[4] = (PORTA & (1<<5))>>5;
-[e = *U + &U _readButtonStatus * -> -> -> 4 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux -> >> & -> _PORTA `i << -> 1 `i -> 5 `i -> 5 `i `uc ]
+[; ;main.c: 62:             readButtonStatus[2] = (PORTA & (1<<2))>>2;
+[e = *U + &U _readButtonStatus * -> -> -> 2 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux -> >> & -> _PORTA `i << -> 1 `i -> 2 `i -> 2 `i `uc ]
+"63
+[; ;main.c: 63:             readButtonStatus[3] = (PORTA & (1<<4))>>4;
+[e = *U + &U _readButtonStatus * -> -> -> 3 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux -> >> & -> _PORTA `i << -> 1 `i -> 4 `i -> 4 `i `uc ]
 "64
-[; ;main.c: 64:             uiButtonDebounce = uiCounterms;
+[; ;main.c: 64:             readButtonStatus[4] = (PORTA & (1<<5))>>5;
+[e = *U + &U _readButtonStatus * -> -> -> 4 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux -> >> & -> _PORTA `i << -> 1 `i -> 5 `i -> 5 `i `uc ]
+"67
+[; ;main.c: 67:             uiButtonDebounce = uiCounterms;
 [e = _uiButtonDebounce _uiCounterms ]
-"65
-[; ;main.c: 65:         }
+"68
+[; ;main.c: 68:         }
 }
 [e :U 122 ]
-"67
-[; ;main.c: 67:         RABIF = 0;
+"70
+[; ;main.c: 70:         RABIF = 0;
 [e = _RABIF -> -> 0 `i `b ]
-"68
-[; ;main.c: 68:     }
+"71
+[; ;main.c: 71:     }
 }
 [e :U 121 ]
-"69
-[; ;main.c: 69: }
+"72
+[; ;main.c: 72: }
 [e :UE 119 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"71
-[; ;main.c: 71: void main(void) {
+"74
+[; ;main.c: 74: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"74
-[; ;main.c: 74:     configBoard();
-[e ( _configBoard ..  ]
 "77
-[; ;main.c: 77:     initDisplay();
-[e ( _initDisplay ..  ]
-"78
-[; ;main.c: 78:     initButtons();
-[e ( _initButtons ..  ]
+[; ;main.c: 77:     configBoard();
+[e ( _configBoard ..  ]
 "81
-[; ;main.c: 81:      while(1){
+[; ;main.c: 81:     initDisplay();
+[e ( _initDisplay ..  ]
+"82
+[; ;main.c: 82:     initButtons();
+[e ( _initButtons ..  ]
+"88
+[; ;main.c: 88:         while(1){
 [e :U 125 ]
 {
-"83
-[; ;main.c: 83:            if(0 == (uiCounterms%5)){
+"91
+[; ;main.c: 91:         if(0 == (uiCounterms%5)){
 [e $ ! == -> -> -> 0 `i `l `ul % _uiCounterms -> -> -> 5 `i `l `ul 127  ]
 {
-"84
-[; ;main.c: 84:                 shiftDisplays();
+"92
+[; ;main.c: 92:             shiftDisplays();
 [e ( _shiftDisplays ..  ]
-"85
-[; ;main.c: 85:             }
+"93
+[; ;main.c: 93:         }
 }
 [e :U 127 ]
-"86
-[; ;main.c: 86:             if((readButtonStatus[0] != Botoes[0].status) && readButtonStatus[0] == 0){
+"96
+[; ;main.c: 96:             if((readButtonStatus[0] != Botoes[0].status) && readButtonStatus[0] == 0){
 [e $ ! && != -> *U + &U _readButtonStatus * -> -> -> 0 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> . *U + &U _Botoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 `i == -> *U + &U _readButtonStatus * -> -> -> 0 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> 0 `i 128  ]
 {
-"87
-[; ;main.c: 87:                 randomSeed = uiCounterms + 47;
+"97
+[; ;main.c: 97:                 randomSeed = uiCounterms + 47;
 [e = _randomSeed + _uiCounterms -> -> -> 47 `i `l `ul ]
-"88
-[; ;main.c: 88:                 Botoes[0].status = readButtonStatus[0];
+"98
+[; ;main.c: 98:                 Botoes[0].status = readButtonStatus[0];
 [e = . *U + &U _Botoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 *U + &U _readButtonStatus * -> -> -> 0 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux ]
-"89
-[; ;main.c: 89:                 break;
+"99
+[; ;main.c: 99:                 break;
 [e $U 126  ]
-"90
-[; ;main.c: 90:             }else if((readButtonStatus[0] != Botoes[0].status) && readButtonStatus[0] == 1){
+"100
+[; ;main.c: 100:             }else if((readButtonStatus[0] != Botoes[0].status) && readButtonStatus[0] == 1){
 }
 [e $U 129  ]
 [e :U 128 ]
 [e $ ! && != -> *U + &U _readButtonStatus * -> -> -> 0 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> . *U + &U _Botoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 `i == -> *U + &U _readButtonStatus * -> -> -> 0 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> 1 `i 130  ]
 {
-"91
-[; ;main.c: 91:                 Botoes[0].status = readButtonStatus[0];
+"101
+[; ;main.c: 101:                 Botoes[0].status = readButtonStatus[0];
 [e = . *U + &U _Botoes * -> -> -> 0 `i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 *U + &U _readButtonStatus * -> -> -> 0 `i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux ]
-"92
-[; ;main.c: 92:             }
+"102
+[; ;main.c: 102:             }
 }
 [e :U 130 ]
 [e :U 129 ]
-"93
-[; ;main.c: 93:      }
+"103
+[; ;main.c: 103:      }
 }
 [e :U 124 ]
 [e $U 125  ]
 [e :U 126 ]
-"95
-[; ;main.c: 95:    randomNumber();
+"106
+[; ;main.c: 106:      randomNumber();
 [e ( _randomNumber ..  ]
-"96
-[; ;main.c: 96:    randomNumber();
+"107
+[; ;main.c: 107:      randomNumber();
 [e ( _randomNumber ..  ]
-"98
-[; ;main.c: 98:       while(1){
+"109
+[; ;main.c: 109:      while(1){
 [e :U 132 ]
 {
-"102
-[; ;main.c: 102:         if(0 == (uiCounterms%5)){
+"112
+[; ;main.c: 112:         if(0 == (uiCounterms%5)){
 [e $ ! == -> -> -> 0 `i `l `ul % _uiCounterms -> -> -> 5 `i `l `ul 134  ]
 {
-"103
-[; ;main.c: 103:             shiftDisplays();
+"113
+[; ;main.c: 113:             shiftDisplays();
 [e ( _shiftDisplays ..  ]
-"104
-[; ;main.c: 104:         }
+"114
+[; ;main.c: 114:         }
 }
 [e :U 134 ]
-"106
-[; ;main.c: 106:         int i;
-[v _i `i ~T0 @X0 1 a ]
-"108
-[; ;main.c: 108:         for (i = 0; i < 5; i++){
+"116
+[; ;main.c: 116:         unsigned char i;
+[v _i `uc ~T0 @X0 1 a ]
+"119
+[; ;main.c: 119:         for (i = 0; i < 5; i++){
 {
-[e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 135  ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 5 `i 135  ]
 [e $U 136  ]
 [e :U 135 ]
 {
-"110
-[; ;main.c: 110:             if((readButtonStatus[i] != Botoes[i].status) && readButtonStatus[i] == 0){
-[e $ ! && != -> *U + &U _readButtonStatus * -> -> _i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> . *U + &U _Botoes * -> -> _i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 `i == -> *U + &U _readButtonStatus * -> -> _i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> 0 `i 138  ]
+"121
+[; ;main.c: 121:             if((readButtonStatus[i] != Botoes[i].status) && readButtonStatus[i] == 0){
+[e $ ! && != -> *U + &U _readButtonStatus * -> _i `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> . *U + &U _Botoes * -> _i `ux -> -> # *U &U _Botoes `ui `ux 1 `i == -> *U + &U _readButtonStatus * -> _i `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> 0 `i 138  ]
 {
-"112
-[; ;main.c: 112:                 deviceStateMachine(i + 1);
-[e ( _deviceStateMachine (1 -> + _i -> 1 `i `uc ]
-"114
-[; ;main.c: 114:                 Botoes[i].status = readButtonStatus[i];
-[e = . *U + &U _Botoes * -> -> _i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 *U + &U _readButtonStatus * -> -> _i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux ]
-"115
-[; ;main.c: 115:             }else if((readButtonStatus[i] != Botoes[i].status) && readButtonStatus[i] == 1){
+"122
+[; ;main.c: 122:                 deviceStateMachine(i + 1);
+[e ( _deviceStateMachine (1 -> + -> _i `i -> 1 `i `uc ]
+"123
+[; ;main.c: 123:                 Botoes[i].status = readButtonStatus[i];
+[e = . *U + &U _Botoes * -> _i `ux -> -> # *U &U _Botoes `ui `ux 1 *U + &U _readButtonStatus * -> _i `ux -> -> # *U &U _readButtonStatus `ui `ux ]
+"124
+[; ;main.c: 124:             }else if((readButtonStatus[i] != Botoes[i].status) && readButtonStatus[i] == 1){
 }
 [e $U 139  ]
 [e :U 138 ]
-[e $ ! && != -> *U + &U _readButtonStatus * -> -> _i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> . *U + &U _Botoes * -> -> _i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 `i == -> *U + &U _readButtonStatus * -> -> _i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> 1 `i 140  ]
+[e $ ! && != -> *U + &U _readButtonStatus * -> _i `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> . *U + &U _Botoes * -> _i `ux -> -> # *U &U _Botoes `ui `ux 1 `i == -> *U + &U _readButtonStatus * -> _i `ux -> -> # *U &U _readButtonStatus `ui `ux `i -> 1 `i 140  ]
 {
-"116
-[; ;main.c: 116:                 Botoes[i].status = readButtonStatus[i];
-[e = . *U + &U _Botoes * -> -> _i `ui `ux -> -> # *U &U _Botoes `ui `ux 1 *U + &U _readButtonStatus * -> -> _i `ui `ux -> -> # *U &U _readButtonStatus `ui `ux ]
-"117
-[; ;main.c: 117:             }
+"125
+[; ;main.c: 125:                 Botoes[i].status = readButtonStatus[i];
+[e = . *U + &U _Botoes * -> _i `ux -> -> # *U &U _Botoes `ui `ux 1 *U + &U _readButtonStatus * -> _i `ux -> -> # *U &U _readButtonStatus `ui `ux ]
+"126
+[; ;main.c: 126:             }
 }
 [e :U 140 ]
 [e :U 139 ]
-"119
-[; ;main.c: 119:         }
+"127
+[; ;main.c: 127:         }
 }
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 135  ]
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 5 `i 135  ]
 [e :U 136 ]
 }
-"120
-[; ;main.c: 120:     }
+"128
+[; ;main.c: 128:     }
 }
 [e :U 131 ]
 [e $U 132  ]
 [e :U 133 ]
-"123
-[; ;main.c: 123: }
+"130
+[; ;main.c: 130: }
 [e :UE 123 ]
 }
