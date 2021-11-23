@@ -2347,7 +2347,7 @@ void deviceStateMachine(unsigned char ucButton){
 }
 # 415 "utils.c"
 unsigned long randomNumber(){
-    randomSeed = (37*randomSeed + 98)%1373;
+    randomSeed = (733*randomSeed + 1237)%7393;
     return randomSeed;
 }
 # 429 "utils.c"

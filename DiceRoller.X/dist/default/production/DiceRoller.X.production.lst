@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Mon Nov 22 17:36:17 2021
+                                                                                               Tue Nov 23 12:57:50 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F687
@@ -2698,20 +2698,20 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2675                           ; Regs used in _randomNumber: [wreg+status,2+status,0+pclath+cstack]
   2676                           
   2677                           
-  2678                           ;utils.c: 416:     randomSeed = (37*randomSeed + 98)%1373;
+  2678                           ;utils.c: 416:     randomSeed = (733*randomSeed + 1237)%7393;
   2679  051E  3000               	movlw	0
   2680  051F  1283               	bcf	3,5	;RP0=0, select bank0
   2681  0520  1303               	bcf	3,6	;RP1=0, select bank0
   2682  0521  00B0               	movwf	___llmod@divisor+3
   2683  0522  3000               	movlw	0
   2684  0523  00AF               	movwf	___llmod@divisor+2
-  2685  0524  3005               	movlw	5
+  2685  0524  301C               	movlw	28
   2686  0525  00AE               	movwf	___llmod@divisor+1
-  2687  0526  305D               	movlw	93
+  2687  0526  30E1               	movlw	225
   2688  0527  00AD               	movwf	___llmod@divisor
-  2689  0528  3062               	movlw	98
+  2689  0528  30D5               	movlw	213
   2690  0529  00BB               	movwf	??_randomNumber
-  2691  052A  3000               	movlw	0
+  2691  052A  3004               	movlw	4
   2692  052B  00BC               	movwf	??_randomNumber+1
   2693  052C  3000               	movlw	0
   2694  052D  00BD               	movwf	??_randomNumber+2
@@ -2729,9 +2729,9 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2706  0539  00A7               	movwf	___lmul@multiplicand+3
   2707  053A  3000               	movlw	0
   2708  053B  00A6               	movwf	___lmul@multiplicand+2
-  2709  053C  3000               	movlw	0
+  2709  053C  3002               	movlw	2
   2710  053D  00A5               	movwf	___lmul@multiplicand+1
-  2711  053E  3025               	movlw	37
+  2711  053E  30DD               	movlw	221
   2712  053F  00A4               	movwf	___lmul@multiplicand
   2713  0540  2571               	fcall	___lmul
   2714  0541  1283               	bcf	3,5	;RP0=0, select bank0
@@ -4352,7 +4352,7 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Mon Nov 22 17:36:17 2021
+Symbol Table                                                                                   Tue Nov 23 12:57:50 2021
 
                            l51 0136                             l58 01A4                   ___awdiv@sign 0026  
                            fsr 0004                            l221 0570                            l135 073B  

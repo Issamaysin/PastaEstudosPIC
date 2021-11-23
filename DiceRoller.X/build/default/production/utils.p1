@@ -1007,8 +1007,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _randomNumber ]
 [f ]
 "416
-[; ;utils.c: 416:     randomSeed = (37*randomSeed + 98)%1373;
-[e = _randomSeed % + * -> -> -> 37 `i `l `ul _randomSeed -> -> -> 98 `i `l `ul -> -> -> 1373 `i `l `ul ]
+[; ;utils.c: 416:     randomSeed = (733*randomSeed + 1237)%7393;
+[e = _randomSeed % + * -> -> -> 733 `i `l `ul _randomSeed -> -> -> 1237 `i `l `ul -> -> -> 7393 `i `l `ul ]
 "417
 [; ;utils.c: 417:     return randomSeed;
 [e ) _randomSeed ]

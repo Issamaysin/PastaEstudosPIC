@@ -154,7 +154,7 @@ void deviceStateMachine(unsigned char ucButton);
 
  /**************************************************************************** */
  /* Method name:        randomNumber                                           */
- /* Method description: Gerador de numeros aleatórios (DATA STILL UNDER TESTS) */
+ /* Method description: Gerador de numeros aleatórios                          */
  /* Input params:       n/a                                                    */
  /* Output params:      unsgined long: Numero aleatorio                        */
  /* ****************************************************************************/

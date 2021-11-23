@@ -408,12 +408,12 @@ void deviceStateMachine(unsigned char ucButton){
 
  /**************************************************************************** */
  /* Method name:        randomNumber                                           */
- /* Method description: Gerador de numeros aleatórios (DATA STILL UNDER TESTS) */
+ /* Method description: Gerador de numeros aleatórios                          */
  /* Input params:       n/a                                                    */
  /* Output params:      unsgined long: Numero aleatorio                        */
  /* ****************************************************************************/
 unsigned long randomNumber(){
-    randomSeed = (37*randomSeed + 98)%1373;
+    randomSeed = (733*randomSeed + 1237)%7393;
     return randomSeed;
 }
 

@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\DiceRoller.X.production.sym \
   --cmf=dist/default/production\DiceRoller.X.production.cmf -z -Q16F687 \
-  -oC:\Users\User\AppData\Local\Temp\xcAs490.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\User\AppData\Local\Temp\xcAs83c.4 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/DiceRoller.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0ABh-0BFh -pstack=STACK \
   -ACODE=00h-07FFh -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 \
@@ -17,7 +17,7 @@ Linker command line:
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE \
   -pcinit=CODE -pfunctab=ENTRY -k \
-  C:\Users\User\AppData\Local\Temp\xcAs490.o \
+  C:\Users\User\AppData\Local\Temp\xcAs83c.o \
   dist/default/production\DiceRoller.X.production.o 
 
 Object code version is 3.11
@@ -27,7 +27,7 @@ Machine type is 16F687
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\User\AppData\Local\Temp\xcAs490.o
+C:\Users\User\AppData\Local\Temp\xcAs83c.o
                 end_init                              A        A        1        8       0
                 reset_vec                             0        0        1        0       0
                 config                             2007     2007        1        0       4

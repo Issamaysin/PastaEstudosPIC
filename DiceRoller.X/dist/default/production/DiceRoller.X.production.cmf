@@ -42,7 +42,7 @@ dataBANK0 BANK0 1 68 68 8 1
 clrtext CODE 0 78F 78F 8 2
 bssCOMMON COMMON 1 70 70 6 1
 config CONFIG 4 2007 2007 1 2
-$C:\Users\User\AppData\Local\Temp\xcAs490.o
+$C:\Users\User\AppData\Local\Temp\xcAs83c.o
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 A A 1 2
 config CONFIG 4 2007 2007 1 2
@@ -86,40 +86,40 @@ STRING 797-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\DiceRoller.X.production.o
-B cinit CODE >574:C:\Users\User\AppData\Local\Temp\xcAs490.s
-B cinit CODE >577:C:\Users\User\AppData\Local\Temp\xcAs490.s
-B cinit CODE >630:C:\Users\User\AppData\Local\Temp\xcAs490.s
-C cinit CODE >631:C:\Users\User\AppData\Local\Temp\xcAs490.s
-D cinit CODE >632:C:\Users\User\AppData\Local\Temp\xcAs490.s
-E cinit CODE >633:C:\Users\User\AppData\Local\Temp\xcAs490.s
-F cinit CODE >634:C:\Users\User\AppData\Local\Temp\xcAs490.s
-10 cinit CODE >635:C:\Users\User\AppData\Local\Temp\xcAs490.s
-11 cinit CODE >636:C:\Users\User\AppData\Local\Temp\xcAs490.s
-12 cinit CODE >637:C:\Users\User\AppData\Local\Temp\xcAs490.s
-13 cinit CODE >638:C:\Users\User\AppData\Local\Temp\xcAs490.s
-14 cinit CODE >639:C:\Users\User\AppData\Local\Temp\xcAs490.s
-15 cinit CODE >640:C:\Users\User\AppData\Local\Temp\xcAs490.s
-16 cinit CODE >641:C:\Users\User\AppData\Local\Temp\xcAs490.s
-17 cinit CODE >642:C:\Users\User\AppData\Local\Temp\xcAs490.s
-18 cinit CODE >643:C:\Users\User\AppData\Local\Temp\xcAs490.s
-19 cinit CODE >644:C:\Users\User\AppData\Local\Temp\xcAs490.s
-1A cinit CODE >645:C:\Users\User\AppData\Local\Temp\xcAs490.s
-1B cinit CODE >664:C:\Users\User\AppData\Local\Temp\xcAs490.s
-1C cinit CODE >665:C:\Users\User\AppData\Local\Temp\xcAs490.s
-1D cinit CODE >666:C:\Users\User\AppData\Local\Temp\xcAs490.s
-1E cinit CODE >667:C:\Users\User\AppData\Local\Temp\xcAs490.s
-1F cinit CODE >668:C:\Users\User\AppData\Local\Temp\xcAs490.s
-20 cinit CODE >671:C:\Users\User\AppData\Local\Temp\xcAs490.s
-21 cinit CODE >672:C:\Users\User\AppData\Local\Temp\xcAs490.s
-22 cinit CODE >673:C:\Users\User\AppData\Local\Temp\xcAs490.s
-23 cinit CODE >674:C:\Users\User\AppData\Local\Temp\xcAs490.s
-24 cinit CODE >677:C:\Users\User\AppData\Local\Temp\xcAs490.s
-25 cinit CODE >678:C:\Users\User\AppData\Local\Temp\xcAs490.s
-26 cinit CODE >679:C:\Users\User\AppData\Local\Temp\xcAs490.s
-27 cinit CODE >680:C:\Users\User\AppData\Local\Temp\xcAs490.s
-28 cinit CODE >686:C:\Users\User\AppData\Local\Temp\xcAs490.s
-28 cinit CODE >688:C:\Users\User\AppData\Local\Temp\xcAs490.s
-29 cinit CODE >689:C:\Users\User\AppData\Local\Temp\xcAs490.s
+B cinit CODE >574:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+B cinit CODE >577:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+B cinit CODE >630:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+C cinit CODE >631:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+D cinit CODE >632:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+E cinit CODE >633:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+F cinit CODE >634:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+10 cinit CODE >635:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+11 cinit CODE >636:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+12 cinit CODE >637:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+13 cinit CODE >638:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+14 cinit CODE >639:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+15 cinit CODE >640:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+16 cinit CODE >641:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+17 cinit CODE >642:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+18 cinit CODE >643:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+19 cinit CODE >644:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+1A cinit CODE >645:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+1B cinit CODE >664:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+1C cinit CODE >665:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+1D cinit CODE >666:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+1E cinit CODE >667:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+1F cinit CODE >668:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+20 cinit CODE >671:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+21 cinit CODE >672:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+22 cinit CODE >673:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+23 cinit CODE >674:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+24 cinit CODE >677:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+25 cinit CODE >678:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+26 cinit CODE >679:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+27 cinit CODE >680:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+28 cinit CODE >686:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+28 cinit CODE >688:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+29 cinit CODE >689:C:\Users\User\AppData\Local\Temp\xcAs83c.s
 4 intentry CODE >43:C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
 374 text17 CODE >43:C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
 374 text17 CODE >46:C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
@@ -559,16 +559,16 @@ FE text6 CODE >401:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
 213 maintext CODE >124:C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
 222 maintext CODE >127:C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
 22B maintext CODE >127:C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
-78F clrtext CODE >651:C:\Users\User\AppData\Local\Temp\xcAs490.s
-78F clrtext CODE >652:C:\Users\User\AppData\Local\Temp\xcAs490.s
-790 clrtext CODE >653:C:\Users\User\AppData\Local\Temp\xcAs490.s
-790 clrtext CODE >654:C:\Users\User\AppData\Local\Temp\xcAs490.s
-791 clrtext CODE >655:C:\Users\User\AppData\Local\Temp\xcAs490.s
-792 clrtext CODE >656:C:\Users\User\AppData\Local\Temp\xcAs490.s
-793 clrtext CODE >657:C:\Users\User\AppData\Local\Temp\xcAs490.s
-794 clrtext CODE >658:C:\Users\User\AppData\Local\Temp\xcAs490.s
-795 clrtext CODE >659:C:\Users\User\AppData\Local\Temp\xcAs490.s
-796 clrtext CODE >660:C:\Users\User\AppData\Local\Temp\xcAs490.s
+78F clrtext CODE >651:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+78F clrtext CODE >652:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+790 clrtext CODE >653:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+790 clrtext CODE >654:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+791 clrtext CODE >655:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+792 clrtext CODE >656:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+793 clrtext CODE >657:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+794 clrtext CODE >658:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+795 clrtext CODE >659:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+796 clrtext CODE >660:C:\Users\User\AppData\Local\Temp\xcAs83c.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -603,10 +603,10 @@ _T0IE 5D 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
 _T0IF 5A 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
 _WPUA 95 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs490.o
+___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs83c.o
 _main 266 0 CODE 0 maintext dist/default/production\DiceRoller.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
-start 14 0 CODE 0 init C:\Users\User\AppData\Local\Temp\xcAs490.o
+start 14 0 CODE 0 init C:\Users\User\AppData\Local\Temp\xcAs83c.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
@@ -623,12 +623,12 @@ __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
 ___awmod@sign 26 0 BANK0 1 cstackBANK0 dist/default/production\DiceRoller.X.production.o
 __end_of_initButtons EC8 0 CODE 0 text5 dist/default/production\DiceRoller.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs490.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs490.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs490.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs490.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs490.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs490.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs83c.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs83c.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs83c.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs83c.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs83c.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs83c.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
 ___llmod@divisor 2D 0 BANK0 1 cstackBANK0 dist/default/production\DiceRoller.X.production.o
@@ -651,8 +651,8 @@ __end_of___llmod A3C 0 CODE 0 text11 dist/default/production\DiceRoller.X.produc
 __end_of___lwdiv BFE 0 CODE 0 text13 dist/default/production\DiceRoller.X.production.o
 __end_of___lwmod E0E 0 CODE 0 text12 dist/default/production\DiceRoller.X.production.o
 _uiCounterms 60 0 BANK0 1 bssBANK0 dist/default/production\DiceRoller.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs490.o
-___stacklo 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs490.o
+___stackhi 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs83c.o
+___stacklo 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs83c.o
 __size_of_shiftDisplays 0 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
 ___lwdiv@quotient 26 0 BANK0 1 cstackBANK0 dist/default/production\DiceRoller.X.production.o
 ___lwmod@dividend 41 0 BANK0 1 cstackBANK0 dist/default/production\DiceRoller.X.production.o
@@ -665,7 +665,7 @@ __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\DiceRoller.X.pro
 __pcstackBANK1 AA 0 BANK1 1 cstackBANK1 dist/default/production\DiceRoller.X.production.o
 __size_of_initButtons 0 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
 _deviceCurrentState 6F 0 BANK0 1 dataBANK0 dist/default/production\DiceRoller.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs490.o
+___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs83c.o
 __end_of_deviceStateMachine 266 0 CODE 0 text6 dist/default/production\DiceRoller.X.production.o
 __end_of_setPin D96 0 CODE 0 text2 dist/default/production\DiceRoller.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
@@ -722,7 +722,7 @@ __size_of_writeCharOnDisplay 0 0 ABS 0 - dist/default/production\DiceRoller.X.pr
 _uiButtonDebounce 70 0 COMMON 1 bssCOMMON dist/default/production\DiceRoller.X.production.o
 _configBoard C88 0 CODE 0 text16 dist/default/production\DiceRoller.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\xcAs490.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\xcAs83c.o
 __end_of_randomNumber AE2 0 CODE 0 text9 dist/default/production\DiceRoller.X.production.o
 __pdataBANK0 68 0 BANK0 1 dataBANK0 dist/default/production\DiceRoller.X.production.o
 __size_of___lmul 0 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
