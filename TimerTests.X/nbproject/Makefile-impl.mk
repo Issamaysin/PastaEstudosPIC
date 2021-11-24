@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=IRremote.X
+PROJECTNAME=TimerTests.X
 
 # Active Configuration
 DEFAULTCONF=default

@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 11 "main.c"
+# 10 "main.c"
 # 1 "./config.h" 1
 # 10 "./config.h"
 #pragma config FOSC = INTOSC
@@ -3376,7 +3376,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 2 3
 # 31 "./config.h" 2
-# 11 "main.c" 2
+# 10 "main.c" 2
 
 
 # 1 "./utils.h" 1
@@ -3386,7 +3386,7 @@ void setPin(int iPin);
 void clearPin(int iPin);
 
 void togglePin(int iPin);
-# 13 "main.c" 2
+# 12 "main.c" 2
 
 
 
@@ -3409,7 +3409,7 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 
     if(TMR0IF)
     {
-        TMR0 = 131;
+        TMR0 = 131+2;
         TMR0IF = 0;
         uiCounterms++;
     }
@@ -3436,11 +3436,11 @@ void main(void) {
 
 
     OPTION_REG = 0b0000100;
-    TMR0=131;
+    TMR0=131+2;
     GIE=1;
     PEIE=1;
     TMR0IE=1;
-# 74 "main.c"
+# 73 "main.c"
     TMR2IE = 1;
     T2CON = 0b00111101;
     PR2 = 125;

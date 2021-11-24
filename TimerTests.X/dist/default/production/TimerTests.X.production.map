@@ -3,16 +3,16 @@ Microchip MPLAB XC8 Compiler V2.32
 Linker command line:
 
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
-  -h+dist/default/production\IRremote.X.production.sym \
-  --cmf=dist/default/production\IRremote.X.production.cmf -z -Q12F1822 \
-  -oC:\Users\User\AppData\Local\Temp\xcAs720.6 --defsym=__MPLAB_BUILD=1 \
-  -Mdist/default/production/IRremote.X.production.map -E1 -ver=XC8 Compiler \
-  --acfsm=1493 -ASTACK=02010h-0206Fh -pstack=STACK -ACODE=00h-07FFh \
-  -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 -ACONST=00h-0FFhx8 \
-  -AENTRY=00h-0FFhx8 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0BFh \
-  -ABIGRAM=02000h-0206Fh -ARAM=020h-06Fh,0A0h-0BFh \
-  -AABS1=020h-07Fh,0A0h-0BFh -ASFR0=00h-01Fh -ASFR1=080h-09Fh \
-  -ASFR2=0100h-016Fh -ASFR3=0180h-01EFh -ASFR4=0200h-026Fh \
+  -h+dist/default/production\TimerTests.X.production.sym \
+  --cmf=dist/default/production\TimerTests.X.production.cmf -z -Q12F1822 \
+  -oC:\Users\User\AppData\Local\Temp\xcAs4ro.4 --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/production/TimerTests.X.production.map -E1 \
+  -ver=XC8 Compiler --acfsm=1493 -ASTACK=02010h-0206Fh -pstack=STACK \
+  -ACODE=00h-07FFh -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 \
+  -ACONST=00h-0FFhx8 -AENTRY=00h-0FFhx8 -ACOMMON=070h-07Fh \
+  -ABANK0=020h-06Fh -ABANK1=0A0h-0BFh -ABIGRAM=02000h-0206Fh \
+  -ARAM=020h-06Fh,0A0h-0BFh -AABS1=020h-07Fh,0A0h-0BFh -ASFR0=00h-01Fh \
+  -ASFR1=080h-09Fh -ASFR2=0100h-016Fh -ASFR3=0180h-01EFh -ASFR4=0200h-026Fh \
   -ASFR5=0280h-02EFh -ASFR6=0300h-036Fh -ASFR7=0380h-03EFh \
   -ASFR8=0400h-046Fh -ASFR9=0480h-04EFh -ASFR10=0500h-056Fh \
   -ASFR11=0580h-05EFh -ASFR12=0600h-066Fh -ASFR13=0680h-06EFh \
@@ -26,8 +26,8 @@ Linker command line:
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\User\AppData\Local\Temp\xcAs720.o \
-  dist/default/production\IRremote.X.production.o 
+  -pfunctab=ENTRY -k C:\Users\User\AppData\Local\Temp\xcAs4ro.o \
+  dist/default/production\TimerTests.X.production.o 
 
 Object code version is 3.11
 
@@ -36,11 +36,11 @@ Machine type is 12F1822
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\User\AppData\Local\Temp\xcAs720.o
+C:\Users\User\AppData\Local\Temp\xcAs4ro.o
                 end_init                             26       26        1        8       0
                 reset_vec                             0        0        1        0       0
                 config                             8007     8007        2        0       4
-dist/default/production\IRremote.X.production.o
+dist/default/production\TimerTests.X.production.o
                 cinit                                27       27        C        8       0
                 intentry                              4        4       22        8       0
                 config                             8007     8007        2        0       4

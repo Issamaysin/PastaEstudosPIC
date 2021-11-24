@@ -1,8 +1,7 @@
 /*
  * File:   main.c
  * Author: Renato Pepe
- * Description:     Atuar como um controle remoto IR
- *                   utilizando protocolo NEC
+ * Description:     Test dos módulos timer0 e timer2
  * Controlador:     PIC12F1822
  * Created on 25 de Outubro de 2021, 16:37
  */
@@ -32,7 +31,7 @@ void __interrupt () my_isr_routine (void) {
     /* Modulo de interrupção do Timer0 */
     if(TMR0IF) // Timer flag has been triggered due to timer overflow
     {   
-        TMR0 = 131;     //Load the timer Value
+        TMR0 = 131+2;     //Load the timer Value
         TMR0IF = 0;     // Clear timer interrupt flag
         uiCounterms++;  //update global timer counter
     } 
@@ -55,11 +54,11 @@ void main(void) {
    /*
     * Port Configuration for Timer0
     *   set timer0 reading external frequency with 32 prescaler and enables pullups
-    *   set the TMR0 register at 131 to obtain the desired interruption time (1ms)
+    *   set the TMR0 register at 133 to obtain the desired interruption time (1ms)
     *   enable global, peripherial, and timer0 interruptions
     */
     OPTION_REG = 0b0000100;  
-    TMR0=131;      
+    TMR0=131+2;      
     GIE=1;         
     PEIE=1;         
     TMR0IE=1;      

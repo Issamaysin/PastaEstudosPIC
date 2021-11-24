@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Wed Nov 24 13:30:00 2021
+                                                                                               Wed Nov 24 13:36:15 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	12F1822
@@ -543,8 +543,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    529  0036  3004               	movlw	4
    530  0037  0095               	movwf	21	;volatile
    531                           
-   532                           ;main.c: 61:     TMR0=131;
-   533  0038  3083               	movlw	131
+   532                           ;main.c: 61:     TMR0=131+2;
+   533  0038  3085               	movlw	133
    534  0039  0020               	movlb	0	; select bank0
    535  003A  0095               	movwf	21	;volatile
    536  003B                     l753:
@@ -851,8 +851,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    837  000A                     u17_20:
    838  000A                     i1l741:
    839                           
-   840                           ;main.c: 33:     {;main.c: 34:         TMR0 = 131;
-   841  000A  3083               	movlw	131
+   840                           ;main.c: 33:     {;main.c: 34:         TMR0 = 131+2;
+   841  000A  3085               	movlw	133
    842  000B  0020               	movlb	0	; select bank0
    843  000C  0095               	movwf	21	;volatile
    844  000D                     i1l743:
@@ -1096,7 +1096,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Wed Nov 24 13:30:00 2021
+Symbol Table                                                                                   Wed Nov 24 13:36:15 2021
 
                      l65 00D0                      l733 00B3                      l735 00B7  
                     l751 0033                      l737 00C4                      l761 0045  

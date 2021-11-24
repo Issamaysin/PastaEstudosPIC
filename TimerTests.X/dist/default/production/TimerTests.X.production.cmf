@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$dist/default/production\IRremote.X.production.o
+$dist/default/production\TimerTests.X.production.o
 cinit CODE 0 27 27 C 2
 text1 CODE 0 B3 B3 1E 2
 maintext CODE 0 33 33 80 2
@@ -20,7 +20,7 @@ cstackBANK0 BANK0 1 28 28 8 1
 intentry CODE 0 4 4 22 2
 bssBANK0 BANK0 1 20 20 8 1
 config CONFIG 4 8007 8007 2 2
-$C:\Users\User\AppData\Local\Temp\xcAs720.o
+$C:\Users\User\AppData\Local\Temp\xcAs4ro.o
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 26 26 1 2
 config CONFIG 4 8007 8007 2 2
@@ -94,58 +94,58 @@ STRING D1-7FF 2
 # are in ascending order of addresses.
 # All other numeric values are in decimal.
 %LINETAB
-$dist/default/production\IRremote.X.production.o
-27 cinit CODE >851:C:\Users\User\AppData\Local\Temp\xcAs720.s
-27 cinit CODE >854:C:\Users\User\AppData\Local\Temp\xcAs720.s
-27 cinit CODE >869:C:\Users\User\AppData\Local\Temp\xcAs720.s
-28 cinit CODE >870:C:\Users\User\AppData\Local\Temp\xcAs720.s
-29 cinit CODE >871:C:\Users\User\AppData\Local\Temp\xcAs720.s
-2A cinit CODE >872:C:\Users\User\AppData\Local\Temp\xcAs720.s
-2B cinit CODE >873:C:\Users\User\AppData\Local\Temp\xcAs720.s
-2C cinit CODE >874:C:\Users\User\AppData\Local\Temp\xcAs720.s
-2D cinit CODE >875:C:\Users\User\AppData\Local\Temp\xcAs720.s
-2E cinit CODE >876:C:\Users\User\AppData\Local\Temp\xcAs720.s
-2F cinit CODE >877:C:\Users\User\AppData\Local\Temp\xcAs720.s
-30 cinit CODE >883:C:\Users\User\AppData\Local\Temp\xcAs720.s
-30 cinit CODE >885:C:\Users\User\AppData\Local\Temp\xcAs720.s
-31 cinit CODE >886:C:\Users\User\AppData\Local\Temp\xcAs720.s
-32 cinit CODE >887:C:\Users\User\AppData\Local\Temp\xcAs720.s
-4 intentry CODE >29:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-6 intentry CODE >32:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-A intentry CODE >34:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-D intentry CODE >35:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-E intentry CODE >36:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-16 intentry CODE >40:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-1B intentry CODE >41:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-1C intentry CODE >42:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-24 intentry CODE >45:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-B3 text1 CODE >18:C:\Users\User\MPLABXProjects\IRremote.X\utils.c
-B3 text1 CODE >19:C:\Users\User\MPLABXProjects\IRremote.X\utils.c
-BC text1 CODE >19:C:\Users\User\MPLABXProjects\IRremote.X\utils.c
-C0 text1 CODE >19:C:\Users\User\MPLABXProjects\IRremote.X\utils.c
-C4 text1 CODE >20:C:\Users\User\MPLABXProjects\IRremote.X\utils.c
-D0 text1 CODE >22:C:\Users\User\MPLABXProjects\IRremote.X\utils.c
-33 maintext CODE >47:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-33 maintext CODE >52:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-36 maintext CODE >60:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-38 maintext CODE >61:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-3B maintext CODE >62:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-3C maintext CODE >63:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-3D maintext CODE >64:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-3E maintext CODE >73:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-40 maintext CODE >74:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-43 maintext CODE >75:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-45 maintext CODE >82:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-47 maintext CODE >83:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-4A maintext CODE >84:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-4C maintext CODE >87:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-54 maintext CODE >88:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-5C maintext CODE >93:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-77 maintext CODE >94:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-7E maintext CODE >97:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-87 maintext CODE >101:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-A2 maintext CODE >102:C:\Users\User\MPLABXProjects\IRremote.X\main.c
-A8 maintext CODE >105:C:\Users\User\MPLABXProjects\IRremote.X\main.c
+$dist/default/production\TimerTests.X.production.o
+27 cinit CODE >851:C:\Users\User\AppData\Local\Temp\xcAs4ro.s
+27 cinit CODE >854:C:\Users\User\AppData\Local\Temp\xcAs4ro.s
+27 cinit CODE >869:C:\Users\User\AppData\Local\Temp\xcAs4ro.s
+28 cinit CODE >870:C:\Users\User\AppData\Local\Temp\xcAs4ro.s
+29 cinit CODE >871:C:\Users\User\AppData\Local\Temp\xcAs4ro.s
+2A cinit CODE >872:C:\Users\User\AppData\Local\Temp\xcAs4ro.s
+2B cinit CODE >873:C:\Users\User\AppData\Local\Temp\xcAs4ro.s
+2C cinit CODE >874:C:\Users\User\AppData\Local\Temp\xcAs4ro.s
+2D cinit CODE >875:C:\Users\User\AppData\Local\Temp\xcAs4ro.s
+2E cinit CODE >876:C:\Users\User\AppData\Local\Temp\xcAs4ro.s
+2F cinit CODE >877:C:\Users\User\AppData\Local\Temp\xcAs4ro.s
+30 cinit CODE >883:C:\Users\User\AppData\Local\Temp\xcAs4ro.s
+30 cinit CODE >885:C:\Users\User\AppData\Local\Temp\xcAs4ro.s
+31 cinit CODE >886:C:\Users\User\AppData\Local\Temp\xcAs4ro.s
+32 cinit CODE >887:C:\Users\User\AppData\Local\Temp\xcAs4ro.s
+4 intentry CODE >29:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+6 intentry CODE >32:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+A intentry CODE >34:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+D intentry CODE >35:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+E intentry CODE >36:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+16 intentry CODE >40:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+1B intentry CODE >41:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+1C intentry CODE >42:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+24 intentry CODE >45:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+B3 text1 CODE >18:C:\Users\User\MPLABXProjects\TimerTests.X\utils.c
+B3 text1 CODE >19:C:\Users\User\MPLABXProjects\TimerTests.X\utils.c
+BC text1 CODE >19:C:\Users\User\MPLABXProjects\TimerTests.X\utils.c
+C0 text1 CODE >19:C:\Users\User\MPLABXProjects\TimerTests.X\utils.c
+C4 text1 CODE >20:C:\Users\User\MPLABXProjects\TimerTests.X\utils.c
+D0 text1 CODE >22:C:\Users\User\MPLABXProjects\TimerTests.X\utils.c
+33 maintext CODE >47:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+33 maintext CODE >52:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+36 maintext CODE >60:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+38 maintext CODE >61:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+3B maintext CODE >62:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+3C maintext CODE >63:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+3D maintext CODE >64:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+3E maintext CODE >73:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+40 maintext CODE >74:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+43 maintext CODE >75:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+45 maintext CODE >82:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+47 maintext CODE >83:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+4A maintext CODE >84:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+4C maintext CODE >87:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+54 maintext CODE >88:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+5C maintext CODE >93:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+77 maintext CODE >94:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+7E maintext CODE >97:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+87 maintext CODE >101:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+A2 maintext CODE >102:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
+A8 maintext CODE >105:C:\Users\User\MPLABXProjects\TimerTests.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -158,48 +158,48 @@ A8 maintext CODE >105:C:\Users\User\MPLABXProjects\IRremote.X\main.c
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-___latbits 0 0 ABS 0 - dist/default/production\IRremote.X.production.o
+___latbits 0 0 ABS 0 - dist/default/production\TimerTests.X.production.o
 __Hspace_0 D1 0 ABS 0 - -
 __Hspace_1 78 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 10010 0 ABS 0 - -
-__size_of_my_isr_routine 0 0 ABS 0 - dist/default/production\IRremote.X.production.o
+__size_of_my_isr_routine 0 0 ABS 0 - dist/default/production\TimerTests.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-_PEIE 5E 0 ABS 0 - dist/default/production\IRremote.X.production.o
-_TMR0 15 0 ABS 0 - dist/default/production\IRremote.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs720.o
-_main 66 0 CODE 0 maintext dist/default/production\IRremote.X.production.o
-btemp 7E 0 ABS 0 - dist/default/production\IRremote.X.production.o
-start 4C 0 CODE 0 init C:\Users\User\AppData\Local\Temp\xcAs720.o
-__size_of_main 0 0 ABS 0 - dist/default/production\IRremote.X.production.o
+_PEIE 5E 0 ABS 0 - dist/default/production\TimerTests.X.production.o
+_TMR0 15 0 ABS 0 - dist/default/production\TimerTests.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs4ro.o
+_main 66 0 CODE 0 maintext dist/default/production\TimerTests.X.production.o
+btemp 7E 0 ABS 0 - dist/default/production\TimerTests.X.production.o
+start 4C 0 CODE 0 init C:\Users\User\AppData\Local\Temp\xcAs4ro.o
+__size_of_main 0 0 ABS 0 - dist/default/production\TimerTests.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs720.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs720.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs720.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs720.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs720.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs720.o
-wtemp0 7E 0 ABS 0 - dist/default/production\IRremote.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs4ro.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs4ro.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs4ro.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs4ro.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs4ro.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs4ro.o
+wtemp0 7E 0 ABS 0 - dist/default/production\TimerTests.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-_ANSELA 18C 0 ABS 0 - dist/default/production\IRremote.X.production.o
+_ANSELA 18C 0 ABS 0 - dist/default/production\TimerTests.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-_uiCounterms 24 0 BANK0 1 bssBANK0 dist/default/production\IRremote.X.production.o
-main@uiContadorTempo2 2C 0 BANK0 1 cstackBANK0 dist/default/production\IRremote.X.production.o
-_OPTION_REG 95 0 ABS 0 - dist/default/production\IRremote.X.production.o
-___stackhi 206F 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs720.o
-___stacklo 2010 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs720.o
-main@uiContadorTempo 28 0 BANK0 1 cstackBANK0 dist/default/production\IRremote.X.production.o
-start_initialization 4E 0 CODE 0 cinit dist/default/production\IRremote.X.production.o
-_OSCCON 99 0 ABS 0 - dist/default/production\IRremote.X.production.o
-__pcstackBANK0 28 0 BANK0 1 cstackBANK0 dist/default/production\IRremote.X.production.o
-_TMR0IE 5D 0 ABS 0 - dist/default/production\IRremote.X.production.o
-_TMR0IF 5A 0 ABS 0 - dist/default/production\IRremote.X.production.o
-_TMR2IE 489 0 ABS 0 - dist/default/production\IRremote.X.production.o
-_TMR2IF 89 0 ABS 0 - dist/default/production\IRremote.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs720.o
+_uiCounterms 24 0 BANK0 1 bssBANK0 dist/default/production\TimerTests.X.production.o
+main@uiContadorTempo2 2C 0 BANK0 1 cstackBANK0 dist/default/production\TimerTests.X.production.o
+_OPTION_REG 95 0 ABS 0 - dist/default/production\TimerTests.X.production.o
+___stackhi 206F 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs4ro.o
+___stacklo 2010 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs4ro.o
+main@uiContadorTempo 28 0 BANK0 1 cstackBANK0 dist/default/production\TimerTests.X.production.o
+start_initialization 4E 0 CODE 0 cinit dist/default/production\TimerTests.X.production.o
+_OSCCON 99 0 ABS 0 - dist/default/production\TimerTests.X.production.o
+__pcstackBANK0 28 0 BANK0 1 cstackBANK0 dist/default/production\TimerTests.X.production.o
+_TMR0IE 5D 0 ABS 0 - dist/default/production\TimerTests.X.production.o
+_TMR0IF 5A 0 ABS 0 - dist/default/production\TimerTests.X.production.o
+_TMR2IE 489 0 ABS 0 - dist/default/production\TimerTests.X.production.o
+_TMR2IF 89 0 ABS 0 - dist/default/production\TimerTests.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs4ro.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 BANK2 1 bank2 -
@@ -270,7 +270,7 @@ __Lbank6 0 0 BANK6 1 bank6 -
 __Lbank7 0 0 BANK7 1 bank7 -
 __Lbank8 0 0 BANK8 1 bank8 -
 __Lbank9 0 0 BANK9 1 bank9 -
-_uiCountermsTimer2 20 0 BANK0 1 bssBANK0 dist/default/production\IRremote.X.production.o
+_uiCountermsTimer2 20 0 BANK0 1 bssBANK0 dist/default/production\TimerTests.X.production.o
 __Lcinit 4E 0 CODE 0 cinit -
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
@@ -324,19 +324,19 @@ __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
-int$flags 7E 0 ABS 0 - dist/default/production\IRremote.X.production.o
+int$flags 7E 0 ABS 0 - dist/default/production\TimerTests.X.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_my_isr_routine 8 0 CODE 0 intentry dist/default/production\IRremote.X.production.o
-_GIE 5F 0 ABS 0 - dist/default/production\IRremote.X.production.o
-_PR2 1B 0 ABS 0 - dist/default/production\IRremote.X.production.o
+_my_isr_routine 8 0 CODE 0 intentry dist/default/production\TimerTests.X.production.o
+_GIE 5F 0 ABS 0 - dist/default/production\TimerTests.X.production.o
+_PR2 1B 0 ABS 0 - dist/default/production\TimerTests.X.production.o
 __S0 D1 0 ABS 0 - -
 __S1 78 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\xcAs720.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\xcAs4ro.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
-__end_of_my_isr_routine 4C 0 CODE 0 intentry dist/default/production\IRremote.X.production.o
+__end_of_my_isr_routine 4C 0 CODE 0 intentry dist/default/production\TimerTests.X.production.o
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
 __Lbank12 0 0 BANK12 1 bank12 -
@@ -359,7 +359,7 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext 66 0 CODE 0 maintext dist/default/production\IRremote.X.production.o
+__pmaintext 66 0 CODE 0 maintext dist/default/production\TimerTests.X.production.o
 __Lbigram 0 0 ABS 0 bigram -
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
@@ -371,33 +371,33 @@ __Lspace_4 0 0 ABS 0 - -
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __Lend_init 4C 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-end_of_initialization 60 0 CODE 0 cinit dist/default/production\IRremote.X.production.o
+end_of_initialization 60 0 CODE 0 cinit dist/default/production\TimerTests.X.production.o
 __Hintentry 4C 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
-togglePin@iPin 70 0 COMMON 1 cstackCOMMON dist/default/production\IRremote.X.production.o
+togglePin@iPin 70 0 COMMON 1 cstackCOMMON dist/default/production\TimerTests.X.production.o
 __Hreset_vec 2 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__ptext1 166 0 CODE 0 text1 dist/default/production\IRremote.X.production.o
+__ptext1 166 0 CODE 0 text1 dist/default/production\TimerTests.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-__end_of_togglePin 1A2 0 CODE 0 text1 dist/default/production\IRremote.X.production.o
+__end_of_togglePin 1A2 0 CODE 0 text1 dist/default/production\TimerTests.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
-__size_of_togglePin 0 0 ABS 0 - dist/default/production\IRremote.X.production.o
-__end_of__initialization 60 0 CODE 0 cinit dist/default/production\IRremote.X.production.o
+__size_of_togglePin 0 0 ABS 0 - dist/default/production\TimerTests.X.production.o
+__end_of__initialization 60 0 CODE 0 cinit dist/default/production\TimerTests.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
-_togglePin 166 0 CODE 0 text1 dist/default/production\IRremote.X.production.o
-__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\IRremote.X.production.o
+_togglePin 166 0 CODE 0 text1 dist/default/production\TimerTests.X.production.o
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\TimerTests.X.production.o
 __Hend_init 4E 0 CODE 0 end_init -
-__end_of_main 166 0 CODE 0 maintext dist/default/production\IRremote.X.production.o
-_PORTA C 0 ABS 0 - dist/default/production\IRremote.X.production.o
-_T2CON 1C 0 ABS 0 - dist/default/production\IRremote.X.production.o
-_TRISA 8C 0 ABS 0 - dist/default/production\IRremote.X.production.o
+__end_of_main 166 0 CODE 0 maintext dist/default/production\TimerTests.X.production.o
+_PORTA C 0 ABS 0 - dist/default/production\TimerTests.X.production.o
+_T2CON 1C 0 ABS 0 - dist/default/production\TimerTests.X.production.o
+_TRISA 8C 0 ABS 0 - dist/default/production\TimerTests.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-__pintentry 8 0 CODE 0 intentry dist/default/production\IRremote.X.production.o
-__initialization 4E 0 CODE 0 cinit dist/default/production\IRremote.X.production.o
-__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\IRremote.X.production.o
+__pintentry 8 0 CODE 0 intentry dist/default/production\TimerTests.X.production.o
+__initialization 4E 0 CODE 0 cinit dist/default/production\TimerTests.X.production.o
+__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\TimerTests.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.

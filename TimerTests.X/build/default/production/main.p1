@@ -295,152 +295,152 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSL equ 0FEEh ;# ">
 "5033
 [; <" TOSH equ 0FEFh ;# ">
-"21 main.c
-[; ;main.c: 21: unsigned long uiCounterms = 0;
+"20 main.c
+[; ;main.c: 20: unsigned long uiCounterms = 0;
 [v _uiCounterms `ul ~T0 @X0 1 e ]
 [i _uiCounterms
 -> -> -> 0 `i `l `ul
 ]
-"22
-[; ;main.c: 22: unsigned long uiCountermsTimer2 = 0;
+"21
+[; ;main.c: 21: unsigned long uiCountermsTimer2 = 0;
 [v _uiCountermsTimer2 `ul ~T0 @X0 1 e ]
 [i _uiCountermsTimer2
 -> -> -> 0 `i `l `ul
 ]
 [v $root$_my_isr_routine `(v ~T0 @X0 0 e ]
-"30
-[; ;main.c: 30: void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
+"29
+[; ;main.c: 29: void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 [v _my_isr_routine `(v ~T1 @X0 1 ef ]
 {
 [e :U _my_isr_routine ]
 [f ]
-"33
-[; ;main.c: 33:     if(TMR0IF)
+"32
+[; ;main.c: 32:     if(TMR0IF)
 [e $ ! _TMR0IF 275  ]
-"34
-[; ;main.c: 34:     {
+"33
+[; ;main.c: 33:     {
 {
+"34
+[; ;main.c: 34:         TMR0 = 131+2;
+[e = _TMR0 -> + -> 131 `i -> 2 `i `uc ]
 "35
-[; ;main.c: 35:         TMR0 = 131;
-[e = _TMR0 -> -> 131 `i `uc ]
-"36
-[; ;main.c: 36:         TMR0IF = 0;
+[; ;main.c: 35:         TMR0IF = 0;
 [e = _TMR0IF -> -> 0 `i `b ]
-"37
-[; ;main.c: 37:         uiCounterms++;
+"36
+[; ;main.c: 36:         uiCounterms++;
 [e ++ _uiCounterms -> -> -> 1 `i `l `ul ]
-"38
-[; ;main.c: 38:     }
+"37
+[; ;main.c: 37:     }
 }
 [e :U 275 ]
-"41
-[; ;main.c: 41:     if(TMR2IF){
+"40
+[; ;main.c: 40:     if(TMR2IF){
 [e $ ! _TMR2IF 276  ]
 {
-"42
-[; ;main.c: 42:         TMR2IF = 0;
+"41
+[; ;main.c: 41:         TMR2IF = 0;
 [e = _TMR2IF -> -> 0 `i `b ]
-"43
-[; ;main.c: 43:         uiCountermsTimer2++;
+"42
+[; ;main.c: 42:         uiCountermsTimer2++;
 [e ++ _uiCountermsTimer2 -> -> -> 1 `i `l `ul ]
-"44
-[; ;main.c: 44:     }
+"43
+[; ;main.c: 43:     }
 }
 [e :U 276 ]
-"46
-[; ;main.c: 46: }
+"45
+[; ;main.c: 45: }
 [e :UE 274 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"48
-[; ;main.c: 48: void main(void) {
+"47
+[; ;main.c: 47: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"53
-[; ;main.c: 53:     OSCCON = 0b1111100;
+"52
+[; ;main.c: 52:     OSCCON = 0b1111100;
 [e = _OSCCON -> -> 124 `i `uc ]
-"61
-[; ;main.c: 61:     OPTION_REG = 0b0000100;
+"60
+[; ;main.c: 60:     OPTION_REG = 0b0000100;
 [e = _OPTION_REG -> -> 4 `i `uc ]
+"61
+[; ;main.c: 61:     TMR0=131+2;
+[e = _TMR0 -> + -> 131 `i -> 2 `i `uc ]
 "62
-[; ;main.c: 62:     TMR0=131;
-[e = _TMR0 -> -> 131 `i `uc ]
-"63
-[; ;main.c: 63:     GIE=1;
+[; ;main.c: 62:     GIE=1;
 [e = _GIE -> -> 1 `i `b ]
-"64
-[; ;main.c: 64:     PEIE=1;
+"63
+[; ;main.c: 63:     PEIE=1;
 [e = _PEIE -> -> 1 `i `b ]
-"65
-[; ;main.c: 65:     TMR0IE=1;
+"64
+[; ;main.c: 64:     TMR0IE=1;
 [e = _TMR0IE -> -> 1 `i `b ]
-"74
-[; ;main.c: 74:     TMR2IE = 1;
+"73
+[; ;main.c: 73:     TMR2IE = 1;
 [e = _TMR2IE -> -> 1 `i `b ]
-"75
-[; ;main.c: 75:     T2CON = 0b00111101;
+"74
+[; ;main.c: 74:     T2CON = 0b00111101;
 [e = _T2CON -> -> 61 `i `uc ]
-"76
-[; ;main.c: 76:     PR2 = 125;
+"75
+[; ;main.c: 75:     PR2 = 125;
 [e = _PR2 -> -> 125 `i `uc ]
-"83
-[; ;main.c: 83:     ANSELA = 0x00;
+"82
+[; ;main.c: 82:     ANSELA = 0x00;
 [e = _ANSELA -> -> 0 `i `uc ]
-"84
-[; ;main.c: 84:     TRISA = 0b1111010;
+"83
+[; ;main.c: 83:     TRISA = 0b1111010;
 [e = _TRISA -> -> 122 `i `uc ]
-"85
-[; ;main.c: 85:     PORTA = 0x00;
+"84
+[; ;main.c: 84:     PORTA = 0x00;
 [e = _PORTA -> -> 0 `i `uc ]
-"88
-[; ;main.c: 88:     unsigned long uiContadorTempo = 0;
+"87
+[; ;main.c: 87:     unsigned long uiContadorTempo = 0;
 [v _uiContadorTempo `ul ~T0 @X0 1 a ]
 [e = _uiContadorTempo -> -> -> 0 `i `l `ul ]
-"89
-[; ;main.c: 89:     unsigned long uiContadorTempo2 = 0;
+"88
+[; ;main.c: 88:     unsigned long uiContadorTempo2 = 0;
 [v _uiContadorTempo2 `ul ~T0 @X0 1 a ]
 [e = _uiContadorTempo2 -> -> -> 0 `i `l `ul ]
-"91
-[; ;main.c: 91:     while(1){
+"90
+[; ;main.c: 90:     while(1){
 [e :U 279 ]
 {
-"94
-[; ;main.c: 94:         if((uiCounterms - uiContadorTempo) > 1000){
+"93
+[; ;main.c: 93:         if((uiCounterms - uiContadorTempo) > 1000){
 [e $ ! > - _uiCounterms _uiContadorTempo -> -> -> 1000 `i `l `ul 281  ]
 {
-"95
-[; ;main.c: 95:             togglePin(2);
+"94
+[; ;main.c: 94:             togglePin(2);
 [e ( _togglePin (1 -> 2 `i ]
-"98
-[; ;main.c: 98:             uiContadorTempo = uiCounterms;
+"97
+[; ;main.c: 97:             uiContadorTempo = uiCounterms;
 [e = _uiContadorTempo _uiCounterms ]
-"99
-[; ;main.c: 99:         }
+"98
+[; ;main.c: 98:         }
 }
 [e :U 281 ]
-"102
-[; ;main.c: 102:         if((uiCountermsTimer2 - uiContadorTempo2) > 1000){
+"101
+[; ;main.c: 101:         if((uiCountermsTimer2 - uiContadorTempo2) > 1000){
 [e $ ! > - _uiCountermsTimer2 _uiContadorTempo2 -> -> -> 1000 `i `l `ul 282  ]
 {
-"103
-[; ;main.c: 103:             togglePin(0);
+"102
+[; ;main.c: 102:             togglePin(0);
 [e ( _togglePin (1 -> 0 `i ]
-"106
-[; ;main.c: 106:             uiContadorTempo2 = uiCountermsTimer2;
+"105
+[; ;main.c: 105:             uiContadorTempo2 = uiCountermsTimer2;
 [e = _uiContadorTempo2 _uiCountermsTimer2 ]
-"107
-[; ;main.c: 107:         }
+"106
+[; ;main.c: 106:         }
 }
 [e :U 282 ]
-"108
-[; ;main.c: 108:     }
+"107
+[; ;main.c: 107:     }
 }
 [e :U 278 ]
 [e $U 279  ]
 [e :U 280 ]
-"109
-[; ;main.c: 109: }
+"108
+[; ;main.c: 108: }
 [e :UE 277 ]
 }

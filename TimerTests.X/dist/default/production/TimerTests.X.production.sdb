@@ -11,11 +11,11 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"29 C:\Users\User\MPLABXProjects\IRremote.X\main.c
+"29 C:\Users\User\MPLABXProjects\TimerTests.X\main.c
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
 "47
 [v _main main `(v  1 e 1 0 ]
-"18 C:\Users\User\MPLABXProjects\IRremote.X\utils.c
+"18 C:\Users\User\MPLABXProjects\TimerTests.X\utils.c
 [v _togglePin togglePin `(v  1 e 1 0 ]
 "429 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\PIC12F1822.h
 [v _PORTA PORTA `VEuc  1 e 1 @12 ]
@@ -45,7 +45,7 @@
 [v _TMR2IE TMR2IE `VEb  1 e 0 @1161 ]
 "6074
 [v _TMR2IF TMR2IF `VEb  1 e 0 @137 ]
-"20 C:\Users\User\MPLABXProjects\IRremote.X\main.c
+"20 C:\Users\User\MPLABXProjects\TimerTests.X\main.c
 [v _uiCounterms uiCounterms `ul  1 e 4 0 ]
 "21
 [v _uiCountermsTimer2 uiCountermsTimer2 `ul  1 e 4 0 ]
@@ -58,13 +58,13 @@
 [v main@uiContadorTempo uiContadorTempo `ul  1 a 4 0 ]
 "108
 } 0
-"18 C:\Users\User\MPLABXProjects\IRremote.X\utils.c
+"18 C:\Users\User\MPLABXProjects\TimerTests.X\utils.c
 [v _togglePin togglePin `(v  1 e 1 0 ]
 {
 [v togglePin@iPin iPin `i  1 p 2 0 ]
 "22
 } 0
-"29 C:\Users\User\MPLABXProjects\IRremote.X\main.c
+"29 C:\Users\User\MPLABXProjects\TimerTests.X\main.c
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
 {
 "45
