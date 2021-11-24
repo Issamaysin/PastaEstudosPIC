@@ -2012,13 +2012,11 @@ void writeCharOnDisplay(unsigned char ucCharacter, unsigned char ucDisplay);
 void initButtons();
 # 109 "./utils.h"
 void configBoard();
-# 120 "./utils.h"
+# 119 "./utils.h"
 void setPin(unsigned char ucPin, unsigned char ucPort);
-# 129 "./utils.h"
+# 128 "./utils.h"
 void clearPin(unsigned char ucPin, unsigned char ucPort);
-# 138 "./utils.h"
-void togglePin(unsigned char ucPin, unsigned char ucPort);
-# 153 "./utils.h"
+# 144 "./utils.h"
 void deviceStateMachine(unsigned char ucButton);
 
 
@@ -2028,7 +2026,7 @@ void deviceStateMachine(unsigned char ucButton);
 
 
 unsigned long randomNumber();
-# 170 "./utils.h"
+# 161 "./utils.h"
 void rollDice();
 # 11 "utils.c" 2
 
@@ -2236,25 +2234,7 @@ void clearPin(unsigned char ucPin, unsigned char ucPort){
             break;
     }
 }
-# 283 "utils.c"
-void togglePin(unsigned char ucPin, unsigned char ucPort){
-
-    switch(ucPort){
-        case 0:
-                PORTA ^= (1<<ucPin);
-            break;
-        case 1:
-                PORTB ^= (1<<ucPin);
-            break;
-        case 2:
-                PORTC ^= (1<<ucPin);
-            break;
-        default:
-            return;
-            break;
-    }
-}
-# 317 "utils.c"
+# 293 "utils.c"
 void deviceStateMachine(unsigned char ucButton){
 
 
@@ -2345,12 +2325,12 @@ void deviceStateMachine(unsigned char ucButton){
 
 
 }
-# 415 "utils.c"
+# 391 "utils.c"
 unsigned long randomNumber(){
     randomSeed = (733*randomSeed + 1237)%7393;
     return randomSeed;
 }
-# 429 "utils.c"
+# 405 "utils.c"
 void rollDice(){
     unsigned char i;
     unsigned int ulTotal = 0;

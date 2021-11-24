@@ -109,7 +109,6 @@ void initButtons();
 void configBoard();
 
 
-
  /****************************************************************************************** */
  /* Method name:        setPin                                                               */
  /* Method description: Muda para 1 (HIGH) o pino passado de parametro na porta especificada */
@@ -128,14 +127,6 @@ void setPin(unsigned char ucPin, unsigned char ucPort);
  /* *****************************************************************************************/
 void clearPin(unsigned char ucPin, unsigned char ucPort);
 
- /***************************************************************************************** */
- /* Method name:        togglePin                                                           */
- /* Method description: Inverte o valor do pino passado de parametro na porta especificada  */
- /* Input params:       ucPin: Pino que terá o valor invertido                              */
- /*                     ucPort: Porta onde está esse pino                                   */
- /* Output params:      n/a                                                                 */
- /* *****************************************************************************************/
-void togglePin(unsigned char ucPin, unsigned char ucPort);
 
  /********************************************************************************** */
  /* Method name:        deviceStateMachine                                           */

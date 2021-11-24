@@ -11,16 +11,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./utils.h: 52: state deviceCurrentState = MENU;
 [c E1005 0 1 .. ]
 [n E1005 state ROLL MENU  ]
-"120
-[; ;./utils.h: 120: void setPin(unsigned char ucPin, unsigned char ucPort);
+"119
+[; ;./utils.h: 119: void setPin(unsigned char ucPin, unsigned char ucPort);
 [v _setPin `(v ~T0 @X0 0 ef2`uc`uc ]
 "14 utils.c
 [; ;utils.c: 14: extern int indiceDisplay;
 [v _indiceDisplay `i ~T0 @X0 0 e ]
 "255 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
 [v _PORTC `Vuc ~T0 @X0 0 e@7 ]
-"129 ./utils.h
-[; ;./utils.h: 129: void clearPin(unsigned char ucPin, unsigned char ucPort);
+"128 ./utils.h
+[; ;./utils.h: 128: void clearPin(unsigned char ucPin, unsigned char ucPort);
 [v _clearPin `(v ~T0 @X0 0 ef2`uc`uc ]
 "1177 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\PIC16F687.h
 [v _OSCCON `Vuc ~T0 @X0 0 e@143 ]
@@ -66,8 +66,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _WPUA `Vuc ~T0 @X0 0 e@149 ]
 "1746
 [v _IOCA `Vuc ~T0 @X0 0 e@150 ]
-"170 ./utils.h
-[; ;./utils.h: 170: void rollDice();
+"161 ./utils.h
+[; ;./utils.h: 161: void rollDice();
 [v _rollDice `(v ~T0 @X0 0 e? ]
 "15 utils.c
 [; ;utils.c: 15: extern unsigned long randomSeed;
@@ -667,400 +667,338 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;utils.c: 273: }
 [e :UE 145 ]
 }
-"283
-[; ;utils.c: 283: void togglePin(unsigned char ucPin, unsigned char ucPort){
-[v _togglePin `(v ~T0 @X0 1 ef2`uc`uc ]
-{
-[e :U _togglePin ]
-[v _ucPin `uc ~T0 @X0 1 r1 ]
-[v _ucPort `uc ~T0 @X0 1 r2 ]
-[f ]
-"285
-[; ;utils.c: 285:     switch(ucPort){
-[e $U 154  ]
-{
-"286
-[; ;utils.c: 286:         case 0:
-[e :U 155 ]
-"287
-[; ;utils.c: 287:                 PORTA ^= (1<<ucPin);
-[e =^ _PORTA -> << -> 1 `i -> _ucPin `i `Vuc ]
-"288
-[; ;utils.c: 288:             break;
-[e $U 153  ]
-"289
-[; ;utils.c: 289:         case 1:
-[e :U 156 ]
-"290
-[; ;utils.c: 290:                 PORTB ^= (1<<ucPin);
-[e =^ _PORTB -> << -> 1 `i -> _ucPin `i `Vuc ]
-"291
-[; ;utils.c: 291:             break;
-[e $U 153  ]
-"292
-[; ;utils.c: 292:         case 2:
-[e :U 157 ]
 "293
-[; ;utils.c: 293:                 PORTC ^= (1<<ucPin);
-[e =^ _PORTC -> << -> 1 `i -> _ucPin `i `Vuc ]
-"294
-[; ;utils.c: 294:             break;
-[e $U 153  ]
-"295
-[; ;utils.c: 295:         default:
-[e :U 158 ]
-"296
-[; ;utils.c: 296:             return;
-[e $UE 152  ]
-"297
-[; ;utils.c: 297:             break;
-[e $U 153  ]
-"298
-[; ;utils.c: 298:     }
-}
-[e $U 153  ]
-[e :U 154 ]
-[e [\ -> _ucPort `i , $ -> 0 `i 155
- , $ -> 1 `i 156
- , $ -> 2 `i 157
- 158 ]
-[e :U 153 ]
-"299
-[; ;utils.c: 299: }
-[e :UE 152 ]
-}
-"317
-[; ;utils.c: 317: void deviceStateMachine(unsigned char ucButton){
+[; ;utils.c: 293: void deviceStateMachine(unsigned char ucButton){
 [v _deviceStateMachine `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _deviceStateMachine ]
 [v _ucButton `uc ~T0 @X0 1 r1 ]
 [f ]
-"320
-[; ;utils.c: 320:     if(1 == ucButton){
-[e $ ! == -> 1 `i -> _ucButton `i 160  ]
+"296
+[; ;utils.c: 296:     if(1 == ucButton){
+[e $ ! == -> 1 `i -> _ucButton `i 153  ]
 {
-"321
-[; ;utils.c: 321:         deviceCurrentState = ROLL;
+"297
+[; ;utils.c: 297:         deviceCurrentState = ROLL;
 [e = _deviceCurrentState . `E1005 0 ]
-"323
-[; ;utils.c: 323:         rollDice();
+"299
+[; ;utils.c: 299:         rollDice();
 [e ( _rollDice ..  ]
-"324
-[; ;utils.c: 324:         return;
-[e $UE 159  ]
-"325
-[; ;utils.c: 325:     }
+"300
+[; ;utils.c: 300:         return;
+[e $UE 152  ]
+"301
+[; ;utils.c: 301:     }
 }
-[e $U 161  ]
-"326
-[; ;utils.c: 326:     else if (deviceCurrentState == ROLL){
-[e :U 160 ]
-[e $ ! == -> _deviceCurrentState `ui -> . `E1005 0 `ui 162  ]
+[e $U 154  ]
+"302
+[; ;utils.c: 302:     else if (deviceCurrentState == ROLL){
+[e :U 153 ]
+[e $ ! == -> _deviceCurrentState `ui -> . `E1005 0 `ui 155  ]
 {
-"327
-[; ;utils.c: 327:         deviceCurrentState = MENU;
+"303
+[; ;utils.c: 303:         deviceCurrentState = MENU;
 [e = _deviceCurrentState . `E1005 1 ]
-"329
-[; ;utils.c: 329:         writeCharOnDisplay('0' + diceState[0], 0);
+"305
+[; ;utils.c: 305:         writeCharOnDisplay('0' + diceState[0], 0);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `ui `uc -> -> 0 `i `uc ]
-"330
-[; ;utils.c: 330:         writeCharOnDisplay('d', 1);
+"306
+[; ;utils.c: 306:         writeCharOnDisplay('d', 1);
 [e ( _writeCharOnDisplay (2 , -> -> 100 `ui `uc -> -> 1 `i `uc ]
-"331
-[; ;utils.c: 331:         writeCharOnDisplay('0' + diceState[1]/10, 2);
+"307
+[; ;utils.c: 307:         writeCharOnDisplay('0' + diceState[1]/10, 2);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> / -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 10 `i `ui `uc -> -> 2 `i `uc ]
-"332
-[; ;utils.c: 332:         writeCharOnDisplay('0' + diceState[1]%10, 3);
+"308
+[; ;utils.c: 308:         writeCharOnDisplay('0' + diceState[1]%10, 3);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> % -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 10 `i `ui `uc -> -> 3 `i `uc ]
-"333
-[; ;utils.c: 333:         return;
-[e $UE 159  ]
-"334
-[; ;utils.c: 334:     }
+"309
+[; ;utils.c: 309:         return;
+[e $UE 152  ]
+"310
+[; ;utils.c: 310:     }
 }
-[e :U 162 ]
-[e :U 161 ]
-"338
-[; ;utils.c: 338:     switch(ucButton){
-[e $U 164  ]
+[e :U 155 ]
+[e :U 154 ]
+"314
+[; ;utils.c: 314:     switch(ucButton){
+[e $U 157  ]
 {
-"339
-[; ;utils.c: 339:         case 2:
-[e :U 165 ]
-"340
-[; ;utils.c: 340:             if(diceState[0] < 9 ){
-[e $ ! < -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 9 `i 166  ]
+"315
+[; ;utils.c: 315:         case 2:
+[e :U 158 ]
+"316
+[; ;utils.c: 316:             if(diceState[0] < 9 ){
+[e $ ! < -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 9 `i 159  ]
 {
-"341
-[; ;utils.c: 341:                 diceState[0]++;
+"317
+[; ;utils.c: 317:                 diceState[0]++;
 [e ++ *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 1 `i `uc ]
-"342
-[; ;utils.c: 342:             }
+"318
+[; ;utils.c: 318:             }
 }
-[e :U 166 ]
-"343
-[; ;utils.c: 343:             break;
-[e $U 163  ]
-"345
-[; ;utils.c: 345:         case 3:
-[e :U 167 ]
-"346
-[; ;utils.c: 346:             if(diceState[0] > 1){
-[e $ ! > -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 1 `i 168  ]
+[e :U 159 ]
+"319
+[; ;utils.c: 319:             break;
+[e $U 156  ]
+"321
+[; ;utils.c: 321:         case 3:
+[e :U 160 ]
+"322
+[; ;utils.c: 322:             if(diceState[0] > 1){
+[e $ ! > -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 1 `i 161  ]
 {
-"347
-[; ;utils.c: 347:                 diceState[0]--;
+"323
+[; ;utils.c: 323:                 diceState[0]--;
 [e -- *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 1 `i `uc ]
-"348
-[; ;utils.c: 348:             }
+"324
+[; ;utils.c: 324:             }
 }
+[e :U 161 ]
+"325
+[; ;utils.c: 325:             break;
+[e $U 156  ]
+"327
+[; ;utils.c: 327:         case 4:
+[e :U 162 ]
+"328
+[; ;utils.c: 328:             if(diceState[1] < 20){
+[e $ ! < -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 20 `i 163  ]
+{
+"329
+[; ;utils.c: 329:                 switch(diceState[1]){
+[e $U 165  ]
+{
+"330
+[; ;utils.c: 330:                     case 12:
+[e :U 166 ]
+"331
+[; ;utils.c: 331:                         diceState[1] = 20;
+[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 20 `i `uc ]
+"332
+[; ;utils.c: 332:                         break;
+[e $U 164  ]
+"333
+[; ;utils.c: 333:                     case 10:
+[e :U 167 ]
+"334
+[; ;utils.c: 334:                         diceState[1] = 12;
+[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 12 `i `uc ]
+"335
+[; ;utils.c: 335:                         break;
+[e $U 164  ]
+"336
+[; ;utils.c: 336:                     case 8:
 [e :U 168 ]
-"349
-[; ;utils.c: 349:             break;
-[e $U 163  ]
-"351
-[; ;utils.c: 351:         case 4:
+"337
+[; ;utils.c: 337:                         diceState[1] = 10;
+[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 10 `i `uc ]
+"338
+[; ;utils.c: 338:                         break;
+[e $U 164  ]
+"339
+[; ;utils.c: 339:                     case 6:
 [e :U 169 ]
+"340
+[; ;utils.c: 340:                         diceState[1] = 8;
+[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 8 `i `uc ]
+"341
+[; ;utils.c: 341:                         break;
+[e $U 164  ]
+"342
+[; ;utils.c: 342:                     default:
+[e :U 170 ]
+"343
+[; ;utils.c: 343:                         diceState[1]++;
+[e ++ *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 1 `i `uc ]
+"344
+[; ;utils.c: 344:                         break;
+[e $U 164  ]
+"345
+[; ;utils.c: 345:                 }
+}
+[e $U 164  ]
+[e :U 165 ]
+[e [\ -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i , $ -> 12 `i 166
+ , $ -> 10 `i 167
+ , $ -> 8 `i 168
+ , $ -> 6 `i 169
+ 170 ]
+[e :U 164 ]
+"346
+[; ;utils.c: 346:             }
+}
+[e :U 163 ]
+"348
+[; ;utils.c: 348:             break;
+[e $U 156  ]
+"349
+[; ;utils.c: 349:         case 5:
+[e :U 171 ]
+"351
+[; ;utils.c: 351:             if(diceState[1] > 2){
+[e $ ! > -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 2 `i 172  ]
+{
 "352
-[; ;utils.c: 352:             if(diceState[1] < 20){
-[e $ ! < -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 20 `i 170  ]
+[; ;utils.c: 352:                 switch(diceState[1]){
+[e $U 174  ]
 {
 "353
-[; ;utils.c: 353:                 switch(diceState[1]){
-[e $U 172  ]
-{
-"354
-[; ;utils.c: 354:                     case 12:
-[e :U 173 ]
-"355
-[; ;utils.c: 355:                         diceState[1] = 20;
-[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 20 `i `uc ]
-"356
-[; ;utils.c: 356:                         break;
-[e $U 171  ]
-"357
-[; ;utils.c: 357:                     case 10:
-[e :U 174 ]
-"358
-[; ;utils.c: 358:                         diceState[1] = 12;
-[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 12 `i `uc ]
-"359
-[; ;utils.c: 359:                         break;
-[e $U 171  ]
-"360
-[; ;utils.c: 360:                     case 8:
+[; ;utils.c: 353:                     case 20:
 [e :U 175 ]
-"361
-[; ;utils.c: 361:                         diceState[1] = 10;
-[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 10 `i `uc ]
-"362
-[; ;utils.c: 362:                         break;
-[e $U 171  ]
-"363
-[; ;utils.c: 363:                     case 6:
+"354
+[; ;utils.c: 354:                         diceState[1] = 12;
+[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 12 `i `uc ]
+"355
+[; ;utils.c: 355:                         break;
+[e $U 173  ]
+"356
+[; ;utils.c: 356:                     case 12:
 [e :U 176 ]
-"364
-[; ;utils.c: 364:                         diceState[1] = 8;
-[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 8 `i `uc ]
-"365
-[; ;utils.c: 365:                         break;
-[e $U 171  ]
-"366
-[; ;utils.c: 366:                     default:
+"357
+[; ;utils.c: 357:                         diceState[1] = 10;
+[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 10 `i `uc ]
+"358
+[; ;utils.c: 358:                         break;
+[e $U 173  ]
+"359
+[; ;utils.c: 359:                     case 10:
 [e :U 177 ]
+"360
+[; ;utils.c: 360:                         diceState[1] = 8;
+[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 8 `i `uc ]
+"361
+[; ;utils.c: 361:                         break;
+[e $U 173  ]
+"362
+[; ;utils.c: 362:                     case 8:
+[e :U 178 ]
+"363
+[; ;utils.c: 363:                         diceState[1] = 6;
+[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 6 `i `uc ]
+"364
+[; ;utils.c: 364:                         break;
+[e $U 173  ]
+"365
+[; ;utils.c: 365:                     default:
+[e :U 179 ]
+"366
+[; ;utils.c: 366:                         diceState[1]--;
+[e -- *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 1 `i `uc ]
 "367
-[; ;utils.c: 367:                         diceState[1]++;
-[e ++ *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 1 `i `uc ]
+[; ;utils.c: 367:                         break;
+[e $U 173  ]
 "368
-[; ;utils.c: 368:                         break;
-[e $U 171  ]
+[; ;utils.c: 368:                 }
+}
+[e $U 173  ]
+[e :U 174 ]
+[e [\ -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i , $ -> 20 `i 175
+ , $ -> 12 `i 176
+ , $ -> 10 `i 177
+ , $ -> 8 `i 178
+ 179 ]
+[e :U 173 ]
 "369
-[; ;utils.c: 369:                 }
+[; ;utils.c: 369:             }
 }
-[e $U 171  ]
 [e :U 172 ]
-[e [\ -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i , $ -> 12 `i 173
- , $ -> 10 `i 174
- , $ -> 8 `i 175
- , $ -> 6 `i 176
- 177 ]
-[e :U 171 ]
 "370
-[; ;utils.c: 370:             }
-}
-[e :U 170 ]
+[; ;utils.c: 370:             break;
+[e $U 156  ]
+"371
+[; ;utils.c: 371:         default:
+[e :U 180 ]
 "372
 [; ;utils.c: 372:             break;
-[e $U 163  ]
+[e $U 156  ]
 "373
-[; ;utils.c: 373:         case 5:
-[e :U 178 ]
-"375
-[; ;utils.c: 375:             if(diceState[1] > 2){
-[e $ ! > -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 2 `i 179  ]
-{
+[; ;utils.c: 373:     }
+}
+[e $U 156  ]
+[e :U 157 ]
+[e [\ -> _ucButton `i , $ -> 2 `i 158
+ , $ -> 3 `i 160
+ , $ -> 4 `i 162
+ , $ -> 5 `i 171
+ 180 ]
+[e :U 156 ]
 "376
-[; ;utils.c: 376:                 switch(diceState[1]){
-[e $U 181  ]
-{
-"377
-[; ;utils.c: 377:                     case 20:
-[e :U 182 ]
-"378
-[; ;utils.c: 378:                         diceState[1] = 12;
-[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 12 `i `uc ]
-"379
-[; ;utils.c: 379:                         break;
-[e $U 180  ]
-"380
-[; ;utils.c: 380:                     case 12:
-[e :U 183 ]
-"381
-[; ;utils.c: 381:                         diceState[1] = 10;
-[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 10 `i `uc ]
-"382
-[; ;utils.c: 382:                         break;
-[e $U 180  ]
-"383
-[; ;utils.c: 383:                     case 10:
-[e :U 184 ]
-"384
-[; ;utils.c: 384:                         diceState[1] = 8;
-[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 8 `i `uc ]
-"385
-[; ;utils.c: 385:                         break;
-[e $U 180  ]
-"386
-[; ;utils.c: 386:                     case 8:
-[e :U 185 ]
-"387
-[; ;utils.c: 387:                         diceState[1] = 6;
-[e = *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 6 `i `uc ]
-"388
-[; ;utils.c: 388:                         break;
-[e $U 180  ]
-"389
-[; ;utils.c: 389:                     default:
-[e :U 186 ]
-"390
-[; ;utils.c: 390:                         diceState[1]--;
-[e -- *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux -> -> 1 `i `uc ]
-"391
-[; ;utils.c: 391:                         break;
-[e $U 180  ]
-"392
-[; ;utils.c: 392:                 }
-}
-[e $U 180  ]
-[e :U 181 ]
-[e [\ -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i , $ -> 20 `i 182
- , $ -> 12 `i 183
- , $ -> 10 `i 184
- , $ -> 8 `i 185
- 186 ]
-[e :U 180 ]
-"393
-[; ;utils.c: 393:             }
-}
-[e :U 179 ]
-"394
-[; ;utils.c: 394:             break;
-[e $U 163  ]
-"395
-[; ;utils.c: 395:         default:
-[e :U 187 ]
-"396
-[; ;utils.c: 396:             break;
-[e $U 163  ]
-"397
-[; ;utils.c: 397:     }
-}
-[e $U 163  ]
-[e :U 164 ]
-[e [\ -> _ucButton `i , $ -> 2 `i 165
- , $ -> 3 `i 167
- , $ -> 4 `i 169
- , $ -> 5 `i 178
- 187 ]
-[e :U 163 ]
-"400
-[; ;utils.c: 400:         writeCharOnDisplay('0' + diceState[0], 0);
+[; ;utils.c: 376:         writeCharOnDisplay('0' + diceState[0], 0);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `ui `uc -> -> 0 `i `uc ]
-"401
-[; ;utils.c: 401:         writeCharOnDisplay('d', 1);
+"377
+[; ;utils.c: 377:         writeCharOnDisplay('d', 1);
 [e ( _writeCharOnDisplay (2 , -> -> 100 `ui `uc -> -> 1 `i `uc ]
-"402
-[; ;utils.c: 402:         writeCharOnDisplay('0' + diceState[1]/10, 2);
+"378
+[; ;utils.c: 378:         writeCharOnDisplay('0' + diceState[1]/10, 2);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> / -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 10 `i `ui `uc -> -> 2 `i `uc ]
-"403
-[; ;utils.c: 403:         writeCharOnDisplay('0' + diceState[1]%10, 3);
+"379
+[; ;utils.c: 379:         writeCharOnDisplay('0' + diceState[1]%10, 3);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> % -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i -> 10 `i `ui `uc -> -> 3 `i `uc ]
-"406
-[; ;utils.c: 406: }
-[e :UE 159 ]
+"382
+[; ;utils.c: 382: }
+[e :UE 152 ]
 }
-"415
-[; ;utils.c: 415: unsigned long randomNumber(){
+"391
+[; ;utils.c: 391: unsigned long randomNumber(){
 [v _randomNumber `(ul ~T0 @X0 1 ef ]
 {
 [e :U _randomNumber ]
 [f ]
-"416
-[; ;utils.c: 416:     randomSeed = (733*randomSeed + 1237)%7393;
+"392
+[; ;utils.c: 392:     randomSeed = (733*randomSeed + 1237)%7393;
 [e = _randomSeed % + * -> -> -> 733 `i `l `ul _randomSeed -> -> -> 1237 `i `l `ul -> -> -> 7393 `i `l `ul ]
-"417
-[; ;utils.c: 417:     return randomSeed;
+"393
+[; ;utils.c: 393:     return randomSeed;
 [e ) _randomSeed ]
-[e $UE 188  ]
-"418
-[; ;utils.c: 418: }
-[e :UE 188 ]
+[e $UE 181  ]
+"394
+[; ;utils.c: 394: }
+[e :UE 181 ]
 }
-"429
-[; ;utils.c: 429: void rollDice(){
+"405
+[; ;utils.c: 405: void rollDice(){
 [v _rollDice `(v ~T0 @X0 1 ef ]
 {
 [e :U _rollDice ]
 [f ]
-"430
-[; ;utils.c: 430:     unsigned char i;
+"406
+[; ;utils.c: 406:     unsigned char i;
 [v _i `uc ~T0 @X0 1 a ]
-"431
-[; ;utils.c: 431:     unsigned int ulTotal = 0;
+"407
+[; ;utils.c: 407:     unsigned int ulTotal = 0;
 [v _ulTotal `ui ~T0 @X0 1 a ]
 [e = _ulTotal -> -> 0 `i `ui ]
-"433
-[; ;utils.c: 433:     for(i = 0; i < diceState[0]; i++){
+"409
+[; ;utils.c: 409:     for(i = 0; i < diceState[0]; i++){
 {
 [e = _i -> -> 0 `i `uc ]
-[e $U 193  ]
-[e :U 190 ]
+[e $U 186  ]
+[e :U 183 ]
 {
-"434
-[; ;utils.c: 434:         ulTotal += ((unsigned int)randomNumber())%diceState[1] + 1;
+"410
+[; ;utils.c: 410:         ulTotal += ((unsigned int)randomNumber())%diceState[1] + 1;
 [e =+ _ulTotal + % -> ( _randomNumber ..  `ui -> *U + &U _diceState * -> -> -> 1 `i `ui `ux -> -> # *U &U _diceState `ui `ux `ui -> -> 1 `i `ui ]
-"435
-[; ;utils.c: 435:     }
+"411
+[; ;utils.c: 411:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 193 ]
-[e $ < -> _i `i -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i 190  ]
-[e :U 191 ]
+[e :U 186 ]
+[e $ < -> _i `i -> *U + &U _diceState * -> -> -> 0 `i `ui `ux -> -> # *U &U _diceState `ui `ux `i 183  ]
+[e :U 184 ]
 }
-"437
-[; ;utils.c: 437:     writeCharOnDisplay('0' + (unsigned char)(ulTotal%10) ,3);
+"413
+[; ;utils.c: 413:     writeCharOnDisplay('0' + (unsigned char)(ulTotal%10) ,3);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> -> % _ulTotal -> -> 10 `i `ui `uc `ui `uc -> -> 3 `i `uc ]
-"438
-[; ;utils.c: 438:     writeCharOnDisplay('0' + (unsigned char)((ulTotal/10)%10) ,2);
+"414
+[; ;utils.c: 414:     writeCharOnDisplay('0' + (unsigned char)((ulTotal/10)%10) ,2);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> -> % / _ulTotal -> -> 10 `i `ui -> -> 10 `i `ui `uc `ui `uc -> -> 2 `i `uc ]
-"439
-[; ;utils.c: 439:     writeCharOnDisplay('0' + (unsigned char)((ulTotal/100)%10) ,1);
+"415
+[; ;utils.c: 415:     writeCharOnDisplay('0' + (unsigned char)((ulTotal/100)%10) ,1);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> -> % / _ulTotal -> -> 100 `i `ui -> -> 10 `i `ui `uc `ui `uc -> -> 1 `i `uc ]
-"440
-[; ;utils.c: 440:     writeCharOnDisplay('0' + (unsigned char)((ulTotal/1000)%10) ,0);
+"416
+[; ;utils.c: 416:     writeCharOnDisplay('0' + (unsigned char)((ulTotal/1000)%10) ,0);
 [e ( _writeCharOnDisplay (2 , -> + -> 48 `ui -> -> % / _ulTotal -> -> 1000 `i `ui -> -> 10 `i `ui `uc `ui `uc -> -> 0 `i `uc ]
-"441
-[; ;utils.c: 441: }
-[e :UE 189 ]
+"417
+[; ;utils.c: 417: }
+[e :UE 182 ]
 }

@@ -50,11 +50,11 @@ MENU 1
 [v _setPin setPin `(v  1 e 1 0 ]
 "257
 [v _clearPin clearPin `(v  1 e 1 0 ]
-"317
+"293
 [v _deviceStateMachine deviceStateMachine `(v  1 e 1 0 ]
-"415
+"391
 [v _randomNumber randomNumber `(ul  1 e 4 0 ]
-"429
+"405
 [v _rollDice rollDice `(v  1 e 1 0 ]
 [s S22 Display 2 `uc 1 pin 1 0 `uc 1 data 1 1 ]
 "41 C:\Users\User\MPLABXProjects\DiceRoller.X/utils.h
@@ -162,23 +162,23 @@ MENU 1
 {
 "138
 } 0
-"317
+"293
 [v _deviceStateMachine deviceStateMachine `(v  1 e 1 0 ]
 {
 [v deviceStateMachine@ucButton ucButton `uc  1 a 1 wreg ]
 [v deviceStateMachine@ucButton ucButton `uc  1 a 1 wreg ]
-"320
+"296
 [v deviceStateMachine@ucButton ucButton `uc  1 a 1 51 ]
-"406
+"382
 } 0
-"429
+"405
 [v _rollDice rollDice `(v  1 e 1 0 ]
 {
-"431
+"407
 [v rollDice@ulTotal ulTotal `ui  1 a 2 46 ]
-"430
+"406
 [v rollDice@i i `uc  1 a 1 45 ]
-"441
+"417
 } 0
 "75
 [v _writeCharOnDisplay writeCharOnDisplay `(v  1 e 1 0 ]
@@ -189,10 +189,10 @@ MENU 1
 [v writeCharOnDisplay@ucCharacter ucCharacter `uc  1 a 1 40 ]
 "113
 } 0
-"415
+"391
 [v _randomNumber randomNumber `(ul  1 e 4 0 ]
 {
-"418
+"394
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]

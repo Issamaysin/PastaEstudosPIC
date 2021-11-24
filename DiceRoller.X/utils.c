@@ -273,30 +273,6 @@ void clearPin(unsigned char ucPin, unsigned char ucPort){
 }
 
 
- /***************************************************************************************** */
- /* Method name:        togglePin                                                           */
- /* Method description: Inverte o valor do pino passado de parametro na porta especificada  */
- /* Input params:       ucPin: Pino que terá o valor invertido                              */
- /*                     ucPort: Porta onde está esse pino                                   */
- /* Output params:      n/a                                                                 */
- /* *****************************************************************************************/
-void togglePin(unsigned char ucPin, unsigned char ucPort){
-     /*  Toggle o bit correspondente aos pino e porta passados por parametro */
-    switch(ucPort){
-        case PORT_A:
-                PORTA ^= (1<<ucPin);
-            break;
-        case PORT_B:
-                PORTB ^= (1<<ucPin);
-            break;
-        case PORT_C:
-                PORTC ^= (1<<ucPin);
-            break;
-        default:
-            return;
-            break;
-    }
-}
 
 
 

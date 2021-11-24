@@ -42,7 +42,7 @@ dataBANK0 BANK0 1 68 68 8 1
 clrtext CODE 0 78F 78F 8 2
 bssCOMMON COMMON 1 70 70 6 1
 config CONFIG 4 2007 2007 1 2
-$C:\Users\User\AppData\Local\Temp\xcAs83c.o
+$C:\Users\User\AppData\Local\Temp\xcAs7g8.o
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 A A 1 2
 config CONFIG 4 2007 2007 1 2
@@ -86,40 +86,40 @@ STRING 797-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\DiceRoller.X.production.o
-B cinit CODE >574:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-B cinit CODE >577:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-B cinit CODE >630:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-C cinit CODE >631:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-D cinit CODE >632:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-E cinit CODE >633:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-F cinit CODE >634:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-10 cinit CODE >635:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-11 cinit CODE >636:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-12 cinit CODE >637:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-13 cinit CODE >638:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-14 cinit CODE >639:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-15 cinit CODE >640:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-16 cinit CODE >641:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-17 cinit CODE >642:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-18 cinit CODE >643:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-19 cinit CODE >644:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-1A cinit CODE >645:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-1B cinit CODE >664:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-1C cinit CODE >665:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-1D cinit CODE >666:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-1E cinit CODE >667:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-1F cinit CODE >668:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-20 cinit CODE >671:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-21 cinit CODE >672:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-22 cinit CODE >673:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-23 cinit CODE >674:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-24 cinit CODE >677:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-25 cinit CODE >678:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-26 cinit CODE >679:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-27 cinit CODE >680:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-28 cinit CODE >686:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-28 cinit CODE >688:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-29 cinit CODE >689:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+B cinit CODE >574:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+B cinit CODE >577:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+B cinit CODE >630:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+C cinit CODE >631:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+D cinit CODE >632:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+E cinit CODE >633:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+F cinit CODE >634:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+10 cinit CODE >635:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+11 cinit CODE >636:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+12 cinit CODE >637:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+13 cinit CODE >638:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+14 cinit CODE >639:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+15 cinit CODE >640:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+16 cinit CODE >641:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+17 cinit CODE >642:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+18 cinit CODE >643:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+19 cinit CODE >644:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+1A cinit CODE >645:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+1B cinit CODE >664:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+1C cinit CODE >665:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+1D cinit CODE >666:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+1E cinit CODE >667:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+1F cinit CODE >668:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+20 cinit CODE >671:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+21 cinit CODE >672:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+22 cinit CODE >673:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+23 cinit CODE >674:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+24 cinit CODE >677:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+25 cinit CODE >678:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+26 cinit CODE >679:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+27 cinit CODE >680:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+28 cinit CODE >686:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+28 cinit CODE >688:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+29 cinit CODE >689:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
 4 intentry CODE >43:C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
 374 text17 CODE >43:C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
 374 text17 CODE >46:C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
@@ -338,13 +338,13 @@ F cinit CODE >634:C:\Users\User\AppData\Local\Temp\xcAs83c.s
 5AC text10 CODE >125:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul32.c
 5B0 text10 CODE >128:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul32.c
 5B8 text10 CODE >129:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul32.c
-51E text9 CODE >415:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-51E text9 CODE >416:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-546 text9 CODE >416:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-54C text9 CODE >416:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-552 text9 CODE >416:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-568 text9 CODE >417:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-570 text9 CODE >418:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+51E text9 CODE >391:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+51E text9 CODE >392:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+546 text9 CODE >392:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+54C text9 CODE >392:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+552 text9 CODE >392:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+568 text9 CODE >393:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+570 text9 CODE >394:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
 231 text8 CODE >75:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
 234 text8 CODE >78:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
 235 text8 CODE >80:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
@@ -383,76 +383,76 @@ F cinit CODE >634:C:\Users\User\AppData\Local\Temp\xcAs83c.s
 2D3 text8 CODE >112:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
 2D6 text8 CODE >112:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
 2D9 text8 CODE >113:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-2DA text7 CODE >429:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-2DA text7 CODE >431:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-2DE text7 CODE >433:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-2E0 text7 CODE >434:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-2F5 text7 CODE >434:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-2FB text7 CODE >434:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-2FF text7 CODE >435:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-305 text7 CODE >435:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-309 text7 CODE >437:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-31B text7 CODE >438:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-33A text7 CODE >439:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-357 text7 CODE >440:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-373 text7 CODE >441:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-2A text6 CODE >317:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-2D text6 CODE >320:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-32 text6 CODE >321:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-33 text6 CODE >323:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-35 text6 CODE >326:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-3A text6 CODE >327:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-3C text6 CODE >329:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-40 text6 CODE >330:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-46 text6 CODE >331:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-5D text6 CODE >332:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-75 text6 CODE >340:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-77 text6 CODE >340:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-7B text6 CODE >341:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-80 text6 CODE >346:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-82 text6 CODE >346:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-86 text6 CODE >347:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-89 text6 CODE >352:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-8B text6 CODE >352:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-90 text6 CODE >355:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-94 text6 CODE >356:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-95 text6 CODE >358:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-99 text6 CODE >359:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-9A text6 CODE >361:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-9E text6 CODE >362:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-9F text6 CODE >364:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-A3 text6 CODE >365:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-A4 text6 CODE >367:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-A8 text6 CODE >368:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-A9 text6 CODE >369:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-AE text6 CODE >369:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-B3 text6 CODE >369:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-B6 text6 CODE >369:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-B9 text6 CODE >369:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-BC text6 CODE >369:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-BF text6 CODE >375:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-C1 text6 CODE >375:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-C6 text6 CODE >387:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-CA text6 CODE >388:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-CB text6 CODE >390:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-CD text6 CODE >391:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-CE text6 CODE >392:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-D3 text6 CODE >392:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-D8 text6 CODE >392:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-DB text6 CODE >392:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-DE text6 CODE >392:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-E1 text6 CODE >392:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-E4 text6 CODE >397:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-E9 text6 CODE >397:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-EE text6 CODE >397:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-F1 text6 CODE >397:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-F4 text6 CODE >397:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-F7 text6 CODE >397:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-FA text6 CODE >400:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-FE text6 CODE >401:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-104 text6 CODE >402:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-11B text6 CODE >403:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
-132 text6 CODE >406:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+2DA text7 CODE >405:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+2DA text7 CODE >407:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+2DE text7 CODE >409:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+2E0 text7 CODE >410:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+2F5 text7 CODE >410:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+2FB text7 CODE >410:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+2FF text7 CODE >411:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+305 text7 CODE >411:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+309 text7 CODE >413:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+31B text7 CODE >414:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+33A text7 CODE >415:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+357 text7 CODE >416:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+373 text7 CODE >417:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+2A text6 CODE >293:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+2D text6 CODE >296:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+32 text6 CODE >297:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+33 text6 CODE >299:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+35 text6 CODE >302:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+3A text6 CODE >303:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+3C text6 CODE >305:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+40 text6 CODE >306:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+46 text6 CODE >307:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+5D text6 CODE >308:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+75 text6 CODE >316:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+77 text6 CODE >316:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+7B text6 CODE >317:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+80 text6 CODE >322:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+82 text6 CODE >322:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+86 text6 CODE >323:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+89 text6 CODE >328:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+8B text6 CODE >328:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+90 text6 CODE >331:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+94 text6 CODE >332:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+95 text6 CODE >334:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+99 text6 CODE >335:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+9A text6 CODE >337:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+9E text6 CODE >338:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+9F text6 CODE >340:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+A3 text6 CODE >341:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+A4 text6 CODE >343:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+A8 text6 CODE >344:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+A9 text6 CODE >345:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+AE text6 CODE >345:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+B3 text6 CODE >345:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+B6 text6 CODE >345:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+B9 text6 CODE >345:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+BC text6 CODE >345:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+BF text6 CODE >351:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+C1 text6 CODE >351:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+C6 text6 CODE >363:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+CA text6 CODE >364:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+CB text6 CODE >366:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+CD text6 CODE >367:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+CE text6 CODE >368:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+D3 text6 CODE >368:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+D8 text6 CODE >368:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+DB text6 CODE >368:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+DE text6 CODE >368:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+E1 text6 CODE >368:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+E4 text6 CODE >373:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+E9 text6 CODE >373:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+EE text6 CODE >373:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+F1 text6 CODE >373:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+F4 text6 CODE >373:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+F7 text6 CODE >373:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+FA text6 CODE >376:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+FE text6 CODE >377:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+104 text6 CODE >378:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+11B text6 CODE >379:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
+132 text6 CODE >382:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
 73C text5 CODE >122:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
 73C text5 CODE >123:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
 73F text5 CODE >124:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
@@ -559,16 +559,16 @@ FE text6 CODE >401:C:\Users\User\MPLABXProjects\DiceRoller.X\utils.c
 213 maintext CODE >124:C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
 222 maintext CODE >127:C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
 22B maintext CODE >127:C:\Users\User\MPLABXProjects\DiceRoller.X\main.c
-78F clrtext CODE >651:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-78F clrtext CODE >652:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-790 clrtext CODE >653:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-790 clrtext CODE >654:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-791 clrtext CODE >655:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-792 clrtext CODE >656:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-793 clrtext CODE >657:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-794 clrtext CODE >658:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-795 clrtext CODE >659:C:\Users\User\AppData\Local\Temp\xcAs83c.s
-796 clrtext CODE >660:C:\Users\User\AppData\Local\Temp\xcAs83c.s
+78F clrtext CODE >651:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+78F clrtext CODE >652:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+790 clrtext CODE >653:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+790 clrtext CODE >654:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+791 clrtext CODE >655:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+792 clrtext CODE >656:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+793 clrtext CODE >657:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+794 clrtext CODE >658:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+795 clrtext CODE >659:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
+796 clrtext CODE >660:C:\Users\User\AppData\Local\Temp\xcAs7g8.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -603,10 +603,10 @@ _T0IE 5D 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
 _T0IF 5A 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
 _WPUA 95 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs83c.o
+___sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs7g8.o
 _main 266 0 CODE 0 maintext dist/default/production\DiceRoller.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
-start 14 0 CODE 0 init C:\Users\User\AppData\Local\Temp\xcAs83c.o
+start 14 0 CODE 0 init C:\Users\User\AppData\Local\Temp\xcAs7g8.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
@@ -623,12 +623,12 @@ __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
 ___awmod@sign 26 0 BANK0 1 cstackBANK0 dist/default/production\DiceRoller.X.production.o
 __end_of_initButtons EC8 0 CODE 0 text5 dist/default/production\DiceRoller.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs83c.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs83c.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs83c.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs83c.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs83c.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs83c.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs7g8.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs7g8.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs7g8.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs7g8.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs7g8.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\User\AppData\Local\Temp\xcAs7g8.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
 ___llmod@divisor 2D 0 BANK0 1 cstackBANK0 dist/default/production\DiceRoller.X.production.o
@@ -651,8 +651,8 @@ __end_of___llmod A3C 0 CODE 0 text11 dist/default/production\DiceRoller.X.produc
 __end_of___lwdiv BFE 0 CODE 0 text13 dist/default/production\DiceRoller.X.production.o
 __end_of___lwmod E0E 0 CODE 0 text12 dist/default/production\DiceRoller.X.production.o
 _uiCounterms 60 0 BANK0 1 bssBANK0 dist/default/production\DiceRoller.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs83c.o
-___stacklo 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs83c.o
+___stackhi 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs7g8.o
+___stacklo 0 0 ABS 0 - C:\Users\User\AppData\Local\Temp\xcAs7g8.o
 __size_of_shiftDisplays 0 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
 ___lwdiv@quotient 26 0 BANK0 1 cstackBANK0 dist/default/production\DiceRoller.X.production.o
 ___lwmod@dividend 41 0 BANK0 1 cstackBANK0 dist/default/production\DiceRoller.X.production.o
@@ -665,7 +665,7 @@ __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\DiceRoller.X.pro
 __pcstackBANK1 AA 0 BANK1 1 cstackBANK1 dist/default/production\DiceRoller.X.production.o
 __size_of_initButtons 0 0 ABS 0 - dist/default/production\DiceRoller.X.production.o
 _deviceCurrentState 6F 0 BANK0 1 dataBANK0 dist/default/production\DiceRoller.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs83c.o
+___int_sp 0 0 STACK 2 stack C:\Users\User\AppData\Local\Temp\xcAs7g8.o
 __end_of_deviceStateMachine 266 0 CODE 0 text6 dist/default/production\DiceRoller.X.production.o
 __end_of_setPin D96 0 CODE 0 text2 dist/default/production\DiceRoller.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
@@ -722,7 +722,7 @@ __size_of_writeCharOnDisplay 0 0 ABS 0 - dist/default/production\DiceRoller.X.pr
 _uiButtonDebounce 70 0 COMMON 1 bssCOMMON dist/default/production\DiceRoller.X.production.o
 _configBoard C88 0 CODE 0 text16 dist/default/production\DiceRoller.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\xcAs83c.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\User\AppData\Local\Temp\xcAs7g8.o
 __end_of_randomNumber AE2 0 CODE 0 text9 dist/default/production\DiceRoller.X.production.o
 __pdataBANK0 68 0 BANK0 1 dataBANK0 dist/default/production\DiceRoller.X.production.o
 __size_of___lmul 0 0 ABS 0 - dist/default/production\DiceRoller.X.production.o

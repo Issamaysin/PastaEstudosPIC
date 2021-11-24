@@ -2023,13 +2023,11 @@ void writeCharOnDisplay(unsigned char ucCharacter, unsigned char ucDisplay);
 void initButtons();
 # 109 "./utils.h"
 void configBoard();
-# 120 "./utils.h"
+# 119 "./utils.h"
 void setPin(unsigned char ucPin, unsigned char ucPort);
-# 129 "./utils.h"
+# 128 "./utils.h"
 void clearPin(unsigned char ucPin, unsigned char ucPort);
-# 138 "./utils.h"
-void togglePin(unsigned char ucPin, unsigned char ucPort);
-# 153 "./utils.h"
+# 144 "./utils.h"
 void deviceStateMachine(unsigned char ucButton);
 
 
@@ -2039,7 +2037,7 @@ void deviceStateMachine(unsigned char ucButton);
 
 
 unsigned long randomNumber();
-# 170 "./utils.h"
+# 161 "./utils.h"
 void rollDice();
 # 15 "main.c" 2
 
